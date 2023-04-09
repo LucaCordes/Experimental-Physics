@@ -1,0 +1,152 @@
+\newcommand{\ConstExercise}{01}
+\newcommand{\ConstDeadline}{14.04.2023}
+
+\documentclass[11pt,letterpaper]{article}
+\textwidth 6.5in
+\textheight 9.in
+\oddsidemargin 0in
+\headheight 0in
+
+\usepackage[dark,exp]{custom_0.1}
+
+\begin{document}
+
+%%%%% Document %%%%%
+
+\begin{enumerate}
+    \item \textbf{Zum Aufwärmen}
+    \begin{enumerate}
+        \item 
+            Extensive Größen verändern sich, abhängig von der Größe des betrachteten Systems.
+            Beispiel: Masse, Volumen, ...\\[1ex]
+            Im Gegensatz dazu sind intensive Größen, solche die unabhängig von der Größe des Systems sind.
+            Beispiel: Temperatur, Massendichte, ...
+        \item 
+            Man kann die beiden Objekte über einen dritten Stoff, 
+            welcher mit beiden verträglich ist, 
+            in thermischen Kontakt miteinander bringen.
+            Ist sowohl das erste Objekt als auch das zweite mit dem dritten im thermischen Gleichgewicht, 
+            dann ist auch das erste Objekt mit dem zweiten im thermischen Gleichgewicht. \\
+            Man müsste um diese Methode zu verwenden, darauf achten, dass der dritte Stoff mit 
+            mindestens einem der anderen objekte im themischen Gleichgewicht ist, noch bevor man 
+            sie thermische miteinander verbindet. 
+        \item 
+            Der Miniskus senkt sich zunächst etwas ab, da das Glas in welchem die Flüssigkeit
+            sich befindet, sich zuerst ausdehnt. Das Volumen des Glasgefäßes steigt, während das
+            der Flüssigkeit zunächst konstant bleibt. Das Resultat ist eine kurzfristige, sehr kleine 
+            Absenkung des Flüssigkeitspegels.
+        \item 
+            Die Querschnittsfläche des Lochs vergrößert sich, da sich das Blech ausdehnt.
+        \item 
+            Schätzungsweise $4\Celsius \ -\ 100\Celsius $, da erst ab $4\Celsius$ gilt: $ V \propto T$
+            ; Bei $100\Celsius$ würde für gewöhnlich das Wasser gasförmig werden, jedoch erhöht sich bei
+            der Erhitzung in einerm festen Volumen der Druck, was dieser Entwicklung zu einem gewissen Grad entgegen wirken sollte.
+    \end{enumerate}
+
+    
+    \item \textbf{Eiesenbahnrad}
+    \begin{enumerate}
+        \item 
+            \begin{align*}
+                \Delta T &= \frac{1}{\alpha} \frac{\Delta r}{r_{innen}}\\
+                &= \frac{1}{13\cdot 10^{-6}\Kelvin^{-1}}\frac{0.4\m[m]}{170\m[m]}\\
+                &\approx 181 \Kelvin
+            \end{align*}
+        \item 
+            \begin{align*}
+                E &=  1.8 \cdot 10^{11} \ufrac{N}{m^2} \\
+                \sigma &= E \varepsilon\\
+                &= 1.8 \cdot 10^{11} \ufrac{N}{m^2}\frac{-0.4\m[m]}{170.4\m[m]}\\
+                &\approx -4.22\cdot 10^{8} \ufrac{N}{m^2}\\
+            \end{align*}
+    \end{enumerate}
+
+    
+    \item \textbf{Räumliche Ausdehnung}
+    \begin{enumerate}
+        \item 
+            \begin{align*}
+                \Delta V &= \gamma \cdot \Delta T _{rel}\\
+                V' &=V\cbrace{1+ \gamma \cdot \Delta T _{rel}}\\
+                &= 12000\cbrace{1+\mathbf{L} \cdot 1.05\cdot 10^{-3} \Kelvin ^{-1} \cdot 30\Kelvin}\\
+                &\approx 12400 \mathrm{L}\\
+            \end{align*}
+        \item 
+            \begin{align*}
+                \rho &= \frac{m}{V}\\
+                \rho& \propto \frac{1}{V}\\
+                \\
+                \rho' &= \rho \cdot \frac{1}{\Delta V_{rel}}\\
+                 &= \rho \cdot \frac{1}{1+\gamma \Delta T}\\
+                 &= 7.3\cdot 10^{3} \ufrac{kg}{m}\frac{1}{1+11\cdot 10^{-6} \Kelvin ^{-1}\cdot 1180\Kelvin}\\
+                 &\approx 7.21\cdot 10^{3} \ufrac{kg}{m^3}
+            \end{align*}
+        \item 
+            \begin{align*}
+                 h &= \frac{V}{\pi r^2}\\
+                 \Delta h &= \frac{\Delta V}{\pi r^2}\\
+                 &= \frac{\gamma \Delta T\cdot V}{\pi r^2}\\
+                 r&= \sqrt{\frac{\gamma \Delta T\cdot V}{\pi \Delta h}}\\
+                 &= \sqrt{\frac{1.6\cdot 10^{-4}\Kelvin^{-1} \cdot 1\Kelvin \cdot 0.5\mathrm{cm}^3}{\pi\cdot 1\mathrm{cm}}}\\
+                &\approx 5.04\cdot10^{-5} = 50.4 \,\m[\mu]\\
+            \end{align*}
+    \end{enumerate}
+
+    \item \textbf{Bimetall II}
+    \begin{enumerate}
+        \item 
+            \begin{align*}
+                l_1 &= l(1+\alpha_1 \Delta T)\\
+                l_2 &= l(1+\alpha_2 \Delta T)\\ 
+                \Delta l_{rel} &= \frac{l_1}{l_2}\\
+                &= \frac{1+\alpha_1 \Delta T}{1+\alpha_2\Delta T }\\
+                \\
+                \Delta l_{rel} &= \Delta U_{rel}\\
+                &= \frac{2\pi(r+d)}{2\pi r} \\
+                &= 1+ \frac{d}{r}=\frac{1+\Delta T \alpha_1}{1+\Delta T \alpha_2}\\
+                r &= \frac{d}{\frac{1+\Delta T \alpha_1}{1+\Delta T \alpha_2}-1}\\  
+                &= \frac{d(\alpha_2 +\Delta T^{-1})}{\alpha_1-\alpha_2}
+            \end{align*}
+        \item 
+            \begin{align*}
+            \end{align*}
+    \end{enumerate}
+
+    \item \textbf{Ideale Gase}
+    \begin{enumerate}
+        \item Richtig (Satz von Avogadro)
+        \item Falsch, da:
+            \begin{align*}
+                \begin{cases}
+                     N_1 = N_2\\m_1=m_2
+                \end{cases}\Longleftrightarrow 
+                \begin{cases}
+                    N_1 = N_2\\N_1\bar{m}_1=N_2 \bar{m}_2
+                \end{cases}
+                \Longrightarrow \bar{m}_1 = \bar{m}_2
+                \Longrightarrow \text{im Allgemeinen falsch}
+            \end{align*}
+            
+        \item Falsch, da:
+            \begin{align*}
+                \bar{v}_i &= \int_{0}^{\infty} v\,p_i(v)\,\di v\\
+                &= \sqrt{\frac{8 k_B T}{\pi m_i}}\\
+                \\
+                \bar{v}_1 &= \bar{v}_2\\
+                \sqrt{\frac{8 k_B T}{\pi m_1}} &= \sqrt{\frac{8 k_B T}{\pi m_2}}\\
+                m_1 &= m_2 \Longrightarrow \text{im Allgemeinen falsch}\\
+            \end{align*}
+    \end{enumerate}
+
+    \item \textbf{Energieerhaltung}
+    \begin{align*}
+        \Delta {E_{pot}} &= \Delta \braket{E_{kin}}\\
+        mg\Delta h &= \frac{3}{2}k_B \Delta T\\
+        \Delta T &= \frac{2}{3}\frac{mg\Delta h}{k_B}\\
+         &= \frac{2}{3} \frac{18.015\cdot 10^{-3}\ufrac{kg}{mol}\cdot 1/6.022 \cdot  10^{-23}\mathrm{mol}\cdot \accelerationearth\cdot 110\meter}
+         {1.380649\cdot 10^{-23} \ufrac{J}{K}}\\
+         &\approx 1.56\Kelvin 
+    \end{align*}
+\end{enumerate}
+
+\end{document}
