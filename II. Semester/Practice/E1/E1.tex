@@ -29,13 +29,13 @@
             dann ist auch das erste Objekt mit dem zweiten im thermischen Gleichgewicht. \\
             Man müsste um diese Methode zu verwenden, darauf achten, dass der dritte Stoff mit 
             mindestens einem der anderen objekte im themischen Gleichgewicht ist, noch bevor man 
-            sie thermische miteinander verbindet. 
+            sie thermisch miteinander verbindet. 
         \item 
             Der Miniskus senkt sich zunächst etwas ab, da das Glas in welchem die Flüssigkeit
             sich befindet, sich zuerst ausdehnt. Das Volumen des Glasgefäßes steigt, während das
             der Flüssigkeit zunächst konstant bleibt. Das Resultat ist eine kurzfristige, sehr kleine 
             Absenkung des Flüssigkeitspegels.
-        \item 
+        \item
             Die Querschnittsfläche des Lochs vergrößert sich, da sich das Blech ausdehnt.
         \item 
             Schätzungsweise $4\Celsius \ -\ 100\Celsius $, da erst ab $4\Celsius$ gilt: $ V \propto T$
@@ -92,6 +92,8 @@
             \end{align*}
     \end{enumerate}
 
+    \newpage
+
     \item \textbf{Bimetall II}
     \begin{enumerate}
         \item 
@@ -103,12 +105,16 @@
                 \\
                 \Delta l_{rel} &= \Delta U_{rel}\\
                 &= \frac{2\pi(r+d)}{2\pi r} \\
-                &= 1+ \frac{d}{r}=\frac{1+\Delta T \alpha_1}{1+\Delta T \alpha_2}\\
-                r &= \frac{d}{\frac{1+\Delta T \alpha_1}{1+\Delta T \alpha_2}-1}\\  
-                &= \frac{d(\alpha_2 +\Delta T^{-1})}{\alpha_1-\alpha_2}
+                &= 1+ \frac{d}{r}=\frac{1+\Delta T \alpha_1}{1+\alpha_1\Delta T}\\
+                r &= \frac{d}{\frac{1+\Delta T \alpha_1}{1+\alpha_2\Delta T }-1}\\  
             \end{align*}
         \item 
             \begin{align*}
+                r &= \frac{d}{\frac{1+\Delta T \alpha_1}{1+\Delta T \alpha_2}-1}\\
+                &= \frac{d({1+\Delta T \alpha_2})}{\Delta T (\alpha_1-\alpha_2)}\\ 
+                &\approx \frac{d}{\Delta T (\alpha_1-\alpha_2)}\\
+                &= \frac{10^{-3}\,\mathrm{m}}{300\Kelvin \cdot 1.85\cdot 10^{-5}\Kelvin^{-1}}\\
+                &\approx 1.80 \cdot 10^{-1} \,\mathrm{m} = 18\,\mathrm{cm}\\
             \end{align*}
     \end{enumerate}
 
