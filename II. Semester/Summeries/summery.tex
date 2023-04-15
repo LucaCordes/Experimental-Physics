@@ -15,11 +15,108 @@
    
  \tableofcontents
 
- \section{Formulas}{
+\section{Thermodynamik}{
+ \subsection{I. Haubtsatz}
+ {
+    Die gesamt Energie ist in einem geschlossenen System zeitlich konstant.
+    \begin{equation*}
+        \Delta U = \Delta Q + \Delta W
+    \end{equation*} 
+    $\Delta U =$ die Änderung der (gesamten) ineren Enrgie eines geschlossenen Systemes\\
+    $\Delta Q =$ von außen zugeführte Wärmeenergie\\
+    $\Delta W =$ vo außen zugeführte mechanische Energie\\ 
+ }
+
+ \subsection{II. Haubtsatz}
+ {
+    Wärme fließt von selbst immer nur vom wärmeren zum kälteren Körper, nicht
+    umgekehrt.\\
+    In einem abgeschlossenen System5 nimmt die Entropie nicht ab
+ }
+
+ \subsection{III. Haubtsatz}
+ {
+    Es ist prinzipiell nicht möglich, den absoluten Temperaturnullpunkt (T = 0 K)
+    zu erreichen.
+ }
+
+\subsection{Wärmetransport}
+{
+    \subsubsection{Diffusion}
+    {
+        Netto-Teilchenstromdichte bei Diffusion:
+        \begin{equation*}
+            \vec{j} = -D\cdot \vec{\nabla}n\\
+        \end{equation*}
+    }
+    \subsubsection{Konduktion}
+    {
+        Wärmestromdichte bei Konduktion:
+        \begin{align*}
+            \vec{j}_Q &= -\lambda\cdot \vec{\nabla}T\\
+            \frac{\abs{\di Q}}{S\cdot \dt} &= \lambda \frac{\abs{\Delta T}}{d}
+        \end{align*}
+    }
+    \subsubsection{Wärmestrahlung}
+    {
+        Gesamtstrahlungsleitung (nach Stefan-Boltzmann-Gesetz):
+        \begin{equation*}
+            P = \varepsilon \sigma A T^4\\
+        \end{equation*}
+    }
+}
+
+ \subsection{Formeln}{
+
+    Zustandsgleichung des idealen Gases:
+    \begin{equation*}
+        p\cdot V = N\cdot k\cdot T
+    \end{equation*}
+
+    Gesamte kinetische Energie, abhängig von Freiheitsgraden:
+    \begin{equation*}
+        E_{kin}^{tot} = \frac{f}{2} k T
+    \end{equation*}
+
+    Expansionsarbeit:
+    \begin{equation*}
+        \abs{\Delta W} = p\Delta V
+    \end{equation*}
+
     \begin{align*}
         \langle E_{kin}^{atom}\rangle&=\frac{3}{2}k\cdot T \\
         \frac{\Delta L}{L}&=\alpha \Delta T\\
         \frac{\Delta V}{V} &= 3 \alpha \Delta T = \gamma \Delta T\\
     \end{align*}
+
+    Zeichen und ihre Bedeutung:
+    \begin{align*}
+        p &\Longleftrightarrow \text{Druck/Pressure}\\
+        V &\Longleftrightarrow \text{Volumen}\\
+        T &\Longleftrightarrow \text{Temperatur}\\
+        f &\Longleftrightarrow \text{Zahl der Freiheitsgrade}\\
+        n &\Longleftrightarrow \text{Stoffmenge (in mol)}\\
+        N &\Longleftrightarrow \text{Stoffmenge}\\
+        U &\Longleftrightarrow \text{innere Energie}\\
+        Q &\Longleftrightarrow \text{Wärmeenergie}\\
+        \vec{j} &\Longleftrightarrow \text{Netto-Teilchenstromdichte bei Diffusion} = -D\cdot \vec{\nabla}n\\
+        \di R &\Longleftrightarrow \text{Reduzierte Wärmemenge} \ = \frac{\di Q}{T}\\
+        \di S &\Longleftrightarrow \text{Entropie} \ = \frac{\di Q_{rev}}{T}\\
+        &\Longleftrightarrow \text{}\\
+        &\Longleftrightarrow \text{}\\
+        &\Longleftrightarrow \text{}\\
+        &\Longleftrightarrow \text{}\\
+        \\
+        N_A &\Longleftrightarrow \text{Avogadro-Konstante}\\
+        R &\Longleftrightarrow \text{allgemeine Gaskonstante}\\
+        k &\Longleftrightarrow \text{Boltzmann-Konstante}\\
+        c &\Longleftrightarrow \text{spezifische Wärmekapazität}\ = \frac{\Delta Q}{M\Delta T}\\
+        D &\Longleftrightarrow \text{Diffusionskonstante}\\
+        \sigma &\Longleftrightarrow \text{Stefan-Boltzmann-Konstante}\ = 5.77\cdot 10^{-8}\ufrac{W}{m^2K^4}\\
+        \varepsilon &\Longleftrightarrow \text{Absorptionsgrad}\ \le 1\\
+        &\Longleftrightarrow \text{}\\
+    \end{align*}
  }
- }\end{document}
+ }}
+ 
+ \end{document}
