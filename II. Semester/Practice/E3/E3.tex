@@ -1,0 +1,213 @@
+\newcommand{\ConstExercise}{3}
+\newcommand{\ConstDeadline}{28.04.2023}
+
+\documentclass[11pt,letterpaper]{article}
+\textwidth 6.5in
+\textheight 9.in
+\oddsidemargin 0in
+\headheight 0in
+
+\usepackage[dark, exp]{custom_0.1}
+
+\begin{document}
+%%%%% Document %%%%%
+
+\begin{enumerate}
+    \item \textbf{Wärmestrahlung}\\
+    Für die Emission des Kupferballs gilt:
+    \begin{align*}
+         \sigma A T^4 &= P = -\derivative{E}{t} = -\frac{c M\di T}{\di t}\\
+        \derivative{T}{t} &= -\frac{ \sigma A}{c M}  T^4\\
+        &= -\frac{ \sigma \cdot 4\pi r^2}{c\cdot \rho \cdot \frac{4}{3}\pi r^3}  T^4\\
+        &= -3\frac{ \sigma}{c \rho r}  T^4
+    \end{align*}
+    Aufgrund des thermischen Gleichgewichts des Behältnisses gilt:
+    \begin{align*}
+        0 &= \dot{E}_E + \dot{E}_A\\
+        &= -\varepsilon \sigma A T_B^4 + \alpha A S\\
+        S &= \frac{\varepsilon}{\alpha}\sigma T_B^4\\
+        &= \sigma T_B^4
+    \end{align*}
+    Damit gilt für die Absorption des Kupferballs:
+    \begin{align*}
+        \derivative{E}{t} &= AS\\
+        \frac{c M\di T}{\di t} &= A \sigma T_B^4\\
+        \dot{T} &= \frac{A \sigma T_B^4}{c M}\\
+        &= \frac{4\pi r^2 \cdot \sigma T_B^4}{c \cdot \rho\frac{4}{3}\pi r^3}\\
+        &= 3 \frac{ \sigma }{c \rho r} T_B^4
+    \end{align*}
+    Insgesamt:
+    \begin{align*}
+        \dot{T} &= \dot{T}_E + \dot{T}_A\\
+        &= 3\frac{\sigma}{c \rho r} \cbrace{T_B^4
+        -T^4}
+        \\
+        &\approx 3\frac{\csb}{383\ufrac{J}{K\,kg} \cdot  8920\, \ufrac{kg}{m^3} \cdot \frac{5}{100}\,\mathrm{m}} \cbrace{(30\ ^\circ\mathrm{C})^4
+        - (5\ ^\circ\mathrm{C})^4}\\
+        &\approx 8.20\cdot 10 ^{-4} \ufrac{K}{s}
+    \end{align*}
+
+    \item \textbf{Arbeit und Leistung}
+        \begin{enumerate}
+            \item 
+            \begin{align*}
+                \abs{Q _{ab}} &= 4\,\mathrm{J}\\
+                \abs{Q _{zu}} &= \cbrace{1-\eta} \abs{Q_{ab}}\\
+                &= \cbrace{1-\frac{17}{100}} 4\,\mathrm{J}\\
+                &\approx 3.32 \,\mathrm{J}\\
+                W &= \eta  \abs{Q _{ab}}\\
+                &= \frac{17}{100}\cdot 4\,\mathrm{J}\\
+                &\approx 0.68 \,\mathrm{J}\\
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                P &= W \cdot f\\
+                &\approx 0.68 \,\mathrm{J} \cdot 10\,\ufrac{1}{s}\\
+                &\approx 6.80 \,\mathrm{W}
+            \end{align*}
+            
+        \end{enumerate}
+
+    \item \textbf{Erster Haubtsatz}
+        \begin{enumerate}
+            \item 
+            \begin{align*}
+                \Delta U_{ACB} &= \Delta Q_{ACB} - \Delta W_{ACB}\\
+                &= 220 \,\mathrm{J} - 60 \,\mathrm{J}\\
+                &= 160 \,\mathrm{J}
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                \Delta Q_{ADB} &= \Delta U_{ADB}  + \Delta W_{ADB}\\
+                &= \Delta U_{ACB}  + \Delta W_{ADB}\\
+                &= 160\,\mathrm{J} + 20 \,\mathrm{J}\\
+                &= 180 \,\mathrm{J}\\
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                \Delta U_{BA} &= \Delta Q_{BA} + \Delta W_{BA}\\
+                -\Delta U_{ACB} &= \Delta Q_{BA} + \Delta W_{BA}\\
+                \Delta Q_{BA} &= -\Delta U_{ACB} - \Delta W_{BA}\\
+                &= -160 \,\mathrm{J} - 40 \,\mathrm{J}\\
+                &= -200 \,\mathrm{J}
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                \Delta U _{AD} &= \Delta Q - \Delta W\\ 
+                &= \frac{3}{2} N k_B \Delta T -p\Delta V\\
+                &= \frac{3}{2} N k_B \cdot \frac{p \Delta V}{N k_B} -p\Delta V\\ 
+                &= \frac{3}{2}p \Delta V -p\Delta V\\ 
+                &= \Delta Q - \frac{2}{3}\Delta Q\\ 
+                \Delta Q &= 3 \Delta U _{AD}\\
+                &= 3\cdot 40\,\mathrm{J}\\
+                &= 120 \,\mathrm{J}
+            \end{align*}
+            \begin{align*}
+                \Delta Q _{AB} &= -\Delta Q _{BA}\\
+                &= 200 \,\mathrm{J}
+            \end{align*}
+            
+        \end{enumerate}
+
+    \item \textbf{Ideales Gas}
+        \begin{enumerate}
+            \item 
+            \begin{align*}
+                \Delta U &= \frac{3}{2} n n_A k_B \Delta T\\
+                &\approx \frac{3}{2} \frac{1}{2} \,\mathrm{mol}\cdot \ca\cdot \cb \cdot375\,\mathrm{K}\\
+                &\approx 2340 \,\mathrm{J}\\
+                \Delta Q &= 0 \\
+                \Delta W &= \Delta U\\
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                \Delta U &= \frac{3}{2} n n_A k_B \Delta T\\
+                &\approx 2340 \,\mathrm{J}\\
+                \Delta Q &= 2500\,\mathrm{J}\\
+                \Delta W &= \Delta U - \Delta Q\\
+                &\approx 2340 \,\mathrm{J} - 2500\,\mathrm{J}\\
+                &= -160\,\mathrm{J}
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                \Delta U &= \frac{3}{2} n n_A k_B \Delta T\\
+                &\approx 2340 \,\mathrm{J}\\
+                \Delta W &= -p\Delta V\\
+                &= -n n_A k_B \Delta T\\
+                &\approx -1560 \, \mathrm{J}\\
+                \Delta Q &= \Delta U - \Delta W\\
+                &= \frac{5}{2} n n_A k_B \Delta T\\
+                &\approx 3900\,\mathrm{J}\\
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                \Delta U &= \Delta Q\\
+                \Delta Q &= \frac{3}{2} n  n_A k_B \Delta T\\
+                &\approx 2340 \,\mathrm{J}\\
+                \Delta W &= 0\\
+            \end{align*}
+            
+        \end{enumerate}
+
+    \item \textbf{Stirling-Prozess}
+        \begin{enumerate}
+            \item 
+            \begin{align*}
+                0 &= \Delta U_{AB} + \Delta U_{BC} + 
+                \Delta U_{CD} + \Delta U_{DA}\\
+                &= \frac{3}{2}N k_B \cbrace{\Delta T_{AB} + \Delta T_{BC} +
+                \Delta T_{CD} + \Delta T_{DA}}\\
+                &= \frac{3}{2}N k_B \cbrace{0 + \Delta T_{BC} +
+                0 + \Delta T_{DA}}\\
+                &= \Delta U_{BC} + \Delta U_{DA}\\
+                \abs{\Delta U_{BC}} &= \abs{\Delta U_{DA}}
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                \Delta W_1 &= -p_1 \Delta V\\
+                &= -\frac{k_B N T_1}{V} \Delta V\\
+                \\
+                W_1 &= k_B N T_1 (\ln {V_1} - \ln{V_2}) \\
+                &= k_B N T_1 \ln {\frac{V_1}{V_2}} \\
+                \\
+                \Delta Q _2 &= -\frac{3}{2}N k_B \Delta T \\
+                &= -\frac{3}{2} V_2 \Delta p_1 \\
+                \\
+                W_2 &= k_B N T_2  {\frac{V_2}{V_1}} \\
+                \\
+                \Delta Q _4 &= - \Delta Q_2 \\
+                \end{align*}
+                \begin{align*}
+                \eta_1 &= -\frac{W}{\Delta Q}\\
+                &= \frac{W_1 + W_2}{W_1 + Q_2}\\
+                &= \frac{k_B N T_1 \ln {\frac{V_1}{V_2}} - k_B N T_2  {\frac{V_1}{V_2}}}
+                {k_B N T_1 \ln {\frac{V_1}{V_2}} - \frac{3}{2} N k_B (T_1 -T_2)}\\
+                &= \frac{  T_1  -T_2 }
+                {T_1  + \frac{3}{2} \frac{T_1 - T_2}{\ln {\frac{V_2}{V_1}}}}\\
+                \\
+                \eta_2 &= -\frac{W}{\Delta Q}\\
+                &= \frac{W_1 + W_2}{W_1}\\
+                &= \frac{k_B N T_1 \ln {\frac{V_1}{V_2}} - k_B N T_2  {\frac{V_1}{V_2}}}
+                {k_B N T_1 \ln {\frac{V_1}{V_2}}}\\
+                &= 1 - \frac{T_2}{T_1}\\
+                \\
+                \eta _1  &< \eta_2
+            \end{align*}
+
+            \item 
+            \begin{align*}
+                \eta_{Carnot} &=  1 - \frac{T_2}{T_1}\\
+                \eta _1  &< \eta_2 = \eta_{Carnot}\\
+            \end{align*}
+            
+        \end{enumerate}
+\end{enumerate}
+\end{document}
