@@ -31,7 +31,7 @@
  {
     Wärme fließt von selbst immer nur vom wärmeren zum kälteren Körper, nicht
     umgekehrt.\\
-    In einem abgeschlossenen System5 nimmt die Entropie nicht ab
+    In einem abgeschlossenen System nimmt die Entropie nicht ab $\Delta S \ge09$.
  }
 
  \subsection{III. Haubtsatz}
@@ -132,12 +132,35 @@
 
 }
 
+\subsection{Entropie}{
+    \ \ \ \ Klassischer, thermischer Entropiebegriff:
+    \begin{align*}
+        \di S &= \frac{\di Q_{rev}}{T} \\
+        \Delta S &= \int_K \frac{\di Q_{rev}}{T} 
+    \end{align*}
+    Statistischer Entropiebegriff:
+
+    Die Entropie ist ein Maß für die Wahrscheinlichkeit eines Zustandes, d.h. für
+    die Anzahl der mikroskopischen Realisierungsmöglichkeiten eines vorgegebe-
+    nen makroskopischen Zustandes.
+    \begin{align*}
+        S &= k_B \ln n_{RM}
+    \end{align*}
+    \begin{align*}
+        n_{RM} \hat{=} \text{ mikroskopische Realisierungsmöglichkeiten für einen makroskopischen Zustand}
+    \end{align*}
+}
+
 
  \subsection{Formeln}{
-
-    Zustandsgleichung des idealen Gases:
+    \ \ \ \ Zustandsgleichung des idealen Gases:
     \begin{equation*}
         p\cdot V = N\cdot k\cdot T
+    \end{equation*}
+
+    Zustandsgleichung des realen Gases:
+    \begin{equation*}
+        \left(p+\frac{a N^2}{V^2}\right) \cdot(V-N b)=N k T
     \end{equation*}
 
     Gesamte kinetische Energie, abhängig von Freiheitsgraden:
