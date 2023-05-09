@@ -1,0 +1,100 @@
+\newcommand{\ConstExercise}{2}
+\newcommand{\ConstDeadline}{21.04.2023}
+
+\documentclass[11pt,letterpaper]{article}
+\textwidth 6.5in
+\textheight 9.in
+\oddsidemargin 0in
+\headheight 0in
+
+\usepackage[dark,exp]{custom_0.1}
+
+\begin{document}
+
+%%%%% Document %%%%%
+
+\begin{enumerate}
+  \item \textbf{Wärmeleitung I}
+    \begin{enumerate}
+      \item
+        \begin{align*}
+          \vec{j}_Q &= -\lambda\cdot \vec{\nabla}T\\
+          j_Q&= \lambda \frac{\abs{\Delta T}}{d}\\
+          \\
+          &= 0.8\,\ufrac{W}{mK} \frac{40\,^\circ\mathrm{K}}{5\cdot 10^{-3}\, \mathrm{m}}\\
+          &= 6400\,\ufrac{W}{m^2}
+        \end{align*}
+
+      \item
+        Die Temperatur der äußeren Seite der inneren Scheibe ist gleich der Innentemperatur,
+        analog dazu ist die Temperatur der äußere Seite der äußeren Scheibe gleich der Außentemperatur.
+        Dies liegt daran das der Temperaturverlauf stetig wird, denn die Formel sagt für einen 
+        abrupter Temperaturwechsel eine unendliche Wärmestromdichte vorraus:
+        \begin{align*}
+          \lim_{d\to 0}j_Q &= \lim_{d\to 0}\lambda \frac{\abs{\Delta T}}{d} = \infty \quad \text{, für } \Delta T >0
+        \end{align*}
+
+      \item
+        \begin{align*}
+          j_Q&= \lambda \frac{\abs{\Delta T}}{d}\\
+          \Delta T_{i} &= \frac{j_Q d_i}{\lambda_i}\\
+          \sum_{i} \Delta T_{i} &= \abs{T_1 - T_2} = j_Q \sum_i \frac{ d_i}{\lambda_i}\\
+          j_Q &= \frac{\Delta T}{ \sum_i \frac{ d_i}{\lambda_i}}\\
+          \\
+        \end{align*}
+    \end{enumerate}
+
+  \item \textbf{Spezifische Wärme}
+    \begin{align*}
+    \end{align*}
+
+
+  \item \textbf{Thermische Eigenschaften von Stickstoff}
+    \begin{enumerate}
+      \item
+        \begin{align*}
+        \end{align*}
+
+      \item
+        \begin{align*}
+        \end{align*}
+
+      \item
+        \begin{align*}
+        \end{align*}
+
+      \item
+        \begin{align*}
+        \end{align*}
+
+      \item
+        \begin{align*}
+        \end{align*}
+    \end{enumerate}
+
+\newpage
+  \item \textbf{Um welches Gas handelt es sich? }
+    \begin{enumerate}
+      \item
+        \begin{align*}
+        \end{align*}
+
+      \item
+        \begin{align*}
+        \end{align*}
+    \end{enumerate}
+
+  \item \textbf{Steigende Luftblase}
+    \begin{enumerate}
+      \item
+        \begin{align*}
+        \end{align*}
+
+      \item
+        \begin{align*}
+        \end{align*}
+    \end{enumerate}
+
+\end{enumerate}
+
+\end{document}

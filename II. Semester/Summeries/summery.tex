@@ -151,6 +151,44 @@
     \end{align*}
 }
 
+\subsection{Thermodynamik realer Gase und Flüssigkeiten}
+{
+    \subsubsection{Clausius-Clapeyron-Gleichung}
+    {
+        \begin{align*}
+            Q(T) &= T\cdot \frac{\di p_S}{\di T} \cdot (V_G - V_L)
+        \end{align*}
+
+        $Q$ ist die Verdampfungswärme für eine vorgegebene Stoffmenge (z.B. ein Mol), $V_G$
+        bzw. $V_L$ sind die entsprechenden Volumina falls sich die Substanz vollständig in
+        der Gasphase bzw. im flüssigen Aggregatzustand befindet (Liquid), für die gleiche
+        Stoffmenge. Entsprechendes gilt für die anderen Phasenübergänge.\\
+
+        Mit den Approximationen $V_G \ll V_L$ und $Q = \mathrm{const}$ (d.h. nicht T-abhängig) kann
+        man aus der Clausius-Clapeyron-Beziehung die Abhängigkeit des Dampfdruckes
+        von der Temperatur näherungsweise berechnen:
+
+        \begin{align*}
+            W \frac{\di T}{T} = \di p_S \cdot V_G
+        \end{align*}
+        Integration führt nun zu folgendem Ausdruck: 
+        \begin{align*}
+            p_S &= p_S^0 \cdot e ^{-\frac{Q}{Nk}\cbrace{\frac{1}{T}-\frac{1}{T_0}}}
+        \end{align*}
+    }
+    \subsubsection{Zustandsgleichung des realen Gases}
+    {
+        \begin{equation*}
+            n R T = \left(p+\frac{a n^2}{V^2}\right) \cdot(V-n b)\\\
+        \end{equation*}
+    }
+    \subsubsection{Boltzmann-Faktor}
+    {
+        \begin{align*}
+            N(R) \propto  e^{-\frac{E}{kT}}
+        \end{align*}
+    }
+}
 
  \subsection{Formeln}{
     \ \ \ \ Zustandsgleichung des idealen Gases:
@@ -160,7 +198,7 @@
 
     Zustandsgleichung des realen Gases:
     \begin{equation*}
-        \left(p+\frac{a N^2}{V^2}\right) \cdot(V-N b)=N k T
+        n R T = \left(p+\frac{a n^2}{V^2}\right) \cdot(V-n b)\\\
     \end{equation*}
 
     Gesamte kinetische Energie, abhängig von Freiheitsgraden:
