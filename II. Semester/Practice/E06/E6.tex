@@ -1,0 +1,133 @@
+\newcommand{\ConstExercise}{6}
+\newcommand{\ConstDeadline}{18.05.2023}
+
+\documentclass[11pt,letterpaper]{article}
+\textwidth 6.5in
+\textheight 9.in
+\oddsidemargin 0in
+\headheight 0in
+
+\usepackage[exp]{custom_0.1}
+\usepackage{physics}
+
+\begin{document}
+
+%%%%% Document %%%%%
+
+\begin{enumerate}
+    \item \textbf{Elektrostatisches Pendel}
+        \begin{enumerate}
+            \item
+            In einem Kugelkondensator mit den Radien $r_1$ und 
+            $r_2$ gilt, herrscht für  $r_1<r<r_2$ das Feld einer 
+            im Kugelmittelpunkt sitzenden Punktladung:   
+            \begin{align*}
+                \vec{E}(r) &= \frac{Q}{4 \pi \varepsilon_0 r^2}\e_{r}\\
+                \\
+                \phi(r) &= - \int \vec{E}(r) \cdot \di \vec{r}\\
+                &= \frac{Q}{4 \pi \varepsilon_0 r} + \phi_0\\
+                \\
+                U &= \phi(r_1) - \phi(r_2)\\
+                &= \frac{Q}{4 \pi \varepsilon_0} \cbrace{\frac{1}{r_1}-\frac{1}{r_2}}\\
+                \\
+                C_K &= \lim_{r_2\to \infty}\frac{Q}{U}\\
+                &= \lim_{r_2\to \infty}\frac{Q}{\frac{Q}{4 \pi \varepsilon_0} \cbrace{\frac{1}{r_1}-\frac{1}{r_2}}}\\
+                &= 4 \pi \varepsilon_0 r_1 = 4 \pi \varepsilon_0 R \\
+            \end{align*}
+
+            \item
+            \begin{align*}
+                0 &= \ddot{r} - \frac{F}{m}\\
+                &= \ddot{r} - \frac{E(r) q}{m}\\
+                &= \ddot{r} - \frac{\frac{U}{d} \cdot U C_K}{m}\\
+                &= \ddot{r} - \frac{C_K U^2}{d m}\\
+                \vec{r}(t) &= \frac{C_K U^2}{2 d m}t^2 + v_0 t + r_0\\
+            \end{align*}
+            Die Kupferkugel sei nun auf der linken Seite des Kondensators, 
+            sodass gilt $v_0=0\ \land r_0=0$. Dann ergibt sich die Periodendauer
+            aufgrund des symmetrischen Schwingvorganges aus: $P = 2 t_0\ |\ r(t_0)=d $
+            \begin{align*}
+                \vec{r}(t_0) &= \frac{C_K U^2}{2 d m}t_0^2 = d\\
+                t_0 &= \sqrt{\frac{2d^2 m}{C_K U^2}}\\
+                \\
+                P &= 2 t_0 = 2\sqrt{\frac{2d^2 m}{C_K U^2}} 
+                = 2 \frac{d}{U}\sqrt{\frac{2m}{C_K}}
+                = \frac{2}{E}\sqrt{\frac{2m}{C_K}}
+            \end{align*}
+        \end{enumerate}
+
+    
+    \item \textbf{Influenzmaschine}
+        \begin{align*}
+        \end{align*}
+
+    
+    \item \textbf{Zylinderkondensator}
+        \begin{enumerate}
+            \item
+            \begin{align*}
+            \end{align*}
+
+            \item
+            \begin{align*}
+            \end{align*}
+
+        \end{enumerate}
+
+    
+    \item \textbf{Unendlich ausgedehnte Leiterplatte}
+        \begin{enumerate}
+            \item
+            \begin{align*}
+            \end{align*}
+
+            \item
+            \begin{align*}
+            \end{align*}
+
+        \end{enumerate}
+
+    
+    \item \textbf{Potenzialdifferenz}
+        \begin{enumerate}
+            \item
+            \begin{align*}
+            \end{align*}
+
+            \item
+            \begin{align*}
+            \end{align*}
+
+            \item
+            \begin{align*}
+            \end{align*}
+
+            \item
+            \begin{align*}
+            \end{align*}
+
+        \end{enumerate}
+
+    
+    \item \textbf{Kondensatorauf-/ und -umladung}
+        \begin{enumerate}
+            \item
+            \begin{align*}
+            \end{align*}
+
+            \item
+            \begin{align*}
+            \end{align*}
+            
+            \item
+            \begin{align*}
+            \end{align*}
+
+            \item
+            \begin{align*}
+            \end{align*}
+
+        \end{enumerate}
+\end{enumerate}
+
+\end{document}
