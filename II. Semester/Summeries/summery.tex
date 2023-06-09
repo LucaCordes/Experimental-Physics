@@ -1,22 +1,23 @@
- %%%%% Layout Variables %%%%%
- \newcommand{\ConstTitle}{Experimental Physics II}
+\title{Experimental Physics II}
 
- \documentclass[11pt,letterpaper]{article}
- \textwidth 6.5in
- \textheight 9.in
- \oddsidemargin 0in
- \headheight 0in
- 
- \usepackage[book,dark]{custom_0.1}
- 
- \begin{document}{
- 
- \maketitle
-   
- \tableofcontents
+\documentclass[11pt,letterpaper]{article}
+\textwidth 6.5in
+\textheight 9.in
+\oddsidemargin 0in
+\headheight 0in
+\setlength\parindent{0pt}
 
-\section{Thermodynamik}{
- \subsection{I. Haubtsatz}
+\usepackage[summery, de]{custom_2.0}
+\newcommand\alt{\overset{(a.)}{=}}
+\begin{document}
+\maketitle
+  
+\tableofcontents
+
+\section{Thermodynamik}
+\subsection{Haubtsätze}
+
+ \subsubsection{I. Haubtsatz}
  {
     Die gesamt Energie ist in einem geschlossenen System zeitlich konstant.
     \begin{equation*}
@@ -27,14 +28,14 @@
     $\Delta W =$ vo außen zugeführte mechanische Energie\\ 
  }
 
- \subsection{II. Haubtsatz}
+ \subsubsection{II. Haubtsatz}
  {
     Wärme fließt von selbst immer nur vom wärmeren zum kälteren Körper, nicht
     umgekehrt.\\
     In einem abgeschlossenen System nimmt die Entropie nicht ab $\Delta S \ge09$.
  }
 
- \subsection{III. Haubtsatz}
+ \subsubsection{III. Haubtsatz}
  {
     Es ist prinzipiell nicht möglich, den absoluten Temperaturnullpunkt (T = 0 K)
     zu erreichen.
@@ -54,7 +55,7 @@
         Wärmestromdichte bei Konduktion:
         \begin{align*}
             \vec{j}_Q &= -\lambda\cdot \vec{\nabla}T\\
-            \frac{\abs{\di Q}}{S\cdot \dt} &= \lambda \frac{\abs{\Delta T}}{d}
+            \frac{\abs{\d Q}}{S\cdot \dt} &= \lambda \frac{\abs{\Delta T}}{d}
         \end{align*}
     }
     \subsubsection{Wärmestrahlung}
@@ -135,8 +136,8 @@
 \subsection{Entropie}{
     \ \ \ \ Klassischer, thermischer Entropiebegriff:
     \begin{align*}
-        \di S &= \frac{\di Q_{rev}}{T} \\
-        \Delta S &= \int_K \frac{\di Q_{rev}}{T} 
+        \d S &= \frac{\d Q_{rev}}{T} \\
+        \Delta S &= \int_K \frac{\d Q_{rev}}{T} 
     \end{align*}
     Statistischer Entropiebegriff:
 
@@ -156,7 +157,7 @@
     \subsubsection{Clausius-Clapeyron-Gleichung}
     {
         \begin{align*}
-            Q(T) &= T\cdot \frac{\di p_S}{\di T} \cdot (V_G - V_L)
+            Q(T) &= T\cdot \frac{\d p_S}{\d T} \cdot (V_G - V_L)
         \end{align*}
 
         $Q$ ist die Verdampfungswärme für eine vorgegebene Stoffmenge (z.B. ein Mol), $V_G$
@@ -169,11 +170,11 @@
         von der Temperatur näherungsweise berechnen:
 
         \begin{align*}
-            W \frac{\di T}{T} = \di p_S \cdot V_G
+            W \frac{\d T}{T} = \d p_S \cdot V_G
         \end{align*}
         Integration führt nun zu folgendem Ausdruck: 
         \begin{align*}
-            p_S &= p_S^0 \cdot e ^{-\frac{Q}{Nk}\cbrace{\frac{1}{T}-\frac{1}{T_0}}}
+            p_S &= p_S^0 \cdot e ^{-\frac{Q}{Nk}\hug{\frac{1}{T}-\frac{1}{T_0}}}
         \end{align*}
     }
     \subsubsection{Zustandsgleichung des realen Gases}
@@ -190,64 +191,142 @@
     }
 }
 
- \subsection{Formeln}{
-    \ \ \ \ Zustandsgleichung des idealen Gases:
-    \begin{equation*}
-        p\cdot V = N\cdot k\cdot T
-    \end{equation*}
+\subsection{Zeichen und ihre Bedeutung}
+\begin{align*}
+    p &\Longleftrightarrow \text{Druck/Pressure}\\
+    V &\Longleftrightarrow \text{Volumen}\\
+    T &\Longleftrightarrow \text{Temperatur}\\
+    f &\Longleftrightarrow \text{Zahl der Freiheitsgrade}\\
+    n &\Longleftrightarrow \text{Stoffmenge (in mol)}\\
+    N &\Longleftrightarrow \text{Stoffmenge}\\
+    U &\Longleftrightarrow \text{innere Energie}\\
+    Q &\Longleftrightarrow \text{Wärmeenergie}\\
+    \vec{j} &\Longleftrightarrow \text{Netto-Teilchenstromdichte bei Diffusion} = -D\cdot \vec{\nabla}n\\
+    \d R &\Longleftrightarrow \text{Reduzierte Wärmemenge} \ = \frac{\d Q}{T}\\
+    \d S &\Longleftrightarrow \text{Entropie} \ = \frac{\d Q_{rev}}{T}\\
+    \kappa &\Longleftrightarrow \text{Adiabatenindex} \ = \frac{c_P}{c_V} &= \frac{f+2}{f}=1+\frac{2}{f}\\
+    \\
+    N_A &\Longleftrightarrow \text{Avogadro-Konstante}\\
+    R &\Longleftrightarrow \text{allgemeine Gaskonstante}\\
+    k &\Longleftrightarrow \text{Boltzmann-Konstante}\\
+    c &\Longleftrightarrow \text{spezifische Wärmekapazität}\ = \frac{\Delta Q}{M\Delta T}\\
+    D &\Longleftrightarrow \text{Diffusionskonstante}\\
+    \sigma &\Longleftrightarrow \text{Stefan-Boltzmann-Konstante}\ = 5.77\cdot 10^{-8}\ufrac{W}{m^2K^4}\\
+    \varepsilon &\Longleftrightarrow \text{Absorptionsgrad}\ \le 1\\\\
+\end{align*}
 
-    Zustandsgleichung des realen Gases:
-    \begin{equation*}
-        n R T = \left(p+\frac{a n^2}{V^2}\right) \cdot(V-n b)\\\
-    \end{equation*}
+\section{Elektrostatik}
+\subsection{Haubtsätze}
+\subsubsection{Gaußsches Gesetz}
+\begin{align*}
+    \vnabla \cdot \vec E &= \frac \rho {\epsilon_0}\\
+    \implies Q &= \oiiint_{V} \rho \dV = \epsilon_0\oiint_{S} \vec E \cdot \dS\\
+    \implies \vec E &= \frac{1}{4\pi \epsilon_0 \epsilon_r} \frac{Q}{r^2}\e_r\\
+\end{align*}
 
-    Gesamte kinetische Energie, abhängig von Freiheitsgraden:
-    \begin{equation*}
-        E_{kin}^{tot} = \frac{f}{2} k T
-    \end{equation*}
+\subsection{Kondensator}
 
-    Expansionsarbeit:
-    \begin{equation*}
-        \abs{\Delta W} = p\Delta V
-    \end{equation*}
+\subsubsection{Plattenkondensator}
+Elektrisches Feld:
+\begin{align*}
+    E = \frac{Q}{\epsilon_0\epsilon_r A}
+\end{align*}
+Spannung:
+\begin{align*}
+    U &= \frac Qd \overset{reihe}{\implies}U =U_1+U_2 \overset{parallel}{\implies} U_1=U_2
+\end{align*}
+Kapazität:
+\begin{align*}
+    C = \frac{Q}{U} = \epsilon_0\epsilon_r \frac{A}{d} 
+    \overset{reihe}{\implies} \frac{1}{C_{ges}}= \frac{1}{C_1} + \frac{1}{C_2} + \dots + \frac{1}{C_n}
+    \overset{parallel}{\implies} C=C_1 + C_2 + \dots + C_n
+\end{align*}
 
+\subsubsection{Zylinderkondensator}
+Elektrisches Feld:
+\begin{align*}
+    E = \frac{Q}{2\pi r l \epsilon_0\epsilon_r}
+\end{align*}
+Kapazität:
+\begin{align*}
+    C = 2\pi \epsilon_0\epsilon_r \frac{l}{\ln\hug{\frac{R_2}{R_1}}} 
+\end{align*}
+
+\subsubsection{Kugelkondensator}
+Elektrisches Feld:
+\begin{align*}
+    E = \frac{Q}{4\pi r^2 \epsilon_0\epsilon_r}
+\end{align*}
+Kapazität:
+\begin{align*}
+    C = 4\pi \epsilon_0\epsilon_r\hug{\frac{1}{R_1} - \frac{1}{R_2}}^{-1} 
+\end{align*}
+
+\section{Elektrik}
+\subsection{Aufgabenformate}
+\begin{enumerate}
+    \item Driftgeschwindigkeit bestimmen
     \begin{align*}
-        \langle E_{kin}^{atom}\rangle&=\frac{3}{2}k\cdot T \\
-        \frac{\Delta L}{L}&=\alpha \Delta T\\
-        \frac{\Delta V}{V} &= 3 \alpha \Delta T = \gamma \Delta T\\
+        v_D &\alt \sigma_{el} E \alt \frac{E}{\varrho} \alt  a\cdot \tau \alt \frac{j}{n q} \\
+        &= \frac{I}{n q A}
     \end{align*}
-
-    Zeichen und ihre Bedeutung:
+    \item Mittlere Flugzeit zwischen Kollisionen von Elektronen im Leiter
     \begin{align*}
-        p &\Longleftrightarrow \text{Druck/Pressure}\\
-        V &\Longleftrightarrow \text{Volumen}\\
-        T &\Longleftrightarrow \text{Temperatur}\\
-        f &\Longleftrightarrow \text{Zahl der Freiheitsgrade}\\
-        n &\Longleftrightarrow \text{Stoffmenge (in mol)}\\
-        N &\Longleftrightarrow \text{Stoffmenge}\\
-        U &\Longleftrightarrow \text{innere Energie}\\
-        Q &\Longleftrightarrow \text{Wärmeenergie}\\
-        \vec{j} &\Longleftrightarrow \text{Netto-Teilchenstromdichte bei Diffusion} = -D\cdot \vec{\nabla}n\\
-        \di R &\Longleftrightarrow \text{Reduzierte Wärmemenge} \ = \frac{\di Q}{T}\\
-        \di S &\Longleftrightarrow \text{Entropie} \ = \frac{\di Q_{rev}}{T}\\
-        \kappa &\Longleftrightarrow \text{Adiabatenindex} \ = \frac{c_P}{c_V} &= \frac{f+2}{f}=1+\frac{2}{f}\\
-        &\Longleftrightarrow \text{}\\
-        &\Longleftrightarrow \text{}\\
-        &\Longleftrightarrow \text{}\\
-        \\
-        N_A &\Longleftrightarrow \text{Avogadro-Konstante}\\
-        R &\Longleftrightarrow \text{allgemeine Gaskonstante}\\
-        k &\Longleftrightarrow \text{Boltzmann-Konstante}\\
-        c &\Longleftrightarrow \text{spezifische Wärmekapazität}\ = \frac{\Delta Q}{M\Delta T}\\
-        D &\Longleftrightarrow \text{Diffusionskonstante}\\
-        \sigma &\Longleftrightarrow \text{Stefan-Boltzmann-Konstante}\ = 5.77\cdot 10^{-8}\ufrac{W}{m^2K^4}\\
-        \varepsilon &\Longleftrightarrow \text{Absorptionsgrad}\ \le 1\\
-        &\Longleftrightarrow \text{}\\
+        \tau &= \frac{v_D}{a} = \frac{v_D m_e}{qE} 
+        =\frac{I m_e}{n A q^2 E} 
     \end{align*}
- }
- }}
+    \item Mittlerer Weglänge:
+    \begin{align*}
+        \Lambda &=  v \tau\\
+        \frac{1}{2}m_e v^2 &= \frac{3}{2}k_B T\\
+        v &= \sqrt{\frac{3k_B T}{m_e }}\\
+        \Lambda &= \tau \sqrt{\frac{3k_B T}{m_e }}
+    \end{align*}
+\end{enumerate}
+
+\subsection{Strom}
+\begin{align*}
+    I &= \deriv{Q}{t} = \oint j \dA = - \deriv{}{t}\int \varrho_{el} \dV\\
+\end{align*}
+
+\subsection{Beweglichkeit}
+\begin{align*}
+    \vec v_D &= \mu \cdot \vec E = \frac{I}{n q}\\ % n 
+    n &= \frac{Q_{frei}}{V}
+    \mu &= \frac{ q }{m } \tau_s % mu = beweglichkeit
+\end{align*}
+
+\subsubsection{Kontinuitätsgleichung}
+\begin{align*}
+    \vnabla j(r,t) &= - \partiald{}{t} \varrho_{el}(r,t)
+\end{align*}
+
+\subsection{Knotenregel}
+\begin{align*}
+    0 &= \sum_i I_i\\
+\end{align*}
+
+\subsection{Maschenregel}
+\begin{align*}
+    0 &= \sum_i U_i\\
+    -U_0 &= \sum_{i\ge1} U_i
+\end{align*}
  
- \begin{align*}
-    p V = N k T
- \end{align*}
+\subsection{Zeichen und ihre Bedeutung}
+\begin{align*}
+    I = \frac{U}{R}&\Longleftrightarrow \text{Stromstärke}\\
+    U = I R&\Longleftrightarrow \text{Spannung}\\
+    R = \frac{I}{U} = \rho_R \frac{L}{A}&\Longleftrightarrow \text{Widerstand}\\
+    \vec j = \frac{I}{A} = \sigma_e \cdot \vec E = n q \vec v_D &\Longleftrightarrow \text{Stromdichte}\\
+    n = \frac{N}{V}&\Longleftrightarrow \text{Ladungsträgerdichte}\\
+    \vec v_D = \mu \vec E = \vec a \tau_s&\Longleftrightarrow \text{Driftgeschwindigkeit}\\
+    \tau_s = \frac{\mu m }{q}&\Longleftrightarrow \text{mittlere Zeit zwischen zwei Stößen}\\
+    \mu = \frac{q}{m} \tau_s&\Longleftrightarrow \text{Beweglichkeit }\\
+    \sigma_e = \frac{q^2}{m}n \tau_s&\Longleftrightarrow \text{elektrische Leitfähigkeit}\\
+    \rho_R = \frac{1}{\sigma_e}&\Longleftrightarrow \text{spezifischer Widerstand}\\
+    &\Longleftrightarrow \text{}\\
+    &\Longleftrightarrow \text{}\\
+    &\Longleftrightarrow \text{}\\
+\end{align*}
+
  \end{document}
