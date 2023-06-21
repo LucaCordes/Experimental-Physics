@@ -1,0 +1,283 @@
+\newcommand{\deadline}{23.06.2023}
+
+\documentclass[11pt]{article}
+
+\usepackage[exercise,ex]{custom_2.1}
+
+\begin{document}
+
+\section{Barlow'sches Rad}
+\subsection{}
+\begin{adjustwidth}{20pt}{}
+    Das Barlow'sche Rad besteht aus einem leitendem Rad, welches drehbar 
+    gelagert ist und auf einer Seite in eine leitende Flüssigkeit eingetaucht 
+    ist. Legt man nun eine Spannung zwischen Achse und Flüssigkeit an,
+    fließt ein Strom radial durch das Rad. Wird außerdem das Rad
+    mit einem B-Feld parallel zur Achse durchsetzt,
+    fängt das Rad "von alleine" an zu drehen, da die Elektronen welche im Rad fließen,
+    durch die Lorentzkraft seitwärts abgelenkt werden, und einen Teil
+    dieser tangentialen Bewegung durch Reibung an die Atomrümpfen im Rad weitergeben.
+\end{adjustwidth}
+    
+\subsection{}
+\begin{adjustwidth}{20pt}{}
+    Die Rotationsgeschwindigkeit wird wie in (a) erläutert durch die Interaktion zwischen 
+    den Elektronen und den Atomen erzeugt, folglich kann die Rotationsgeschwindigkeit bei gleichem Strom erhöht werden, 
+    indem der Widerstand im Rad erhöht wird, bzw. der Widerstand der Flüssigkeit
+    verringert wird. (Oder trivialer Weise helfen auch: die Stromstärke erhöhen,
+    den mechanischen Widerstand in der Lagerung verringern)
+\end{adjustwidth}
+
+\section{Teilchen im Magnetfeld}
+\subsection{}
+\begin{align*}
+    F_{el} &= F_Z\\
+    \frac{1}{4\pi \epsilon_0}\frac{q Q}{r^2} &= m \frac{v^2}{r}\\
+    v^2 &=  \frac{1}{4\pi \epsilon_0}\frac{q Q}{m r}\\
+    \omega_0^2 &= \frac{1}{4\pi \epsilon_0}\frac{q Q}{m r^3}\\
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    0 &= F_{Z} + F_{el} + F_{L}\\
+    0 &= m \frac{v^2}{r} -\frac{1}{4\pi \epsilon_0}\frac{q Q}{r^2} - v q B \\
+    0 &= v^2 - \frac{v q B}{m} -\frac{1}{4\pi \epsilon_0}\frac{q Q}{m r} \\
+    0 &= \omega^2 - \omega\frac{ q B}{m r^2} -\frac{1}{4\pi \epsilon_0}\frac{q Q}{m r^3} \\
+    \omega(B) &= \underbrace{\frac{ q B}{2 m r^2}}_{\gamma} \pm\sqrt{\frac{1}{4} \hug{\frac{ q B}{2 m r^2}}^2 + \underbrace{\frac{1}{4\pi \epsilon_0}\frac{q Q}{m r^3}}_{\omega_0}} \\
+    &= \gamma \pm\sqrt{\frac{\gamma^2}{4} + \omega_0} \\
+    \omega(0) &=  \omega_0\\
+    \partiald{\omega}{B}(0) &= \frac\gamma B = \frac{ q}{2 m r^2}\\
+    \partiald{^2\omega}{B^2}(0) &= \pm\frac{1}{\sqrt{\omega_0}}\\
+    \omega(B) &\approx \omega_0 + \frac{ q}{2 m r^2} B
+     \ \ \bhug{\pm\frac{1}{2\sqrt{\omega_0}}B^2 }
+\end{align*}
+\begin{adjustwidth}{20pt}{}
+    \emph{Beobachtungen:} Die Kreisfrequenz \(\omega\) ist proportional 
+    zum überlagertem B-Feld, d.h. \(\omega \propto B\). Interpretiert man den
+    Aufbau als ein Elektron, dass um einen Atomkern kreist, so würde dies bedeuten,
+    dass das Durchdringen von Materie mit einem B-Feld Energie benötigt oder Energie generiert (umgewandelt) wird, 
+    da das Elektron an kinetischer Energie gewinnt/verliert.
+    Eine interessante Folge ist, dass die kinetische Energie ein Maximum bei einer bestimmten 
+    Raumrichtung der Winkelgeschwindigkeit hat. Es ist somit möglich, dass sich die Elektronen bei einer
+    mit einem Magnetfeld durchsetzten Materie ordnen, d.h. ihre Winkelgeschwindigkeit parallel zueinander wird,
+    da dies einem Minimum im Potenzial entspricht. Das durch die bewegte Ladung 
+    erzeugte B-Feld überlagert sich daher nun konstruktiv; d.h. es könnte bei genug 
+    geordneten Atomen ein messbares Magentfeld entstehen, welches sogar relativ stabil wäre,
+    da für die "Entparallelisierung" der Winkelgeschwindigkeiten eine Arbeit geleistet 
+    werden muss. Das Resultat ähneld einem Permanentmagneten.
+\end{adjustwidth}
+
+\section{Helmholtzspulen}
+\subsection{}
+\begin{adjustwidth}{20pt}{}
+    Für eine Spule:
+\end{adjustwidth}
+\begin{align*} 
+    \d \vec B &= - \frac{\mu_0 I}{4\pi} \cdot \frac{\vec r \times \ds}{r^3}\\
+    \vec B  &= - \frac{\mu_0 I}{4\pi} \oint_{\mathcal L } \frac{\vec r \times \ds}{r^3}\\
+    &= - \frac{\mu_0 I}{4\pi} \oint_{\mathcal L} \frac{\hug{z\e_z+R \e_r+ \theta \e_\theta} \times (\e_\theta \dtheta)}{\hug{z^2 + R^2}^{\frac 32}}\\
+    &= - \frac{\mu_0 I}{4\pi} \oint_{\mathcal L} \dtheta \frac{z\e_r-R \e_z}{\hug{z^2 + R^2}^{\frac 32}}\\
+    &= - \frac{\mu_0 I}{4\pi} \frac{1}{\hug{z^2 + R^2}^{\frac 32}}\oint_{0}^{2\pi} \dtheta R\hug{z\e_r-R \e_z}\\
+    &= \frac{\mu_0 I}{4\pi} \frac{1}{\hug{z^2 + R^2}^{\frac 32}}\Biggl(2\pi R^2 \e_z - z R{\oint_{0}^{2\pi} \dtheta \e_r}\Biggr)\\
+    &= \frac{\mu_0 I}{4\pi} \frac{1}{\hug{z^2 + R^2}^{\frac 32}}\Biggl(2\pi R^2 \e_z - \underbrace{z R\oint_{0}^{2\pi} \dtheta \hug{\cos\theta,\sin\theta,0}^T}_{=0}\Biggr)\\
+    &= \frac{\mu_0 I}{2} \frac{R^2 }{\hug{z^2 + R^2}^{\frac 32}} \e_z 
+\end{align*}
+\begin{adjustwidth}{20pt}{}
+    Das Prinzip der Superposition ergibt nun für Überlagerung von zwei 
+    gleichgroßen Spulen:
+\end{adjustwidth}
+\begin{align*}
+    \vec B &= \vec B_1 + \vec B_2\\
+    &= \frac{\mu_0 I}{2} R^2 \hug{{\hug{(z+d/2)^2 + R^2}^{-\frac 32}}
+    + {\hug{(z-d/2)^2 + R^2}^{-\frac 32}} } \e_z\\
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    \vec B(z) &= \frac{\mu_0 I}{2} R^2 \hug{{\hug{(z+d/2)^2 + R^2}^{-\frac 32}}
+    + {\hug{(z-d/2)^2 + R^2}^{-\frac 32}} } \e_z\\
+    \vec B(0) &= \mu_0 I R^2 {\hug{(d/2)^2 + R^2}^{-\frac 32}}\e_z\\
+    \partiald{\vec B}{z}(0) &= 0 \since[Achsensymmetrisch]\\
+    \partiald{^2\vec B}{z^2}(0) &= \frac{3}{2}\mu_0 I R^2  \frac{\hug{4(d/2)^2 - R^2}}{\hug{(d/2)^2+R^2}^{\frac 72}}\e_z z^2\\
+    \vec B_T(z) &\approx\vec B(z) \approx  \frac{\mu_0 I R^2}{\hug{(d/2)^2 + R^2}^{\frac 32}}\e_z \hug{1+ \frac 34 \frac{\hug{4(d/2)^2 - R^2}}{\hug{(d/2)^2+R^2}^{2}} z^2}
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    \vec B_T = \text{const}\implies 0= {4(d/2)^2 - R^2} \implies d=R
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    \vec B_T(0) &= \frac{\mu_0 I R^2} {\hug{(d/2)^2 + R^2}^{\frac 32}}\e_z\\
+    &= \frac{\mu_0 n I^* R^2} {\hug{(d/2)^2 + R^2}^{\frac 32}}\e_z\\
+    &\approx \frac{\munull \cdot 1000 \cdot 1.5\u A \cdot 10^2\u{cm^2}}{\hug{(10\u{cm}/2)^2 + 10^2\u{cm^2}}^{\frac 32}}\e_z\\
+    &\approx 13.5 \u{mT}\cdot \e_z
+\end{align*}
+
+
+\section{Hall-Effekt}
+\subsection{}
+\begin{adjustwidth}{20pt}{}
+    Für den Hall-Effekt ist die Stärke des Stroms relevant, welche 
+    der Ladung entspricht die pro Zeiteinheit eine Fläche durchströmt. 
+    Man sieht nun, dass ein Strom von positven Ladungsträgern, der in die 
+    entgegengesetzte Richtung relativ zu den Negativen fließt, den Gesammtstrom vergrößer würde,
+    und somit auch die Hallspannung. 
+\end{adjustwidth}
+
+
+\subsection{}
+\begin{align*}
+    0 &= F_L + F_{el}\\
+    &= q v B + \frac{U_H}{b}\\
+    &= q v B + \frac{U_H}{b}\\
+    U_H &= -dqvB\\
+    \\
+    j &= n q v\\
+    v &= \frac{j}{nq}\\
+    \\
+    U_H &= -\frac{b j B}{n q}\\
+    &= -\frac{I B}{d n q}\\
+    &\approx -\frac{1\u A \cdot 0.1\u T}{1\u{mm}\cdot1.1\cdot 10^{29}\ufrac{1}{m^3}\cdot (\chargeelec)}\\
+    &\approx 5.68\u{nV}
+\end{align*}
+\begin{adjustwidth}{20pt}{}
+    Man könnte die Hallspannung erhöhen und damit einfacher messbar machen,
+    indem man bei gleicher Stromdichte die Ladungsträgerdichte verringert, 
+    da dann die Ladungsträger schneller sind und der Einfluss der Lorenzkraft
+    somit größer. Realisieren ließe sich dies, indem man statt Kupfer z.B. einen
+    Halbleiter verwendet.
+\end{adjustwidth}
+
+\subsection{}
+\begin{align*}
+    U_H &= -\frac{b j B}{n q}\\
+    &= -b v B\\
+    v &= -\frac{U_H}{b B}\\
+    &\approx \frac{5.68\u{nV}}{5\u{mm}\cdot 0.1\u T}\\
+    &\approx 11.4\ufrac{\micro m}{s}
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    \rho &= \frac{A U}{l I}\\
+    U &= \frac{\rho l I}{d b}\\
+    U_{\te{Cu}} &\approx \frac{1.7\cdot 10^{-8}\,\Omega\mathrm m \cdot 6\u{mm} \cdot 0.7 \u A}{1\u{mm} \cdot 5\u{mm}}\\
+    &\approx 14.3\u {\micro V}\\
+    U_{\te{Si}} &\approx \frac{4.6\cdot 10^{-2}\,\Omega\mathrm m \cdot 6\u{mm} \cdot 0.7 \u A}{1\u{mm} \cdot 5\u{mm}}\\
+    &\approx 38.6 \u V
+\end{align*}
+\begin{adjustwidth}{20pt}{}
+    Die beiden spezifischen Widerstände unterscheiden sich um sechs Größenordnungen,
+    somit ist eine starke Differenz der benötigten Spannung erwartet.
+\end{adjustwidth}
+
+\section{Magnetfeld eines stromdurchflossenden Leiters}
+
+\subsection{}
+\begin{align*}
+    \d \vec B &= - \frac{\mu_0 I}{4\pi} \cdot \frac{\vec r \times \ds}{r^3}\\
+    \vec B  &= - \frac{\mu_0 I}{4\pi} \oint_{\mathcal L } \frac{\vec r \times \ds}{r^3}\\
+    &= - \frac{\mu_0 I}{4\pi} \hug{\oint_{\te{Schleife} } \frac{\vec r \times \ds}{r^3}
+    + \int_{\te{gerader Leiter} } \frac{\vec r \times \ds}{r^3}}\\
+    - \frac{\mu_0 I}{4\pi}\oint_{\te{Schleife} } \frac{\vec r \times \ds}{r^3} &= B_{\text{Spule}}(0)\notethat[siehe Nr.3 (a)]\\
+    &= \frac{\mu_0 I}{2} \frac{R^2}{(z^2+ R^2{\frac 32})} \e_z\\
+    &= \frac{\mu_0 I}{2} \frac{1}{R} \e_z
+\end{align*}
+\begin{align*}
+    \int_{\te{Gerader Leiter}} \frac{\vec r \times \ds}{r^3} &=
+    \int_{\mathcal L} \frac{(R\e_y - x\e_x)\times (\dx\e_x)}{(x^2+R^2)^{\frac32}}\\ 
+    &= R\e_z\int_{\mathcal L} \frac{\dx}{(x^2+R^2)^{\frac32}}\\
+    &= \frac{\e_z}{R^2}\int_{-\infty}^{\infty}\frac{\d x}{(x^2/R^2+1)^{\frac32}} \\
+    &\eq \frac{\e_z}{R}\int_{-\infty}^{\infty}\frac{\cosh u}{(\sinh^2u+1)^{\frac32}} \du\\
+    &\eq \frac{\e_z}{R}\int_{-\infty}^{\infty}\frac{1}{\cosh^2u} \du\with \sinh^2u+1=\cosh^2u\\
+    &= \frac{\e_z}{R} \tanh u \eval_{-\infty}^{\infty}\\
+    &= \frac{2}{R} \e_z\\
+    \\
+    \vec B_{\te{ges}}  &= \frac{\mu_0 I}{2} \frac{1}{R} \e_z - \frac{\mu_0 I}{4\pi} \frac{2}{R} \e_z\\
+    &= \frac{\mu_0 I}{2} \frac{1}{R} \e_z \hug{1-\frac{1}{\pi}}\\
+\end{align*}
+\begin{adjustwidth}{20pt}{}
+    \con Substitution: \(\sinh u=\frac{x}{R}\rightarrow\du \cosh u=\frac\dx R\)\\
+\end{adjustwidth}
+
+\subsection{}
+\begin{align*}
+    \int_{\te{Gerader Leiter}} \frac{\vec r \times \ds}{r^3} &= 0 \since \vec r \parallel \ds\\
+    \int_{\te{Schleife*}} \frac{\vec r \times \ds}{r^3} &= 
+    \int_{\te{Oben}} \frac{\vec r \times \ds}{r^3} + \int_{\te{Unten}} \frac{\vec r \times \ds}{r^3}\\
+    &\eq0 \\
+    \vec B_{\te{ges}}&=0
+\end{align*}
+\begin{adjustwidth}{20pt}{}
+    \con Da nach der Rechtenhandregel der Beitrag zum B-Feld der von einem Leiterstückchen oben geleistet
+    wird, von dem Leitstückchen darunter weggehoben wird, d.h. die Beträge der beiden Stücken sind gleich,
+    jedoch zeigen sie in die genau entgegengesetzte Richtung zueinander.
+\end{adjustwidth}
+
+
+\section{Maxwell-Gleichungen}
+\begin{enumerate}
+    \item Maxwellgleichung:\\
+    \begin{align*}
+        \vnabla \cdot \vec E &= \frac{\rho}{\epsilon_0} \\
+        \oint_{\mathcal V}  \vnabla \cdot \vec E \dV&= \frac{1}{\epsilon_0}\oint_{\mathcal V} \rho\dV \\
+        \oint_{\mathcal S}  \vec E \dS&= \frac{Q}{\epsilon_0} 
+    \end{align*}
+    \begin{adjustwidth}{20pt}{}
+        Diese Gleichung beschreibt, dass das elektrische Fluss durch eine
+        geschlossene Oberfläche propotialnal ist zur Ladungen innerhalb diese. 
+        Das macht die Ladung zu Quellen des elektrischen Feldes. 
+        Außerdem impliziert dies bereits die \(\frac{1}{r^2}\) Propotionalität
+        des E-Feldes da dies der Proportionalität einer Oberfläche in 3 Dimensionen bei 
+        Skalierung entspricht.
+    \end{adjustwidth}
+    
+    \item Maxwellgleichung:\\
+    \begin{align*}
+        \vnabla \cdot \vec B &= 0\\
+        \oint_{\mathcal V}\vnabla \cdot \vec B \dV&= 0\\
+        \oint_{\mathcal S} \vec B \dS &= 0
+    \end{align*}
+    \begin{adjustwidth}{20pt}{}
+        Diese Gleichung sagt aus, dass der über eine geschlossene Oberfläche
+        summierte magentische Fluss gleich null ist, d.h. es gibt 
+        keine magnetische Ladung gibt.
+    \end{adjustwidth}
+
+    
+    \item Maxwellgleichung:\\
+    \begin{align*}
+        \vnabla \times \vec E &= -\partiald{\vec B}{t}\\
+        \oint_{\mathcal S} \vnabla \times \vec E \dS &= -\oint_{\mathcal S}\partiald{\vec B}{t}\dS\\
+        \oint_{\mathcal L} \vec E \d \vec x &=- \oint_{\mathcal S} \partiald{\vec B}{t}\dS
+    \end{align*}
+    \begin{adjustwidth}{20pt}{}
+        Diese Gleichung sagt aus, dass das entlang einer geschlossen Linie summierte E-Feld 
+        bei einem nicht veränderndem B-Feld gleich null ist. Konkret auf 
+        Schaltungen angewand entspricht dies der Knotenregel 
+        (für Stromkreise mit ausschließlich
+        konzentrierten Bauelementen), d.h.
+        dass die Summe aller Ströme gleich null ist.
+        Gibt es jedoch ein zeitlich veränderndes B-Feld, so erzeugt dieses
+        ein Wirbel-E-Feld, sodass das durch eine geschlossene Linie summierte
+        E-Feld nun proportional zur negativen magnetischen Flussänderung innerhalb der geschlossenen 
+        Linie ist (Induktion).
+    \end{adjustwidth}
+    
+    \item Maxwellgleichung:\\
+    \begin{align*}
+        \vnabla \times \vec B &= \mu_0\vec j + \mu_0\epsilon_0\partiald{\vec E}{t}\\
+        \oint_{\mathcal S} \vnabla \times \vec B \dS &=  \mu_0\oint_{\mathcal S}\vec j \dS + \mu_0\epsilon_0\oint_{\mathcal S} \partiald{\vec E}{t}\dS\\
+        \oint_{\mathcal L} \vec B \d \vec x &= \mu_0 I+ \mu_0 \epsilon_0\oint_{\mathcal S} \partiald{\vec E}{t}\dS
+    \end{align*}
+    \begin{adjustwidth}{20pt}{}
+        Diese Gleichung sagt aus, dass das über eine geschlosse Linie summierte 
+        B-Feld gleich dem Strom ist der zwischen der geschlossenen Linie fließt, 
+        plus die zeitliche Änderung des elektrischen Flusses zwischen der Linie. 
+    \end{adjustwidth}
+\end{enumerate}
+
+
+\end{document}
