@@ -105,27 +105,54 @@
     &= \underbrace{\mu_0 \mu_{r,n} \frac{N_n^2 A }{l}}_{L_n} \dot i_n + \underbrace{\mu_0 \mu_{r,mn} \frac{N_n N_m A}{l}}_{L_{nm}} \dot i_m\\
     &= L_n\dot i_n + L_{nm} \dot i_m\\
     &= j \omega L_n i_n + j \omega L_{nm}i_m\\
-    &= j \omega L_n \frac{u_n}{Z_n} + j \omega L_{nm}\frac{u_m}{Z_m} \\
-    &= \frac{j \omega L_{nm} u_m / Z_m}{1-j \omega L_n / Z_n} \\
     &\rightarrow\begin{cases}
         u_1 = j \omega L_1 i_1 + j \omega L_{12} i_2\\
-        u_2 = j \omega L_2 i_2 + j \omega L_{12} i_1\\
+        u_2 = Z i_2 = j \omega L_2 i_2 + j \omega L_{12} i_1\\
     \end{cases}\\
     &\rightarrow\begin{cases}
         u_1 = j \omega L_1 i_1 + j \omega L_{12} i_2\\
-        \un Z i_2 = j \omega L_2 i_2 + j \omega L_{12} i_1\\
+        i_2 = \frac{j \omega L_{12} }{ Z - j \omega L_2}i_1\\
     \end{cases}\\
     &\rightarrow\begin{cases}
-        u_1 = j \omega L_1 i_1 + j \omega L_{12} i_2\\
-        i_2=  \frac{j \omega L_{12} i_1}{\un Z- j \omega L_2 }\\
+        u_1 = j \omega  \hug{L_1 +  \frac{j \omega L_{12}^2 }{ Z - j \omega L_2}}i_1\\
+        \ \ \ \ = \frac{j \omega L_1 Z + \omega^2 (L_1 L_2 - L_{12}^2)}{Z - j \omega L_2} i_1\\
     \end{cases}\\
-    \frac{u_2}{u_1} &= \frac{j \omega L_2 i_2 + j \omega L_{12} i_1}{j \omega L_1 i_1 + j \omega L_{12} i_2}\\
-    &= \frac{L_2 i_2 +L_{12} i_1}{L_1 i_1 + L_{12} i_2}\\
+    &\rightarrow\begin{cases}
+        u_1 = \frac{j \omega L_1 Z + \omega^2 (L_1 L_2 - L_{12}^2)}{Z - j \omega L_2} i_1\\
+        u_1 = - \frac{j \omega L_1 Z + \omega^2 (L_1 L_2 - L_{12}^2)}{i\omega L_{12}} i_2
+    \end{cases}\\
+    \frac{i_2}{i_1} &=-  \frac{j\omega L_{12}}{Z + j \omega L_2}\\
+    \frac{u_2}{i_1 Z} &=-  \frac{j\omega L_{12}}{Z + j \omega L_2}\\
+    \frac{u_2}{u_1} &= -\frac{j\omega L_{12} Z}{j\omega L_1 Z + \omega^2 (L_{12}^2-L_1 L_2)}\\
+    &\approx 
+\end{align*}
+
+\subsection{}
+\begin{align*}\frac{a + bi}{c+ di} &= \frac{(a + bi)(c+id)}{c^2+ d^2}\\
+    &= \frac{(ac - bd) + i(ad + bc)}{c^2+ d^2}\\
+    \abs{\frac{a + bi}{c+ di}}&= \frac{ac - bd}{c^2+ d^2}\\
+    \abs{\frac{a + bi}{c+ di}} /\abs{\frac{e + fi}{c+ di}}&= \frac{ac - bd}{c^2+ d^2} \frac{c^2+ d^2}{ec - fd}\\
+    &= \frac{ac - bd}{ec - fd}\\
+    i_1 &= \frac{Z - j \omega L_2}{j \omega L_1 Z + \omega^2 (L_1 L_2 - L_{12}^2)} u_1\\
+    i_2 &= \frac{-j\omega L_{12}}{j \omega L_1 Z + \omega^2 (L_1 L_2 - L_{12}^2)} u_1\\
+    \frac{\abs{i_2}}{\abs{i_1}} &=  \frac{\omega^2 Z (L_1 L_2 - L_{12}^2) + \omega^2 Z L_1 L_2}
+    {\omega ^2 Z L_1 L_{12}}\\
+    &=  \frac{(L_1 L_2 - L_{12}^2) +  L_1 L_2}
+    {L_1 L_{12}}\\
+    &= \frac{{\mu_0 \mu_{r} \frac{N_1^2 A }{l} \cdot \mu_0 \mu_{r} \frac{N_2^2 A }{l}} 
+    - \mu_0^2 \mu_{r}^2 \frac{N_1^2 N_2^2 A^2 }{l^2} +  
+    \mu_0 \mu_{r} \frac{N_1^2 A }{l} \cdot \mu_0 \mu_{r} \frac{N_2^2 A }{l}}
+    {\mu_0 \mu_{r} \frac{N_1^2 A }{l}\cdot  \mu_0 \mu_{r} \frac{N_1 N_2 A }{l}}\\
+    &= \frac{N_1^2 \cdot N_2^2}
+    {N_1^2\cdot N_1 N_2}\\
+    &= \frac{N_2}{N_1}\\ 
 \end{align*}
 
 \subsection{}
 \begin{align*}
-    \frac{u_2}{u_1} &= \frac{L_2\dot i_2 + L_{12} \dot i_1}{L_1\dot i_1 + L_{12} \dot i_2}\\
+    \frac{u_2}{u_1} &= -\frac{j\omega L_{12} Z}{j\omega L_1 Z + \omega^2 (L_{12}^2-L_1 L_2)}\\
+    &= -\frac{j\omega L_{12} \frac{1}{j \omega C}}{j\omega L_1 \frac{1}{j \omega C} + \omega^2 (L_{12}^2-L_1 L_2)}\\
+    &= -\frac{L_{12}/C}{L_1 /C + \omega^2 (L_{12}^2-L_1 L_2)}\\
 \end{align*}
 
 \section{Schwingkreise}
