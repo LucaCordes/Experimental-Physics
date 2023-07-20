@@ -15,6 +15,10 @@
     \frac{E_P}{E_L} &= \frac{1}{2\epsilon_r}\\
     &\approx 0.278\\
 \end{align*}
+\begin{adjustwidth}{20pt}{}
+    Da für isotrope Dielektrika gilt, dass $\vec E \propto \vec D$, verändert sich 
+    das D-Feld um den gleichen Faktor wie das E-Feld.
+\end{adjustwidth}
 
 \subsection{}
 \begin{align*}
@@ -33,6 +37,13 @@
 
 \subsection{}
 \begin{align*}
+    D_L &= \varepsilon_0 \varepsilon_r E_L\\
+    &\approx \epsnull \cdot 1 \cdot 93.9 \ufrac {kV}m\\
+    &\approx 8.31\E{-8}\ufrac{C}{m^2}\\
+    \\
+    D_P &= \varepsilon_0 \varepsilon_r E_P\\
+    &\approx \epsnull \cdot 1.8 \cdot 26.1 \ufrac{kV}{m}\\
+    &\approx 4.16\E{-7}\ufrac{C}{m^2}
 \end{align*}
 
 \subsection{}
@@ -80,10 +91,7 @@
     \centering
     \includegraphics[width=0.5\textwidth]{F1.png}
     \begin{adjustwidth}{20pt}{}
-        \caption{Poynting Vektoren bei Aufladen eines kreisförmigen Plattenkondensators.
-        (Tatsächlich würden sich die B-Felder bei einem perfekt homogenen Feld 
-        im Inneren des Kondensators gegenseitig wegheben, deswegen die 
-        beiden inneren B-Feldlinien bitte einfach ignorieren)}
+        \caption{Poynting Vektoren bei Aufladen eines kreisförmigen Plattenkondensators.}
     \end{adjustwidth}
 \end{figure}
 
@@ -99,7 +107,29 @@
     \dot Q &= - \frac{Q}{RC} - \frac{U}{R}\\
     Q(t) &= c\cdot e^{-\frac{t}{RC}} - UC \notethat c\in\R\\
     Q(0) &= 0 \implies Q(t) = UC \hug{e^{-\frac{t}{RC}} - 1} \\
+    \dot Q(t) &= - \frac UR e^{-\frac{t}{RC}}\\
     \\
+    E &= \frac{U}{d}\\
+    &= \frac{Q}{d C}\\
+    &= \frac {U}d \hug{e^{-\frac{t}{RC}} - 1}\\
+    &= E_{max} \hug{e^{-\frac{t}{RC}} - 1}
+\end{align*}9
+\begin{align*}
+    \div \vec B &= \varepsilon_0 \mu_0 \partiald{\vec E}{t}\\
+    \oint_{\partial A}\vec B &= \varepsilon_0 \mu_0 \oint_S \partiald{\vec E}{t}\dS\\
+    &= \varepsilon_0 \mu_0 \int_{0}^{r}\dr \int_{0}^{2\pi}\dphi \partiald{E}{t}r\\
+    \dot E &= \frac {\dot U}d = \frac{\dot Q}{dC} = - \frac {U_0}{dRC} e^{-\frac{t}{RC}}\\
+    \oint_{\partial A}\vec B &= -\varepsilon_0 \mu_0 \frac {2\pi U_0}{dRC} e^{-\frac{t}{RC}}\int_{0}^{r}r \dr\\
+    &= -\varepsilon_0 \mu_0 \frac {\pi U_0 r^2}{dRC} e^{-\frac{t}{RC}}\\
+    &= \varepsilon_0 \mu_0 \pi r^2\dot E\\
+    \\
+    \sabs{\vec S}(t) &=  \varepsilon_0 c^2 \sabs{\vec E}\cdot\sabs{\vec B}\\
+    &= \varepsilon_0 c^2 E\cdot \varepsilon_0 \mu_0 \pi r^2\dot E\\
+    &= \varepsilon_0^2 \mu_0 \pi c^2 r^2 \dot E E\\
+    &= \varepsilon_0^2 \mu_0 \pi \frac{c^2 r^2}{d^2c^2} \dot Q Q\\
+    &= \varepsilon_0 c^2\cdot \varepsilon_0 \mu_0 \frac {\pi U_0 r^2}{dRC} e^{-\frac{t}{RC}} \cdot \\  
+\end{align*}
+\begin{align*}
     \vec S (t)&=  \epsilon_0 c^2 (\vec E (t)\times \vec B(t))\\
     \sabs{\vec S}(t) &=  \epsilon_0 c^2 \sabs{\vec E}\cdot\sabs{\vec B}\\
     &= \epsilon_0 c E^2\\
@@ -113,10 +143,19 @@
 
 \subsection{}
 \begin{align*}
+    P &= \int_S\vec S\d\vec A\\
+    &= \int_{Mantelflache}\vec S\d\vec A + \underbrace{\int_{Kondensator Platten} \vec S\d\vec A}_{=0\te{,da }\vec S\perp\d\vec A}\\
+    &= \int_{0}^{d}\dz\int_{0}^{2\pi}\dphi \abs {S(t)}\notethat[da ]\vec S \parallel \vec A\\
+    &= 2\pi \cdot d \cdot \abs {S(t)}\\
+    &= 2\pi \cdot d \cdot I_{max} \hug{e^{4-\frac{t}{RC}} - 1}^2\\
 \end{align*}
 
 \subsection{}
 \begin{align*}
+    P &= 2\pi \cdot d \cdot I_{max} \hug{e^{-\frac{t}{RC}} - 1}^2\\
+    &= 2\pi\epsilon_0 c \frac{U^2}{d} \hug{e^{-\frac{t}{RC}} - 1}^2\\
+    W &= \int_{0}^{\infty}P\dt\\
+    &= 2\pi\epsilon_0 c \frac{ U^2}{d} \int_{0}^{\infty}\hug{e^{-\frac{t}{RC}} - 1}^2\dt\\
 \end{align*}
 
 \section{Dipolstrahlung}
@@ -146,7 +185,7 @@
     &= \eta + \frac\eta2 + \frac\eta{12} \cos(3\theta)\eval_{0}^{\pi}\\
     &= \eta + \frac\eta2 - \frac\eta{6}\\
     &= \frac{4}{3}\eta\\
-    &= \frac{\omega^4 P_0^2}{12\pi^2 \epsilon_0 c^3}\\
+    &= \frac{\omega^4 P_0^2}{12\pi^2 \epsilon_0 c^3}
 \end{align*}
 
-\end{document}
+\end{document} 
