@@ -1,0 +1,29 @@
+\documentclass[twocolumn]{summery}
+\title{Experimentalphysik III - Zusammenfassung}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Geometrische Optik}
+\subsection{Fermat's Prinzip}
+Die geometrische Optik lässt sich mathematisch elegant beschreiben wenn man den Lichtweg 
+\(L = \int \abs{\vec r(t)}\cdot n(\vec r (t)) \dt\) definiert. Er ist der normale Weg, gewichtete 
+mit dem lokalen Brechungsindex.
+Das Licht nimmt immer den Weg, der den Lichtweg extremal werden lässt.
+Zur Erinnerung: Es gilt \(n = \frac{c}{v}\)
+
+Es Weg des Lichts kann daher formal mithilfe der Euler-Lagrange Gleichungen beschrieben werden:
+\begin{align*}
+    \ddt \partiald{\mathcal L}{\vdot x} = \partiald{\mathcal L}{\vec x} \with \mathcal L = \abs{\vec r(t)}\cdot n(\vec r (t))
+\end{align*}
+
+\subsection{Snell's Gesetz}
+Reist ein Lichtstrahl von einem Medium mit Brechungsindex \(n_1\) in ein zweites mit 
+Brechungindex \(n_2\), wird er gebrochen. Der Winkel kann mithilfe von Snell's Gesetz 
+berechnet werden:
+\begin{align*}
+    \frac{\sin\beta}{\sin\alpha} &= \frac{n_a}{n_b}
+\end{align*}
+
+\end{document}
