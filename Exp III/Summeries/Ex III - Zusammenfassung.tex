@@ -5,7 +5,7 @@
 \maketitle
 \tableofcontents
 
-\section{Geometrische Optik}
+\section{Licht}
 \subsection{Fermat's Prinzip}
 Die geometrische Optik lässt sich mathematisch elegant beschreiben wenn man den Lichtweg 
 \(L = \int \abs{\vec r(t)}\cdot n(\vec r (t)) \dt\) definiert. Er ist der normale Weg, gewichtete 
@@ -25,5 +25,45 @@ berechnet werden:
 \begin{align*}
     \frac{\sin\beta}{\sin\alpha} &= \frac{n_a}{n_b}
 \end{align*}
+
+\section{Strahlenoptik}
+\subsection{Dünne Linsen in Paraxialer Näherung}
+Sowohl für Sammel-/ aus auch Streulinsen gelten die Linsengleichungen:
+\begin{align*}
+    \frac 1g + \frac 1b = \frac 1f
+\end{align*}
+und 
+\begin{align*}
+    \frac{b}{g} = \frac BG   
+\end{align*}
+
+Linsenmachergleichung für dünne Linsen:
+\begin{align*}
+    D = \frac {n_0}f &= (n_L - n_0)\hug{\frac 1{r_1} + \frac 1{r_2}}
+\end{align*}
+
+Außerdem gilt für dünne Linsen:
+\begin{align*}
+    D &= D_1 + D_2
+\end{align*}
+
+\subsection{Dicke Linsen}
+Linsenmachergleichung:
+\begin{align*}
+    D = \frac {n_0}f &= (n_L - n_0)\hug{\frac 1{r_1} + \frac 1{r_2}}
+    + \frac{(n_L - n_0)^2}{n_L}\frac{d}{r_1r_2}
+\end{align*}
+
+Newtonsch'sche Abbildungsgleichung
+\begin{align*}
+    z\cdot z' &= f_B \cdot f_G
+\end{align*}
+
+\subsection{Kugelfläche in Paraxialer Näherung}
+Für eine Kugelfläche gilt die Abbe'sche Invariante:
+\begin{align*}
+    n_0 \hug{\frac 1r + \frac 1g} &= n_l \hug {\frac 1r - \frac 1b}
+\end{align*}
+ 
 
 \end{document}

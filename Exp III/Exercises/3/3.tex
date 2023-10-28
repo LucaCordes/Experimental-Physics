@@ -1,0 +1,40 @@
+\documentclass[ex]{exercise}
+
+\deadline{31.10.2023}
+
+\begin{document}
+
+\section{Listingsche Strahlenkonstruktion an Hohl- und Wölbspiegeln}
+\begin{center}
+    (siehe hinten)
+\end{center}
+
+\section{Brechungsindex einer Linse}
+Ausgangspunkt sei die Linsenmachergleichung. Da es sich um eine dünne Linse handelt
+ist \(d=0\), außerdem ist \(r_2=\infty\); dies entspricht der ebenen Seite der Linse.
+\begin{align*}
+    \frac {n_0}f &= (n_L - n_0)\hug{\frac 1{r_1} + \frac 1{r_2}}
+    + \frac{(n_L - n_0)^2}{n_L}\frac{d}{r_1r_2}\\
+    \frac {n_0}f &= (n_L - n_0)\frac 1{r_1}\\
+    n_L &= n_0\hug{\frac {r_1}f + 1}\\
+    &\approx \frac{12 \u{cm}}{30 \u{cm}} + 1\\
+    &\approx 1.4
+\end{align*}
+
+\section{Brennweite einer Linse bestimmen}
+Ausgangspunkt sei die Linsenmachergleichung, da es sich um eine dünne Linse handelt.
+\begin{align*}
+    \frac{1}{f} &= \frac{1}{b} - \frac{1}{g} \\
+    \frac{1}{f_1} &= \frac{1}{b_1} + \frac{1}{l} \\
+    \frac{1}{f_2} &= \frac{1}{b_2} - \frac{1}{l} \\
+    b_1 &= l - e \\
+    b_2 &= l + e \\
+    f_1 &= \frac{l - e}{2l^2 - le} \\
+    f_2 &= \frac{l + e}{le}        
+\end{align*}
+\begin{align*}
+    V_1 &= \frac{f}{g_1-f}\\
+    &= \frac{1}{g-f} - 1\\
+\end{align*}
+
+\end{document}
