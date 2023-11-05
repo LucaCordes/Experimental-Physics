@@ -1,0 +1,148 @@
+\documentclass[ex]{exercise}
+
+\deadline{07.11.2023}
+
+\begin{document}
+
+\section{Zweilinsensystem}
+Welchen Abstand müssen zwei Sammellinsen von je 10 cm Brennweite haben, damit ihre 
+Gesamtbrennweite \(f=8 \u{cm}\) ist?
+
+\dottedline
+
+\begin{align*}
+    D' &= D_1 + D_2 - d D_1 D_2\\
+    &= 2 D - d D^2\\
+    d &=\frac{2D - D'}{D^2}\\
+    &\approx \frac{2\cdot \frac 1{10\u{cm}} - \frac1{8\u{cm}}}{\frac1{10^2\u{cm}^2}}\\
+    &\approx 7.5\u{cm}
+\end{align*}
+\begin{align*}   
+    M &= M_{T_3}\cdot M_{L_2}\cdot M_{T_2}\cdot M_{L_1}\cdot M_{T_1}\\
+    &= \begin{pmatrix}
+        1&\frac{b}{n_0}\\
+        0&1\\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&0\\
+        -D_1&1\\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&\frac{d}{n_0}\\
+        0&1\\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&0\\
+        -D_2&1\\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&\frac{g}{n_0}\\
+        0&1\\
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        1- b D_1 - d D_1 - b D_2 + b d D_1 D_2 & 
+        d+g+b- d g D_1 - b g D_2 - b g D_1 - b d D_2 + b g d D_1 D_2\\
+        -D_1 - D_2 + d D_1 D_2 &
+        1- g D_1 - d D_2 - g D_2 + g d D_1 D_2
+    \end{pmatrix}\\
+    S_2 &= M S_1\\
+    &= M \cdot \twovec{0}{\alpha}\\
+    &= \alpha \cdot \twovec
+    {d + g + b - d g D_1 - b g D_1 - b g D_2 - b d D_2 + b g d D_1 D_2}
+    {1 - g D_1 - g D_2 - d D_2 + d g D_1 D_2}\\
+    S_2 &= \twovec{x}{0}\\
+    0 &= 1 - g D_1 - g D_2 - d D_2 + d g D_1 D_2\\
+    &= 1 - 2 g D - d D + d g D^2\\
+    &= 1 - 2 \hug{8\u{cm}- \frac d2} D - d D + \hug{8\u{cm}- \frac d2} d D^2
+    \note \begin{cases}
+        f = g + \frac d2 = 8\u{cm}\\
+        g = 8\u{cm} - \frac d2
+    \end{cases}\\
+    &= 1 - 16 \u{cm}\cdot D + d D - d D + 8\u{cm}\cdot d D^2- \frac {d^2 D^2}2\\
+    &= d^2 \frac {D^2}2 - d\cdot 8\u{cm}\cdot D^2 - 1 + 16 \u{cm}\cdot D\\
+    d &= -\frac{D^2}{4} \pm \sqrt{16\u{cm}\cdot D^4 + 1 - 16 \u{cm}\cdot D }\\
+    &\approx -\frac{D^2}{4} \pm \sqrt{16\u{cm}\cdot D^4 + 1 - 16 \u{cm}\cdot D }\\
+\end{align*}
+
+\section{Vorsatzlinse für Kamera}
+\begin{align*}
+\end{align*}
+
+\section{Vergrö{\ss}erung am Kepler'schen Fernrohr}
+Ein Kepler’sche Fernrohr besteht aus einem Objektiv mit Brennweite $f_{\te{obj}}$ 
+und einem Okular mit Brennweite $f_{\te{okl}}$ die sich den selben Brennpunkt teilen.
+
+\subsection{}
+Bestimmen Sie für einen Strahl der in der Höhe h und Winkel \(\alpha\) das Objektiv trifft die 
+Abbildungsmatrix. Das Objektiv ist eine plankonvexe Linse mit dem Radius von $r_1 = 24 \u{cm}$, 
+das Okular ist eine bikonvexe Linse mit Biegeradius $r_2 = 12 \u{cm}$. 
+Beide Linsen sind aus Kronglas mit einem Brechnungsindex von $n_L = 1.6$ gefertigt.
+
+\dottedline
+
+\begin{align*}
+    D_1 &= (n_L-n_0)\hug{\frac1{r_{11}} + \frac{1}{r_{12}}}
+    \approx (1.6-1)\hug{\frac1{24\u{cm}} + \frac{1}{\infty \u{cm}}}
+    \approx \frac1{40} \u{dpt}\\
+    D_2 &= (n_L-n_0)\hug{\frac1{r_{21}} + \frac{1}{r_{22}}}
+    \approx (1.6-1)\hug{\frac1{12\u{cm}} + \frac{1}{12 \u{cm}}}
+    \approx \frac1{10} \u{dpt}
+\end{align*}
+Abbildungsmatrix für das ganze System:
+\begin{align*}
+    M &= M_{L_2}\cdot M_{T}\cdot M_{L_1}\\
+    &=
+    \begin{pmatrix}
+        1&0\\
+        -D_2&1\\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&\frac{d}{n_0}\\
+        0&1\\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&0\\
+        -D_1&1\\
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        1 & \frac{d}{n_0}\\\
+        -D_2 & 1 - D_2 \frac{d}{n_0}\\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1&0\\
+        -D_1&1\\
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        1 - D_1 \frac{d}{n_0}& \frac{d}{n_0}\\\
+        D_1 D_2 \frac{d}{n_0} - D_2 - D_1& 1 - D_2 \frac{d}{n_0}\\
+    \end{pmatrix}\\
+    &\approx \begin{pmatrix}
+        -\frac14& 50\u{cm}\\
+        0 & -4\\
+    \end{pmatrix}\with 
+    \begin{cases}
+        d = \frac1{D_1}+\frac1{D_2}=50\u{cm}\\
+        n_0 \approx 1
+    \end{cases}
+\end{align*}
+
+\subsection{}
+Mit der Abbildungsmatrix:
+\begin{align*}
+    S_2 &= M \cdot S_1 = M \cdot \binom{0}{\alpha}\\
+    \implies \beta &= -4\alpha\\
+    V &= \frac{\tan\beta}{\tan\alpha}
+    = \frac{\tan(-4\alpha)}{\tan\alpha}
+    \approx -4 \since \tan\alpha =\alpha + \bigO{\alpha^3}
+\end{align*}
+Mithilfe die Geometrie:
+\begin{align*}
+    V &= \frac{\tan\beta}{\tan\alpha}
+    = \frac{b_z / F_2}{-b_z / F_1}
+    = - \frac{D_2}{D_1} 
+    = -4
+\end{align*}
+
+\section{Öffnungsfehler plankonvexe Linse}
+
+\end{document}
