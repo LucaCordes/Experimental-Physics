@@ -65,5 +65,39 @@ Für eine Kugelfläche gilt die Abbe'sche Invariante:
     n_0 \hug{\frac 1r + \frac 1g} &= n_l \hug {\frac 1r - \frac 1b}
 \end{align*}
  
+\section{Fotometrie}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{1.png}
+\end{figure}
 
+\begin{lemma}[Stefan-Boltzmann-Gesetz]
+    \begin{align*}
+        \Phi_E &= \sigma \cdot A \cdot T^4\\
+        \sigma &= 5.670 \cdot10^{-8} \ufrac{W}{m^2K^4}\note[Stefan-Boltzmann-Konstante]
+    \end{align*}
+\end{lemma}
+
+\begin{lemma}[Wien'sches Verschiebungsgesetz]
+    Ist \(\lambda_{\te{max}}\) die Wellenlänge, bei der die Emission eines Schwarzerkörpers
+    die maximale Intensität zeigt, so gilt:
+    \begin{align*}
+        \lambda_{max}\cdot T = \const = 2.8978 \E{-3} \mathrm{m\, K}
+    \end{align*}
+\end{lemma}
+
+\begin{lemma}[Rayleigh-Jean-Gesetz]
+    Das Rayleigh-Jean-Gesetz beschreibt die Abstrahlungsleistungspektrum bei hohen Wellenlängen:
+    \begin{align*}
+        M_E(\lambda):= \frac{\mathrm  d \Phi_E(\lambda)}{\mathrm d\lambda}=2\pi k c\frac T{\lambda^4}
+    \end{align*}
+\end{lemma}
+
+\begin{lemma}[Wien'sches Strahlungsgesetz]
+    Das Wien-Gesetz beschreibt die Abstrahlungsleistungspektrum bei niedrigen Wellenlängen:
+    \begin{align*}
+        M_E(\lambda) &= \frac{c_1}{\lambda^5} \frac{1}{e^{\frac{c_2}{\lambda T}}}
+        = \frac{2\pi h c^2}{\lambda^5} \frac{1}{e^{\frac{h c}{k_B}\frac{1}{\lambda T}}}
+    \end{align*}
+\end{lemma}
 \end{document}

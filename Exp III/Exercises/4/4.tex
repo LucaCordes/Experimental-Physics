@@ -17,55 +17,20 @@ Gesamtbrennweite \(f=8 \u{cm}\) ist?
     &\approx \frac{2\cdot \frac 1{10\u{cm}} - \frac1{8\u{cm}}}{\frac1{10^2\u{cm}^2}}\\
     &\approx 7.5\u{cm}
 \end{align*}
-\begin{align*}   
-    M &= M_{T_3}\cdot M_{L_2}\cdot M_{T_2}\cdot M_{L_1}\cdot M_{T_1}\\
-    &= \begin{pmatrix}
-        1&\frac{b}{n_0}\\
-        0&1\\
-    \end{pmatrix}
-    \begin{pmatrix}
-        1&0\\
-        -D_1&1\\
-    \end{pmatrix}
-    \begin{pmatrix}
-        1&\frac{d}{n_0}\\
-        0&1\\
-    \end{pmatrix}
-    \begin{pmatrix}
-        1&0\\
-        -D_2&1\\
-    \end{pmatrix}
-    \begin{pmatrix}
-        1&\frac{g}{n_0}\\
-        0&1\\
-    \end{pmatrix}\\
-    &= \begin{pmatrix}
-        1- b D_1 - d D_1 - b D_2 + b d D_1 D_2 & 
-        d+g+b- d g D_1 - b g D_2 - b g D_1 - b d D_2 + b g d D_1 D_2\\
-        -D_1 - D_2 + d D_1 D_2 &
-        1- g D_1 - d D_2 - g D_2 + g d D_1 D_2
-    \end{pmatrix}\\
-    S_2 &= M S_1\\
-    &= M \cdot \twovec{0}{\alpha}\\
-    &= \alpha \cdot \twovec
-    {d + g + b - d g D_1 - b g D_1 - b g D_2 - b d D_2 + b g d D_1 D_2}
-    {1 - g D_1 - g D_2 - d D_2 + d g D_1 D_2}\\
-    S_2 &= \twovec{x}{0}\\
-    0 &= 1 - g D_1 - g D_2 - d D_2 + d g D_1 D_2\\
-    &= 1 - 2 g D - d D + d g D^2\\
-    &= 1 - 2 \hug{8\u{cm}- \frac d2} D - d D + \hug{8\u{cm}- \frac d2} d D^2
-    \note \begin{cases}
-        f = g + \frac d2 = 8\u{cm}\\
-        g = 8\u{cm} - \frac d2
-    \end{cases}\\
-    &= 1 - 16 \u{cm}\cdot D + d D - d D + 8\u{cm}\cdot d D^2- \frac {d^2 D^2}2\\
-    &= d^2 \frac {D^2}2 - d\cdot 8\u{cm}\cdot D^2 - 1 + 16 \u{cm}\cdot D\\
-    d &= -\frac{D^2}{4} \pm \sqrt{16\u{cm}\cdot D^4 + 1 - 16 \u{cm}\cdot D }\\
-    &\approx -\frac{D^2}{4} \pm \sqrt{16\u{cm}\cdot D^4 + 1 - 16 \u{cm}\cdot D }\\
-\end{align*}
 
 \section{Vorsatzlinse für Kamera}
+Eine Kamera mit Brennweite $f_1 = 5 \u{cm}$ soll mit einer Vorsatzlinse versehen werden, sodass eine 
+Briefmarke in natürlicher Größe erscheint, wenn die Kamera auf \(\infty\) eingestellt wird.
+Wie groß ist die Brennweite $f_2$ der Vorsatzlinse?
+
+\dottedline\vspace{-0.2cm}
+
+Die Briefmarke erscheint in natürlicher Größe, wenn das gesamt System aus Objektiv und Vorsatzlinse
+das Licht ungebrochen durchlässt \(\implies D' = 0\).
+Für dünne Linsen kann die Brechkraft einfach auf addiert werden:
 \begin{align*}
+    D' &= D_V + D_L=0\\
+    f_V &= - f_L\\
 \end{align*}
 
 \section{Vergrö{\ss}erung am Kepler'schen Fernrohr}

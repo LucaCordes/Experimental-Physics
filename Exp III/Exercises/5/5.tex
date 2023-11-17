@@ -1,0 +1,163 @@
+\documentclass[ex]{exercise}
+
+\deadline{14.11.2023}
+
+\begin{document}
+
+\section{Frauenhofer-Achromat}
+\begin{align*}
+    &\begin{cases}
+        0=f_1\nu_1 + f_2\nu_2\\
+        D=D_1+D_2\\
+    \end{cases}\\
+    0&= \frac{\nu_1}{D-D_2} + f_2\nu_2\\
+    0&= \nu_1 + \hug{\frac{D}{D_2}-1}\nu_2\\
+    \frac{1}{D_2} &= \frac{1}{D}\hug{1-\frac{\nu_1}{\nu_2}}\\
+    \\
+    f_2 &= f\hug{1-\frac{\nu_1}{\nu_2}}\\
+    &\approx 50\u{mm}\cdot  \hug{1-\frac{63.4}{27.5}}\\
+    &\approx -65.3\u{mm}\\
+    \\
+    f_1 &= f_2\frac{\nu_2}{\nu_1}\\
+    &\approx 65.3\u{mm}\cdot \frac{27.5}{63.4}\\
+    &\approx 28.3\u{mm}
+\end{align*}
+
+Bei den Linsen mit Brennweiten \(f_1=28.3\u{mm}\) und \(f_2=-65.3\u{mm}\)
+handelt es sich jeweils um eine konkave Linse/Sammellinse und 
+eine konvexe Linse, also eine Zerstreuungslinse.
+
+\section{Thermische Strahlung}
+Wie gro{\ss} sind die Wellenlängen \(\lambda_{\max}\), bei 
+der die folgenden Quellen genähert als Schwarzkörper,
+ihre maximale wellenlängenabhängige Leistung abstrahlen?
+
+\dottedlinett
+
+Nach dem Wien'schen Strahlungsgesetz gilt für die Energiedichte, abhängig von der Wellenlänge:
+\begin{align*}
+    M_E(\lambda) &= \frac{c_1}{\lambda^5} \frac{1}{e^{\frac{c_2}{\lambda T}}}
+        = \frac{2\pi hr c^2}{\lambda^5} \frac{1}{e^{\frac{h c}{k_B}\frac{1}{\lambda T}}}
+\end{align*}
+Für ein Maximum muss gelten:
+\begin{align*}
+    0 &= \deriv{M_E}{\lambda} \\
+    &= \frac{2\pi h c^2}{\lambda^5} \cdot \frac{h c}{k_B}\frac{1}{\lambda^2 T}  \frac{1}{e^{\frac{h c}{k_B}\frac{1}{\lambda T}}} 
+    -\frac{10\pi h c^2}{\lambda^6}\cdot \frac{1}{e^{\frac{h c}{k_B}\frac{1}{\lambda T}}}\\
+    0 &= \frac{h c}{k_B}\frac{1}{T} - 5 \lambda\\
+    \lambda_{\max} &= \frac{h c}{5 k_B T}                  
+\end{align*}
+
+\subsection{Eine Glühlampe mit Temperatur \(T=3000\u K\)}
+\begin{align*}
+    \lambda_{\max} &= \frac{h c}{5 k_B T} \approx \frac{\ch \cdot \cc}{5\cdot \ckb \cdot 3000\mathrm K}
+    \approx 961 \mathrm{nm}
+\end{align*}
+
+\subsection{Ein Mensch mit Körpertemperatur \(T=37^\circ \mathrm C\)}
+\begin{align*}
+    \lambda_{\max} &= \frac{h c}{5 k_B T} \approx \frac{\ch \cdot \cc}{5\cdot \ckb \cdot \hug{273+37}\mathrm K}
+    \approx 9299 \mathrm{nm}
+\end{align*}
+
+\subsection{Ein Lagerfeuer mit Temperatur \(T=800^\circ \u C\)}
+\begin{align*} 
+    \lambda_{\max} &= \frac{h c}{5 k_B T} \approx \frac{\ch \cdot \cc}{5\cdot \ckb \cdot \hug{273+800}\mathrm K}
+    \approx 2690 \mathrm{nm}
+\end{align*}
+
+\subsection{Eine Atombombenexplosion mit Temperatur \(T=10^7\u K\)}
+\begin{align*}
+    \lambda_{\max} &= \frac{h c}{5 k_B T} \approx \frac{\ch \cdot \cc}{5\cdot \ckb \E7\mathrm K}
+    \approx 0.288 \mathrm{nm}
+\end{align*}
+
+\subsection{Die kosmische Hintergrundstrahlung mit Temperatur \(T=1.7\u K\)}
+\begin{align*}
+    \lambda_{\max} &= \frac{h c}{5 k_B T} \approx \frac{\ch \cdot \cc}{5\cdot \ckb \cdot 2.7\mathrm K}
+    \approx 1.07 \mathrm{mm}
+\end{align*}
+
+\section{Temperatur der Erde}
+\subsection{Zeigen Sie, dass sich die Oberflächentemperatur eines Planeten umgekehrt 
+propertional zur Wurzel aus seinem Abstand zur Sonne verhält. Nehmen Sie dafür an, dass sowohl 
+die Sonne als auch der Planet als Schwarzerkörper beschrieben werden können,
+wobei die Temperatur auf Sonne und Planet überall auf der Oberfläche gleich sein soll.}
+
+\dottedlinett
+
+Geht man von einem statischen Zustand aus, so ist die von der Sonne 
+auf die Erde einstrahlende Leistung im Äquilibrium mit der Leistung der
+Schwarzerkörperstrahlung der Erde. 
+\begin{align*}
+    0 &= \eta \cdot \Phi_E(\te{Sonne}) + \Phi_E(\te{Erde})\note \eta :=\tt{Anteil der Sonnenstrahlen}{die auf die Erde treffen}
+\end{align*}
+Die Schwarzerkörperstrahlung der beiden Himmelskörper lässt sich 
+mit dem Stefan-Boltzmann-Gesetz bestimmen:
+\begin{align*}
+    &= \eta \cdot \sigma A_S  T_S^4 - \sigma A_E T_E^4\\
+    &= \frac{2\pi r_E^2}{4\pi r_{SE}^2}\cdot A_S  T_S^4 - A_E T_E^4\\
+    &= \frac{r_E^2}{2 r_{SE}^2}\cdot  4\pi r_S^2  T_S^4 - 4\pi r_E^2 T_E^4\\
+    T_E^4 &= {\frac12\frac{r_S^2}{r_{SE}^2} T_S^4 }\\
+    T_E &= \sqrt{\frac{1}{\sqrt 2}\frac{r_S}{r_{SE}}} T_S
+\end{align*} 
+
+\subsection{Welche Temperatur ergibt sich nach diesem Modell für die Erde? Vergleichen Sie mit der tatsächlichen 
+Temperatur auf der Erde.}
+
+\dottedlinete
+
+\begin{align*}
+    T_E &= \sqrt{\frac{1}{\sqrt 2}\frac{r_S}{r_{SE}}} T_S\\
+    &\approx \sqrt{\frac{1}{\sqrt 2}\frac{6.96\E8\u m}{1.50\E{11}\u m}} \cdot 5778\u K\\
+    &\approx 331\u K \approx 58.0\c
+\end{align*} 
+Laut Wikipedia ist die echte durchschnittliche Temperatur der Erde \(15\c\); damit ist 
+die Temperatur des Modells recht nah an der Realität. 
+
+
+\section{Fotometriegrö\ss en}
+
+\begin{enumerate}
+    \item Strahlungsphysikalische Grö\ss en:
+    \begin{enumerate}
+        \item Strahlfluss:\\
+        - Die Strahlungsleistung, welche von einem Objekt ausgeht.\\
+        - $\Phi_E$, Einheit: \(1\u W\)
+        
+        \item Strahlstärke:\\
+        - Die Strahlungsleistung, die in einen bestimmten Raumwinkel ausgestrahlt wird\\
+        - Mathematische Definition: \(I_E = \frac{\d \Phi_E}{\d\Omega}\)\\
+        - Einheit: \(1 \ufrac{W}{sr}\)
+        
+        \item Strahldichte:\\
+        - Die Strahldichte, beschreibt Strahlungsleistung in Richtung eines bestimmten Raumwinkels, bezogen 
+        auf die projezierte abstrahlende Fläche \\
+        - Mathematische Definition: \(I_E = \frac{1}{\cos\phi}\frac{\d \Phi_E}{\d A\d\Omega}\)\\
+        - Einheit: \(1 \ufrac{W}{m^2\,sr}\)
+    \end{enumerate}
+    
+    \item Lichttechnische Grö\ss en:
+    \begin{enumerate}
+        \item Lichtstrom:\\
+        - Lichttechnisches Equivalent zum Strahlungsfluss\\
+        - Der Lichtstrom gibt an
+        wie viel sichtbares Licht von einem Objekt abgestrahlt wird, wobei auch die unterschiedliche 
+        Empfindlichkeit des Auges gegenüber verschiedenen Wellenlängen berücksichtigt wird.\\
+        - \(\Phi_V\), Einheit: \(1\u{lm}\), gesprochen Lumen
+    
+        \item Lichtstärke:\\
+        - Lichttechnisches Equivalent zur Strahlstärke\\
+        - Die Lichtstärke beschreibt die Menge des wahrnehmbaren Lichts in eine bestimmte Raumrichtung\\
+        - Mathematische Definition: \(I_V = \frac{\d\Phi_V}{\d\Omega}\)\\
+        - Einheit: \(1 \u{cd}\), gesprochen Candela
+
+        \item Leuchtdichte: \\
+        - Lichttechnisches Equivalent zur Strahldichte\\
+        - Die Lichtdichte, beschreibt den Lichtstrom in Richtung eines bestimmten Raumwinkels, bezogen 
+        auf die projezierte abstrahlende Fläche \\
+        - Mathematische Definition: \(L_V = \frac{\d\Phi_V}{\d\Omega}\)\\
+        - Einheit: \(1 \ufrac{cd}{m^2}\)
+    \end{enumerate}
+\end{enumerate}
+\end{document}
