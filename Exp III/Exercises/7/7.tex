@@ -1,0 +1,137 @@
+\documentclass[ex]{exercise}
+
+\deadline{28.11.2023}
+
+\begin{document}
+
+\section{Beugungsscheiben eines Sterns}
+Mit einer Kamera vom Öffungsverhältnis $\frac Df = \frac{1}{2.8}$, mit 
+dem Öffnungsdurchmesser $D$ und der Brennweite $f$ , wird
+ein Stern fotografiert. Welchen Radius hat das auf dem Fotochip entstehende zentrale Beugungsscheibchen 
+$(λ =600 \u{nm})$?
+
+\dottedlinett
+
+\begin{align*}
+\end{align*}
+
+\section{Spektrumüberlappung}
+Weisen Sie nach, dass das rote Ende $(\lambda_1 = 700 \u{nm})$ des Spektrums 2. Ordnung eines Beugungsgitters vom violetten
+Ende des Spektrums 3. Ordnung $(\lambda_2 = 400 \u{nm})$ überlappt wird
+
+\dottedlinett
+
+\begin{align*}
+    \Delta \phi &= 2\pi \frac d\lambda \sin\theta\\
+    n &= \frac d\lambda \sin\theta \for[konstr. Interferenz]\\
+    \theta_n &= \arcsin\hug{\frac{n \lambda}d}\\
+    \\
+    \theta_2(\lambda_1) &= \arcsin\hug{\frac{2\cdot 700\u{nm}}{d}}\\
+    &= \arcsin\hug{\frac{1400\u{nm}}{d}}\\
+    \theta_3(\lambda_2) &= \arcsin\hug{\frac{3\cdot 400\u{nm}}{d}}\\
+    &= \arcsin\hug{\frac{1200\u{nm}}{d}}\\
+    \\
+    \implies \theta_2(\lambda_1) &> \theta_3(\lambda_2)\since \arcsin x \te{ streng monoton steigend}
+\end{align*}
+Da das Ende des Spektrums 2. Ordnung mit einem größeren Winkel abgestrahlt wird als der 
+Anfang des Spektrums 3. Ordnung, ist klar, dass sich die Spektren 2. und 3. Ordnung überlappen.
+Bei höheren Ordungen wird die Überlappung noch signifikanter werden.
+
+\section{Laser auf gerader Oberfläche}
+Scheint man mit einem optischen Laser auf eine gerade Oberfläche, sieht man ein Scheibchen reflektierten Lichts
+(siehe Bild).
+Man erkennt, dass dem Intensitätsprofil des Lasers (circa gaussisch) eine granulare Feinstruktur überlagert ist.
+Betrachtet ein(e) Brillenträger(in) das Scheibchen ohne Brille in einer Distanz, in der er/sie nicht mehr scharf
+sehen kann, verschwimmt das Scheibchen. Die granulare Feinstruktur verschmiert interessanterweise nicht.
+(Jemand der üblicherweise keine Brille trägt, beobachtet den gleichen Effekt, wenn er das Scheibchen durch die
+Brille jemand anderes beobachtet).\\
+Erklären Sie diese Beobachtung qualitativ!
+
+\dottedlinett
+
+Das Laserlicht ist nahezu perfekt kohärent. Wenn es auf die Oberfläche 
+trifft, wird es gestreut; von jedem Punkt der Oberfläche geht nun eine Kugelwelle aus,
+dessen Phase von der mikroskopische Beschaffenheit der Oberfläche abhängt. 
+Da das Licht zu diesem Zeitpunkt immer noch kohärent ist, interferiert es, und es bilden
+sich praktisch zufällig im Raum verteilte Intensitätsminima/maxima. 
+Dieser Effekt findet unabhängig davon statt, ob das Licht in einer optischen Vorrichtung, wie 
+dem Auge, gebrochen wird; Folglich kann der Effekt auch beobachtet werden, wenn die 
+Augen des Beobachters nicht vollständig akkommodiert sind.
+Zusammenfassend handelt es sich also um ein Beugungs/Interferenzphänomen.
+
+
+
+
+\section{Kohärenz beim Michelson-Interferometer}
+Bei Messungen mut einem Michelson-Interferometer wird bei einem der beiden 
+Interferometer-Arme der Spiegel bewegt und dabei das Erscheinen und Berschwinden der 
+Maxima im Zentrum des Interferenzbildes auf dem Schirm beobachtet. Im Interferenzmeter
+werde zunächst Licht der roten Cadmium-Linie mut der Wellenlänge \(\lambda=646.8\u{nm}\)
+und der Linienbreite \(\Delta \lambda = 0.0013\u{nm}\) benutzt. Für die Abstrahlung 
+gilt für die Frequenz \(\nu\) und die Abstrahldauer \(t\), \(\nu \cdot t=1\)
+
+\subsection{Wie groß ist die gesamte Verstellstrecke des Spiegels, innerhalb derer eine 
+Interferenzbild zu beobachten ist?}
+
+\dottedlinett
+
+\begin{align*}    
+\end{align*}
+
+
+\subsection{Wie groß ist sie, wenn man Licht eines Helium-Neon-Lasers mit 
+\(\lambda = 632.8\u{nm}\) und einer Frequenzstabilität von \(2\E{-10}\) benutzt?}
+
+\dottedlinett
+
+\begin{align*}
+\end{align*}
+
+\section{Fresnelsche Zonenplatte}
+Eine Zonenplatte ist eine ebene Glasplatte mit konzentrischen Kreisringen, die abwechselnd lichtdurchlässig und
+lichtundurchlässig sind. Die innerste Kreisfläche ist dabei lichtundurchlässig. 
+Bestimmen Sie die Radien der Kreisringe so, dass die Platte als symmetrischen bikonvexen Sammellinse wirkt
+
+\subsection{Wie müssen die Radien gewählt werden, wenn Licht der Wellenlänge 600 nm mit einer Brennweite von 50 cm
+fokussiert werden soll?}
+
+\dottedlinett
+
+Es wird die Phasendifferenz im Fokuspunkt zwischen einem Lichtstrahl
+der durch die optische Achse verläuft, und einem der im Abstand \(r\) von der 
+optischen Achse gebeugt wurde, berechnet. Ziel ist es den Kreis in Zonen einzuteilen, in
+denen jeweils konstruktive/destruktive Interferenz stattfindet. Für die 
+Radien \(r_n\) an denen konstruktive zu destruktiver Interferenz wechselt, muss gelten, dass 
+die überlagerte normierte Amplitude gleich eins ist, also weder konstruktive noch destruktive
+Interferenz stattfindet:
+\begin{align*}
+    \phi(r) &= \frac{2\pi \sqrt{f^2 + r^2}}{\lambda}\\
+    \\
+    E_\Sigma(r) &= 2\cos^2\hug{\frac{\phi(0)- \phi(r)}{2}}\\
+    &= 2\cos^2\hug{\pi\frac{\sqrt{f^2 + r^2} - f}{\lambda}}\\
+    \\
+    E_\Sigma(r_n) &\peq 1\\
+    \hug{1+2n}\frac\pi4 &= \pi\frac{\sqrt{f^2 + r_n^2} - f}{\lambda}\\
+    r_n &= \sqrt{\hug{f + \frac{1+2n}4 \lambda}^2 - f^2}\\
+    &= \sqrt{\frac{1+2n}2 \lambda f + \hug{\frac{1+2n}4}^2 \lambda^2}\\
+    &= \sqrt{\frac{1+2n}2 \cdot600\u{nm} \cdot 50\u{cm} + \hug{\frac{1+2n}4}^2 \cdot600^2\u{nm}^2}\\
+    &= \sqrt{\frac{1+2n}2 \cdot3\E{-7}\u{m}^2 + \hug{\frac{1+2n}4}^2 \cdot3.6\E{-13}\u{m}^2}
+\end{align*}
+
+\subsection{Vergleichen Sie die chromatische Aberration \(\dd D\lambda\)
+dieser Zonenplatte mit der einer Sammellinse aus Flintglas mit
+der gleichen Brennweite}
+
+\dottedlinett
+
+Für die Sammellinse aus Flintglas gilt:
+\begin{align*}
+    D &= \frac{2(n_L(\lambda) - n_0)}{r}\\
+    r &= 2f (n_L(600\u{nm}) - n_0)\\
+    &= 2\cdot 50\u{cm} \cdot (1.61 - 1)\\
+    &= 61 \u{cm}\\
+    \dd D\lambda &= \frac{2}{r} \dd{n_L}\lambda\\
+    &= - \frac{2}{61 \u{cm}} \cdot 0.97\E5 \u m\inv\\
+    &\approx - 31.8 \u{cm}\inv\\
+\end{align*}
+\end{document}
