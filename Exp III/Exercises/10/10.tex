@@ -1,0 +1,166 @@
+\documentclass[ex]{exercise}
+
+\deadline{19.12.2023}
+
+\begin{document}
+
+\section{Pauli-Matrizen}
+\begin{align*}
+    \sigma_x &= \begin{pmatrix}
+        0&1\\1&0
+    \end{pmatrix}\quad
+    \sigma_y = \begin{pmatrix}
+        0&-i\\i&0
+    \end{pmatrix}\quad
+    \sigma_z = \begin{pmatrix}
+        1&0\\0&-1
+    \end{pmatrix}
+\end{align*}
+
+\subsection{\(\sigma_i^2= \I\):}
+\begin{align*}
+    \sigma_x^2 &=\begin{pmatrix}
+        0&1\\1&0
+    \end{pmatrix}\begin{pmatrix}
+        0&1\\1&0
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        0\cdot0+1\cdot1&1\cdot0+0\cdot1\\
+        0\cdot1+0\cdot1&1\cdot1+0\cdot0
+    \end{pmatrix}\\
+    &= \I\\
+    \\
+    \sigma_y^2 &= \begin{pmatrix}
+        0&-i\\i&0
+    \end{pmatrix}\begin{pmatrix}
+        0&-i\\i&0
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        0\cdot0 - i\cdot i&-0\cdot i - i\cdot0\\
+        0\cdot i + 0\cdot i&-i\cdot i + 0\cdot0
+    \end{pmatrix}\\
+    &= \I\\
+    \\
+    \sigma_z^2 &= \begin{pmatrix}
+        1&0\\0&-1
+    \end{pmatrix}\begin{pmatrix}
+        1&0\\0&-1
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        1\cdot1 + 0\cdot0&1\cdot0- 0\cdot1\\
+        0\cdot1 - 1\cdot0&0\cdot0-1\cdot(-1)
+    \end{pmatrix}\\
+    &= \I
+\end{align*}
+
+\subsection{\(\sigma_i\sigma_j = - \sigma_j \sigma_i = 
+i \sigma_k\) mit \(i,j,k\) zyklisch:}
+\begin{align*}
+    \sigma_1\sigma_2 &= \begin{pmatrix}
+        0\cdot0 + 1\cdot i&-0\cdot i + 1\cdot0\\
+        1\cdot0 + 0\cdot i&-i\cdot1 + 0\cdot0\\
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        i&0\\
+        0&-i\\
+    \end{pmatrix}\\
+    \\
+    -\sigma_2\sigma_1 &= -\begin{pmatrix}
+        0\cdot0 - i\cdot 1&1\cdot0 -0\cdot i\\
+        i\cdot1 + 1\cdot0 &i\cdot1 + 0\cdot 0\\
+    \end{pmatrix}\\
+    &= \begin{pmatrix}
+        i&0\\
+        0&-i\\
+    \end{pmatrix}\\
+    \\
+    i\sigma_3 &= \begin{pmatrix}
+        i&0\\
+        0&-i\\
+    \end{pmatrix}
+\end{align*}
+\begin{align*}
+    \sigma_i\sigma_j &= - \sigma_j \sigma_i = 
+    i \sigma_k\\
+    \sigma_i\sigma_j\sigma_j &= i \sigma_k\sigma_j\\
+    \sigma_i&= i \sigma_k\sigma_j\\
+    - \sigma_k\sigma_j &= i \sigma_i\\
+    \implies \sigma_j\sigma_k &= - \sigma_k\sigma_j = i \sigma_i
+\end{align*}
+Nach dem Prinzip der vollst. Induktion folgt die Gleichung für alle zyklischen \(i,j,k\).
+
+\subsection{Kommutator}
+\begin{align*}
+    \bug{\sigma_i, \sigma _j} &= \sigma_i \sigma_j - \sigma_j \sigma_i
+    = \sigma_i \sigma_j + \sigma_i \sigma_j
+    = 2 i \sigma_k
+\end{align*}
+
+\section{Normierung von Wellenfunktionen}
+\subsection{\(\psi(x) = N \sin\frac{n\pi x}{L}\note 0\le x\le L\note n\in\N\):}
+\begin{align*}
+    1 &= N^2 \int_0^L \sin^2\frac{n\pi x}{L}\dx\\
+    &= \frac {N^2}2 \int_0^L \hug{1-\cos\frac{2n\pi x}{L}}\dx\\
+    &= \frac {N^2}2 \hug{x-\frac{L}{2n\pi}\sin\frac{2n\pi x}{L}}\eval_0^L\\
+    &= \frac {N^2}2 \hug{L-\frac{L}{2n\pi}\sin(2n\pi)}\\
+    &= \frac {L N^2}2\\
+    N &= \sqrt{\frac 2L}
+\end{align*}
+
+\subsection{\(\psi = N e^{-\absv r /a}\note a >0\):}
+\begin{align*}
+    1 &= N \intr[\infty]\inttheta\intphi e^{-r/a}\cdot r^2\sin\theta\\
+    &= 4\pi N \intr[\infty] r^2 e^{-r/a}\\
+    &= 4\pi N \hug{-a r^2 e^{-r/a} + 2a\int \dr r e^{-r/a}}\eval_0^\infty\\
+    &= 8\pi a N \int_0^\infty \dr r e^{-r/a}\\
+    &= 8\pi a N \hug{-a r\, e^{-r/a} + a \int \dr e^{-r/a}}\eval_0^\infty\\
+    &= 8\pi a N \hug{-a r\, e^{-r/a} - a^2 e^{-r/a}}\eval_0^\infty\\
+    &= 8\pi a^3 N\\
+    N &= \frac1{8\pi a^3}
+\end{align*}
+
+\section{Der Raum der quadratintegrablem Funktionen}
+\subsection{Subadditivität:}
+Allgemein erfüllt \emph{jede} durch ein Skalarprodukt induzierte Norm die Dreicksungleichung.
+Dies kann mit der Cauchy-Schwarz-Ungleichung, welche jedes Skalarprodukt erfüllt, 
+bewiesen werden:
+\begin{align*}
+    \| v + w \|^2 & = \braket{v + w}{v + w} \\
+    &= \braket vv + \braket vw + \braket wv +\braket ww \\
+    &= \| v \|^2 + \braket vw + \overline{\braket v w} + \| w \|^2 \\ 
+    & = \| v \|^2 + 2 \operatorname{Re} \braket v w + \| w \|^2 \\
+    &\leq \| v \|^2 + 2 \, \| v \| \, \| w \| + \| w \|^2 \\
+    &= \left( \| v \| + \| w \| \right)^2
+\end{align*}
+
+Damit gilt für \(f,g\in L^2(\R^3,\C)\):
+\begin{align*}
+    \norm{\alpha f +\beta g}
+    \le \norm{\alpha f} + \norm{\beta g}
+    = \alpha \norm{f} + \beta \norm{g}< \infty
+\end{align*}
+
+\subsection{Schwarz-Ungleichung:}
+
+"{}Parallelkomponente"{} von \(\ket f\) zu \(\ket g\):
+\begin{align*}
+    \underbrace{\frac{\braket fg}{\braket gg}}_{z\in\C} \ket g = z \ket g
+\end{align*}
+
+Damit ist \(\ket \xi = \ket f - z\ket g\) orthogonal, d.h.:
+\begin{align*}
+    \braket g\xi = 0 \quad\te{und}\quad \ket f = z \ket g + \ket \xi
+\end{align*}
+
+Hieraus lässt sich nun die Ungleichung ableiten:
+\begin{align*}
+    \norm f^2 &= \norm{z g + \xi}^2\\
+    &= \braket{z g + \xi}{z g + \xi}\\
+    &= \abs z ^2 \braket gg + \braket \xi\xi + \underbrace{\bar z \braket g\xi
+    + z \braket g\xi}_{=0}\\
+    &\ge \abs z ^2 \braket gg\\
+    &= \abs{\frac{\braket fg}{\braket gg}} ^2 \braket gg\\
+    \implies \norm f^2&= \frac{\abs{\braket fg}^2}{\norm g^2}
+\end{align*}
+
+\end{document}
