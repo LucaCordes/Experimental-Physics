@@ -12,7 +12,14 @@ $(λ =600 \u{nm})$?
 
 \dottedlinett
 
+Nach dem Rayleigh-Kriterium gilt für die Winkeldistanz bei der 
+sich das Beugungsminimum erster Ordnung, des einen Objektes, mit dem
+Beugungsmaximum erster Ordnung, des anderen Objektes, überlappt:
 \begin{align*}
+    \sin\theta_{min} &=  1.22 \frac{\lambda}{D}\\
+    r_{min} &=  1.22 \frac{f \lambda}{D}\\
+    &\approx 1.22 \cdot 2.8 \cdot 600\u{nm}\\
+    &\approx 2050 \u{nm}
 \end{align*}
 
 \section{Spektrumüberlappung}
@@ -33,7 +40,7 @@ Ende des Spektrums 3. Ordnung $(\lambda_2 = 400 \u{nm})$ überlappt wird
     \\
     \implies \theta_2(\lambda_1) &> \theta_3(\lambda_2)\since \arcsin x \te{ streng monoton steigend}
 \end{align*}
-Da das Ende des Spektrums 2. Ordnung mit einem größeren Winkel abgestrahlt wird als der 
+Da das Ende des Spektrums 2. Ordnung mit einem grö{\ss}eren Winkel abgestrahlt wird als der 
 Anfang des Spektrums 3. Ordnung, ist klar, dass sich die Spektren 2. und 3. Ordnung überlappen.
 Bei höheren Ordungen wird die Überlappung noch signifikanter werden.
 
@@ -60,32 +67,43 @@ Augen des Beobachters nicht vollständig akkommodiert sind.
 Zusammenfassend handelt es sich also um ein Beugungs/Interferenzphänomen.
 
 
-
-
 \section{Kohärenz beim Michelson-Interferometer}
-Bei Messungen mut einem Michelson-Interferometer wird bei einem der beiden 
-Interferometer-Arme der Spiegel bewegt und dabei das Erscheinen und Berschwinden der 
+Bei Messungen mit einem Michelson-Interferometer wird bei einem der beiden 
+Interferometer-Arme der Spiegel bewegt und dabei das Erscheinen und Verschwinden der 
 Maxima im Zentrum des Interferenzbildes auf dem Schirm beobachtet. Im Interferenzmeter
 werde zunächst Licht der roten Cadmium-Linie mut der Wellenlänge \(\lambda=646.8\u{nm}\)
 und der Linienbreite \(\Delta \lambda = 0.0013\u{nm}\) benutzt. Für die Abstrahlung 
 gilt für die Frequenz \(\nu\) und die Abstrahldauer \(t\), \(\nu \cdot t=1\)
 
-\subsection{Wie groß ist die gesamte Verstellstrecke des Spiegels, innerhalb derer eine 
+\subsection{Wie gro{\ss} ist die gesamte Verstellstrecke des Spiegels, innerhalb derer eine 
 Interferenzbild zu beobachten ist?}
 
 \dottedlinett
 
-\begin{align*}    
+Die Kohärenzzeit ist die Zeit, in der zwei Wellen verschiedener Wellenlänge ihre 
+Phasenrelation um \(180^\circ\) wechselt, daher muss gelten:
+\begin{align*}
+l_c  &= \begin{cases}
+    n \lambda_1\\
+    (n+1) \lambda_2\\
+\end{cases}\\
+\implies l_c &= \hug{\frac{ct_c}{\lambda_1} + 1}\lambda_2\\
+ &= \frac{\lambda_2}{1-\frac{\lambda_2}{\lambda_1}}\\
+&= \frac{\lambda_1\lambda_2}{\lambda_1-\lambda_2}\\
+&= \frac{(\lambda + \Delta\lambda/2)(\lambda - \Delta\lambda/2)}{\Delta\lambda}\\
+&= \frac{\lambda^2 - \Delta\lambda^2/4}{\Delta\lambda}\\
+l_c &\approx \frac{\lambda^2}{\Delta \lambda}\for \Delta \lambda\ll \lambda\\
+ &= \frac{(643.8\E{-9})^2}{0.0013\E{-9}}\\
+ &\approx 0.319 \u m
 \end{align*}
+Im Interferemeter lässt sich auf einer gesamten Verstellstrecke von ca. \(0.319 \u m\)
+ein Interferenzbild beobachten.
 
-
-\subsection{Wie groß ist sie, wenn man Licht eines Helium-Neon-Lasers mit 
+\subsection{Wie gro{\ss} ist sie, wenn man Licht eines Helium-Neon-Lasers mit 
 \(\lambda = 632.8\u{nm}\) und einer Frequenzstabilität von \(2\E{-10}\) benutzt?}
 
 \dottedlinett
 
-\begin{align*}
-\end{align*}
 
 \section{Fresnelsche Zonenplatte}
 Eine Zonenplatte ist eine ebene Glasplatte mit konzentrischen Kreisringen, die abwechselnd lichtdurchlässig und
@@ -107,15 +125,10 @@ Interferenz stattfindet:
 \begin{align*}
     \phi(r) &= \frac{2\pi \sqrt{f^2 + r^2}}{\lambda}\\
     \\
-    E_\Sigma(r) &= 2\cos^2\hug{\frac{\phi(0)- \phi(r)}{2}}\\
-    &= 2\cos^2\hug{\pi\frac{\sqrt{f^2 + r^2} - f}{\lambda}}\\
-    \\
-    E_\Sigma(r_n) &\peq 1\\
-    \hug{1+2n}\frac\pi4 &= \pi\frac{\sqrt{f^2 + r_n^2} - f}{\lambda}\\
-    r_n &= \sqrt{\hug{f + \frac{1+2n}4 \lambda}^2 - f^2}\\
-    &= \sqrt{\frac{1+2n}2 \lambda f + \hug{\frac{1+2n}4}^2 \lambda^2}\\
-    &= \sqrt{\frac{1+2n}2 \cdot600\u{nm} \cdot 50\u{cm} + \hug{\frac{1+2n}4}^2 \cdot600^2\u{nm}^2}\\
-    &= \sqrt{\frac{1+2n}2 \cdot3\E{-7}\u{m}^2 + \hug{\frac{1+2n}4}^2 \cdot3.6\E{-13}\u{m}^2}
+    n\pi &= \Delta \phi = \phi(r)-\phi(0)\note n\in\N\\
+    &= \frac{2\pi \sqrt{f^2 + r_n^2}}{\lambda} - \frac{2\pi f }{\lambda}\\
+    r_n &= \sqrt{\hug{\frac{n\lambda}2 + f}^2 - f^2}\\
+    &= \sqrt{n\lambda f + \frac{n^2\lambda^2}4}
 \end{align*}
 
 \subsection{Vergleichen Sie die chromatische Aberration \(\dd D\lambda\)
@@ -124,7 +137,7 @@ der gleichen Brennweite}
 
 \dottedlinett
 
-Für die Sammellinse aus Flintglas gilt:
+Für die chromatische Abberation der Sammellinse aus Flintglas gilt:
 \begin{align*}
     D &= \frac{2(n_L(\lambda) - n_0)}{r}\\
     r &= 2f (n_L(600\u{nm}) - n_0)\\
@@ -132,6 +145,22 @@ Für die Sammellinse aus Flintglas gilt:
     &= 61 \u{cm}\\
     \dd D\lambda &= \frac{2}{r} \dd{n_L}\lambda\\
     &= - \frac{2}{61 \u{cm}} \cdot 0.97\E5 \u m\inv\\
-    &\approx - 31.8 \u{cm}\inv\\
+    &\approx - 31.8 \u{cm}^{-2}\\
 \end{align*}
+
+Für die Fresnelsche Linse gilt hingegen:
+\begin{align*}
+    r_n &= \sqrt{n \lambda f + \frac{n^2}{4}\lambda^2}\\
+    &\approx \sqrt{n \lambda f} \since \lambda\ll f\\
+    \\
+    D &=\frac1f =  \frac{n\lambda}{r_n^2}\\
+    \dd D\lambda &= \frac{n}{r_n^2}\\
+    &= \frac1{\lambda_0 f}\\
+    &\approx 3.33 \u m^{-2}
+\end{align*}
+Es fällt auf, dass die Brechkraft der Fresnellinse mit steigender Wellenlänge
+zunimmt, bei der Linse aus Flintglas andersrun; Au{\ss}erdem ist die 
+chormatische Abberation der  
+Fresnellinse um mehrere Grö{\ss}enordnungen stärker.
+
 \end{document}
