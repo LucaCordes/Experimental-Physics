@@ -1,0 +1,89 @@
+\documentclass[ex]{exercise}
+
+\deadline{09.01.2023}
+
+\begin{document}
+
+\section{Quantenmechanischer Oszillator}
+Die Lösungen der Schrödingergleichung für das Potenzial eines eindimensionalen 
+harmonischen Oszillators lauten:
+\begin{align*}
+    \psi_n(x) &= \hug{\frac{m\omega}{\pi\hbar}}^{\frac14} \frac1{s^n n!} H_n\hug{\sqrt{\frac{m\omega}{\hbar}}} e^{-\frac12 \frac{m\omega}{\hbar}x^2} \note n\in \R
+\end{align*}
+und mit:
+\begin{align*}
+    H_0(y) &= 1\\
+    H_1(y) &= 2y\\
+    H_2(y) &= 4y^2-2\\
+    &\ \ \vdots
+\end{align*}
+Zeigen Sie, dass für die Zustände \(n=0,1,2\), die Energie gegeben ist über \(E_n=\hbar\omega \hug{n+\frac12}\).
+Werten Sie dazu durch explizite Rechnung die zeitunabhängige Schrödingergleichung 
+\begin{align*}
+    \hat H \psi_n (x) = E_n\psi_n (X)
+\end{align*}
+mit dem Hamilton Operator \(\hat H=-\frac{\hbar^2}{2m} \Delta + \frac12 m\omega^2 x^2\) aus.
+
+\dottedlinete
+
+\begin{align*}
+    \pp{}x \psi_0 &= -\frac{m\omega}{\hbar}x \,\psi_0\\
+    \\
+    \hat H \psi_n(x) &= \hug{-\frac{\hbar^2}{2m} \Delta+ \frac12 m\omega^2 x^2}\psi_n(x)\\
+    &= \hug{-\frac{\hbar^2}{2m} \pp{^2}{x^2}+ \frac12 m\omega^2 x^2}\psi_n(x)\\
+    \\
+    \hat H \psi_0(x) &= \hug{-\frac{\hbar^2}{2m} \pp{^2}{x^2}+ \frac12 m\omega^2 x^2}\psi_0(x)\\
+    &= \hug{-\frac{\hbar^2}{2m} \hug{-\frac{m\omega}{\hbar} + \frac{m^2\omega^2}{\hbar^2}x^2}+ \frac12 m\omega^2 x^2}\psi_0(x)\\
+    &= \frac{\hbar \omega }{2}\psi_0(x)\\
+    \implies E_0 &= \frac{\hbar \omega }{2}
+\end{align*}
+\begin{align*}
+    \hat H \psi_1(x) &= \hug{-\frac{\hbar^2}{2m} \pp{^2}{x^2}+ \frac12 m\omega^2 x^2}\psi_1(x)\\
+    &= \hug{-\frac{\hbar^2}{2m} \pp{^2}{x^2}+ \frac12 m\omega^2 x^2}2\sqrt{\frac{m\omega }{h}}x\,\psi_0(x)\\
+    &= \hug{-\frac{\hbar^2}{m} \pp{^2}{x^2}+  m\omega^2 x^2}\sqrt{\frac{m\omega }{h}} x\,\psi_0(x)\\
+    &= \hug{-\frac{\hbar^2}{m} \pp{}x \hug{1 - \frac{m\omega}{\hbar}x^2}+  m\omega^2 x^3}\sqrt{\frac{m\omega }{h}} \psi_0(x)\\
+    &= \hug{-\frac{\hbar^2}{m} \hug{- \frac{m\omega}{\hbar}x - \frac{m\omega}{\hbar}\hug{2x - \frac{m\omega}{\hbar}x^3}}+  m\omega^2 x^3}\sqrt{\frac{m\omega }{h}} \psi_0(x)\\
+    &= \hug{\hbar \omega \hug{3 - \frac{m\omega}{\hbar}x^2}+  m\omega^2 x^2}\sqrt{\frac{m\omega }{h}} x\psi_0(x)\\
+    &= 3\hbar \omega\sqrt{\frac{m\omega }{h}} x\psi_0(x)\\
+    &= \frac32 \hbar \omega \psi_1(x)\\
+    \implies E_1 &= \frac32 \hbar \omega\\
+\end{align*}
+\begin{align*}
+    \hat H \psi_2(x) &= \hug{-\frac{\hbar^2}{2m} \pp{^2}{x^2}+ \frac12 m\omega^2 x^2}\psi_2(x)\\
+    &= \hug{-\frac{\hbar^2}{2m} \pp{^2}{x^2}+ \frac12 m\omega^2 x^2}\hug{4\frac{m\omega}{\hbar}x^2 -2}\psi_0(x)\\
+    &= \hug{-\frac{\hbar^2}{2m} \pp{}{x}\hug{4\frac{m\omega}{\hbar}\hug{2x - x^3\frac{m\omega}{\hbar}} + 2\frac{m\omega}{\hbar}x}+ \frac12 m\omega^2 x^2\hug{4\frac{m\omega}{\hbar}x^2 -2}}\psi_0(x)\\
+    &= \hug{-\hbar \omega \pp{}{x}\hug{5x - 2\frac{m\omega}{\hbar} x^3}+ m\omega^2 x^2\hug{2\frac{m\omega}{\hbar}x^2 -1}}\psi_0(x)\\
+    &= \hug{-\hbar \omega \hug{5\hug{1 - \frac{m\omega}{\hbar}x^2} - 2\frac{m\omega}{\hbar} \hug{3x^2 - \frac{m\omega}{\hbar}x^4}}+ m\omega^2 x^2\hug{2\frac{m\omega}{\hbar}x^2 -1}}\psi_0(x)\\
+    &= \hug{-\hbar \omega \hug{5\hug{1 - \frac{m\omega}{\hbar}x^2} - 6\frac{m\omega}{\hbar} x^2}- m\omega^2 x^2} \psi_0(x)\\
+    &= \hug{-\hbar \omega \hug{5-11\frac{m\omega}{\hbar}x^2}- m\omega^2 x^2} \psi_0(x)\\
+    &= \hbar \omega\hug{-5 + 10\frac{m\omega}{\hbar}x^2} \psi_0(x)\\
+    &= \frac52 \hbar \omega \cdot \hug{4\frac{m\omega}{h}x^2 - 2}\cdot\psi_0(x)\\
+    &= \frac52 \hbar \omega \cdot \psi_2(x)\\
+    \implies E_2 &= \frac52 \hbar \omega
+\end{align*}
+Damit wird die Energie des quantenmechanischen Oszillators für die Zustände \(n=0,1,2\)
+korrekt mit der Formel \(E_n = \hbar \omega \hug{n + \half}\) beschrieben.
+
+
+\section{Messwerte des quantenmechanischen Oszillators}
+Berechnen Sie den zu erwartenden Messwert der Energien der folgenden Zustände unter Berücksichtigung
+der Ergebnisse aus Aufgabe 1.
+\subsection{\(\ket\psi = \frac{\sqrt3}{2}\ket{\psi_0} + \frac12 \ket{\psi_1}\)}
+\begin{align*}
+    \ev E &= \sum p_i E_i\\
+    &= \sum \abs{c_i}^2 E_i\\
+    &=  \frac34 E_0 + \frac14 E_1\\
+    &=  \frac34\hbar\omega\frac12 + \frac14 \hbar \omega \frac32\\
+    &=  \frac68 \hbar \omega
+\end{align*}
+
+\subsection{\(\ket\psi = \frac1{\sqrt3}\ket{\psi_0} + \frac1{\sqrt3} \ket{\psi_1}+ \frac1{\sqrt3} \ket{\psi_2}\)}
+\begin{align*}
+    \ev E &= \sum p_i E_i\\
+    &= \sum \abs{c_i}^2 E_i\\
+    &=  \frac13 E_0 + \frac13 E_1 + \frac13 E_2\\
+    &=  \frac13 \hbar\omega \hug{\frac12 + \frac32 + \frac52}\\
+    &=  \frac32 \hbar \omega
+\end{align*}
+
+\end{document}
