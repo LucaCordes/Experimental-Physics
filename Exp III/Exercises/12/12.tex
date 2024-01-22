@@ -1,0 +1,174 @@
+\documentclass[ex]{exercise_3.0}
+
+\deadline{16.01.2024}
+
+\begin{document}
+
+\section{Aufenthaltswahrscheinlichkeit des Elektrons im H-Atoms}
+Die Wellenfunktion des Elektrons im Grundzustand des Wasserstoffatoms lautet 
+\begin{align*}
+    \psi(r) &= \frac1{\sqrt{\pi a^3}} e^{-\frac ra}
+\end{align*}
+Die Aufenthaltswahrscheinlichkeit des Elektrons ist egegen durch 
+\begin{align*}
+    P(r) = 4\pi r^2 \abs{\psi(r)}^2
+\end{align*}
+Wie groß ist der wahrscheinlichste Abstand des Elektrons zum Kern?
+
+\dottedlinete
+
+\begin{align*}
+    0&\peq \dd Pr\\
+    &= \pp{}r \hug{4\pi r^2 \abs{\psi(r)}^2}\\
+    &= \pp{}r \hug{4\pi r^2 \frac1{\pi a^3} e^{-\frac {2r}a}}\\
+    &= \pp{}r \hug{\frac{4r^2}{a^3} e^{-\frac {2r}a}}\\
+    &= \hug{\frac{8r}{a^3} - \frac{8r^2}{a^4}} e^{-\frac {2r}a}\\
+    \implies 0 &= -a r + r^2\\
+    \implies r &= a \for a> 0 
+\end{align*}
+
+\section{Endlicher Potentialtopf}
+Ein endlicher Potentialtopf sei gegeben über 
+\begin{align*}
+    V(x) &= \begin{cases}
+        0 \,\,\,\for x\in[-a,a]\\
+        V_0 \telse
+    \end{cases} \ \  \ \with V_0>0
+\end{align*}
+Bestimmen Sie die allgemeine Lösung der stationären Schrödingergleichung für ein Teilchen mit der Energie \(E\)
+mit \(0<E<V_0\) im Potential \(V(x)\). Benutzen Sie als Lösungsansatz
+\begin{align*}
+    \psi_1 (x) &= \alpha_1 e^{\kappa x} + \alpha_2 e^{-\kappa x} \for x<-a\\
+    \psi_2 (x) &= \beta_1 e^{i k x} + \beta_2 e^{-i k x} \for -a\le x\le a\\
+    \psi_3 (x) &= \gamma_1 e^{\kappa x} + \gamma_2 e^{-\kappa x} \for a<x\\
+\end{align*}\tight
+\begin{align*}
+    k&= \sqrt{\frac{2m}{\hbar^2}E} & \kappa&= \sqrt{\frac{2m}{\hbar^2}(V_0-E)}
+\end{align*}
+Benutzen Sie zunächst die Bedingung, dass die Wellenfunktion für ein physikalisches Problem endlich bleiben muss. 
+Wenden Sie anschließend die aus der Vorleseung bekannten Stetigkeitsbedingungen an.
+
+\dottedlinett
+
+Die Symmetrie des Problems impliziert, dass \(P(x)= P(-x) \implies \abs{\psi(x)}^2=\abs{\psi(-x)}^2\) und somit 
+\(\psi(x) = \pm\psi(-x)\). 
+Außerdem müssen für Konvergenz bei \(x\to \pm\infty\) die Konstanten \(\alpha_2=\gamma_1=0\) gewählt werden.
+
+\begin{align*}
+    \psi_1 (x) &= \alpha_1 e^{\kappa x}\\
+    \psi_2 (x) &= \beta_1 e^{i k x} + \beta_2 e^{-i k x}\\
+    \psi_3 (x) &= \gamma_2 e^{-\kappa x}
+\end{align*}
+\begin{align*}
+    \psi_1(-a) &= \psi_2(-a)\\
+    \alpha_1 e^{-\kappa a} &= \beta_1 e^{- i k a} + \beta_2 e^{i k a}\\
+    \\
+    \psi_3(a) &= \psi_2(a)\\
+    \gamma_2 e^{-\kappa a} &= \beta_1 e^{i k a} + \beta_2 e^{-i k a}\\
+    \\
+    \pp{\psi_1}x\eval_{x=-a} &= \pp{\psi_{2}}x\eval_{x=-a}\\
+    \kappa \alpha_1 e^{-\kappa a} &= ik \beta_1 e^{- i k a} - ik \beta_2 e^{i k a}\\
+    \\
+    \pp{\psi_3}x\eval_{x=a} &= \pp{\psi_{2}}x\eval_{x=a}\\
+    -\kappa \gamma_2 e^{-\kappa a} &= ik \beta_1 e^{i k a} - ik \beta_2 e^{-i k a}\\
+\end{align*}
+
+Für \(\psi(x)=\psi(-x)\):
+\begin{align*}
+    \implies \beta:=\beta_1&=\beta_2\tand \alpha:=\alpha_1= \gamma_2\\
+    \\
+    \alpha e^{-\kappa a} &= \beta e^{i k a} + \beta e^{-i k a}\\
+    -\kappa \alpha e^{-\kappa a} &= ik \beta e^{i k a} - ik \beta e^{- i k a}\\
+    \\
+    \alpha e^{-\kappa a} &= 2\beta \cos ka\\
+    \kappa \alpha e^{-\kappa a} &= 2k\beta  \sin ka\\
+    \\
+    \kappa &= k \tan ka\implies \te{diskrete Energieniveaus}\\
+\end{align*}
+
+Für \(\psi(x)=-\psi(-x)\):
+\begin{align*}
+    \implies \beta:=\beta_1&=-\beta_2\tand \alpha:=\alpha_1=-\gamma_2\\
+    \\
+    -\alpha e^{-\kappa a} &= \beta e^{i k a} - \beta e^{-i k a}\\
+    \kappa \alpha e^{-\kappa a} &= ik \beta e^{i k a} + ik \beta e^{- i k a}\\
+    \\
+    \alpha e^{-\kappa a} &= 2i\beta \sin ka\\
+    -\kappa \alpha e^{-\kappa a} &= 2ik\beta \cos ka\\
+    \\
+    \kappa &= -\frac k {\tan ka}\implies \te{diskrete Energieniveaus}\\
+\end{align*}
+
+Die zu jedem Energiezustand zugehörige Wellenfunktion soll normalisiert sein.
+
+Für \(\psi(x)=\psi(-x)\):
+\begin{align*}
+    1 &= \int_{-\infty}^{-a}\dx\psi_1\bar\psi_1 + \int_{-a}^{a}\dx\psi_2\bar\psi_2 + \int_{a}^{\infty}\dx\psi_3\bar\psi_3\\
+    &= \int_{-\infty}^{-a}\dx \alpha\bar\alpha \,e^{2\kappa x} + \int_{-a}^{a}\dx2\beta\bar\beta \cos^2 kx
+    + \int_{a}^{\infty}\dx  \alpha\bar\alpha \,e^{-2\kappa x}\\
+    &= 2 \alpha\bar\alpha \int_{a}^{\infty}\dx e^{-2\kappa x} + 2\beta\bar\beta\int_{-a}^{a}\dx\frac{1+ \cos 2kx}{2}\\
+    &= \frac{\abs\alpha}{\kappa}e^{-2\kappa a} + \abs \beta\hug{2a +\frac{\sin 2ka}{k}}\\
+    &= \frac{2\cos ka\,e^{\kappa a}\abs{\beta}}{\kappa}e^{-2\kappa a} + \abs \beta\hug{2a +\frac{\sin 2ka}{k}}\\
+    \abs \beta &= \hug{\frac{2\cos ka}{\kappa}e^{-\kappa a} + 2a +\frac{\sin 2ka}{k}}\inv\\
+    \alpha &= 2\beta \cos ka\, e^{\kappa a}\\
+\end{align*}
+
+Für den asymmetrischen Fall \(\psi(x)=-\psi(-x)\) wechseln sich \(\cos\) und \(\sin\):
+\begin{align*}
+    \abs \beta &= \hug{\frac{2\sin ka}{\kappa}e^{-\kappa a} + 2a +\frac{\cos 2ka}{k}}\inv\\
+    \alpha &= 2i \beta \sin ka\, e^{\kappa a}\\
+\end{align*}
+
+Hat man ein Teilchen, dessen Energie entweder \(\kappa = k \tan ka\) oder \(\kappa = -\frac k {\tan ka}\) erfüllt,
+ist somit die zugehörige Wellengleichung bis auf einen komplexen Vorfaktor bestimmt, der jedoch keinen Einfluss
+auf beobachtbare Größen hat. \(\beta\) kann daher der Einfachheit halber immer als \(\beta\in\R\) gewählt werden.
+
+\section{}
+In den Bereichen \(I_1 = (-\infty,-a), \ I_2 = (-a,-a)\) und \(I_3 = (a, \infty)\) ist das Potenzial konstant,
+das Teilchen bewegt sich daher auf jedem jeweils wie eine freies Teilchen:
+\begin{align*}
+    E\psi(x) &= -\frac{\hbar ^2}{2m} \Delta \psi (x) + V\psi(x)\\
+    0 &= \pp{^2\psi}{x^2} + \frac{2m}{\hbar ^2}(E-V) \psi\\
+    \implies \psi(x) &= A_1 e^{i k x } + A_2 e^{-i k x } \note k = \sqrt{2m(E-V)/\hbar ^2}
+\end{align*}
+Damit sind die Wellenfunktionen für die drei Abschnitte jeweils der Form
+\begin{align*}
+    \psi_1 &= A_1 e^{i k x } + A_2 e^{-i k x }&
+    \psi_2 &= B_1 e^{i k' x } + B_2 e^{-i k' x}&
+    \psi_3 &= C_1 e^{i k x } + C_2 e^{-i k x }
+\end{align*}
+mit 
+\begin{align*}
+    k = \sqrt{2m E_0 /\hbar^2} \tand
+    k' = \sqrt{2m (E_0 -V_0) /\hbar^2}
+\end{align*}
+Der Term mit \(C_2\) in \(\psi_3\) repräsentiert ein Teilchen, dass von \(x=\infty\) nach links reist; Dies 
+ist per Konstruktion nicht möglich, der Vorfaktor \(C_2\) muss daher gleich null sein.\\[1ex]
+Die Wellenfunktion und ihre Ableitungen, müssen an den Sprungstellen des Potenzials stetig sein:
+\begin{align*}
+    \te{I.:}\ \,\psi_1(-a) &= \psi_2(-a) & \te{II.:}\ \ \,\psi_2(a) &= \psi_3(a)\\
+    \te{III.:}\ \pp{\psi_1}x\eval_{-a} &= \pp{\psi_2}x\eval_{-a} & \te{IV.:}\ \pp{\psi_2}x\eval_{a} &= \pp{\psi_3}x\eval_{a}
+\end{align*}
+\begin{align*}
+    \te{I.} &\implies &A_1 e^{-i k a} + A_2 e^{i k a} 
+    &= B_1 e^{- i k' a} + B_2 e^{i k' a}
+    \\
+    \te{II.} &\implies& B_1 e^{i k' a} + B_2 e^{-i k' a} 
+    &= C_1 e^{i k a}
+    \\ 
+    \te{III.} &\implies& i k A_1 e^{-i k a} - i k A_2 e^{i k a} 
+    &= i k' B_1 e^{- i k' a} - i k' B_2 e^{i k' a}
+    \\
+    \te{IV.} &\implies& i k' B_1 e^{i k' a} - i k' B_2 e^{-i k' a} 
+    &= i k C_1 e^{i k a} 
+\end{align*}
+Sei 
+\begin{align*}
+    R &=\frac{A_2 \bar A_2}{A_1 \bar A_1}:=r\bar r \note[reflektierter Anteil]\\
+    T &=\frac{C_2\bar C_2}{A_1 \bar A_1} :=t\bar t\note[transmittierter Anteil]\\
+    1 &= R+T
+\end{align*}
+Damit gibt es insgesamt sieben Unbekannte und sieben Gleichung - das Gleichungssystem ist 
+theoretisch lösbar, aber ich investier meine Zeit heute lieber noch in was anderes :)
+
+\end{document}
