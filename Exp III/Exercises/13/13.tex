@@ -1,0 +1,88 @@
+\documentclass[ex,minted]{exercise_3.1}
+
+\deadline{23.01.2024}
+
+\begin{document}
+
+\section{Unschärferelationen}
+\begin{align*}
+    \Delta A \cdot \Delta B &\ge \frac12 \abs{\left\langle{\psi\abs{\bug[]{\hat A,\, \hat B}}\psi}\right\rangle}
+\end{align*}
+\subsection{}
+\begin{align*}
+    \Delta p \cdot \Delta x &\ge \frac\hbar2\\
+    \Delta x &\ge \frac{\hbar}{2m_e\Delta v } \\
+    &\approx \frac{\chbar}{2\cdot \cme \cdot 14.5 \ufrac ms}\\
+    &\approx 4.01 \E{-6} \,\mathrm  m
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    \Delta E \cdot \Delta t &\ge \frac{\hbar}{2}\\
+    \Delta t &\ge \frac{\hbar}{2 \Delta E}\\
+    &\approx \frac{\chbar}{2 \cdot 0.2 \,\u{eV}}\\
+    &\approx 1.65\E{-15} \u s
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    L &= \snorm L \\
+    &= \sqrt{L_x^2 + L_y^2 + L_z ^2}\\
+    \Delta L &=\frac{\sum_iL_i \Delta L_i}{\sqrt{L_x^2 + L_y^2 + L_z ^2}}\\
+    &=\frac{\v L \cdot \Delta \v L}{\snorm {\v L}}\\
+    &= \v e_L\cdot \Delta \v L\\
+    &\ge \Delta L_z
+\end{align*}
+Die \(z\)-Komponente des Drehimpulses kann im Prinzip beliebig genau gemessen werden.
+
+\section{Laser Energieniveau}
+\subsection{}
+\begin{align*}
+    E_{\te{Ph}} &= \frac{hc}{\lambda}\\
+    \lambda &= \frac{hc}{ E_{\te{Ph}}}\\
+    &\approx \frac{\ch \cdot \cc}{1.79 \u{eV}}\\
+    &\approx 693\u{nm} \note[rotes Licht ]
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    E &= \frac{h c}{\lambda}\\
+    \overset{\substack{\te{Gauß'sche}\\\te{Fehlerfortpflanzung}}}\implies\Delta E &= \frac{h c}{\lambda^2}\Delta \lambda
+    \note\tt{kein Minus, da Unsicher-}{heiten per Def. positiv}\\
+    &= \frac{h c E^2}{(hc)^2}\Delta \lambda\\
+    &= \frac{E^2}{hc}\Delta \lambda\\
+    &\approx \frac{1.79^2\u{eV^2}}{\ch\cdot \cc} \cdot 0.53\u{nm}\ce\\
+    &\approx 2.19 \E{-22} \u J
+\end{align*}
+
+\section{Korrelation von Spins}
+\subsection{}
+\begin{align*}
+    \tug{\hat O_1} &= \tug{\uparrow_1 \mid \hat O_1 \mid \uparrow_1}\\
+    &= \int\d\alpha \binom10 \hug{\sigma_x\cos\alpha + \sigma_y\sin\alpha}\binom 10\\
+    &= \int\d\alpha \binom10 \begin{pmatrix}
+        0 & e^{-i\alpha}\\
+        e^{i\alpha} &0 \\
+    \end{pmatrix}\binom 10\\
+    &= \int \d\alpha\binom10 \binom0{e^{i\alpha}}\\
+    &= 0\\
+    \\
+    \tug{\hat O_2} &= \dots =0 \note[analog zu oben] 
+\end{align*}
+
+\subsection{}
+\begin{align*}
+\end{align*}
+
+\subsection{}
+Das Minuszeichen entspricht der Tatsache, dass es bekannt ist, dass die Spins beiden Elektronen
+antiparallel sind. Obwohl die gemessenen Drehimpulse zufällig verteilt sind, gibt einen 
+die Messung des einen Elektron somit durch die Korrelation 
+Informationen über die noch ausstehende Messung des anderen Elektron.
+Wenn der eine Spin immer entgegengesetzt des anderen ist, dann ergibt positiv mal negativ immer 
+ein negatives Produkt.
+ 
+\section{Zustandsenergien endlicher Potenzialtopf}
+\inputpy{Python Code:}{13.py}
+
+\end{document}
