@@ -520,7 +520,9 @@ Ein Operator ist zudem unitär, wenn die Tranformation das Skalarprodukt erhält
     = \sbraket{\phi}{\hat U^\dagger \hat U \psi}\\
     \implies \hat U^\dagger \hat U &= \I
 \end{align*}
-
+\begin{align*}
+    \rot \v B &= \j + \pp{\v E}t
+\end{align*}
 \subsubsection{Kommutator}
 Der Kommutator ist definiert als:
 \begin{align*}
@@ -658,12 +660,22 @@ Basis: \(\mathcal B = \pug{\ket p = e^{ikx}= e^{i p x/\hbar}}\)
     \psi(x) &= \int \dk \psi(k) e^{ikx}
 \end{align*}
 
-\subsection{Unendlicher Potentialtopf}
+\subsection{Einfache Lösungen}
+\subsubsection{Unendlicher Potentialtopf}\tight
+\begin{align*}
+    \ket \psi &= A\sin\frac{n\pi x}{a} \\
+    E_n &= \frac{\pi^2\hbar^2}{2m a^2} n^2
+\end{align*}
 Breiterer Topf \(\implies\) niedrigere Grundzustandenergie
 
-\subsection{Endlicher Potentialtopf}
-\subsection{Endliche Potentialbarriere}
-\subsection{Harmonischer Oszillator}
+\subsubsection{Endlicher Potentialtopf}
+
+\subsubsection{Unendliche Potentialbarriere}\tight
+\begin{align*}
+    \ket \psi &= A\sin kx \note k=\sqrt{2m E} /\hbar
+\end{align*}
+\subsubsection{Endliche Potentialbarriere}
+\subsubsection{Harmonischer Oszillator}\tight
 \begin{align*}
     V(x) &= \frac12k x^2 = \frac{m\omega^2}{2}x^2\\
     E_n &= \hbar \omega\hug{n+\frac12}\\
