@@ -1,17 +1,12 @@
+
+\documentclass[twocolumn]{summery_3.1}
+
 \title{Experimental Physics II}
+\date{SS 23/24}
 
-\documentclass[11pt,letterpaper]{article}
-\textwidth 6.5in
-\textheight 9.in
-\oddsidemargin 0in
-\headheight 0in
-\setlength\parindent{0pt}
-
-\usepackage[summery, de]{custom_2.0}
-\newcommand\alt{\overset{(a.)}{=}}
 \begin{document}
+
 \maketitle
-  
 \tableofcontents
 
 \section{Thermodynamik}
@@ -67,37 +62,43 @@
     }
 }
 
+\subsection{Zustandsgleichung des idealen Gases}
+\begin{align*}
+    pV &= N k_B T\\
+    pV &= n R T
+\end{align*}
+
 \subsection{Zustandsänderungen}
 {
-    \subsubsection{Isotherm}
+    Isotherm:
     {
         \begin{align*}
             \Delta T = 0
         \end{align*}
     }
-    \subsubsection{Isobar}
+    Isobar:
     {
         \begin{align*}
-            \Delta p &= 0\\
+            \Delta p &= 0
         \end{align*}
     }
-    \subsubsection{Isochor}
+    Isochor:
     {
         \begin{align*}
-            \Delta V &= 0 \\
+            \Delta V &= 0 
         \end{align*}
     }
-    \subsubsection{Adiabatisch}
+    Adiabatisch:
     {
         \begin{align*}
-            \Delta Q &= 0\\
+            \Delta Q &= 0
         \end{align*}
         \begin{align*}
             \Delta U &= \frac{f}{2} N k \Delta T = -p \Delta V = -\frac{N k T }{V} \Delta V\\
             \frac{f}{2} \frac{\Delta T}{T} &= - \frac{\Delta V }{V}\\
              T V ^{\kappa -1} &=  \text{const}\\
             p V ^{\kappa } &=  \text{const}\\
-            p^{1-\kappa} T ^{\kappa} &=  \text{const}\\
+            p^{1-\kappa} T ^{\kappa} &=  \text{const}
         \end{align*}
     }
 }
@@ -124,7 +125,7 @@
 {
     Im Gas:
     \begin{align*}
-        \braket{E_{tot}} &= \frac{f}{2}\mathrm{k}_B T
+        \tug{E_{tot}} &= \frac{f}{2}\mathrm{k}_B T
     \end{align*}
     Allgemein:
     \begin{align*}
@@ -204,7 +205,7 @@
     \vec{j} &\Longleftrightarrow \text{Netto-Teilchenstromdichte bei Diffusion} = -D\cdot \vec{\nabla}n\\
     \d R &\Longleftrightarrow \text{Reduzierte Wärmemenge} \ = \frac{\d Q}{T}\\
     \d S &\Longleftrightarrow \text{Entropie} \ = \frac{\d Q_{rev}}{T}\\
-    \kappa &\Longleftrightarrow \text{Adiabatenindex} \ = \frac{c_P}{c_V} &= \frac{f+2}{f}=1+\frac{2}{f}\\
+    \kappa &\Longleftrightarrow \text{Adiabatenindex} \ = \frac{c_P}{c_V} = \frac{f+2}{f}=1+\frac{2}{f}\\
     \\
     N_A &\Longleftrightarrow \text{Avogadro-Konstante}\\
     R &\Longleftrightarrow \text{allgemeine Gaskonstante}\\
@@ -231,7 +232,7 @@
 \subsubsection{Gaußsches Gesetz}
 \begin{align*}
     \vnabla \cdot \vec E &= \frac \rho {\epsilon_0}\\
-    \implies Q &= \oiiint_{V} \rho \dV = \epsilon_0\oiint_{S} \vec E \cdot \dS\\
+    \implies Q &= \iiint_{V} \rho \dV = \epsilon_0\iint_{S} \vec E \cdot \dS\\
     \implies \vec E &= \frac{1}{4\pi \epsilon_0 \epsilon_r} \frac{Q}{r^2}\e_r\\
 \end{align*}
 
@@ -249,8 +250,14 @@ Spannung:
 Kapazität:
 \begin{align*}
     C = \frac{Q}{U} = \epsilon_0\epsilon_r \frac{A}{d} 
-    \overset{reihe}{\implies} \frac{1}{C_{ges}}= \frac{1}{C_1} + \frac{1}{C_2} + \dots + \frac{1}{C_n}
-    \overset{parallel}{\implies} C=C_1 + C_2 + \dots + C_n
+    \begin{cases}
+        \overset{reihe}{\implies} \frac{1}{C_{ges}}= \frac{1}{C_1} + \frac{1}{C_2} + \dots + \frac{1}{C_n}\\
+        \overset{parallel}{\implies} C=C_1 + C_2 + \dots + C_n
+    \end{cases}
+\end{align*}
+Energie:
+\begin{align*}
+    E = \frac12 CU^2
 \end{align*}
 
 \subsubsection{Zylinderkondensator}
@@ -278,7 +285,7 @@ Kapazität:
 \begin{enumerate}
     \item Driftgeschwindigkeit bestimmen
     \begin{align*}
-        v_D &\alt \sigma_{el} E \alt \frac{E}{\varrho} \alt  a\cdot \tau \alt \frac{j}{n q} \\
+        v_D &= \sigma_{el} E = \frac{E}{\varrho} =  a\cdot \tau =\frac{j}{n q} \\
         &= \frac{I}{n q A}
     \end{align*}
     \item Mittlere Flugzeit zwischen Kollisionen von Elektronen im Leiter
@@ -297,7 +304,7 @@ Kapazität:
 
 \subsection{Strom}
 \begin{align*}
-    I &= \deriv{Q}{t} = \oint j \dA = - \deriv{}{t}\int \varrho_{el} \dV\\
+    I &= \dd Qt = \oint j \dA = - \dd{}{t}\int \varrho_{el} \dV\\
 \end{align*}
 
 \subsection{Beweglichkeit}
@@ -309,7 +316,7 @@ Kapazität:
 
 \subsubsection{Kontinuitätsgleichung}
 \begin{align*}
-    \vnabla j(r,t) &= - \partiald{}{t} \varrho_{el}(r,t)
+    \vnabla j(r,t) &= - \pp{}{t} \varrho_{el}(r,t)
 \end{align*}
 
 \subsection{Knotenregel}
@@ -344,7 +351,7 @@ Kapazität:
 \subsection{4. Maxwell'sche Gleichung}
 Differenzialform:
 \begin{align*}
-    \vnabla \times \vec B &= \mu_0 \vec j+ \mu_0\epsilon_0 \partiald{\vec E }{t}
+    \vnabla \times \vec B &= \mu_0 \vec j+ \mu_0\epsilon_0 \pp{\vec E }{t}
 \end{align*}
 Integralform:
 \begin{align*}
@@ -352,7 +359,7 @@ Integralform:
 \end{align*}
 Biot-Savart-Gesetz:
 \begin{align*}
-    \d \vec B = - \frac{\mu_0 I}{4\pi} \cdot \frac{\vec r \times \dS}{r^3}
+    \dv B = - \frac{\mu_0 I}{4\pi} \cdot \frac{\vec r \times \dS}{r^3}
 \end{align*}
 
  \end{document}
