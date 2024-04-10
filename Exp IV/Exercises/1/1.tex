@@ -1,0 +1,124 @@
+\documentclass[ex,minted,hatbasis]{exercise_4.0}
+
+\deadline{10.04.2024}
+
+\begin{document}
+
+\section{Massenspektrometer}
+\textit{Aus einem Strahl aus einfach ionisierten Uran-Atomen mit natürlichem Isotopengemisch \\$(0.72 \,\%\ \schemie{^{235}U}$ und
+$99.28 \,\%\ \schemie{^{238}U}$) soll in einem Thomsonschen Massenspektrometer nach der Parabelmethode \schemie{^{235}U} abgeschieden
+werden. Der Durchmesser des Strahls sei $1 \u{mm}$, die erreichbare Stromstärke im Strahl beträgt $0.2 \u {mA}$. Im $4\u{cm}$
+langen Spektrometer herrscht ein homogenes elektrisches Feld von $5000 \ufrac Vm$ und ein homogenes Magnetfeld
+von $0.01 \u T$. Wir betrachten Teilchen \schemie{^{235}U} und \schemie{^{238}U}, die sich mit gleicher Geschwindigkeit $v$ durch das
+Spektrometer bewegen.}
+
+\subsection{}
+\textit{Bei welcher Geschwindigkeit der Uran-Atome überlappen sich die Strahlen der beiden Isotope direkt
+hinter dem Spektrometers gerade nicht mehr?}\vspace{2ex}
+
+Sei das Massenspektrometer nach Thomson so aufgebaut, dass der magnetische Nordpol und der elektrische negative Pol in $\e_y$-Richtung liegen, und die Atome Richtung $\e_z$ fliegen. 
+Beim durchqueren des Massenspektrometer wirken auf die Uran Isotope die Coloumb-/ und Lorentzkraft: 
+\begin{align*}
+    \v F_L &= q \,\v v \times \v B = qv B \e_x\\ 
+    \v F_C &= q \v E = q E \e_y
+\end{align*}
+Da jede Kraft nur in jeweils eine Richtung wirkt, kann die Bewegung des Uran für beide Richtungen einzeln betrachtet werden:
+\begin{align*}
+    F_L &= m a_x \implies \ddot x = \frac{q v B}{m} \implies x(t) = \frac{q v B}{2 m}t^2\\
+    F_C &= m a_y \implies \ddot y = \frac{q E}{m}\implies y(t) = \frac{qE}{2 m}t^2
+\end{align*}
+Nimmt man an, dass die Geschwindigkeit der Teilchen entlang der $z$-Achse konstant ist gilt für den Zeitpunkt an dem die Teilchen auf den Schirm auftreffen $t_0=L/v$ mit $L$ als Distanz bis zum Schirm, und somit für die Distanzen $x_0,y_0$:
+\begin{align*}
+    x_0 = x(t_0) = \frac{q B L^2}{2 m v}\\
+    y_0 = y(t_0) = \frac{q E L^2}{2 m v^2}
+\end{align*}
+\newcommand{\urana}{\schemie{^{235}U}}
+\newcommand{\uranb}{\schemie{^{238}U}}
+
+ Die Strahlen der beiden Uran-Isotope überlappen sich dann gerade nicht mehr, wenn der Anstand ihrer zentralen Strahlen $\Delta$ auf dem Schirm mindestens so groß wie der Strahldurchmesser $d$ sein. Werte die sich auf \urana{} beziehen sind im folgendem nicht gestrichen, Werte die sich auf \uranb{} beziehen sind gestrichen.
+
+\begin{align*}
+    d &= \Delta\\
+    d^2 &= \hug{x_0 - x_0'}^2 + \hug{y_0 - y_0'}^2 \\
+    &= \hug{\frac{q B L^2}{2 m v} - \frac{q B L^2}{2 m' v}}^2 + \hug{\frac{q E L^2}{2 m v^2} - \frac{q E L^2}{2 m' v^2}}^2 \\
+    &= \frac{q^2 B^2 L^4}{4 v^2}\hug{\frac1m - \frac1{m'}}^2 + \frac{q^2 E^2 L^4}{4 v^4}\hug{\frac{1}{m} - \frac1{m'}}^2 \\
+    &= \frac{q^2 L^4}{4 v^4}\hug{\frac{1}{m} - \frac1{m'}}^2\hug{v^2B^2 + E^2} \\
+    0 &= v^4 - \frac{q^2 L^4}{4d^2}\hug{\frac{1}{m} - \frac1{m'}}^2\hug{v^2B^2 + E^2} \\
+    &= v^4 - \frac{\eta^2 M^2}{4}\hug{v^2B^2 + E^2} \note \begin{cases}
+        \eta = \frac{q L^2}{d}\\
+        M = \frac{1}{m} - \frac1{m'}
+    \end{cases}\\
+    \implies v^2 &= \frac{\eta^2 M^2 B^2}{8} + \sqrt{\hug{\frac{\eta^2 M^2 B^2}{8}}^2 + \frac{\eta^2 M^2 E^2}{4}}\\
+    &= \frac{\eta^2 M^2 B^2}{8} + \frac{\eta M}{2} \sqrt{\frac{\eta^2 M^2}{16}B^4  + E^2}\\
+    \implies v &= 57307 \ufrac ms\note \frac vc= 0.191\permil
+\end{align*}
+Wobei verwendet wurde, dass die Atommasse für \urana{} $235\u u$ ist, und für \uranb{} $238\u u$.
+
+
+
+\subsection{}
+\textit{Wie lange dauert das Abscheiden von $1 \u{mg}$ \schemie{^{235}U}?}\vspace{2ex}
+
+Seien $j_q$ der Teilchenstrom in $\ufrac 1s$ und $j_C$ der Ladungsstrom in $\ufrac Cs$.
+\begin{align*}
+    m\sub{ges} &= m N = m\, j_q\, t = \frac{M\sub{mol}\, j_C\, t}{n_A\, q} \\
+    t &=\frac{m\sub{ges}\,n_A\, q}{M\sub{mol}\, j_C}\\
+    &\approx\frac{10^{-3}\u{kg} \cdot \cnA \cdot \ce}{0.235\ufrac{kg}{mol}\cdot0.2\cdot10^{-3}\u A}\\
+    &\approx 2.05\E6 \u s = 23.7 \u d
+\end{align*}
+
+\section{Röntgenbeugung an Kristallen}
+\subsection{}
+{\it
+Wie groß sind Radius und Volumen von {\normalfont Ar}-Atomen in einem kalten {\normalfont Ar}-Kristall (dichteste Kugelpackung in kubisch-flächenzentriertem Gitter), wenn bei Bragg-Reflexion von Röntgenstrahlung $(\lambda = 0.45 \u{nm})$, die unter dem Winkel $\theta$ gegen die Netzebene parallel zu den Würfelflächen einfällt, das erste Reflexionsminimum bei $\theta = 43^\circ$ auftritt?\\[1ex]
+\emph{Hinweis:} Betrachtet werden Reflexionen an der Ebene parallel zu den Würfelflächen. Deswegen ist, wenn $a$ die Länge der kubischen Elementarzelle ist, die Distanz zwischen zwei Streuebenen ist $d = a/2$ (Siehe Abbildung 1).}\vspace{2ex}
+
+\begin{align*}
+\end{align*}
+
+\subsection{}
+\textit{In der Vorlesung wurde ein {\normalfont NaCl}-Kristall (kubisch-flächenzentriertes Gitter) in Braggscher Anordnung mit Röntgenlicht einer Molybdän-Anode vermessen. Die Bragg Winkel ergaben sich zu $7.22^\circ$ und $6.41^\circ$.
+Berechnen Sie den Abstand der Streuebenen des {\normalfont NaCl}-Kristalls. Bestimmen Sie mit Ihrem Ergebnis die
+Avogadro-Zahl. $(\rho\sub{NaCl} = 2.163 \ufrac g{cm^3})$\\[1ex]
+\emph{Hinweis:} Die Molybdän Anode emittiert ein kontinuierliches Röntgenspektrum mit zwei charakteristischen Linien bei $E_{K_\alpha} = 17.4 \u{keV}$ und $E_{K_\beta} = 19.6 \u{keV}$. Die molaren Massen von {\normalfont Na} und {\normalfont Cl} sind Ihnen
+bekannt.}\vspace{2ex}
+\begin{align*}
+\end{align*}
+
+\section{Tintenstrahldrucker}
+{\it Die Düse eines Tintenstrahldruckers spritzt Tröpfchen auf ein Blatt Papier. Ein Tintentröpfchen hat die Masse $m = 1.3\E{-10}\u{kg}$ und eine Ladung von $Q = -1.5 \E{-13} C$. Die Tröpfchen treten orthogonal in ein homogenes E-Feld der Länge $L = 1.6 \u{cm}$ mit einer Geschwindigkeit von $v = 20 \ufrac ms$ ein.}
+
+\subsection{}
+{\it Wie stark muss das E-Feld gewählt werden, damit die Tröpfchen beim Verlassen des E-Feldes $0.5 \u{mm}$ vertikal abgelenkt werden?}\vspace{2ex}
+
+Auf der Skizze sieht es so aus, als ob das Tröpfen nach dem Kondensator noch eine gewisse Distanz $d$ bis zum Papier zurücklegen muss. Eine längere Distanz würde allgemein eine stärkere Auslenkung zur Folge haben, da aber kein konkreter Wert angegeben ist, rechnen wir für diesen Aufgabenteil mit $d=0$.\\[1ex] Im Kondensator wirkt auf das Tröpfchen wirkt die Coloumbkraft:
+\begin{align*}
+    m a &= F_C = q E\\
+    \ddot x &= \frac{qE}{m}\\
+    \implies x(t) &= \frac{qE}{2m} t^2
+\end{align*}
+Bei konstanter Geschwindigkeit Richtung Papier ($v_z = \const$) benötigt das Tröpfchen $t_0 = \frac{L}{v}$ um aus dem Kondensator wieder raus zu kommen.
+Es hat zu diesem Zeitpunkt die x-Koordinate und die Geschwindigkeit:
+\begin{align*}
+    x_0 &= x(t_0) = \frac{q E L^2}{2 m v^2}\\
+    v_0 &= \dot x(t_0) = \frac{q E L}{m v}\\
+\end{align*}
+Zwischen Papier und Kondensator wirken keine Kräfte, somit ist die finale x-Koordinate des Tröpfchens:
+\begin{align*}
+    x' &= x_0 + v_0 t'\\ 
+    x' &= \frac{q E L^2}{2 m v^2} + \frac{q E L}{m v} t'\\
+\end{align*}
+
+
+\subsection{}
+{\it Die Tropfen haben eine Größe von $0.5 \u{mm}$ auf dem Papier. Wie weit entfernt müsste das Papier mindestens sein, damit zwei Tropfen mit einer um eins unterschiedlichen Elementarladung $Q$ und $Q + e$ sich nicht überlappen?}\vspace{2ex}
+\begin{align*}
+\end{align*}
+
+\section{Einheiten umrechnen}
+\textit{Schreiben Sie ein kurzes Programm oder Jupyter Notebook, um Einheiten umrechnen zu können. Erstellen
+Sie eine Tabelle mit den Werten 1-10 des Ausgabewertes und berechnen Sie den entsprechenden Zielwert. Rechnen sie folgende Einheiten um: Joule in Elektronvolt, Meter in Ångström, kg in Stoffmenge (Mol) für \schemie{H2O}, 
+Elektronvolt in Wellenlänge und Frequenz (für Photonen).}\vspace{1ex}
+\inputpy{Python Code}{1.py}
+
+\end{document}
