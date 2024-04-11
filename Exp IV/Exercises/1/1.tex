@@ -71,19 +71,62 @@ Seien $j_q$ der Teilchenstrom in $\ufrac 1s$ und $j_C$ der Ladungsstrom in $\ufr
 \subsection{}
 {\it
 Wie groß sind Radius und Volumen von {\normalfont Ar}-Atomen in einem kalten {\normalfont Ar}-Kristall (dichteste Kugelpackung in kubisch-flächenzentriertem Gitter), wenn bei Bragg-Reflexion von Röntgenstrahlung $(\lambda = 0.45 \u{nm})$, die unter dem Winkel $\theta$ gegen die Netzebene parallel zu den Würfelflächen einfällt, das erste Reflexionsminimum bei $\theta = 43^\circ$ auftritt?\\[1ex]
-\emph{Hinweis:} Betrachtet werden Reflexionen an der Ebene parallel zu den Würfelflächen. Deswegen ist, wenn $a$ die Länge der kubischen Elementarzelle ist, die Distanz zwischen zwei Streuebenen ist $d = a/2$ (Siehe Abbildung 1).}\vspace{2ex}
+{Hinweis:} Betrachtet werden Reflexionen an der Ebene parallel zu den Würfelflächen. Deswegen ist, wenn $a$ die Länge der kubischen Elementarzelle ist, die Distanz zwischen zwei Streuebenen ist $d = a/2$ (Siehe Abbildung 1).}\vspace{2ex}
+
+Für ein Reflexionsminimum muss die Wegdifferenz zweier Strahlen die an den zwei Streuebenen reflektiert werden $n\lambda-\lambda/2 \note n\in\N$ betragen (destruktive Interferenz).
 
 \begin{align*}
+    \lambda(n - 1/2) &\peq \Delta s = 2 d \sin\theta = a \sin\theta \\
+    a &= \frac{\lambda}{2\sin\theta} \for n=1\\
+    &= \frac{0.45\u{nm}}{\sin(43^\circ)}\\
+    &\approx 6.60 \A 
+\end{align*}
+Aus der Geometrie folgt für den Radius $r$:
+\begin{align*}
+    a^2 &= (2r)^2 + (2r)^2\\ 
+    \implies r &= \frac{a}{\sqrt 8}\\
+    &\approx 2.33 \A\\
+    \\
+    V &= \frac 43 \pi r^3\\
+    &\approx 53.0\A^3
 \end{align*}
 
 \subsection{}
 \textit{In der Vorlesung wurde ein {\normalfont NaCl}-Kristall (kubisch-flächenzentriertes Gitter) in Braggscher Anordnung mit Röntgenlicht einer Molybdän-Anode vermessen. Die Bragg Winkel ergaben sich zu $7.22^\circ$ und $6.41^\circ$.
 Berechnen Sie den Abstand der Streuebenen des {\normalfont NaCl}-Kristalls. Bestimmen Sie mit Ihrem Ergebnis die
 Avogadro-Zahl. $(\rho\sub{NaCl} = 2.163 \ufrac g{cm^3})$\\[1ex]
-\emph{Hinweis:} Die Molybdän Anode emittiert ein kontinuierliches Röntgenspektrum mit zwei charakteristischen Linien bei $E_{K_\alpha} = 17.4 \u{keV}$ und $E_{K_\beta} = 19.6 \u{keV}$. Die molaren Massen von {\normalfont Na} und {\normalfont Cl} sind Ihnen
+{Hinweis:} Die Molybdän Anode emittiert ein kontinuierliches Röntgenspektrum mit zwei charakteristischen Linien bei $E_{K_\alpha} = 17.4 \u{keV}$ und $E_{K_\beta} = 19.6 \u{keV}$. Die molaren Massen von {\normalfont Na} und {\normalfont Cl} sind Ihnen
 bekannt.}\vspace{2ex}
+
+Die den charakteristischen Linien zugehörige Wellenlängen sind:
 \begin{align*}
+    \lambda &= \frac cf = \frac{hc}{E}\\
+    \\
+    \lambda_{K_\alpha} &\approx 71.3\u{pm}\\
+    \lambda_{K_\beta} &\approx 63.3\u{pm}
 \end{align*}
+
+Für die Glanzwinkel gilt die Bragg-Bedingung:
+\begin{align*}
+    n\lambda &= 2d \sin\theta\\
+    d &= \frac{n\lambda}{2\sin\theta}\\
+    \\
+    d_{K_\alpha} &\approx 2.83\A\\
+    d_{K_\beta} &\approx 2.83\A
+\end{align*}
+Für die Glanzwinkel der beiden charakteristischen Linien kommt der gleiche Abstand der Streuebenen von $2.83\A$ heraus. \\
+
+In der Elementarzelle des \schemie{NaCl} befinden sich vier Natriumatome und vier Chloratome. Die Kantenlänge der Elementarzelle ist $a=2d$ (siehe Nr.2 (a)). Damit lässt sich die Avogadro-Konstante wie folgt bestimmen:
+
+\begin{align*}
+    \rho\sub{NaCl} &= \frac{4m\sub{Na} + 4m\sub{Cl}}{a^3} \\
+    &= 4\frac{M\sub{Na} + M\sub{Cl}}{n_A a^3} \\
+    n_A &= 4\frac{M\sub{Na} + M\sub{Cl}}{\rho\sub{NaCl} \,a^3} \\
+    &\approx 5.96\E{23} \ufrac1{mol}
+\end{align*}
+
+Der Literaturwert für die Avogadro-Konstante ist $\cnA$, damit ist der relative Fehler des experimentellen Wertes etwa \(1.02\%\).
+
 
 \section{Tintenstrahldrucker}
 {\it Die Düse eines Tintenstrahldruckers spritzt Tröpfchen auf ein Blatt Papier. Ein Tintentröpfchen hat die Masse $m = 1.3\E{-10}\u{kg}$ und eine Ladung von $Q = -1.5 \E{-13} C$. Die Tröpfchen treten orthogonal in ein homogenes E-Feld der Länge $L = 1.6 \u{cm}$ mit einer Geschwindigkeit von $v = 20 \ufrac ms$ ein.}
@@ -91,7 +134,7 @@ bekannt.}\vspace{2ex}
 \subsection{}
 {\it Wie stark muss das E-Feld gewählt werden, damit die Tröpfchen beim Verlassen des E-Feldes $0.5 \u{mm}$ vertikal abgelenkt werden?}\vspace{2ex}
 
-Auf der Skizze sieht es so aus, als ob das Tröpfen nach dem Kondensator noch eine gewisse Distanz $d$ bis zum Papier zurücklegen muss. Eine längere Distanz würde allgemein eine stärkere Auslenkung zur Folge haben, da aber kein konkreter Wert angegeben ist, rechnen wir für diesen Aufgabenteil mit $d=0$.\\[1ex] Im Kondensator wirkt auf das Tröpfchen wirkt die Coloumbkraft:
+Sei $d$ die Distanz, die das Tröpfchen nach dem Kondensator bis zum Papier zurücklegen muss. Im Kondensator wirkt auf das Tröpfchen wirkt die Coloumbkraft:
 \begin{align*}
     m a &= F_C = q E\\
     \ddot x &= \frac{qE}{m}\\
@@ -106,13 +149,21 @@ Es hat zu diesem Zeitpunkt die x-Koordinate und die Geschwindigkeit:
 Zwischen Papier und Kondensator wirken keine Kräfte, somit ist die finale x-Koordinate des Tröpfchens:
 \begin{align*}
     x' &= x_0 + v_0 t'\\ 
-    x' &= \frac{q E L^2}{2 m v^2} + \frac{q E L}{m v} t'\\
+     &= \frac{q E L^2}{2 m v^2} + \frac{q E L d}{m v^2}\\
+     &= \frac{q E L \hug{L + 2d}}{2m v^2}\\
+     \implies E &= \frac{2m v^2 x'}{q L^2} \note d=0\\
+     &\approx -1.35 \E6\ufrac Vm
 \end{align*}
 
 
 \subsection{}
 {\it Die Tropfen haben eine Größe von $0.5 \u{mm}$ auf dem Papier. Wie weit entfernt müsste das Papier mindestens sein, damit zwei Tropfen mit einer um eins unterschiedlichen Elementarladung $Q$ und $Q + e$ sich nicht überlappen?}\vspace{2ex}
 \begin{align*}
+    D &\peq x_2' - x_1' \\
+    &= \frac{E L (q_2 - q_1)\hug{L + 2d}}{2m v^2}\\
+    &= -\frac{e E L\hug{L + 2d}}{2m v^2}\\
+    d &= -\frac{m v^2 D}{e E L} - \frac L2\\
+    &\approx 7500 \u m
 \end{align*}
 
 \section{Einheiten umrechnen}
