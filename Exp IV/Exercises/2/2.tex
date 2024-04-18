@@ -1,0 +1,246 @@
+\documentclass[ex, minted]{exercise_4.0}
+
+\deadline{24.04.2024}
+
+\begin{document}
+
+\section{}
+{\it In einer Elektronenbeugungsröhre werden die Elektronen von der Kathode emittiert und an einem mit Graphitpulver belegten Beugungsgitter gestreut (Debye-Scherrer-Verfahren, siehe Vorlesung). Es entstehen zwei
+Beugungsringe, da zwei verschiedene Netzebenenabstände vorkommen. Die Ringe werden auf dem Fluoreszenzschirm der Röhre beobachtet. Der Öffnungswinkel der Streukegel (und damit der Radius der Ringe)
+ändert sich mit der angelegten Beschleunigungsspannung aufgrund der Bragg-Bedingung und der de-Broglie-Beziehung. Die Tabelle gibt an welche Durchmesser der Beugungsringe bei unterschiedlichen Spannungen gemessen wurden. Die Messung des Abstands zwischen Graphitfolie und Fluoreszenzschirm ergab $L = 13.3 \u{cm}$.}
+
+\begin{center}
+\begin{tabularx}{.3\textwidth}{|y|y|y|}
+    \hline 
+    $U$/kV & $D_1$/cm & $D_2$/cm\\\hline
+    3.0 & 2.8 & 5.0 \\\hline
+    3.5 & 2.7 & 4.7 \\\hline
+    4.0 & 2.6 & 4.4 \\\hline
+    4.5 & 2.5 & 4.1 \\\hline
+    5.0 & 2.4 & 3.9 \\\hline
+\end{tabularx}
+\end{center}
+
+\subsection{\it Berechnen Sie die de-Broglie Wellenlänge der Elektronen für jeden Messwert.}\vspace{1ex}
+
+Für die Wellenlänge gilt:
+\begin{align*}
+    \lambda &= \frac hp 
+    = \frac{h}{\sqrt{2m_e E\sub{kin}}}
+    = \frac{h}{\sqrt{2m_e e U }}
+\end{align*}
+
+Und somit für die Messwerte ($\lambda$ mit drei Stellen um Rundungsfehler klein zu halten):
+
+\begin{center}
+\begin{tabularx}{.4\textwidth}{|y|y|y|y|}
+    \hline 
+    $U$/kV & $D_1$/cm & $D_2$/cm & $\lambda$/pm\\\hline
+    3.0 & 2.8 & 5.0 & 22.4\\\hline
+    3.5 & 2.7 & 4.7 & 20.7\\\hline
+    4.0 & 2.6 & 4.4 & 19.4\\\hline
+    4.5 & 2.5 & 4.1 & 18.3\\\hline
+    5.0 & 2.4 & 3.9 & 17.3\\\hline
+\end{tabularx}
+\end{center}
+    
+
+\subsection{\it Sie haben nun für die beiden Beugungsringe jeweils eine Gitterkonstante $d_1 = 2.13 \E{-10}\u m$ und $d_2 =
+1.23 \E{-10}\u m$ gegeben. Tragen Sie mittels eines Python-Skripts oder Jupyter-Notebooks die Radien der
+Beugungsringe als Funktion von $\frac1{\sqrt U}$ auf und fitten Sie die Steigung. Nutzen Sie die de-Broglie-Beziehung
+aus dem ersten Aufgabenteil aus um diese Steigung zu beschreiben. Bestimmen Sie daraus das Plancksche
+Wirkungsquantum h. In dem Profil für das Jupyter Notebook der Vorlesung finden Sie eine Vorlage für
+diese Teilaufgabe. Bitte reichen sie einen Graphen mit Fit und Erklärung sowie das Endresultat ein.
+Hinweis: Beachten sie dazu, dass für kleine Winkel $\lambda = \frac{d D}{
+2L}$ gilt.}\vspace{2ex}
+
+Nach der Theorie ist beim Auftragen von $R$ gegen $\frac1{\sqrt U}$ eine Gerade gemäß 
+\begin{align*}
+    \lambda &= \frac{h}{\sqrt{2m_e e U}} \approx \frac{dD}{2L}\\
+    \implies R &\approx \frac{hL}{d\sqrt{2m_e e}} \frac1{\sqrt U}
+\end{align*}
+zu erwarten.
+
+\inputpy{Lineare Regression - Python}{2.1.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=\textwidth]{fit_R1.svg}
+    \caption{Fit der $\hug{1/\sqrt U , R_1} -$Regression}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=\textwidth]{fit_R2.svg}
+    \caption{Fit der $\hug{1/\sqrt U , R_2} -$Regression}
+\end{figure}
+
+Da auf die Messwerte keine Unsicherheiten angegeben wurden, haben wir die Unsicherheiten auf die Parameter $a,b$ der Gerade $y=  ax+b$ mit der Annahme regulärer Residuen geschätzt. Der Fit bildet insgesamt die Daten gut ab, in den Residuenplots ist jedoch eine gewisse Systematik zu erkennen, welche der Linearisierung des Sinus zuschreibbar wäre. Etwas Besorgnis erregend ist, dass die $D_1$-Messreihe nicht mit der Theorie-Vorhersage eines verschwindenen Y-Achsen Abschnittes kompatibel ist.\\
+
+Das Plancksche-Wirkungsquantum lässt sich nun wie folgt aus der Steigung bestimmen:
+\begin{align*}
+    a_i &= \frac{hL}{d_i\sqrt{2m_e e}}\\
+    \implies h &= \frac{a_i d_i\sqrt{2m_e e}}{L}
+\end{align*}
+
+Es ergeben sich so für die beiden Messreihen $\hug{h\sub{Literatur} = \ch}$:
+\begin{center}
+\begin{tabularx}{.8\textwidth}{|c|y|y|y|}
+    \hline
+    & Wert / Js& rel. Abweichung & Abweichung in $\sigma$\\\hline
+    $h_1$ & $(4.18\pm0.27)\E{-34}$ & $-0.586$ & $8.95\cdot\sigma_{h_1}$\\\hline
+    $h_2$ & $(6.80\pm0.28)\E{-34}$ & $0.0251$ & $0.604\cdot\sigma_{h_2}$\\\hline
+\end{tabularx}
+\end{center}\vspace{1ex}
+
+Die zu $h_1$ zugehörige Messreihe ist, wie durch den Regressionsplot schon zu vermuten war, nicht mit dem Literaturwert kompatibel. Im Gegensatz dazu ist die andere Messreihe sehr gut mit dem Literaturwert kompatibel.  
+
+
+\section{Bohrsches Atommodell}
+{\it Das Bohrsche Atommodell berechnet die Gesamtenergie von Elektronen klassisch $E\sub{ges} = E\sub{kin} + E\sub{pot}$. Quantenmechanisch gilt jedoch eine Ortsunschärfe für das Elektron.}
+
+\subsection{\it Drücken Sie die kinetische Energie $E\sub{kin}$ des Elektrons als Funktion des Impulses aus und setzen Sie die Unschärferelation für den Impuls ein. Minimieren Sie die Gesamtenergie $E$ des Elektrons als Funktion des Radius und berechnen Sie so den ersten Bohrschen Radius!}\vspace{1ex}
+
+Die Gesamtenergie ergibt sich bei vernachlässigbarer Schwerkraft als
+\begin{align*}
+    E\sub{ges} &= E\sub{kin} + E\sub{pot}
+    = \frac{p^2}{2m_e} + \frac{q_1 q_2}{4\pi \varepsilon_0 r}
+\end{align*}
+Der Impuls $p$ lässt sich mit der Unschärferelation abschätzen als:
+\begin{align*}
+    p &\ge \Delta p = \frac\hbar{\Delta x} \ge \frac\hbar x
+\end{align*}
+Damit gilt für die Energie:
+\begin{align*}
+    E\sub{ges} &\ge \frac{\hbar^2}{2m_e r^2} + \frac{q_1 q_2}{4\pi \varepsilon_0 r}
+\end{align*}
+
+Sofern die minimale Energie nicht an den Intervallrändern liegt, also 
+$r_{E\sub{min}}\not\in\pug{0,\inf}$, muss die Ableitung verschwinden:
+
+\begin{align*}
+    0 &\peq \pp{E\sub{ges}}{r}
+    = -\frac{\hbar^2}{m_e r^3} - \frac{q_1 q_2}{4\pi \varepsilon_0 r^2}\\
+    \implies r  &= \frac{4\pi \varepsilon_0 \hbar^2}{m_e q_1 q_2 }
+    \approx  0.529 \A \for[Wasserstoff ] (q_1=-q_2=e)
+\end{align*}
+Die Annahme, dass die minimale Energie nicht bei $r\in\pug{0,\inf}$ erreicht wird, ist leicht gerechtfertigbar. Das Minimum kann nicht bei $r=0$ liegen, da für $r\to 0$ die Energie divergiert. Für $r=\infty$ ist die Gesamtenergie Energie gleich null, aber dennoch nicht minimal, weil die Energie welche der Form
+\begin{align*}
+    E\sub{ges}=&\frac{a}{r^2} - \frac{b}{r}\with a,b>0
+\end{align*}
+ist, ab einem gewissen $r$ immer kleiner als null ist:
+\begin{align*}
+    0 &\overset!> E = \frac{a}{r^2} - \frac{b}{r}\\
+    0 &> a - b r\\
+    \\
+    \implies r &> \frac ab
+\end{align*}  
+
+\subsection{\it Berechnen Sie die Bindungsenergie des ersten Bohrschen Radius!\\
+{\normalfont{Hinweis:}} Verwenden sie die Unschärfe Relation $\Delta p \cdot \Delta x \ge \hbar $ wobei $\Delta p$ der Unschärfe für $p$
+entspricht und $\Delta x$ für den Radius $r$}\vspace{1ex}
+
+\begin{align*}
+    E\sub{ges} &\ge \frac{\hbar^2}{2m_e r^2} - \frac{q_1 q_2}{4\pi \varepsilon_0 r}\\
+    &= \frac{\hbar^2}{2m_e}\frac{m_e^2 q_1^2 q_2^2 }{16\pi^2 \varepsilon_0^2 \hbar^4} - \frac{q_1 q_2}{4\pi \varepsilon_0}\frac{m_e q_1 q_2 }{4\pi \varepsilon_0 \hbar^2}\\
+    &= \frac{m_e q_1^2 q_2^2 }{32\pi^2 \varepsilon_0^2 \hbar^2} - \frac{m_e q_1^2 q_2^2 }{16\pi^2 \varepsilon_0^2 \hbar^2}\\
+    &= -\frac{m_e q_1^2 q_2^2 }{32\pi^2 \varepsilon_0^2 \hbar^2} \\
+    &\approx -13.6\u{eV}
+\end{align*}
+
+\section{Kastenpotenzial}
+{\it Nehmen Sie ein eindimensionales Kastenpotential mit unendlich hohen Wänden an
+\begin{align*}
+    V(x) &= \begin{cases}
+        0\for 0\le x\le L\\
+        \inf \note[sonst]
+    \end{cases}
+\end{align*}
+Dies stellt ein einfaches quantenmechanisches Atommodell dar. Ein Elektron befinde sich in einem Kasten der
+Breite $L$ mit unendlich hohen Wänden. Seine Geschwindigkeit sei klein im Vergleich zur Lichtgeschwindigkeit.
+Bitte wiederholen Sie folgende Punkte:}
+
+\subsection{\it Welche Wellenlängen kann die dem Elektron zugeordnete de-Broglie-Welle haben, und welche kinetischen
+Energien ergeben sich daraus?}\vspace{1ex}
+
+Da die Wellenfunktion, welche das Teilchen beschreibt, stetig sein muss, ergibt sich folgendes RW-Problem (Annahme statischer Lösungen): 
+\begin{align*}
+    \psi: \begin{cases}
+        \hat H \psi = E\psi \for x\in(0,L)\\
+        \psi = 0 \telse
+    \end{cases}
+\end{align*}
+\begin{align*}
+    E\ket\psi &= \hat H \ket\psi
+    = \frac{\hat v^2}{2m}\ket\psi
+    = \frac{(-i\hbar \nabla )^2}{2m}\ket \psi
+\end{align*}
+\begin{align*}
+    \implies 0 &= \hug{\frac{2m E}{\hbar^2} + \pp[2]{}x}\ket \psi  
+\end{align*}
+Die Lösung der DGL sind periodische Exponentialfunktionen:
+\begin{align*}
+    \ket \psi &= A \cdot e^{i \gamma x} + B \cdot e^{- i \gamma x}\note \begin{cases}
+        \gamma = \sqrt{\frac{2m E}{\hbar^2}}\\
+        A,B\in\C
+    \end{cases}
+\end{align*}
+
+Die erste Randbedingung ist $\ket\psi (x) = 0$, hierraus folgt:
+\begin{align*}
+    0 &\peq \ket \psi(0) = A + B\\\\
+    \implies \ket \psi &= A \cdot\hug{ e^{i \gamma x} - e^{- i \gamma x}}\\
+    &= 2i A \sin(\gamma x) \\
+    &\equiv A\sin(\gamma x)
+\end{align*} 
+
+Damit auch die zweite Randbedingung erfüllt ist, muss gelten dass $\ket\psi (L) = 0$, hierraus folgt:
+\begin{align*}
+    0 &\peq \ket \psi(L) 
+    = A\sin(\gamma L)\\\\
+    \implies n\pi &= \gamma L\note n\in\N\\
+    &= \sqrt{\frac{2m E}{\hbar^2}} L 
+    \bug{= \frac{pL}{\hbar}  
+    = \frac{h L}{\hbar \lambda}  
+    = \frac{2\pi L}{\lambda}}  \\
+    \\
+    \implies &\begin{cases}
+        E_n = \frac{\pi^2\hbar^2}{2m L^2} n^2\\
+        \lambda_n = \frac{2L}{n}
+    \end{cases}
+\end{align*} 
+
+Die Randbedingungen führen somit zur Diskretisierung der Energien/Wellenlängen. Es  fällt außerdem auf, dass für breitere Kastenpotenziale niedrigere Energien zugelassen sind, und im Grenzfall $L\to \infty$ ein stetiges Energiespektrum entsteht.
+
+\subsection{\it Erläutern Sie mit Hilfe der Unschärferelation, warum im Grundzustand die kinetische Energie des Elektrons nicht Null sein kann.}\vspace{1ex}
+
+Nach den Unschärferelationen gilt:
+\begin{align*}
+    \frac \hbar 2 \le \Delta p \Delta x
+\end{align*}
+Ist die Energie gleich null mit einer verschwindenen Standardabweichung, ist auch der Impuls null mit einer verschwindenen Standardabweichung.
+\begin{align*}
+    \frac \hbar 2 \le 0\cdot  \Delta x
+\end{align*}
+Dies ist offensichtlich nach der Unschärferelation nicht möglich, es sei denn die Standardabweichung auf den Ort ist unendlich, was jedoch einer unphysikalischen Lösung entspräche. 
+
+\subsection{\it Erstellen Sie ein Python-Skript oder Jupyter-Notebook, um die Aufenthaltswahrscheinlichkeit des Elektrons für die Quantenzahlen n = 1, 2, 3 als Funktion der Ortskoordinate $x$ darzustellen. Dies entspricht
+drei Diagrammen, wobei die Kastenwände bei $x = 0$ und $x = L$ liegen (mit $L = 9\,$cm). In dem Profil für
+das Jupyter Notebook der Vorlesung finden Sie eine Vorlage für diese Teilaufgabe.}\vspace{1ex}
+
+\inputpy{Python-Code}{2.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=\textwidth]{2.svg}
+    \caption{Von Pythonscript generierter Plot}
+\end{figure}
+
+\subsection{\it Beschreiben Sie, wie sich ein Elektron im Potentialtopf nach klassischer Vorstellung bewegen müsste.
+Erläutern Sie, ob diese Vorstellung mit den in Teilaufgabe c) skizzierten Verteilungen im Einklang ist.}\vspace{1ex}
+
+Klassisch würde das Teilchen mit konstanter Geschwindigkeit in die eine Richtung reisen, bis es an der anderen Seite des Kastens reflektiert wird und wieder mit konstanter Geschwindigkeit in die andere Richtung reist. Daraus ergibt sich eine konstante Wahrscheinlichkeitsdichte innerhalb des Kastens.
+Im Kontrast dazu steht die Sinusförmige Wahrscheinlichkeitsdichte für ein quantenmechanisches Teilchen. 
+
+
+\end{document}
