@@ -1,0 +1,105 @@
+\documentclass[ex,minted]{exercise_4.0}
+
+\deadline{02.05.2024}
+
+\begin{document}
+
+\section{Tunneleffekt}
+\subsection{
+    {\it Ein zeitlich konstanter Strom von Teilchen der Masse \(m\) und Energie \(E<E_0\) bewege sich in positive \(x\)-Richtung auf eine Potentialbarriere zu. Berechnen Sie den Reflektionskoeffizienten \(R\) und den Transmissionskoeffizienten \(T\), und zeigen Sie, dass
+    \begin{align*}
+        T = \frac{1-E/E_0}{1-E/E_0 + \frac{E_0}{4E} \sinh^2(\alpha a)} \with \alpha = \sqrt{2m(E_0-E)/\hbar^2}
+    \end{align*}
+    gilt. Dabei gibt die Transmission \(T\) an mit weclher Wahrscheinlichkeit ein Teilchen die Potentialbarriere durchfliegt während, \(R=1-T\) die Wahrscheinlichkeit angibt, dass ein Teilchen reflektiert wird.}
+}\vspace{2ex}
+
+Da sich der Teilchenstrom auf den Abschnitten \((-\infty,0),[0,a],(a,\infty)\) jeweils in einem konstanten Potential bewegt, sind die Lösungen jeweils die eines freien Teilchens. 
+\begin{align*}
+    \psi(x) &= \begin{cases}
+        \psi_1(x) = A\exp(ik_1x) + B\exp(-ik_1x) &\te{für}\quad  x<0\\ 
+        \psi_2(x) = C\exp(ik_2x) + D\exp(-ik_2x) &\te{für}\quad  0\le x\le a\\ 
+        \psi_3(x) = A'\exp(ik_1x) + B'\exp(-ik_1x) &\te{für}\quad  a<x\\ 
+    \end{cases}
+\end{align*}
+Es muss \(B'=0\) gelten, da der zugehörige Term mit \(p\propto-\e_x\) ein Teilchenstrom repräsentiert, der sich von \(+\infty\) aus auf die Potentialbarriere zubewegt, und dies per Konstruktion unphysikalisch ist. 
+
+\begin{align*}
+    \psi(x) &= \begin{cases}
+        \psi_1(x) = A\exp(ik_1x) + B\exp(-ik_1x) &\te{für}\quad  x<0\\ 
+        \psi_2(x) = C\exp(ik_2x) + D\exp(-ik_2x) &\te{für}\quad  0\le x\le a\\ 
+        \psi_3(x) = A'\exp(ik_1x) &\te{für}\quad  a<x\\ 
+    \end{cases}
+\end{align*}
+
+Da das Potenzial beschränkt ist, muss die Wellenfunktion an den Übergängen bei \(x=0\) und \(x=a\) erstens stetig sein, und zweitens stetig diffbar.\\
+
+I.:
+\begin{align*}
+    \begin{rcases}
+        \psi_1(0) = \psi_2(0)\\
+        \psi_2(a) = \psi_3(a)\\
+    \end{rcases}\implies 
+    \begin{cases}
+        A+B &= C + D\\
+        C\exp(ik_2a) + D\exp(-ik_2a) &= A'\exp(ik_1a)
+    \end{cases}
+\end{align*}
+
+
+II.:
+\begin{align*}
+    \begin{rcases}
+        \psi_1'(0) = \psi_2'(0)\\
+        \psi_2'(a) = \psi_3'(a)\\
+    \end{rcases}\implies 
+    \begin{cases}
+        k_1(A-B) &= k_2(C - D)\\
+        k_2\hug{C\exp(ik_2a) - D\exp(-ik_2a)} &= k_1 A'\exp(ik_1a)
+    \end{cases}
+\end{align*}
+
+% Das ist jetzt das dritte mal, dass wir diese Aufgabe machen müssen, jedes mal mit einem etwas anderen Ansatz, sodass man den Rechenweg nicht einfach kopieren kann. 
+
+\inputpy{Python-Code}{3.py}
+
+\begin{align*}
+    A &= \frac{0.25 A' \left(- k_{1}^{2} e^{2.0 i a k_{2}} + k_{1}^{2} + 2.0 k_{1} k_{2} e^{2.0 i a k_{2}} + 2.0 k_{1} k_{2} - k_{2}^{2} e^{2.0 i a k_{2}} + k_{2}^{2}\right) e^{i a \left(k_{1} - k_{2}\right)}}{k_{1} k_{2}} \\
+    &= \frac{- k_{1}^{2} e^{i a k_{2}} + k_{1}^{2} e^{-i k_{2} a} + 2 k_{1} k_{2} e^{i a k_2} + 2 k_{1} k_{2} e^{-i a k_2} - k_{2}^{2} e^{i a k_{2}} + k_2^2 e^{-i a k_2}}{4 k_{1} k_{2}} A' e^{i k_{1} a}\\
+    \\
+    &= \frac{- 2 i k_1^2 \sin(k_2 a) + 4 k_1 k_2 \cos(k_2 a)  - 2 i k_2^2  \sin(k_2 a)}{4 k_{1} k_{2}} A' e^{i k_{1} a}\\
+    &= \frac{2 k_1 k_2 \cos(k_2 a)  - i (k_1^2 + k_2^2)  \sin(k_2 a)}{2 k_{1} k_{2}} A' e^{i k_{1} a}\\
+    \\
+    &= \hug{\cos(k_2 a)  - i \frac{k_1^2 + k_2^2}{2 k_1 k_2}  \sin(k_2 a)} e^{i k_{1} a} A'\\
+    \\
+    \\
+    B &= \frac{0.25 A' \left(- k_{1}^{2} e^{2.0 i a k_{2}} + k_{1}^{2} + k_{2}^{2} e^{2.0 i a k_{2}} - k_{2}^{2}\right) e^{i a \left(k_{1} - k_{2}\right)}}{k_{1} k_{2}}\\
+    &= \frac{- k_1^2 e^{i k_2 a} + k_1^2 e^{-i k_2 a}+ k_2^2 e^{i k_2 a} - k_2^2 e^{-i k_2 a} }{4 k_1 k_2} e^{i a k_1} A'\\
+    &= \frac{- 2 i k_1^2 \sin(k_2 a) + 2 i k_2^2 \sin(k_2 a) }{4 k_1 k_2} e^{i a k_1} A'\\
+    &= i\frac{k_2^2-k_1^2}{2 k_1 k_2} \sin(k_2 a) e^{i a k_1} A'\\
+\end{align*}
+
+Der reflektierte Anteil ist dann der reflektierte Teilchenstrom (in Teilchen pro Sekunde) durch den eingehenden Teilchenstrom
+\begin{align*}
+    R &= \frac{\abs B^2}{\abs A^2}
+    = \frac{\hug{\frac{k_2^2-k_1^2}{2 k_1 k_2}}^2 \sin^2(k_2 a)}{\cos^2(k_2 a)  + \hug{\frac{k_1^2 + k_2^2}{2 k_1 k_2}}^2 \sin^2(k_2 a)}\\
+    &= \frac{1}{\hug{\frac{2 k_1 k_2}{k_2^2-k_1^2}}^2 \tan^{-2}(k_2 a) + 1}\\
+    \\
+    \abs A^2 &= \hug{\cos^2(k_2 a)  + \hug{\frac{k_1^2 + k_2^2}{2 k_1 k_2}}^2 \sin^2(k_2 a)}  A'^2\\
+    \abs B^2 &= \hug{\frac{k_2^2-k_1^2}{2 k_1 k_2}}^2 \sin^2(k_2 a)A'^2\\
+\end{align*}
+und die Transmission ergibt sich aus der Kontinuitätsgleichung als: 
+\begin{align*}
+   T &= 1- R\\
+   &= 1- \frac{1}{\hug{\frac{2 k_1 k_2}{k_2^2-k_1^2}}^2 \tan^{-2}(k_2 a) + 1} \\
+   &= \frac{1}{1 + \hug{\frac{k_2^2-k_1^2}{2 k_1 k_2}}^2 \tan^{2}(k_2 a)} \\
+\end{align*}
+
+\subsection{}
+\begin{align*}
+\end{align*}
+
+\subsection{}
+\begin{align*}
+\end{align*}
+
+\end{document}
