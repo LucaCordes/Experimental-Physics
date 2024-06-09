@@ -1,0 +1,58 @@
+\documentclass{article}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{amsmath}
+\RequirePackage{amsfonts}
+\RequirePackage{amssymb}
+\RequirePackage{xcolor}
+\RequirePackage{graphicx}
+\RequirePackage{pdfpages} % includepdf
+\RequirePackage[no-math]{fontspec} % ß and vs-code font for minted
+\RequirePackage{svg}
+\RequirePackage{minted} % compile with xelatex or luatex!
+\usemintedstyle{emacs}
+\RequirePackage[breakable]{tcolorbox} % boxed minted
+\RequirePackage{xkeyval} % boxed minted
+\RequirePackage[breakable,listingsutf8]{tcolorbox} 
+
+\begin{document}
+
+\newfontfamily\Consolas{Consolas}[NFSSFamily=ConsolasFamily]
+\setminted{python3,mathescape,fontfamily=ConsolasFamily,breaklines=true,fontsize=\small}
+\setmintedinline{python3,mathescape,fontfamily=ConsolasFamily}
+
+\newcounter{python}
+
+%% minted commands
+\newmintinline[py]{python}{}
+\newmintedfile[@inputpy]{python}{}
+
+% \define@key[〈prefix〉]{〈family〉}{〈key〉}[〈default〉]{〈function〉}
+% -> \〈prefix〉@〈family〉@〈key〉 holding <function>
+\define@key{inputpython}{minted}{#1}
+\define@key{inputpython}{tcolorbox}{#1}
+\define@key{inputpython}{title}{#1}
+\define@key{inputpython}{firstcell}{#1}
+\define@key{inputpython}{lastcell}{#1}
+
+\newtcbinputlisting{inputpython@terminal}
+{
+    title=Python-Code \thepythoncounter: \inputpython@title 
+    colback=black,colupper=white,colframe=yellow!75!black,
+    listing only,listing options={style=tcblatex},
+    every listing line={\textcolor{red}{\small\ttfamily\bfseries >>> }}
+}
+
+
+\newcommand{\inputpython}[2][]
+{
+    \begin{tcolorbox}[breakable,title=#1]
+        \INTERNALinputpy[#1]{#3}
+        \tclower
+        
+
+    \end{tcolorbox}
+}
+
+\section{Erste Versuche}
+
+\end{document}

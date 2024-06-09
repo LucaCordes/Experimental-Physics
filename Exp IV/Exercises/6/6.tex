@@ -1,0 +1,323 @@
+\documentclass[ex, minted]{exercise_4.0}
+
+\deadline{29.05.2024}
+
+\begin{document}
+
+\section{Feinstruktur}
+{\it In der Vorlesung wurde für die totale Feinstrukturaufspaltung im Wasserstoff-Atom der Ausdruck gefunden:
+\begin{align}
+    \Delta E_{FS} &= E_n \cdot \frac{Z^2\alpha^2}{n} \hug{\frac{1}{j+\frac12} - \frac{3}{4n}}
+\end{align}
+Diese Aufspaltung setzt sich aus den Beiträgen der Spin-Bahn-Kopplung \(\Delta E_{LS}\), dem Darwin-Term \(\Delta E_D\) und der relativistischen Korrektur \(\Delta E\sub{rel}\) zusammen: 
+\begin{align*}
+    \Delta E_{LS} &= - E_n \frac{Z^2\alpha^2}{n} \frac{1}{2l(l+1/2)(l+1)}\cdot \begin{cases}
+        l &\for j=l+1/2 \tand l\ge1\\ 
+        -l-1 &\for j=l-1/2 \tand l\ge1\\ 
+    \end{cases}\\
+    \Delta E_D &= - E_n \frac{Z^2\alpha^2}{n} \for l=0\\
+    \Delta E\sub{rel} &= -E_n \frac{Z^2\alpha^2}{n} \hug{\frac3{4n} - \frac{1}{l+\frac12}}
+\end{align*}
+}
+
+\subsection{\it Zeigen Sie, dass sich die Darwinkorrektor auch für den Fall \(l=0\) aus der \(\Delta E_{LS}\) Korrektur ergibt. Warum tritt der zweite Fall \(-l-1\) der Fallunterscheidung bei der Darwinkorrektur nicht auf?}
+
+\dottedlinett
+
+Der zweite Fall \(-l-1\) der Fallunterscheidung tritt nicht auf, weil dann \(j=l-1/2=0-1/2=-1/2\) negativ wäre, obwohl der Gesamt-Drehimpuls als positive Größe definiert ist.
+
+\begin{align*}
+    \Delta E_{LS} &= - E_n \frac{Z^2\alpha^2}{n} \frac{1}{2l(l+1/2)(l+1)}\cdot \begin{cases}
+        l &\for j=l+1/2 \tand l\ge1\\ 
+        -l-1 &\for j=l-1/2 \tand l\ge1\\ 
+    \end{cases}\\
+    &= - E_n \frac{Z^2\alpha^2}{n} \frac{1}{2(l+1/2)(l+1)}\for j=l+1/2\\
+    &= - E_n \frac{Z^2\alpha^2}{n} \for l=0\\
+    &= \Delta E_D
+\end{align*}
+
+\subsection{\it Leiten Sie aus den genannten Korrekturen die Gesamtkorrektur, Gleichung (1) her und zeigen Sie damit, dass die Feinstrukturaufspaltung nur von \(n\) und \(j\) abhängig ist. Benennen Sie einen entarteten Zustand unterschiedlichen Bahndrehimpulses. \\\\
+Hinweis: Berücksichtigen Sie die Gültigkeit der Ausdrücke für bestimme Quantenzahlen.}
+
+\dottedlinett
+
+\begin{align*}
+    \Delta E_{FS} 
+    &= \Delta E_{LS} + \Delta E_D + \Delta E\sub{rel}\\
+    &= \Delta E_{LS} + \Delta E\sub{rel}\for \Delta E_{LS}(l=0)=E_D\\
+    &= - E_n \frac{Z^2\alpha^2}{n}\hug{\frac3{4n} - \frac{1}{l+\frac12}+ \frac{1}{2l(l+1/2)(l+1)}\cdot \begin{cases}
+        l &\for j=l+1/2\\ 
+        -l-1 &\for j=l-1/2 \tand l\ge1\\ 
+    \end{cases}}\\
+    &= - E_n \frac{Z^2\alpha^2}{n}\hug{\frac3{4n} - \begin{cases}
+        \frac{1}{j} - \frac{j-1/2}{2(j-1/2)j(j+1/2)}\\
+        \frac{1}{j+1} + \frac{j+3/2}{2(j+1/2)(j+1)(j+3/2)}
+    \end{cases}}\note[implizit gleiche Fallunterscheidung]\\
+    &= - E_n \frac{Z^2\alpha^2}{n}\hug{\frac3{4n} - \begin{cases}
+        \frac{2(j-1/2)j(j+1/2) - j(j-1/2)}{2(j-1/2)j^2(j+1/2)}\\
+        \frac{2(j+1/2)(j+1)(j+3/2) + (j+1)(j+3/2)}{2(j+1/2)(j+1)^2(j+3/2)}
+    \end{cases}}\\
+    &= - E_n \frac{Z^2\alpha^2}{n}\hug{\frac3{4n} - \begin{cases}
+        \frac{2(j+1/2) - 1}{2j(j+1/2)}\\
+        \frac{2(j+1/2) + 1}{2(j+1/2)(j+1)}
+    \end{cases}}\\
+    &= - E_n \frac{Z^2\alpha^2}{n}\hug{\frac3{4n} - \begin{cases}
+        \frac{1}{j+1/2}\\
+        \frac{1}{j+1/2}
+    \end{cases}}\\
+    &= - E_n \frac{Z^2\alpha^2}{n}\hug{\frac3{4n} - \frac{1}{j+1/2}}\\
+    &= E_n \frac{Z^2\alpha^2}{n}\hug{\frac{1}{j+1/2} - \frac3{4n}}
+\end{align*}
+Damit ist die Feinstrukturaufspaltung nur von \(n\) und \(j\) abhängig. 
+Die Feinstrukturaufspaltung hebt die Entartung zwischen vielen Zuständen auf, jedoch nicht zwischen allen, z.B. haben die Zustände \(2^2s_{1/2}\) und \(2^2p_{1/2}\) weiterhin die gleiche Energie, obwohl sie sich im Bahndrehimpuls klar unterscheiden.
+
+\section{Korrekturen zum Wasserstoffspektrum}
+{\it In der Vorlesung haben Sie verschiedene Korrekturen zum Wasserstoffspektrum kennengelernt:}
+
+\subsection{\it Zeichnen Sie für \(n=1,2\) und \(3\) ein vollständiges (nicht maßstäbliches) Termschema des  Wasserstoffatoms, das die verschiedenen Korrekturen zum unkorrigierten Wasserstoffspektrum herausgestellt. Achten Sie dabei auf die korrekte Bezeichnung der Energieniveaus und erläutern Sie kurz, wodurch die einzelnen Korrekturen hervorgerufen werden.\\\\
+Hinweis: Wegen der Übersicht genügt für \(n=3\) die Betrachtung bis zur Feinstrukturaufspaltung.}
+
+\dottedlinett
+
+
+\fig{Wasserstoff Termschema}{wasserstoff_termschema.jpg}
+
+\subsection{\it Bestimmen Sie die Energien der Übergänge 
+\(2^2P_{3/2}\to 1^2S_{1/2}\), \(2^2P_{1/2}\to 1^2S_{1/2}\) und 
+\(2^2S_{1/2}\to 1^2S_{1/2}\). \\\\
+Hinweis: Verwenden Sie \(\Delta E\sub{Lamb}(1^2S_{1/2}) = +3.35\cdot 10^{-5}\u{eV}\). Eine Berücksichtigung der Hyperfeinstrukturaufspaltung ist nicht notwendig.}
+
+\dottedlinett
+
+Alle Werte werden berechnet mit:
+\begin{align*}
+    E_{n,l,j} &= E_n + \Delta E_{FS} + \Delta E\sub{Lamb} \\
+    &= -\frac{\mu Z^2 e^4}{32 \pi^2 \varepsilon_0^2 \hbar^2} \frac{1}{n^2}  \hug{1+ \frac{Z^2\alpha^2}{n} \hug{\frac{1}{j+\frac12} - \frac{3}{4n}}} + \Delta E\sub{Lamb}
+\end{align*}
+
+Damit ergeben sich: 
+\begin{center}
+    \begin{tabular}{|c|c|c|c|}
+        \hline 
+        Zustand \(Z_i\)& \(\Delta E\sub{Lamb}(Z_i)\) in eV & \(E(Z_i)\) in eV& \(\Delta E = E_{Z_i} - E_{Z_0}\) in eV\\\hline
+        \(1^2S_{1/2}\) & \(+3.35\E{-5}\) & \(-13.605841\) & 0 \\
+        \(2^2P_{3/2}\) & \(+4.60\E{-8}\) & \( -3.401435\) & 10.204406 \\
+        \(2^2P_{1/2}\) & \( -6.00\E{-8}\) & \(-3.401480\) & 10.204361 \\
+        \(2^2S_{1/2}\) & \(+4.31\E{-6}\) & \(-3.401476\) & 10.204365 \\\hline
+    \end{tabular}    
+\end{center}
+
+\section{Pauli-Prinzip und Schalenbau der Atome}
+\subsection{\it Durch welche Quantenzahlen werden die Elektronenzustände Schalenmodell eines Atom beschrieben?}
+
+\dottedlinett
+
+Zustände werden durch die Quantenzahlen \(n,l,m_l\) und \(m_s\) beschrieben.
+
+\subsection{\it Wie viele Elektronen finden in den Unterschalen eines Atoms Platz, und welche Quantenzahlen kommen jeweils den einzenen Elektronenzuständen zu?}
+
+\dottedlinett
+
+Für Elektronen in der Unterschale mit Drehimpuls-Quantenzahl \(l\), kann die magnetische Quantenzahl \(m_l\) die Werte \(-l,\dots, l\) annehmen (\(N(m_l)=1+2l\) Möglichkeiten). Für jeden Wert von \(m_l\) gibt es dann noch zwei Möglichkeiten für den Spin des Elektrons \(m_s=\pm \frac12\) ($N(m_s)=2$ Möglichkeiten), sodass es insgesamt in jeder Unterschale \(N(m_l,m_s) = N(m_l)\cdot N(m_s) = 2+4l\) verschiedene Zustände gibt, welche von Elektronen angenommen werden können. Da nach dem Prinzip von Pauli keine zwei Elektronen den gleichen Zustand besetzten können, finden somit in der Unterschale mit Drehimpulsquantenzahl \(l\) auch nur maximal \(2+4l\) Elektronen Platz.
+
+\subsection{\it Wie viele Elektronen "{}passen"{} in die K-, L-, M- und N-Schale?}
+
+\dottedlinett
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    Schale & maximale Anzahl \(e^-\) \\\hline
+    K & 2 \\\hline
+    L & 8 \\\hline
+    M & 18 \\\hline
+    N & 32 \\\hline
+    \(\vdots\) & \(\vdots\)\\\hline
+    \(\ket n\) & \(2n^2\)\\\hline
+\end{tabular}
+\end{center}
+
+\subsection{\it Nehmen Sie an, dass sich in demselben Atom zwei Elektronen mit den selben Quantenzahlen \(n=2\) und \(l=1\) befinden. Wäre das Pauli-Prinzip nicht gültig, wie viele Kombinationen von Zuständen wäre denkbar?}
+
+\dottedlinett
+
+Ohne das Pauliprinzip könnte jeweils für jedes Elektron die magnetische Quantenzahl \(m_l=-1,0,1\) sein, und der Spin \(m_s\) jeweils \(\pm \frac12\). Für jedes Elektron gäbe es somit \(3\cdot2=6\) Möglichkeiten, und für beide zusammen dann \(6\cdot 6 = 36\). 
+
+
+\subsection{\it Mit den gleichen Annahmen wie schon in (d). Wie viele und welche Zustände werden durch das Pauliprinzip verboten?}
+
+\dottedlinett
+
+Mit dem Pauliprinzip kann, wenn das erste Elektron den Zustand \(Z\) besetzt, das zweite sich nicht ebenfalls im Zustand \(Z\) befinden. Für jede Möglichkeit des ersten Elektrons entfällt somit im Vergleich zur vorherigen Aufgabe ein Zustand für das zweite Elektron. Insgesamt gibt es somit sechs Zustände weniger, d.h. genau \(36-6=30\).  
+
+\section{Störungsrechnung im Heliumatom}
+{\it 
+    Das Potential des Helium Atoms ist aus der Vorlesung bekannt als
+    \begin{align*}
+        V(r_1) &= -\frac{e^2 Z}{4\pi \epsilon_0 r_1} + \Delta V(r_{12})
+    \end{align*}
+    Wie sieht das Potenzial \(V(r_1)\) für das zweite Elektron im He-Atom aus, wenn das erste Elektron durch eine 1s-Wellenfunktion beschrieben werden kann (d.h. die Wechselwirkung zwischen den beiden Elektronen wird nur gemittelt berücksichtigt)?\\\\
+    Tipp: Berechnen sie \(\Delta V\) über Störungsrechnung in dem Sie explizit \(\Psi_1\) einsetzten und über \(\v r_1\) integrieren.
+}
+
+\dottedlinett
+
+Die Notation ist im folgendendem so, dass \((\ )_1\) Variablen sind, die sich auf das erste Elektron beziehen und \((\ )_2\) auf das zweite Elektron. \\
+
+Die Wellenfunktion für ein Elektron im Zustand \(1s\) ist
+\begin{align*}
+    \Psi_{1s}(r) &= \Upsilon_0^0 \cdot R_{1,0} = \frac{1}{\sqrt{\pi}}\hug{\frac{Z}{a_0}}^{\frac32} e^{-\frac{Z}{a_0}r}
+\end{align*}
+
+Damit ergibt sich
+\begin{align*}
+    \Delta V_2(r_{12})
+    &= \frac{e^2}{4\pi \epsilon_0 r_{12}}\\
+    &= \frac{e^2}{4\pi \epsilon_0} \frac1{\abs{\v r_1 - \v r_2}}\\
+    \tug{\Delta V_2} 
+    &= \frac{e^2}{4\pi \epsilon_0} \tug{\frac1{\abs{\v r_1 - \v r_2}}}\\
+    &= \frac{e^2}{4\pi \epsilon_0} \int_{\R^3}\dV {\frac{\abs{\Psi_{1s}}^2}{\abs{\v r_1 - \v r_2}}}\\
+    &= \frac{e^2}{4\pi \epsilon_0} \frac{Z^3}{\pi a_0^3}\int_{\R^3}\dV {\frac{e^{-\frac{2 Z}{a_0}r_1}}{\abs{\v r_1 - \v r_2}}}
+\end{align*}
+Aufgrund der sphärischen Symmetrie des \(1s\) Zustandes, kann o.E.d.A. angenommen werden, dass \(\v r_2 = r_2 \cdot \e_z\) ist. 
+\begin{align*}
+    \Delta V_2(r_{12}) 
+    &= \frac{e^2}{4\pi \epsilon_0} \frac{Z^3}{\pi a_0^3}\int_0^\inf\dr \,r^2 \inttheta \sin\theta \int_0^{2\pi}\d\varphi  {\frac{e^{-\frac{2 Z}{a_0}r}}{\sqrt{r^2\sin^2\theta\cos^2\varphi + r^2\sin^2\theta\sin^2\varphi +(r\cos\theta - r_2)^2}}}\\
+    &= \frac{e^2}{4\pi \epsilon_0} \frac{Z^3}{\pi a_0^3}\int_0^\inf\dr \,r^2 \inttheta \sin\theta \int_0^{2\pi}\d\varphi  {\frac{e^{-\frac{2 Z}{a_0}r}}{\sqrt{r^2\sin^2\theta + r^2\cos^2\theta + r_2^2 - 2 r_2 r \cos\theta}}}\\
+    &= \frac{e^2}{4\pi \epsilon_0} \frac{Z^3}{\pi a_0^3}\int_0^\inf\dr \,r^2 \inttheta \sin\theta \int_0^{2\pi}\d\varphi  {\frac{e^{-\frac{2 Z}{a_0}r}}{\sqrt{r^2 - 2 r r_2 \cos\theta + r_2^2}}}\\
+    &= \frac{e^2 Z^3}{2\pi\epsilon_0 a_0^3} \int_0^\inf\dr \,r^2 \inttheta \sin\theta {\frac{e^{-\frac{2 Z}{a_0}r}}{\sqrt{r^2 - 2 r r_2 \cos\theta + r_2^2}}}\\
+\end{align*}
+
+Nebenrechnung: \(a,b\in\R^+\), \(b\neq 0\)
+\begin{align*}
+    \int_0^\pi \dtheta \frac{\sin\theta}{\sqrt{a-b \cos\theta}}
+    &= \frac{1}{b} \int_{a-b}^{a+b} \frac{\du}{\sqrt{u}} \with u = a-b\cos\theta\\
+    &= \frac{2}{b} \sqrt{u}\eval_{a-b}^{a+b}\\
+    &= \frac{2}{b} \hug{\sqrt{a+b} - \sqrt{a-b}}
+\end{align*}
+
+Haubtrechnung:
+\begin{align*}
+    \Delta V_2(r_{12}) &= \frac{e^2 Z^3}{2\pi\epsilon_0 a_0^3} \int_0^\inf\dr r^2 e^{-\frac{2 Z}{a_0}r}\inttheta \frac{\sin\theta }{\sqrt{a - b \cos\theta}}\with a = r^2+r_2^2 \te{ und } b = 2rr_2\\
+    &= \frac{e^2 Z^3}{2\pi\epsilon_0 a_0^3} \int_0^\inf\dr r^2 e^{-\frac{2 Z}{a_0}r}\frac{2}{b} \hug{\sqrt{a+b} - \sqrt{a-b}}\\
+    &= \frac{e^2 Z^3}{2\pi\epsilon_0 a_0^3} \int_0^\inf\dr r^2 e^{-\frac{2 Z}{a_0}r}\frac{1}{rr_2} \hug{\sqrt{r^2+r_2^2+2rr_2} - \sqrt{r^2+r_2^2-2rr_2}}\\
+    &= \frac{e^2 Z^3}{2\pi\epsilon_0 a_0^3} \int_0^\inf\dr r^2 e^{-\frac{2 Z}{a_0}r}\frac{1}{rr_2} \hug{(r+r_2) - (r-r_2)}\\
+    &= \frac{e^2 Z^3}{2\pi\epsilon_0 a_0^3} \int_0^\inf\dr r e^{-\frac{2 Z}{a_0}r}\\
+    &= \frac{e^2 Z^3}{2\pi\epsilon_0 a_0^3} \hug{\frac{a_0}{2 Z}}^2\underbrace{\int_0^\inf\du u  e^{-u}}_{=1!}\note u=\frac{2 Z}{a_0}r\\
+    &= \frac{e^2 Z}{8\pi\epsilon_0 a_0} \\
+    &= \frac{e^2}{4\pi\epsilon_0 a_0} \\
+\end{align*}
+
+Endergebnis:
+\begin{align*}
+    V(r_2) &= -\frac{e^2 Z}{4\pi \epsilon_0 r_2} + \Delta V_2(r_{12})\\
+    &= -\frac{e^2}{2\pi \epsilon_0 r_1} +  \frac{e^2}{4\pi\epsilon_0 a_0}\\
+    &= \frac{e^2}{2\pi \epsilon_0 } \hug{\frac{1}{2a_0}-\frac{1}{r_1}}
+\end{align*}
+
+\newpage
+\section{Hyperfeinstruktur des Wasserstoffatoms}
+{\it Die Hyperfeinstrukturaufspaltung \(\Delta E_{HFS}\) ergibt sich aus der Wechselwirkung des Kernspins \(I\) mit dem Gesamtdrehimpuls des Hüllenelektrons \(j\).}
+
+\subsection{\it Zeigen Sie, dass für die Hyperfeinstrukturaufspaltung folgende Abhängigkeit von \(j,I\) und \(F\) gilt:}
+\begin{align*}
+    \Delta E_{HFS} &= \frac A2 \hug{F(F+1) - j(j+1) - I(I+1)} \with A=\frac{g_i \mu_K B_j}{\sqrt{j(j+1)}}
+\end{align*}
+
+\dottedlinett
+
+Die Energiedifferenzen der Feinstruktur \(\Delta_{HFS}\) entstehten durch die Wechselwirkung des magnetischen Moments des Kerns, mit dem B-Feld der Schale.
+Betrachtet man den Kern in der Dipol-Näherung mit Dipolmoment \(\v \mu_I\), hat er im B-Feld \(\v B_J\) der Schale die Energie:
+
+\begin{align*}
+    \Delta E _{HFS} &= - \v \mu_I\cdot \v B_J\\
+    &= -\frac{g_I \mu_k}{\hbar}\v I \cdot \frac{-\abs{B_J} \v J }{\abs J} \\ 
+    &= \frac{g_I \mu_k \abs{B_J}}{\hbar\abs J } \v I \cdot \v J\\
+\end{align*}
+Nebenrechnung:
+\begin{align*}
+    \v F &= \v J + \v I\\ 
+    \v F^2 &= \v J^2 + 2\v J\cdot \v I + \v I^2\\ 
+    \v J\cdot \v I &= \frac{\v F^2 - \v J^2 - \v I^2}{2}\\ 
+    &= \frac{\hbar^2}{2} \hug{f(f+1) - j(j+1) - i(i+1)}
+\end{align*}
+
+Haubtrechung:
+\begin{align*}
+    \Delta E_{HFS} 
+    &= \frac{g_I \mu_k \abs{B_J}}{\hbar\abs J } \v I \cdot \v J\\
+    &= \frac{g_I \mu_k \hbar  \abs{B_J}}{2\abs J } \hug{f(f+1) - j(j+1) - i(i+1)}\\
+    &= \frac{g_I \mu_k \abs{B_J}}{2\sqrt{j(j+1)} } \hug{f(f+1) - j(j+1) - i(i+1)}\\
+    &= \frac{A}{2} \hug{f(f+1) - j(j+1) - i(i+1)}\with A = \frac{g_I \mu_k \abs{B_J}}{\sqrt{j(j+1)} } \\
+\end{align*}
+
+\subsection{\it Zeigen Sie, dass für den Abstand aufeinanderfolgender Energieniveaus folgende Regel gilt:
+\begin{align*}
+    \Delta E_{HFS,F+1} - \Delta E_{HFS,F} &= A\cdot (F+1)
+\end{align*}
+}
+
+\dottedlineee
+
+\begin{align*}
+    \Delta E_{HFS,F+1} - \Delta E_{HFS,F} 
+    &= \frac{A}{2} \hug{(f+1)(f+2) - j(j+1) - i(i+1)} \\
+    &\qquad - \frac A2 \hug{f(f+1) - j(j+1) - i(i+1)}\\
+    &= \frac{A}{2} \hug{(f+1)(f+2) - f(f+1)}\\
+    &= A (f+1)
+\end{align*}
+
+\subsection{Das Isotop \({}^{209}\)Bi hat einen angeregten Zustand der elektronischen Konfiguration \({}^2\)D\(_{5/2}\). Der Zustand zeigt eine Aufspaltung in 6 Hyperfein-Niveaus mit entsprechenden Abständen zueinander. Eine experimentelle Messung der Abstände der Wellenzahl \(\bar \nu =\frac1\lambda\) ist in der folgenden Tabelle für 20 Messreihen dargestellt. Bestimmen Sie den Kernspin \(I\) und die Konstante \(A\), samt ihrer Fehler. Erstellen Sie ein python-Skipt oder Jupyter-Notebook und wählen Sie eine sinnvolle grafische Darstellung der Messungen und Fehler der einzelnen Abstände. Denken Sie daran ihre Analyse zu kommentieren oder so zu beschreiben, dass sie nachvollziehbar ist. Die Daten finden Sie auch in \py{dataLines.csv} im Jupyter-Hub der RWTH. Die Datei kann man wie in dem Beispielskript unserer Präsenzübung auslesen.}
+
+\dottedlinett
+
+Der auf dem Aufgabenzettel gedruckte Datensatz ist nicht der gleiche wie der, der im Jupyter-Hub zum Download angeboten wird. Auf dem Zettel befindet sich in der zweiten Messreihe mit \(0.674\dots\) ein Ausreißer, der gleiche Wert ist beim Jupyter-Datensatz in der dritten Messreihe zu finden und auch dort ein Ausreißer. Wir haben den Messwert daher für die Analyse entfernt. \\
+% 0.2350315783,0.3105147864,0.674109339,0.4696743616,0.5513567203
+
+Schritt eins unser Analyse ist es die Daten einzuladen, und für jede Messreihe Mittelwert und Standartabweichung zu schätzen. Die Ergebnisse sind in einem Plot nachzuvollziehen.
+
+\inputpy[lastline=25]{Daten einladen und vorbereiten}{6.py}
+
+\svg{Histogramme der Messreihen mit eingezeichneten \(\mu\) und \(\sigma\)}{1.svg}
+
+
+Zu jedem \(\Delta E = E_{f+1}-E_f\) Wert gehört ein \(f\). Da die Energien der Messreihen ansteigen, ist klar, dass die erste Messreihe das kleinste \(f\) hat und \(f\) danach in einser Schritten ansteigt. \\
+
+Findet man für die erste Messreihe das korrekte \(f\) wird nach 
+\begin{align*}
+    \Delta E_{HFS,F+1} - \Delta E_{HFS,F} &= A\cdot (f+1)
+\end{align*}
+ein linearer Zusammenhang zwischen \(f\) und \(\Delta E\) erwartet, mit Steigung und y-Achsenabschnitt \(A\). Etwas rumprobieren zeigt, dass Steigung und y-Achsenabschnitt übereinstimmen, wenn man das erste \(f\) als \(f=2\) wählt. 
+
+\inputpy[firstline=28,lastline=37]{Fit}{6.py}
+
+Noch ein Plot des Fits und der normierten Residuen, um die Güte zu beurteilen; Es sind keine Auffälligkeiten zu erkennen.
+
+\inputpy[firstline=40,lastline=58]{Plot von Fit und normierten Residuen}{6.py}
+
+\svg{Fit und normierte Residuen}{2.svg}
+
+% \newcommand{\mygraphics}[2][]{
+% \tcbox[enhanced,boxsep=0pt,top=0pt,bottom=0pt,left=0pt,
+% right=0pt,clip upper, colback=black!75!white,toptitle=2pt,bottomtitle=2pt,nobeforeafter,,title=\hspace{5mm}\detokenize{#2}]
+% {\includegraphics[width=\textwidth]{#2}}}
+
+% \mygraphics{2.png}
+
+
+Ein gewichtetes Mittel von gefitteter Steigung und y-Achsenabschnitt führt dann zum finalen Wert
+\begin{align*}
+    A = (9.720\pm 0.016) \E{-6} \u{eV}
+\end{align*}  
+
+Da außerdem bestimmt wurde, dass die Energieniveaus den Gesamt-Drehimpulsen
+\begin{align*}
+    f = \abs{j-i}, \abs{j-i}+1,\dots j+i= 2, 3,4,5,6, 7
+\end{align*} 
+entsprechen, muss nach den Rechenregeln der Drehimpuls-Addition
+der Kern Drehimpuls symmetrisch in der Mitte liegen, also 
+\begin{align*}
+    i = \frac92 
+\end{align*}
+
+\end{document}

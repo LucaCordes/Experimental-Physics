@@ -10,8 +10,10 @@
     \begin{align*}
         T = \frac{1-E/E_0}{1-E/E_0 + \frac{E_0}{4E} \sinh^2(\alpha a)} \with \alpha = \sqrt{2m(E_0-E)/\hbar^2}
     \end{align*}
-    gilt. Dabei gibt die Transmission \(T\) an mit weclher Wahrscheinlichkeit ein Teilchen die Potentialbarriere durchfliegt während, \(R=1-T\) die Wahrscheinlichkeit angibt, dass ein Teilchen reflektiert wird.}
-}\vspace{2ex}
+    gilt. Dabei gibt die Transmission \(T\) an mit welcher Wahrscheinlichkeit ein Teilchen die Potentialbarriere durchfliegt während, \(R=1-T\) die Wahrscheinlichkeit angibt, dass ein Teilchen reflektiert wird.}
+}
+
+\dottedlinett
 
 Da sich der Teilchenstrom auf den Abschnitten \((-\infty,0),[0,a],(a,\infty)\) jeweils in einem konstanten Potential bewegt, sind die Lösungen jeweils die eines freien Teilchens. 
 \begin{align*}
@@ -21,6 +23,7 @@ Da sich der Teilchenstrom auf den Abschnitten \((-\infty,0),[0,a],(a,\infty)\) j
         \psi_3(x) = A'\exp(ik_1x) + B'\exp(-ik_1x) &\te{für}\quad  a<x\\ 
     \end{cases}
 \end{align*}
+Mit \(k_i = \sqrt{2m(E - V_i)/\hbar^2}\). 
 Es muss \(B'=0\) gelten, da der zugehörige Term mit \(p\propto-\e_x\) ein Teilchenstrom repräsentiert, der sich von \(+\infty\) aus auf die Potentialbarriere zubewegt, und dies per Konstruktion unphysikalisch ist. 
 
 \begin{align*}
@@ -76,30 +79,343 @@ II.:
     &= \frac{- k_1^2 e^{i k_2 a} + k_1^2 e^{-i k_2 a}+ k_2^2 e^{i k_2 a} - k_2^2 e^{-i k_2 a} }{4 k_1 k_2} e^{i a k_1} A'\\
     &= \frac{- 2 i k_1^2 \sin(k_2 a) + 2 i k_2^2 \sin(k_2 a) }{4 k_1 k_2} e^{i a k_1} A'\\
     &= i\frac{k_2^2-k_1^2}{2 k_1 k_2} \sin(k_2 a) e^{i a k_1} A'\\
+    % &= i\frac{V_2 - V_1}{2\sqrt{(E - V_1)(E - V_2)}} \sin(k_2 a) e^{i a k_1} A'\\
 \end{align*}
 
-Der reflektierte Anteil ist dann der reflektierte Teilchenstrom (in Teilchen pro Sekunde) durch den eingehenden Teilchenstrom
-\begin{align*}
-    R &= \frac{\abs B^2}{\abs A^2}
-    = \frac{\hug{\frac{k_2^2-k_1^2}{2 k_1 k_2}}^2 \sin^2(k_2 a)}{\cos^2(k_2 a)  + \hug{\frac{k_1^2 + k_2^2}{2 k_1 k_2}}^2 \sin^2(k_2 a)}\\
-    &= \frac{1}{\hug{\frac{2 k_1 k_2}{k_2^2-k_1^2}}^2 \tan^{-2}(k_2 a) + 1}\\
+Der reflektierte Anteil ist dann der reflektierte Teilchenstrom durch den eingehenden Teilchenstrom
+\begin{align*}   
+    \abs A^2 
+    &= \abs{\hug{\cos(k_2 a)  - i \frac{k_1^2 + k_2^2}{2 k_1 k_2}  \sin(k_2 a)} e^{i k_{1} a} A'}^2\\
+    &= \abs{{\cosh(K_2 a)  - i \frac{k_1^2 - K_2^2}{2 k_1 K_2} \sinh(K_2 a)}}^2 A'^2\\
+    &= \hug{\cosh^2(K_2 a)  + \hug{\frac{k_1^2 - K_2^2}{2 k_1 K_2}}^2 \sinh^2(K_2 a)} A'^2\\
     \\
-    \abs A^2 &= \hug{\cos^2(k_2 a)  + \hug{\frac{k_1^2 + k_2^2}{2 k_1 k_2}}^2 \sin^2(k_2 a)}  A'^2\\
-    \abs B^2 &= \hug{\frac{k_2^2-k_1^2}{2 k_1 k_2}}^2 \sin^2(k_2 a)A'^2\\
+    \abs B^2 
+    &= \abs{i\frac{k_2^2-k_1^2}{2 k_1 k_2} \sin(k_2 a) e^{i a k_1} A'}^2\\
+    &= \abs{\frac{-K_2^2-k_1^2}{2 k_1 K_2} \sinh(K_2 a)}^2 A'^2\note K_2 = k_2 / i = \sqrt{2m(V_2 -  E)/\hbar^2}\\
+    &= \hug{\frac{K_2^2+k_1^2}{2 k_1 K_2}}^2 \sinh^2(K_2 a) A'^2
 \end{align*}
-und die Transmission ergibt sich aus der Kontinuitätsgleichung als: 
 \begin{align*}
-   T &= 1- R\\
-   &= 1- \frac{1}{\hug{\frac{2 k_1 k_2}{k_2^2-k_1^2}}^2 \tan^{-2}(k_2 a) + 1} \\
-   &= \frac{1}{1 + \hug{\frac{k_2^2-k_1^2}{2 k_1 k_2}}^2 \tan^{2}(k_2 a)} \\
+    \hug{\frac{K_2^2+k_1^2}{2 k_1 K_2}}^2 &= \hug{\frac{(V_2-E) + (E - V_1)}{2\sqrt{(E - V_1)(V_2 - E)}}}^2\\
+    &= \frac{(V_2- V_1)^2}{4(E - V_1)(V_2 - E)}\\
+    \\
+    \hug{\frac{k_1^2-K_1^2}{2 k_1 K_2}}^2 &= \hug{\frac{(E - V_1) - (V_2-E)}{2\sqrt{(E - V_1)(V_2 - E)}}}^2\\
+    &= \frac{(2E - V_1-V_2)^2}{4(E - V_1)(V_2 - E)}
+\end{align*}
+\begin{align*}
+    R &= \frac{\abs B^2}{\abs A^2}\\ 
+    &= \frac{\hug{\frac{K_2^2+k_1^2}{2 k_1 K_2}}^2 \sinh^2(K_2 a)}{\cosh^2(K_2 a)  + \hug{\frac{k_1^2 - K_2^2}{2 k_1 K_2}}^2 \sinh^2(K_2 a)}\\
+    &= \frac{\frac{(V_2- V_1)^2}{4(E - V_1)(V_2 - E)} \sinh^2(K_2 a)}{\cosh^2(K_2 a)  + \frac{(2E - V_1-V_2)^2}{4(E - V_1)(V_2 - E)} \sinh^2(K_2 a)}\\
+    &= \frac{\frac{V_2^2}{4E(V_2 - E)} \sinh^2(K_2 a)}{\cosh^2(K_2 a)  + \frac{(2E-V_2)^2}{4E(V_2 - E)} \sinh^2(K_2 a)}\note V_1=0\\
+    &= \frac{V_2^2}{4E(V_2 - E)\coth^2(K_2 a)  + (2E-V_2)^2}\\
+    &= \frac{V_2^2}{4E(V_2 - E)\hug{1 + \sinh^{-2}(K_2 a)}  + (2E-V_2)^2}\\
+    &= \frac{V_2^2}{4E(V_2 - E)\sinh^{-2}(K_2 a)  + V_2^2}\\
+    &= \frac{1}{4E/V_2(1 - E/V_2)\sinh^{-2}(K_2 a)  + 1}\\
+    &= \frac{(1 - E/V_2)^{-1}}{(1 - E/V_2)^{-1} - 4E/V_2\sinh^{-2}(K_2 a) }
+\end{align*}
+und die Transmission ergibt sich aufgrund der Kontinuitätsgleichung als: 
+\begin{align*}
+    T &= 1- R\\
+    &= 1 -\frac{(1 - E/V_2)^{-1}}{4E/V_2\sinh^{-2}(K_2 a) + (1 - E/V_2)^{-1}}\\
+    &= \frac{4E/V_2\sinh^{-2}(K_2 a) + (1 - E/V_2)^{-1} - (1 - E/V_2)^{-1}}{4E/V_2\sinh^{-2}(K_2 a) + (1 - E/V_2)^{-1}}\\
+    &= \frac{1 - E/V_2}{1 - E/V_2 + \frac{V_2}{4E}\sinh^{2}(K_2 a)}\\
 \end{align*}
 
-\subsection{}
+\subsection{\it Berechnen Sie \(R\) und \(T\) für ein Elektron der Energie \(4\u{eV}\), das auf eine Potenzialbarriere der Energie \(E_0=5\u{eV}\) und der Breite \(a=1\A\) stößt.}
+
+\dottedlinete 
+
 \begin{align*}
+    R &= \frac{(1 - E/V_2)^{-1}}{(1 - E/V_2)^{-1} + 4E/V_2\sinh^{-2}(K_2 a)}
+    \approx 30.9 \% \\
+   T &= \frac{1 - E/V_2}{1 - E/V_2 + \frac{V_2}{4E}\sinh^{2}(K_2 a)} \approx 69.1\%\\
 \end{align*}
 
-\subsection{}
+
+\subsection{\it Unter welchen Vorraussetzungen gilt unser Ansatz, die stationäre Schrödingergleichung zu verwenden?}
+
+\dottedlinett
+
+Die stationäre Schrödingergleichung hat keine extra Vorraussetzungen im Vergleich zur nicht stationären, abgesehen davon dass das Potenzial nicht explizit von der Zeit abhängen darf, was in der Regel gegeben ist.
+
+Eine Problematik die man bei der stationären Schrödingergleichung für freie Teilchen jedoch berücksichtigen muss ist, dass die Wellenfunktion eines eindeutigen Energiewertes oft nicht normierbar ist. Entweder man ändert hier die Interpretation der Wellenfunktion von einer Wahrscheinlichkeitsverteilung für ein einzelnes Teilchen hin zu einer Teilchenstromstärke, oder man überlagert Wellenfunktionen für ein Spektrum aus Energien, wodurch die Wellenfunktion normierbar wird. 
+
+\section{Kugelflächenfunktionen}
+\subsection{\it Zeigen Sie für \(\ell=0,1,2\) durch explizites Einsetzen der Kugelflächenfunktionen, dass
 \begin{align*}
+    \sum_{m=-\ell}^\ell \abs{Y_\ell^m(\theta, \phi)}^2 = \frac{2\ell+1}{4\pi}
 \end{align*}
+gilt.
+}
+
+\dottedlinett
+
+Als Definition für die Kugelflächenfunktionen wird 
+\begin{align*}  
+    Y_\ell^{(m)}(\theta, \phi) &= \frac{1}{\sqrt{2\pi}}\sqrt{\frac{2\,\ell + 1}{2} \, \frac{(\ell - m)!}{(\ell + m)!}} \, P_\ell^{(m)}(\cos \theta) \, e^{i\,m\,\phi}\\
+\end{align*}
+verwendet mit \(P_\ell^{(m)}(x)\) als den zugeordneten Legendrepolynomen:
+\begin{align*}
+    P_\ell^{(m)}(x) = (-1)^m \left(1-x^2\right)^{m/2} \frac{\mathrm{d}^m}{\mathrm{d}x^m} P_\ell(x)
+\end{align*}
+Die ersten zugeordneten Legendrepolynomen mit \(\cos\theta\) als Argument sind:
+
+\begin{center}
+    \begin{tabularx}{.5\textwidth}{|c|c|c|y|}
+        \hline
+        \(P_l^{(m)}(\cos\theta)\)& \(l=0\)& \(l=1\)& \(l=2\)\\\hline
+        $m=-2$ & & & $1/8\sin^2\theta$ \\\hline
+        $m=-1$ & & $1/2\sin\theta$ & $1/2\sin\theta\cos\theta$ \\\hline
+        $m=0$ & 1& $\cos\theta$ & $1/2 (3\cos^2\theta-1)$\\\hline
+        $m=1$ & & $-\sin\theta$ & $-3\sin\theta\cos\theta$ \\\hline
+        $m=2$ & & & $3\sin^2\theta$\\\hline
+    \end{tabularx}
+\end{center}
+
+\underline{Für $\ell=0$:}
+\begin{align*}
+    \frac{2\ell+1}{4\pi} &\peq \abs{Y_0^0(\theta, \phi)}^2\\
+    \frac{1}{4\pi}&=\abs{ \frac{1}{2\sqrt{\pi}} \, P_0^{0}(\cos \theta)}^2\\
+    &= \frac{1}{4\pi} \since P_0^0(\cos\theta) = 1\\
+\end{align*}
+
+\underline{Für $\ell=1$:}
+\begin{align*}
+    \frac{2\ell+1}{4\pi} &\peq \sum_{m=-\ell}^\ell \abs{Y_\ell^m(\theta, \phi)}^2\\
+    \frac{3}{4\pi} &= \sum_{m=-1}^1 \abs{Y_1^m(\theta, \phi)}^2\\
+    &= \sum_{m=-1}^1 \frac{1}{2\pi}\frac{3}{2} \, \frac{(1- m)!}{(1+ m)!} \,\hug{ P_1^{(m)}(\cos \theta)}^2\\
+    &= \frac{3}{4\pi} \hug{2 \,\hug{P_1^{(-1)}(\cos \theta)}^2 
+    + \hug{ P_1^{(0)}(\cos \theta)}^2 + \frac{1}{2} \,\hug{P_1^{(1)}(\cos \theta)}^2}\\
+    &= \frac{3}{4\pi} \hug{\frac12 \sin^2\theta + \cos^2\theta + \frac{1}{2} \sin^2\theta}\\
+    &= \frac{3}{4\pi} 
+\end{align*}
+
+\underline{Für $\ell=2$:}
+\begin{align*}
+    \frac{2\ell+1}{4\pi} &\peq \sum_{m=-\ell}^\ell \abs{Y_\ell^m(\theta, \phi)}^2\\
+    \frac{5}{4\pi} &= \sum_{m=-2}^2 \abs{Y_2^m(\theta, \phi)}^2\\
+    &= \sum_{m=-2}^2 \frac{1}{2\pi}\frac{5}{2} \, \frac{(2- m)!}{(2+ m)!} \,\hug{ P_2^{(m)}(\cos \theta)}^2\\
+    &= \frac{5}{4\pi}\sum_{m=-2}^2  \, \frac{(2- m)!}{(2+ m)!} \,\hug{ P_2^{(m)}(\cos \theta)}^2\\
+    &= \frac{5}{4\pi}\left(24\hug{ P_2^{(-2)}(\cos \theta)}^2 + 6\hug{ P_2^{(-1)}(\cos \theta)}^2 + \hug{P_2^{(0)}(\cos \theta)}^2 +\right.\\
+    &\qquad \left. \frac{1}{6}\hug{ P_2^{(1)}(\cos \theta)}^2 + \frac{1}{24}\hug{ P_2^{(2)}(\cos \theta)}^2 \right)\\
+    &= \frac{5}{4\pi}\hug{\frac 38\sin^4\theta + \frac 32 \sin^2\theta\cos^2\theta + \frac14(3\cos^2\theta-1)^2 + \frac{3}{2}\sin^2\theta\cos^2\theta + \frac{3}{8}\sin^4\theta}\\
+    &= \frac{5}{4\pi}\hug{\frac 34\sin^4\theta + 3 \sin^2\theta\cos^2\theta + \frac94\cos^4\theta- \frac 32\cos^2\theta + \frac14}\\
+    &= \frac{5}{4\pi}\hug{\frac 34\sin^4\theta + 3 \sin^2\theta\cos^2\theta + \frac32\cos^2\theta\hug{\frac12\cos^2\theta-\sin^2\theta} + \frac14}\\
+    &= \frac{5}{4\pi}\hug{\frac 34(\sin^4\theta + \cos^4\theta) + 3 \sin^2\theta\cos^2\theta - \frac32\sin^2\theta\cos^2\theta + \frac14}\\
+    &= \frac{5}{4\pi}\hug{\frac 34(\sin^4\theta + \cos^4\theta) + \frac32\sin^2\theta\cos^2\theta + \frac14}\\
+    &= \frac{5}{4\pi}\frac14\hug{3(\sin^4\theta + \cos^4\theta) + 6\sin^2\theta\cos^2\theta + 1}\\
+    &= \frac{5}{4\pi}\frac14\hug{3\sin^4\theta +  3\cos^2\theta(\cos^2\theta + 2\sin^2\theta) + 1}\\
+    &= \frac{5}{4\pi}\frac14\hug{3\sin^4\theta +  3\cos^2\theta\sin^2\theta + 3\cos^2\theta + 1}\\
+    &= \frac{5}{4\pi}\frac14\hug{3\sin^2\theta + 3\cos^2\theta + 1}\\
+    &= \frac{5}{4\pi}\\
+\end{align*}
+
+\subsection{\it Außerdem, dass allgemein 
+\begin{align*}
+    Y_l^{(m)} (\pi-\theta,\phi+\pi) &= (-1)^l Y_l^{(m)}(\theta,\phi)
+\end{align*}
+gilt.
+}
+
+\dottedlinete
+
+\begin{align*}
+    Y_\ell^{(m)}(\theta, \phi) &= \frac{1}{\sqrt{2\pi}}\sqrt{\frac{2\,\ell + 1}{2} \, \frac{(\ell - m)!}{(\ell + m)!}} \, P_\ell^{(m)}(\cos \theta) \, e^{i\,m\,\phi}\\
+    (-1)^l Y_l^{(m)}(\theta,\phi) &\peq 
+    Y_l^{(m)} (\pi-\theta,\phi+\pi)\\
+    &= \eta \, P_\ell^{(m)}(\cos (\pi-\theta)) \, e^{i\,\pi\,m} \with \eta = \frac{1}{\sqrt{2\pi}}\sqrt{\frac{2\,\ell + 1}{2} \, \frac{(\ell - m)!}{(\ell + m)!}} \, e^{i\,m\,\phi}\\
+    &= (-1)^m \eta \, P_\ell^{(m)}(-\cos\theta)\\
+    &= (-1)^m \eta \, (-1)^m (1-\cos^2\theta)^{m/2} \dd[m]{}{x}\hug{P_\ell(-\cos\theta)}\\
+    &= \eta\,  (1-\cos^2\theta)^{m/2} \dd[m]{}{x}\hug{P_\ell(-\cos\theta)}\\
+\end{align*}
+
+Nebenrechnung: 
+
+Wie man an der Definition von \(P_n\) sehen kann, 
+\begin{align*}
+    P_n(x): \ x\mapsto \sum_{k=0}^{\lfloor n/2\rfloor} (-1)^k \frac{(2n - 2k)! \ }{(n-k)! \ (n-2k)! \ k! \ 2^n} x^{n-2k}
+\end{align*}
+ist es eine gerade Funktion für ein gerades \(n\), und eine ungerade Funktion für ein ungerades \(n\). Mit jeder Differentation von \(P_n\) wechselt die resultierende Funktion zwischen gerade und ungerade.
+Damit ist \(\dd[m]{P_\ell}x (x)\) gerade für \(m+\ell\) gerade und ungerade für \(m+\ell\) ungerade.\\
+
+Haubtrechnung:
+\begin{align*}
+    \eta\,  (1-\cos^2\theta)^{m/2} \dd[m]{}{x}\hug{P_\ell(-\cos\theta)}
+    &= \eta\,  (1-\cos^2\theta)^{m/2} (-1)^{m+\ell}\dd[m]{}{x}\hug{P_\ell(\cos\theta)}\\
+    &= (-1)^\ell \eta\,\cdot  (-1)^{m} (1-\cos^2\theta)^{m/2} \dd[m]{}{x}\hug{P_\ell(\cos\theta)}\\
+    &= (-1)^\ell \eta\,P_\ell^{(m)}(\cos\theta)\\
+    &= (-1)^\ell Y_\ell^{(m)}(\theta, \phi)\\
+\end{align*}
+
+\section{Das Wasserstoffatom}
+{\it Betrachten Sie das Wasserstoffatom im Zustand \(n=2,l=1\).}
+
+\subsection{\it Zeigen Sie durch explizites Einsetzten der Wellenfunktion, dass die Summe
+\begin{align*}
+    \sum_{m=-l}^l \abs{\psi_{n,l,m}}^2
+\end{align*}
+kugelsymmetrisch ist.
+}
+
+\dottedlinete
+
+\begin{align*}
+    \sum_{m=-\ell}^l \abs{\psi_{n,\ell,m}}^2
+    &= \sum_{m=-\ell}^\ell \abs{\Upsilon_\ell^m(\theta,\phi) \cdot R_{n,\ell}(r)}^2\\
+    &= R_{n,\ell}^2(r)\sum_{m=-1}^1 \abs{\Upsilon_\ell^m(\theta,\phi)}^2\\
+    &= \frac{2\ell+1}{4\pi} R_{n,\ell}^2(r)\note[siehe Nr.2 (a)]
+\end{align*}
+
+Die Summe ist keine Funktion der Polar-/Azimutalwinkel, und daher kugelsymmetrisch.
+
+\subsection{\it Berechnen Sie für \(m=0\) durch explizites Einsetzten der Operatoren und Wellenfunktion die Eigenwerte der Operatoren \(\hat{\v L}^2, \hat L_z\) und \(\hat H\).}
+
+\dottedlinett
+
+\underline{Für \(L^2\):}
+\begin{align*}
+    L^2 \psi_{n,\ell,m} 
+    &= (\v r \times \v p)^2\,\psi_{n,\ell,m}\\
+    &= \hug{-i\hbar \,\v r \times \vnabla}^2 \psi_{n,\ell,m}\\
+    &= -\hbar^2 \underbrace{\hug{\frac{1}{\sin\theta}\pp{}\theta\hug{\sin\theta\pp{}\theta} + \frac{1}{\sin^2\theta}\pp[2]{}\phi}}_{\te{Winkelanteil Laplaceoperator}} \psi_{n,\ell,m}\\
+    &= -\hbar^2 \Delta_{\theta,\phi} \psi_{n,\ell,m}\\
+    &= -\hbar^2 R_{n,\ell} \Delta_{\theta,\phi} \Upsilon_\ell^m\\
+\end{align*}
+\begin{adjustwidth}{20pt}{}
+    Die Kugelflächenfunktionen wurden in der Vorlesung als Eigenfunktionen des Winkelanteils des Laplaceoperators mit Eigenwerten \(-\ell(\ell+1)\) eingeführt, daher gilt:
+\end{adjustwidth}
+\begin{align*}
+    -\hbar^2 R_{n,\ell}(r) \Delta_{\theta,\phi} \Upsilon_{\ell,m} &= -\hbar^2 R_{n,\ell}(r) (-\ell(\ell+1))\Upsilon_\ell^m\\
+    &= \hbar^2 \ell(\ell+1) R_{n,\ell}(r)\Upsilon_\ell^m\\
+    &= \hbar^2 \ell(\ell+1) \psi_{n,\ell,m}\\
+    \\
+    \implies L^2 \psi_{2,1,0} &= 2 \hbar^2 \psi_{2,1,0} \approx 2.2\E{-68} \u{N}^2 \u{m^2}\u s^2 \cdot \psi_{2,1,0}
+\end{align*}
+
+\underline{Für \(L_z\):}
+\begin{align*}
+    L_z \psi_{n,\ell,m}
+    &= -i\hbar\hug{x\pp{}y - y \pp{}x} \psi_{n, \ell,m} \\
+    &= -i\hbar \pp{}\phi \psi_{n,\ell,m} \\
+    &= -i\hbar \pp{}\phi \hug{R_{n,\ell}(r) \Upsilon_\ell^m(\theta,\phi)}\\
+    &= -i\hbar \pp{}\phi \hug{R_{n,\ell}(r) \Theta_\ell^m(\theta) e^{im\phi}}\\
+    &= m \hbar\,  R_{n,\ell}(r) \Theta_\ell^m(\theta) e^{im\phi}\\
+    &= m \hbar\, \psi_{n,\ell,m}\\
+    \\
+    \implies L_z \psi_{2,1,0} &= 0 \cdot \psi_{2,1,0} 
+\end{align*}
+
+\underline{Für \(H\):}
+
+Nebenrechnung:
+
+\begin{align*}
+    \Delta_r R_{2,1}(r) &= \p_r \hug{r^2 \p_r} \hug{\frac{2}{\sqrt3} \eta^{\frac32} e^{-\eta r}\eta r}\note \eta = \frac{Z}{n a_0},\ a_0 = \frac{4\pi \varepsilon_0\hbar^2}{\mu e^2}\\
+    &= \p_r \hug{r^2 \frac{2}{\sqrt3} \eta^{\frac32} e^{-\eta r}\hug{\eta  - \eta^2 r}}\\
+    &= \p_r \hug{ \frac{2}{\sqrt3} \eta^{\frac52} e^{-\eta r}  r^2 \hug{1-\eta  r}}\\
+    &=  \frac{2}{\sqrt3} \eta^{\frac52} e^{-\eta r}  \hug{-\eta r^2 \hug{1-\eta r } + 2r \hug{1-\eta r} - r^2\eta}\\
+    &=  \frac{2}{\sqrt3} \eta^{\frac32} e^{-\eta r} \eta r \hug{-\eta r \hug{4 -\eta r} + 2}\\
+    &=  \hug{2 - 4 \eta r+ \eta^2 r^2} \, R_{2,1}\\
+\end{align*}
+
+Haubtrechnung:
+\begin{align*}
+    E_{2,1,0} \psi_{2,1,0} 
+    &= H \psi_{2,1,0}\\
+    &= \hug{-\frac{\hbar^2}{2\mu}\Delta + V(r)} \psi_{2,1,0}\\
+    &= \hug{-\frac{\hbar^2}{2\mu}\frac1{r^2}\hug{\Delta_r + \Delta_{\theta,\phi}} + V(r)} R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= \hug{-\frac{\hbar^2}{2\mu}\frac1{r^2}\hug{\Delta_r + \hug{{\frac{1}{\sin\theta}\pp{}\theta\hug{\sin\theta\pp{}\theta} + \frac{1}{\sin^2\theta}\pp[2]{}\phi}}} + V(r)} R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= \hug{-\frac{\hbar^2}{2\mu}\frac1{r^2}\hug{\Delta_r + \hug{{\frac{1}{\sin\theta}\pp{}\theta\hug{\sin\theta\pp{}\theta} - \frac{m^2}{\sin^2\theta}}}} + V(r)} R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= \hug{-\frac{\hbar^2}{2\mu}\frac1{r^2}\hug{\Delta_r -l(l+1)} + V(r)}  R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= \hug{-\frac{\hbar^2}{2\mu}\frac1{r^2}\hug{\Delta_r - 2 } + V(r)}  R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= \hug{-\frac{\hbar^2}{2\mu}\frac1{r^2}\hug{2 - 4 \eta r+ \eta^2 r^2 - 2 } + V(r)}  R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= \hug{-\frac{\hbar^2 \eta }{2\mu}\hug{\eta -\frac4r} + V(r)}  R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= \hug{-\frac{\hbar^2}{2\mu}\frac{\mu e^2}{8\pi \varepsilon_0\hbar^2}\hug{\frac{\mu e^2}{8\pi \varepsilon_0\hbar^2} -\frac4r} - \frac{e^2}{4\pi\varepsilon_0 r}}  R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= \hug{-\frac{e^2}{16\pi \varepsilon_0}\hug{\frac{\mu e^2}{8\pi \varepsilon_0\hbar^2} -\frac4r} - \frac{e^2}{4\pi\varepsilon_0 r}}  R(r) \Theta(\theta) \Phi(\phi) \\ 
+    &= -\frac{e^2}{16\pi \varepsilon_0}\frac{\mu e^2}{8\pi \varepsilon_0\hbar^2}  \psi_{2,1,0} \\ 
+    &= -\frac{\mu e^4}{128\pi^2 \varepsilon_0^2 \hbar^2}  \psi_{2,1,0} \\ 
+    &= -\frac{\mu e^4}{32 \varepsilon_0^2 h ^2}  \psi_{2,1,0} \\ 
+\end{align*}
+
+
+\subsection{\it Benutzen Sie das Ergebnis aus (a), und berechnen Sie den radial wahrscheinlichsten und mittleren Abstand des Elektron vom Atomkern.}
+
+\dottedlinett
+
+\underline{Mittlerer Abstand:}
+\begin{align*}
+    \tug r &= \int_0^\infty\dr \int_{K_0(r)}\d\Omega \psi^*\, r\, \psi\\
+    &= \int_0^\infty\dr r R_{2,1}^* R_{2,1}\int_{K_0(r)}\d\Omega \Upsilon^*_{2,1}\, \Upsilon_{2,1}\\
+    &= \int_0^\infty\dr r^3 R^*_{2,1} R _{2,1}\\
+    &= \int_0^\infty\dr r^3 \frac{4}{3} \eta^{3} e^{-2 \eta r}\eta^2 r^2 \\
+    &= \frac{4}{3} \eta^{5} \int_0^\infty\dr r^5 e^{-2 \eta r} \\
+    &= \frac{4}{3} \eta^{5} \frac{5!}{(2\eta)^6} \\
+    &= \frac{5}{2\eta} \\
+    &= \frac52 \frac{n a_0}{Z}\\
+    &= 5 a_0\\
+\end{align*}
+
+\underline{Wahrscheinlichster Abstand:}
+\begin{align*}
+    0 &\peq \dd Pr\\
+    &= \dd{}r\int_{K_0(r)}\d\Omega \psi^*\,  \psi\\
+    &= \dd{}r\hug{r^2 R^*_{2,1} R _{2,1}}\\
+    &= \dd{}r\hug{\frac{4}{3} \eta^{5} r^4e^{-2 \eta r}}\\
+    &= \frac{4}{3} \eta^{5} (4r^3 - 2\eta r^4) e^{-2 \eta r}\\
+    \implies 0 &= 2 - \eta r\\
+    \implies r &= \frac{2}{\eta} = 4 a_0
+\end{align*}
+
+
+\section{Wasserstoffähnliche Spektren}
+{\it
+    Mit Hilfe eines Spektrometers werden zwei Proben untersucht und deren Spektrum vermessen. Folgende höhstenergetische Übergänge (zwischen zwei gebundenen Übergängen) werden gefunden.
+}
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    Probe 1 & Probe 2\\\hline
+    \(\lambda\) [nm] &\(\lambda\) [nm] \\\hline
+    30.4 & 243.0\\\hline
+    25.6 & 205.0\\\hline
+    24.3 & 194.4\\\hline
+    23.4 & 189.8\\\hline
+\end{tabular} 
+\end{center}
+{\it
+Die atomaren Grundbausteine der Proben sind wasserstoffähnlich, d.h. sie bestehen aus zwei Körpern, wobei einer dieser Körper ein Elektron ist. Um was handelt es sich bei dem zweiten Körper?
+}
+
+\dottedlinett
+
+Die gemessenen Wellenlängen entsprechen den folgenden Energien:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    Probe 1 & Probe 2\\\hline
+    \(E\) [eV] &\(E\) [eV] \\\hline
+    40.8 & 5.10\\\hline
+    48.4 & 6.05\\\hline
+    51.0 & 6.38\\\hline
+    53.0 & 6.53\\\hline
+\end{tabular} 
+\end{center}
+
+Die erste Messreihe passt am besten zu den Übergängen \(n:2,3,4,5\to1\) von Helium, welches mit einem Kern aus jeweils zwei Protonen und Neutronen folgende Energien generieren würden:
+
+\begin{center}
+\begin{tabular}{|c|c|}
+    \hline
+    Übergang&${}_2^4\mathrm{He}$\\\hline
+    $m\to n$&\(E\) [eV] \\\hline
+    $2\to 1$ &40.8\\\hline
+    $3\to 1$&48.4\\\hline
+    $4\to 1$&51.0\\\hline
+    $5\to 1$&52.2\\\hline
+\end{tabular} 
+\end{center}
+
+Die Energien der zweiten Messreihe entsprechen exakt der Hälfte der Energien der Lyman-Serie von Wasserstoff. Damit gehörten die Energien zur Lymanserie eines Positronium Atom, dessen Bindungsenergien mit \(\mu = m_e/2\) genau halb so groß sind, wie die des Wasserstoff. 
+
 
 \end{document}
