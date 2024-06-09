@@ -1,0 +1,259 @@
+\documentclass[ex,minted]{exercise_4.1}
+\usepackage{siunitx}
+
+\deadline{12.06.2024}
+
+\begin{document}
+
+\section{Rydbergzustände}
+{\it 
+Rydbergatome sind Mehrelektronenatome, bei denen das äußerste Elektron in ein sehr hohes Energieniveau angeregt ist. Im Weltraum findet man Atome mit bis zu Quantenzahlen $n = 350$, im Labor erreicht man etwa $n = 100$. Im Labor stellt man solche hochangeregten Rydbergatome her, indem man z.B. einen verdünnten Lithiumdampfstrahl der Temperatur $650 \c$ in eine Vakuumkammer einleitet und mit einem Farbstofflaser variabler Frequenz bestrahlt.
+}
+\subsection{Begründen Sie, warum hochangeregte Energie-Zustände des Elektrons in Vielelektronenatomen, die gleichen sind wie beim H-Atom.}
+
+\dottedlinett 
+
+Wenn der Abstand des hochangeregten Elektrons vom Atomkern deutlich größer ist, als die Distanz der restlichen Elektronen vom Kern, kann man das Potenzial per Multipolentwicklung entwickeln und alle Terme über der ersten Ordung vernachlässigen.  
+\begin{align*}
+    \phi(\v r) &= \frac{Q}{r} + \bigO{\frac{1}{r^2}} \approx \frac Q r
+\end{align*}
+Für ein insgesamt neutrales Atom heben damit die nicht angeregten Elektronen in der Schale alle Ladungen des Kerns bis auf eine auf, sodass das Potenzial, in dem sich das angeregte Elektron befindet, praktisch identisch ist zu dem des Wasserstoff.  
+
+\subsection{Das äußerste Elektron des Lithiumatoms sei im Labor durch einen Laser auf die Quantenbahn mit $n = 29$ gehoben worden. Berechnen Sie die Ionisierungsenergie dieses Rydbergatoms in eV.}
+
+\dottedlinett
+
+Um zu demonstrieren, dass der Übergang gut mit dem eines Wasserstoffatoms genähert ist, werden kurz die ungefähren Distanzen der Elektronen verglichen. Für Wasserstoff gilt:
+
+\begin{align*}
+    \tug{r_{nl}} &=  \frac{a_0}{2} \hug{3n^2 - l(l+1)}
+            \ge \frac{a_0}{2} \hug{3n^2 - (n-1)n}
+            \ge a_0 n^2
+\end{align*}
+\begin{align*}
+    \Delta r\sub{rel} &\approx \frac{\tug{r_{29}}}{\tug{r_{1}}} -1= 29^2-1= 840
+\end{align*}
+Das angeregte Elektron ist etwa um drei Größenordungen weiter von Kern entfernt, als die restlichen beiden Elektronen. Die nächste Korrektur zum Potenzial (Dipolfeld) bewegt sich daher in der Größenordung einer Promille. Das Atom kann Näherungsweise als Rydbergatom betrachtet werden.
+\begin{align*}
+    E_{n=29} = -\frac{\Ry}{29^2} \approx -16.2\E{-3}\u{eV}
+\end{align*}
+Da die Energie bei \(r=\inf\) als null definiert ist, entspricht dies einer Ionisierungsenergie von \(16.2\E{-3}\u{eV}\).
+
+\subsection{Vergleichen Sie diese Ionisierungsenergie mit der mittleren kinetischen Energie der Lithiumatome im Dampf der Temperatur $650 \c$. Begründen Sie, warum der Dampfstrahl sehr verdünnt sein muss, wenn
+man Emission von Strahlung durch Übergänge in den Grundzustand beobachten möchten.}
+
+\dottedlinete
+
+\begin{align*}
+    \tug{E\sub{kin}}
+    &= \frac{3}{2}k_B T
+    \approx 119\E{-3} \u{eV} \gg E\sub{Ion}
+\end{align*}
+
+Der Lithiumdampfstrahl muss sehr verdünnt sein, damit sich die Atome nicht durch thermische Kollisionen ionisieren.
+
+
+\subsection{Welche Wellenlänge besitzt die emittierte Strahlung, die beim Übergang des Elektrons von $n = 29$ auf $n = 28$ auftritt? In welchem Spektral-Bereich elektromagnetischer Strahlung liegt diese Wellenlänge?}
+
+\dottedlinett
+
+\begin{align*}
+    E\sub{ph} &= E_{n=28} - E_{n=29}\\
+    \frac{hc}{\lambda} &= \Ry \hug{\frac1{28^2} - \frac1{29^2}}\\
+    \lambda 
+    &= \frac{hc}{\Ry}\hug{\frac1{28^2} - \frac1{29^2}}\inv\\
+    &= \frac1{\mathrm {R}_\inf} \hug{\frac1{28^2} - \frac1{29^2}}\inv\\
+    &\approx \SI{5.20}{\micro\meter} 
+\end{align*}
+
+Damit befindet sich die Strahlung dieses Übergangs im Infrarotbereich.
+
+
+\subsection{Zeigen Sie, dass sich die Energiedifferenz zwei benachbarte Quantenbahnen der Quantenzahlen $n$ und $n-1$
+für $n\gg 1$ durch $\Delta E = \frac{2R}{n^3}$ approximieren lässt. Überprüfen Sie die Formel für den Balmer-\(\alpha\) Übergang.}
+
+\dottedlinett
+
+\begin{align*}
+    \Delta E &= E_{n-1} - E_{n}\\
+    &= \Ry \hug{\frac1{(n-1)^2} - \frac1{n^2}}\\
+    &= \Ry \hug{\frac{n^2 - (n-1)^2}{(n-1)^2 n^2}}\\
+    &= \Ry \hug{\frac{2n -1}{n^4-2n^3+n^2}}\\
+    &= \Ry \hug{\frac{2 (1 - 1/(2n^2))}{n^3(1-2/n+1/n^2)}}\\
+    n\to \inf:\  &= \frac{2\Ry }{n^3}\\
+\end{align*}
+
+In Abbildung \ref{fig:1} sieht man im oberen Plot die Werte von der exakten \(\Delta E_n\) und der Näherungen. Unten sieht man noch die relative Abweichung \(\Delta\sub{rel} = E\sub{Näherung} / E\sub{exakt}-1\). Der relative Fehler der Näherung ist bei \(n=3\) (Balmer-$\alpha$ Übergang) ca. \(-50\%\) und liegt selbst bei \(n=30\) immernoch über \(5\%\). Die Formel ist damit auch für hohe \(n\) noch relativ ungenau.  
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{En_vs_En_Näherung.svg}
+    \caption{Exakte \(\Delta E\) vs. Näherung}
+\end{figure}
+
+\section{Natürliche Linienbreite}
+\subsection{In Positronium hat der Übergang vom $2^3P$-Niveau in das $1^3S$-Niveau eine Lebensdauer von 3.2 ns. Berechnen Sie die natürliche Linienbreite des Überganges.}
+
+\dottedlinett
+
+Mit Gaußscher-Fehlerfortpflanzung gilt in erster Ordnung: 
+\begin{align*}
+    E &= \frac{hc}{\lambda}\\
+    \Delta E &= \frac{hc}{\lambda^2}\Delta \lambda\\
+\end{align*}
+
+Es folgt zusammen mit der Heisenberg'schen Unschärferelation:
+\begin{align*}
+    \frac\hbar 2 &\approx \Delta E \cdot \Delta t \\
+    &= \frac{hc}{\lambda^2}\Delta \lambda  \cdot \Delta t\\
+    \\
+    \Delta \lambda&= \frac{\hbar}{2hc \Delta t} \lambda^2\\
+    &= \frac{1}{\pi c R_\inf^2 \Delta t} \hug{\frac{1}{1^2}- \frac1{2^2}}^{-2}\\
+    &= \frac{16}{9\pi c R_\inf^2 \Delta t} \\
+    &\approx \SI{4.90}{\femto\meter}
+\end{align*}
+Bzw., äquivalent und etwas einfacher zu berechnen, im Frequenzraum
+\begin{align*}
+    \Delta \nu &= \frac{1}{2\pi  \Delta t }\approx 49.7\u{MHz}
+\end{align*}
+
+\subsection{Betrachten Sie gasförmiges Helium. Die Niveaus $2^1S_0$ und $3^1P_1$ haben eine Lebensdauer von 1 ms bzw.
+1.4 ns. Berechnen Sie die natürliche Linienbreite des Übergangs von $3^1P_1$ auf $2^1S_0$.}
+
+\section{Dopplerfreie Sättigungsspektroskopie}
+{\it In der Vorlesung wurde Ihnen ein Experiment zur dopplerfreien Spektroskopie bei Rubidium gezeigt (AT-24, siehe Abbildung 1). Abb. 2 zeigt Ihnen das zu erwartende Termschema für die relevanten Rubidium
+Isotope. Während der Vorlesung wurden die Messdaten des Versuchs am Oszilloskop gespeichert. Ziel ist es, die Messwerte aus der Vorlesung zu analysieren und dieses Termschema zu verifizieren.
+Die Daten finden Sie im JupyterHub für die Vorlesung.
+In der Datei \py{DopplerfreieSpektroskopieRubidium.csv} finden Sie die Messung ohne Sättigungsstrahl. Zur Frequenzkalibration wurde mit CH2 (Dritte Spalte) das Signal eines Fabry-Perot-Interferometer aufgenommen. Damit wurde der Umrechnungsfaktor von 0.016 GHz/Datenzeile für Sie kalibriert. (Die Daten einer Zeile haben also eine Breite von 0.016 GHz.)
+}
+
+\subsection{Erstellen Sie ein Python-Skript oder Jupyter-Notebook und lesen Sie die Daten ein, rechnen Sie die
+Frequenz des Lasers $X$ (erste Spalte) mit dem Umrechnungsfaktor in GHz um und stellen Sie die Daten
+des Oszilloskops CH1 (zweite Spalte) graphisch dar.}
+
+\dottedlinett
+
+\inputpy[lastline=19]{}{8.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{a.svg}
+    \caption{Plot der Daten}
+\end{figure}
+
+\subsection{In der Abbildung, die Sie in der vorherigen Teilaufgabe erstellt haben, sehen Sie vier deutliche Minima, die
+einem fallenden Untergrund überlagert sind. Diese Minima korrespondieren zu überlagerten Übergängen
+der beiden Rubidium Isotope, die Sie auch im Termschema in Abbildung 2 entnehmen können. Argumentieren Sie mit dem Termschema, warum Sie vier Linien erwarten, und geben Sie für jedes Minimum an
+um welchem Übergang es sich handelt.\\
+Hinweis: Beachten Sie, dass der Offset der $X$-Achse willkürlich ist. In Abbildung 2 sind die Frequenzunterschiede der Aufspaltungen gezeigt. Überlegen Sie, ob alle Übergänge der Hyperfeinstruktur im Lichte der
+Dopplerverbreiterung aufgelöst werden können und wenn nicht, welche als aufgelöste Übergänge sichtbar
+sind.}
+
+\dottedlinett 
+
+Wir erwarten die vier unterschiedbaren Übergänge 
+\begin{align*}
+    {}^{87}\te{Rb}:\quad 
+    5^2\mathrm{P}_{3/2} \to \begin{cases}
+        5^2\mathrm{S}_{1/2}, F=2\\
+        5^2\mathrm{S}_{1/2}, F=1\\
+    \end{cases}\\
+    {}^{85}\te{Rb}:\quad 
+    5^2\mathrm{P}_{3/2} \to \begin{cases}
+        5^2\mathrm{S}_{1/2}, F=3\\
+        5^2\mathrm{S}_{1/2}, F=2\\
+    \end{cases}\\
+\end{align*}
+da die Hyperfeinstruktur-Aufspaltung des \(5^2\mathrm{P}_{3/2}\) Zustandes, um zwei Größenordungen kleiner ist als die des \(5^2\mathrm{S}_{1/2}\) Zustands, und deshalb von der Dopplerverbreiterung verdeckt wird.\\
+
+Für das ${}^{87}\mathrm{Rb}$ Atom erwartet man zwischen den beiden Übergängen einen Frequenzunterschied von \(\Delta \nu_{87}=6800\u{MHz}\), für das  ${}^{85}\mathrm{Rb}$ Isotop \(\Delta \nu_{85}=3000\u{MHz}\). Da das erste und letzte gemessene Minimum etwa \(6800\u{MHz}\) auseinanderliegen, müssen diese beiden zwangsläufig zum Isotop \({}^{87}\mathrm{Rb}\) gehören, und Minimum \(2-3\) dementsprechend zum Isotop \({}^{85}\mathrm{Rb}\). Berücksichtigt man nun noch, dass die antiparallelen Ausrichtungen der Spins in der Hyperfeinstruktur energetisch günstiger sind, sind die Minima eindeutig identifizierbar: 
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+    \toprule 
+    {\bf Minimum} & {\bf Übergang}\\\midrule
+    1. & ${}^{87}\mathrm{Rb}$, \(F=2\) \\
+    2. & ${}^{85}\mathrm{Rb}$, \(F=3\)\\
+    3. & ${}^{85}\mathrm{Rb}$, \(F=2\)\\
+    4. & ${}^{87}\mathrm{Rb}$, \(F=1\)\\\bottomrule
+\end{tabular}
+\end{center}
+
+
+\subsection{Fitten Sie die Daten mit der folgenden Funktion, die die Minima mit Gauß-Funktionen und den Untergrund mit einer Geraden approximiert:
+\begin{align*}
+    f (x) = p_0 + p_1 x + A_1e^{-\hug{\frac{x-\mu_1}{\sigma_1}}^2}
+    + A_2e^{-\hug{\frac{x-\mu_2}{\sigma_2}}^2}
+    + A_3e^{-\hug{\frac{x-\mu_3}{\sigma_3}}^2}
+    + A_4e^{-\hug{\frac{x-\mu_4}{\sigma_4}}^2}
+\end{align*}
+Geben Sie die die Mittelwerte \(\mu_i\) und Standardabweichungen \(\sigma_i\) mit $i \in \pug{1, 2, 3, 4}$ an. Berechnen Sie aus
+den Breiten die Temperatur des Rubidiumgases.}
+
+\dottedlinett
+
+\inputpy[firstline=21, lastline=53]{}{8.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{c.svg}
+    \caption{Plot des Fits}
+\end{figure}
+
+
+\subsection{Warum können Sie in der vorherigen Aufgabe keine Lorentzkurve fitten, obwohl dies doch die Verteilung der natürlichen Linienbreite ist?}
+
+\dottedlinett 
+
+Die Messung ist ohne Sättigungsstrahl erfolgt, sodass man immernoch eine Dopplerverbreiterung beobachtet, welche in der Regel um mehrere Größenordungen stärker ausgeprägt ist als die natürliche Linienbreite. Das Frequenzspektrum einer Dopplerverbreiterung folgt einer Gaußverteilung, folglich fittet man die Summe von Gaußverteilungen. 
+
+\subsection{Plotten Sie nun die Daten nach Anschalten des Sättigungsstrahls. Diese finden Sie in der Datei DopplerfreieSpektroskopieHyperfineStruktur.csv, die das gleiche Format wie im ersten Aufgabenteil hat.\\
+Hinweis: Diese Datei zeigt nur den Ausschnitt einer Linie aus dem vorherigen Messbereich. Beachten Sie, dass der Umrechnungsfaktor sich geändert hat und nun 0.0016 GHz beträgt.}
+
+\dottedlinett
+
+\inputpy[firstline=56, lastline=63, samepage]{}{8.py}
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{e.svg}
+    \caption{Plot der Daten nach Anschalten des Sättigungsstrahls. Achtung, der Anfang und das Ende des Frequenzspektrums wurden abgeschnitten.}
+\end{figure}
+
+\subsection{In der Abbildung aus dem vorherigen Aufgabenteil sehen Sie 6 Linien. Wie viele Linien würden Sie eigentlich auf Grund der Auswahlregeln sehen? Um welchen der vier vorherigen Übergänge handelt es sich?\\
+Hinweis: Die überzähligen Linen sind kombinatorischer Untergrund der entsteht, wenn der Energieunterschied von Doppler-bewegendem Gas mit einem anderen Übergang zusammenfällt.}
+
+\dottedlinett
+
+Die Auswahlregel \(\Delta F = \pm 1\), entsprechend dem Spin eines Photons, erlaubt die Übergange \((F \to F')\):
+\begin{align*}
+    {}^{87}\mathrm{Rb}:\quad \begin{cases}
+        3\to 2\\
+        1\to 2\\
+        2\to 1\\
+        0\to 1\\
+    \end{cases}\quad \tand \quad 
+    {}^{85}\mathrm{Rb}:\quad \begin{cases}
+        4\to 3\\
+        2\to 3\\
+        3\to 2\\
+        1\to 2\\
+    \end{cases}
+\end{align*}
+Also für jeden der vier beobachten Übergänge eine Aufspaltung in zwei Linien. \\
+
+Die beobachteten Linien lassen sich in drei Paare teilen, die zueinander  jeweils eine Differenz von $\SI{80}{\mega\hertz}$ haben (ca. 4 Subticks im Plot). Die am besten dazu passende Linie ist die von \({^{87}\mathrm{Rb}}\) mit den Übergängen \(1,3\to 2\), da hier die Frequenzdifferenz laut Termschema \((63+30)\u{MHz} = \SI{93}{\mega\hertz}\) entspricht. Die nächst beste Linie wäre die von \({^{87}\mathrm{Rb}}\) mit \(2,4\to 3\), jedoch beträgt die erwartete Frequenzdifferenz hier schon \(\SI{184}{\mega\hertz}\) und ist somit nicht mehr mit der Beobachtung kompatibel.
+
+\subsection{Die ganz rechte Linie ist ein realer HFS Übergang. Lesen Sie die Frequenzbreite ab und schätzen Sie die
+Lebensdauer des Zustandes.\\
+Hinweis: Hierbei handelt es sich um den ${}^{87}$Rb Übergang $F = 3 \to F = 2$.}
+
+\dottedlinett 
+
+Die Frequenzbreite beträgt etwa \(1.5\) Subticks im Plot, bzw. \(\SI{30}{\mega\hertz}\) im Frequenzraum. Folglich ergibt sich die Halbwärtszeit als:
+
+\begin{align*}
+    \tau &= \frac{1}{\delta_\omega}
+    = \frac{1}{2\pi\delta_f}
+    \approx \frac{1}{2\pi\cdot \SI{30}{\mega\hertz}} \approx 5.31\u{ns}
+\end{align*}
+
+\end{document}

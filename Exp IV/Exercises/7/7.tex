@@ -1,0 +1,158 @@
+\documentclass[ex,minted]{exercise_4.0}
+
+\deadline{05.06.2024}
+
+\begin{document}
+
+\section{Herleitung der Plankschen Strahlungsformel für einen Schwarzkörper}
+{\it Das Strahlungsfeld in einem thermischen Hohlraum kann als Summe stehender Wellen dargestellt werden (Moden). Aufgrund der hohen Anzahl an Moden führt man eine spektrale Modendichte ein: \(n_\nu (\nu) = \frac{8\pi \nu^2}{c^3}\).}
+
+\subsection{\it Erläutern Sie kurz zur spektralen Modendichte:}
+\begin{adjustwidth}{20pt}{}
+    \subsubsection{\it Was ist spektrale Modendichte?}\vspace{2pt}
+    \begin{adjustwidth}{20pt}{}
+        Die spektrale Modendichte $\d n/\d\nu = \frac{8\pi\nu^2}{c_0^3}$ ist
+        die Zahl der möglichen Eigenschwingungen pro Volumen eines Hohlraumresonators innerhalb des Frequenzintervalls \(\nu\) bis \(\nu+\Delta \nu\) mit \(\Delta \nu=1\u{Hz}\).
+    \end{adjustwidth}
+    
+    \subsubsection{\it Warum wird bei der Herleitung der Formel nur über eine \(\frac18\) Kugel im \(k-\)Raum integriert und nicht über eine Vollkugel?}\vspace{2pt}
+    Weil negative \(k_i\) Komponenten nicht zu neuen Lösungen führen würden. Tatsächlich unterscheiden sich die Lösungen der einzelnen E-Feld-Komponenten mit \((\pm k_x,\pm k_y,\pm k_z)\) maximal um ein Vorzeichen von der Lösung mit \((k_x,k_y,k_z)\). Dieses Vorzeichen kann einfach in den Vorfaktor der Lösung absorbiert werden, sodass alle einzigartigen Lösungen mit positiven \(k_i\) abgedeckt sind. 
+    
+    \subsubsection{\it Warum kommt im Ergebnis \(8\pi\) und nicht \(4\pi\) vor?}\vspace{2pt}
+    \begin{adjustwidth}{20pt}{}
+        Es kommt ein zusätzlicher Faktor von zwei dazu, um zu berüclsichtigen, dass jede stehende Welle eine
+        beliebige Polarisationsrichtung haben kann, die man immer als Linearkombination aus zwei zueinander
+        senkrecht polarisierten Wellen darstellen kann.
+    \end{adjustwidth}
+    
+\end{adjustwidth}
+
+\subsection{\it Zeigen sie, dass die Planksche Strahlungsformel:
+\begin{align*}
+    u_\nu = n_\nu (\nu) \cdot \tug{E(\nu,T)} = \frac{8\pi \nu^3 h}{c^3}\frac{1}{e^{\frac{h\nu}{k_B T}}-1},
+\end{align*}
+wobei \(\tug{E(\nu,T)}\) die mittlere thermische Energie einer Mode als Funktion der Temperatur \(T\) ist, gilt.\\
+Tipp: Zusätzlich zu den Angaben im Skript, müssen Sie die mittlere Energie über den Mittelwert der Besetzungswahrscheinlichkeit berechnen. Die mittlere Energie (das mit den Besetzungswahrscheinlichkeiten \(P_n\) gewichtete Mittel der Zustandsenergien \(E_n\)) lässt sich durch geometrische Reihen ausdrücken:
+\begin{align*}
+    \tug{E(\nu,T)} &= \sum_n P_n E_n = \frac{-\dd{}\beta \sum_n e^{-\beta E_n}}{\sum_n e^{-\beta E_n}}
+\end{align*}
+mit \(h=2\pi\hbar\) und \(\beta= \frac{1}{k_B T}\).
+}
+
+\dottedlinete
+
+\begin{align*}    
+    \tug{E(\nu,T)} &= \sum_n P_n E_n \\
+    &= \frac{-\dd{}\beta \sum_n e^{-\beta h \nu n}}{\sum_n e^{-\beta h \nu n}}\\
+    &= \frac{-\dd{}\beta \sum_n \alpha^n}{\sum_n \alpha^n}\with\begin{cases}
+        \alpha = e^{-\beta h \nu }<1\\
+        \d\alpha = -h\nu e^{-\beta h \nu } \d\beta
+    \end{cases}\\
+    &= - \dd{}\beta \hug{\frac{1}{1-\alpha}}\hug{1-\alpha}\\
+    &=  h\nu e^{-\beta h \nu}\dd{}\alpha \hug{\frac{1}{1-\alpha}}\hug{1-\alpha}\\
+    &= h\nu e^{-\beta h \nu}\frac{1}{(1-\alpha)^2}\hug{1-\alpha}\\
+    &= h\nu \frac{e^{-\beta h \nu}}{1-e^{-\beta h \nu}}\\
+    &= h\nu \frac{1}{e^{\frac{h \nu}{k_B T}}-1}\\
+    \\
+    u_\nu &= n_\nu(\nu)\cdot \tug{E(\nu, T)} \\
+    &=   \frac{8\pi \nu^3 h}{c^3}\frac{1}{e^{\frac{h\nu}{k_B T}}-1}
+\end{align*}
+
+\section{Lithium}
+{\it Die Energie des tiefsten Zustands \(2s\) im Li-Atom ist \(E=-5.39 \u{eV}\), die in 20s ist \(-0.034\u{eV}\). Wir groß ist die effektive Kernladung \(Z\sub{eff}\) bzw. die Abschirmungskorrektur (Quantendefekt) \(\delta_{nl}\) und der mittlere Bahnradius des dritten Elektron in beiden Zuständen?}
+
+\dottedlinett
+
+Durch die Abschirmung des Kerns wird die effektive Kernladung verringert. Die Proportionalität der Energie wechselt von 
+\begin{align*}
+    E_n\propto \frac{1}{n^2}\qte{zu} E_{n,l} \propto \frac{1}{n^2\hug{1-\frac{\delta_{n,l}}{n}}^2},
+\end{align*}
+mit der Abschirmungskorrektur \(\delta_{nl}\). Es ergeben sich für die \(\delta_{nl}\):
+
+\begin{align*}
+    E_{nl} &= \frac{-13.6\u{eV}}{(n-\delta_{nl})^2}\\
+    \implies \delta_{nl} &= n - \sqrt{\frac{-13.6\u{eV}}{E_{nl}}}\\
+    \\
+    \delta_{2s}&\approx 0.412\\
+    \delta_{20s}&\approx 0.0\\
+\end{align*}
+
+Korrigiert man statt der Quantenzahl \(n\) die Kernladung \(Z\) zu einer effektiven Kernladung \(Z\sub{eff}\) ergeben sich die Werte:
+\begin{align*}
+    -\frac{13.6\u{eV}}{(n-\delta_{nl})^2} &= -\frac{13.6\u{eV}Z\sub{eff}^2}{n^2}\\
+    \implies Z\sub{eff} &= \frac{1}{1-\frac{\delta_{nl}}{n}}\\
+    \\
+    Z\sub{eff}(2s) &= 1.26\\
+    Z\sub{eff}(20s) &= 1.0
+\end{align*}
+
+\section{Belegung der Orbitale}
+{\it 
+Schreiben Sie ein Python-Skript oder Jupyter Notebook, das die Orbitalbelegungen von Mehrelektronen nach dem Madelungschema bestimmt. Wählen Sie als Eingabe die Ordnungszahl $Z$ und als Ausgabe die
+s,p,d,f Nomenklatur für Unterschalen und 1,2,3,... für die Hauptschalen im Format als Dreierblock für jede Unterschale: $nlN$ mit der Hauptschale $n$, der Nebenschale $l$ und der Anzahl der Elektronen $N$ in der
+Unterschale,\\
+Beispiel: Argon, $Z$ = 18, Ausgabe: \py{1s2 2s2 2p6 3s2 3p6}\\
+Das Programm sollte von Wasserstoff ($Z$ = 1) bis Krypton ($Z$ = 102) funktionieren und für elektrisch neutrale Atome gelten.\\\\
+Überprüfen Sie das Programm mit 
+\begin{enumerate}
+    \item[a)] Sauerstoff
+    \item[b)] Kupfer
+    \item[c)] Krypton
+    \item[d)] Uran
+\end{enumerate}
+}
+
+\dottedlinett
+
+\inputpy{}{7.py}
+
+\section{Positronium}
+{\it Ein Elektron kann mit seinem Antiteilchen, dem Positron (Masse $m_e$, elektrische Ladung $+e$) ein wasserstoffähnliches Atom, das Positronium, bilden, wobei Elektron und Positron unter der Wirkung ihrer gegenseitigen elektrostatischen Anziehung um den gemeinsamen Massenschwerpunkt ($S$) „kreisen“.}
+
+\subsection{\it Berechnen Sie allgemein mit Hilfe der Bohrschen Quantenbedingung für den Gesamtbahndrehimpuls die
+möglichen Bahnradien und Energiezustände des Positronium!}
+
+\dottedlinett
+
+Die Bohrsche Quantenbedingung für den Gesamtdrehimpuls ist
+\begin{align*}
+    L_n &= n\hbar
+    = \mu  v_n r_N\\
+\end{align*}
+Im Bohrschen Atommodel muss außerdem gelten:
+\begin{align*}
+    0 &= F_C + F_Z\\
+    &= - \frac{e^2}{4\pi \varepsilon_0 r^2} + \mu  \frac{v^2}{r}\\
+    v &= \frac{e}{\sqrt{4\pi \varepsilon_0 r m _e}}\\
+\end{align*}
+Kombination der beiden Zusammenhänge liefert: 
+\begin{align*}
+    n\hbar &= e \sqrt{\frac{\mu  r_n }{4\pi\varepsilon_0 }}\\
+    r_n &= \frac{4\pi \varepsilon_0\hbar^2}{\mu  e^2} n^2\\
+\end{align*}
+Daraus lässt sich noch die Energie berechnen als:
+\begin{align*}
+    E_n &= T + V\\
+    &= \frac12 mv_n^2 - \frac{e^2}{4\pi\varepsilon_0 r_n}\\
+    &= \frac12 m \frac{n^2\hbar^2}{\mu ^2 r_n^2} - \frac{e^2}{4\pi\varepsilon_0 r_n}\\
+    &= \frac12 m \frac{n^2\hbar^2}{\mu ^2}\frac{\mu ^2 e^4}{16\pi^2 \varepsilon_0^2\hbar^4 n^4} - \frac{e^2}{4\pi\varepsilon_0} \frac{\mu  e^2}{4\pi \varepsilon_0\hbar^2 n^2} \\
+    &= \frac{\mu  e^4}{32\pi^2 \varepsilon_0^2\hbar^2 n^2} - \frac{\mu  e^4}{16\pi^2 \varepsilon_0^2\hbar^2 n^2} \\
+    &= -\frac{\mu  e^4}{32\pi^2 \varepsilon_0^2\hbar^2 n^2}\\
+    &= -\frac{m_e^2}{m_e + m_e}\frac{e^4}{32\pi^2 \varepsilon_0^2\hbar^2 n^2}\\
+    &= -\frac{m_e e^4}{64\pi^2 \varepsilon_0^2\hbar^2 n^2}\\
+\end{align*}
+
+\subsection{\it Wie groß ist die Grundzustandsenergie?}
+
+\dottedlinett
+
+Ein Vergleich mit der Formel für die Energieniveaus des Wasserstoff zeigt, dass der Grundzustand genau die halbe Energie des Wasserstoff hat, also \(-6.8\u{eV}\).
+
+
+\subsection{\it Wie groß ist der kleinste Durchmesser?}
+
+\dottedlinett
+
+Genau doppelt wie das Wasserstoffatom, d.h. \(1.06 \A\).
+
+\end{document}
