@@ -1,0 +1,155 @@
+\documentclass[ex, minted]{exercise_4.1}
+
+\deadline{19.06.2024}
+
+\begin{document}
+
+\section{Röntgenspektrum von Wolfram}
+{\it Die K-Absorbtionskante von Wolfram liegt bei $0.178\A$ und die Wellenlängen der Linien der K-Serie (unter Vernachlässigung der Feinstruktur) sind \(K_\alpha=0.210\A\), \(K_\beta=0.184\A\) und \(K_\gamma=0.179\A\).}
+\subsection{Skizzieren Sei die Energieniveaus von Wolfram und geben Sie die Energie der $K,L,M$ und $N$-Schale an.}
+
+\dottedlinete
+
+\fig{Skizze der Wolfram-Energie-Niveaus}{energie_niveaus.jpg}
+
+\begin{align*}
+    E(n=1) &= - \frac{h c}{K_A} \approx -69.7 \u{keV}\\
+    E(n=2) &= E(n=1) + \frac{h c}{K_\alpha} \approx   -10.6 \u{keV}\\
+    E(n=3) &= E(n=1) + \frac{h c}{K_\beta} \approx  -2.27 \u{keV}\\
+    E(n=4) &= E(n=1) + \frac{h c}{K_\gamma} \approx  -0.389 \u{keV}\\
+\end{align*}
+
+\subsection{Welche Minimalenergie ist nötig, um die \(L\)-Serie in Wolfraum anzuregen? Wie groß ist die Wellenlänge der \(L_\alpha\)-Linie?}
+
+\dottedlinett
+
+Die Minimalenergie die nötig ist, um die \(L\)-Serie in Wolfraum anzuregen, ist die Energiedifferenz zwischen der $L$ und $M$ Schale:
+\begin{align*}
+    E\sub{min}(\to L ) = E(M\to L ) = E(n=3) - E(n=2)\approx 8.33\u{keV} 
+\end{align*}
+
+
+\section{Absorbtion von Röntgenstrahlung}
+\subsection{Röntgenphotonen mit Energien von 0.005,0.05, und 0.1 MeV, aber gleichen Intensitäten, fallen auf einen Bleiabsorber. Die linearen Massenabsorbtionskoeffizienten entnehmen Sie der in der Vorlesung gezeigten Tabelle (Abb. 1). Berechnen Sie die Dicke des Bleis, die erforderlich ist , um die Intensität jedes der Strahlen auf ein fünftel seiner ursprünglichen Intensität abzuschwächen.\\
+Hinweis: Schlagen Sie weitere Materialeigenschaften, die ihnen fehlen, nach. }
+
+\dottedlinett
+
+Die benötigten Literaturwerte sind
+\begin{align*}
+    \kappa(0.005\u{MeV}) &= 100 \ufrac{m^2}{kg}&
+    \kappa(0.05\u{MeV}) &= 0.8\ufrac{m^2}{kg}&
+    \kappa(0.1\u{MeV}) &= 0.6\ufrac{m^2}{kg}
+\end{align*}
+und $\rho\sub{Pb} = 11.340 \ufrac g{cm^3}$.\\
+
+Damit ergibt sich:
+\begin{align*}
+    \frac 15 &= \frac {I'}I = e^{-\mu_\gamma x}\\
+    x &= -\frac{\ln\hug{\frac15}}{\mu_\gamma}
+    = -\frac{\ln\hug{\frac15}}{\kappa_\gamma \rho\sub{Pb}}\\
+    \\
+    x(0.005\u{MeV}) &\approx \SI{1.42}{\um}\\
+    x(0.05\u{MeV}) &\approx \SI{177}{\um}\\
+    x(0.1\u{MeV}) &\approx \SI{237}{\um}
+\end{align*}
+
+\subsection{In welchem Verhältnis stehen die Intensitäten der drei Photonenstrahlen in einer Tiefe von 3 mm zueinander und was ist die mittlere Intensität aller einfallenden Röntgenstrahlen?}
+
+\dottedlinete
+
+\begin{align*}
+    I\sub{rel} &= \frac {I'}I = e^{-\kappa_\gamma\rho\sub{Ph} x}\\\
+    \\
+    I\sub{rel}(0.005\u{MeV}) &\approx 0\\
+    I\sub{rel}(0.05\u{MeV}) &\approx 1.51\E{-12}\\
+    I\sub{rel}(0.1\u{MeV}) &\approx 1.37\E{-9}\\
+    \\
+    I\sub{tot,rel}&=I\sub{rel}(0.005\u{MeV}) + I\sub{rel}(0.05\u{MeV}) + I\sub{rel}(0.1\u{MeV})\\
+    &\approx  1.37151\E{-9}
+\end{align*}
+Damit ist die Strahlung mit Photonen der Energie \(0.005\u{MeV}\) praktisch vollkommen absorbiert, während die Intensität der Strahlung mit Photonen der Energie \(0.05\u{MeV}\) etwa um drei Größenordnungen kleiner ist als die der Strahlung mit Photonen der Energie \(0.1\u{MeV}\). 
+
+
+\section{Abschwächung von Röntgenstrahlung}
+{\it In der Vorlesung wurde ihnen ein Versuch zur Absorbtion von Röntgenstrahlung vorgeführt (siehe Abb. 2, Versuch At-16). Dabei wurden Aluminiumabsorber unterschiedlicher Dicke in den Röntgenstrahl einer Molybdän Anode eingeführt. Hier sollen nun die Messwerte ausgewertet und interpretiert werden. Die benötigeten Daten finden Sie im JupyterHub der RWTH.}
+
+\subsection{Schreiben Sie ein Python-Skript oder Jupyter-Notebook und lesen Sie die Daten aus der Vorlesung ein und plotten Sie für jede Absorberdicke die relative Intensität als Funktion der Frequenz in ein Diagramm. Die Daten finden Sie in der Datei \py{AbschirmungVonRoentgenstrahlen.csv}. Wählen Sie eine logarithmische Darstellung der relativen Intensität. Normieren Sie die Zählraten der einzelnen Messungen so, dass Sie die relativen Intensitäten der Messungen vergleichen können. Dabei gilt, dass die relative Intensität (oder auch Zählrate) proportional zu Messzeit und dem Stromfluss durch Röntgenlampe ist. Die benötigten Informationen zu jeder Messung befinden sich in der Datei \py{Settings.csv}. Sie können die Daten ähnlich einlesen, wie es bereits in der Präsentsübung gezeigt wurde.}
+
+\dottedlinett
+
+\inputpy[lastline=29]{}{9.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{a.svg}
+\end{figure}
+
+\subsection{Verwenden Sie die Messung ohne Absorber (N\_1 in \py{AbschirmungVonRoentgenstrahlen.csv}), um die Energie zu kallibrieren. Nutzen Sie dazu die beiden zentralen Peaks, die der \(K_\alpha\) bei \(17.44\u{eV}\) und der \(K_\beta\) bei \(19.7\u{keV}\) Linie von Molybdän, entsprechen und reproduzieren Sie die Abbildung 3.}
+
+\dottedlinett
+
+\inputpy[firstline=33, lastline=61]{}{9.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{b.svg}
+\end{figure}
+
+\subsection{Vermessen Sie den Absorbtionskoeffizient bei 15 keV und 25 keV. Vergleichen Sie ihr Ergebniss mit Literaturwerten wie z.B.: http://physics.nist.gov/PhysRefData/XrayMassCoef/ ElemTab/z13.html.
+Diskutieren Sie Ihr Ergebnis kurz.\\
+Hinweis: Bei genauer Betrachtung der Messungen stellt man fest, dass sich zwischen den Messungen N\_2
+und N\_3 die Eigenschaften des Versuchs verändert zu haben scheinen. Nutzen Sie daher nur die Daten
+ab N\_3 inklusive.}
+
+\dottedlinett
+
+Wie man im Plot des Fits (unten) sehen kann, gibt es in der Messreihe für $15\u{keV}$ keine Ausreißer. In der Messreihe für \(25\u{keV}\) hingegen, weichen die ersten drei Datenpunkte stark von einem Exponential-Gesetzt ab. 
+Wir haben den Fit daher einmal mit allen Datenpunkten gemacht, und anschließend nochmal ohne die ersten drei Datenpunke.\newpage
+
+\inputpy[firstline=64]{}{9.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{c.svg}
+\end{figure}
+
+\section{Zeeman-Effekt}
+\subsection{Betrachten Sie die Aufspaltung der roten Cadmium-Linie ($\lambda = 643.8 \u{nm}$) durch den Zeeman-Effekt in
+einem Magnetfeld \(B\). Welche Magnetfeldstärke muss man anlegen, damit die Aufspaltung durch den Zeeman-Effekt größer wird als die Dopplerverbreiterung $\delta\lambda_D = 2 \E{-12} \u m$ der roten Cadmium-Linie?}
+
+\dottedlinete
+
+\begin{align*}
+    E &= \frac{hc}{\lambda}\\
+    \implies \Delta E &= \frac{hc}{\lambda^2} \Delta \lambda\\
+    \Delta \lambda &= \frac{\lambda^2}{hc} \Delta E\\
+    \\
+    \delta \lambda_D &\overset !< \Delta \lambda\sub{Zeeman}\\
+    &=\frac{\lambda^2}{hc} \Delta E \\
+    &=\frac{\lambda^2}{hc} \mu_B B \\
+    B &> \frac{hc} {\lambda^2 \mu_B}\delta \lambda_D \\
+    &\approx 0.103\u T\\
+\end{align*}
+
+\subsection{Den normalen Zeeman-Effekt kann man auch zur Messung des lokalen Magnetfeldes in Sonnenfecken verwenden. Dazu muss die Aufspaltung jedoch größer sein als die Linienbreite, die in diesem Fall durch den Doppler-Effekt bestimmt wird. Nehmen Sie als Oberfächentemperatur der Sonne $T_s = 5000 \u K$ an
+sowie eine Spektrallinie mit $\lambda = 501.6 \u{nm}$ und schätzen Sie damit ab, wie groß $B$ sein muss, damit die Zeeman-Aufspaltung mindestens so groß ist wie die Dopplerverbreiterung der Linie.\\
+Hinweis: Machen Sie sich Gedanken über die Zusammensetzung der Sonne, um die Linie zu identifzieren
+und für das richtige Element Ihre Abschätzung zu berechnen. Die Dopplerverbreiterung für ein ideales Gas finden Sie im Skript.}
+
+\dottedlinett
+
+Die Sonne besteht überwiegend aus Wasserstoff.
+
+\begin{align*}
+    \delta \lambda\sub{Doppler} 
+    &= \frac{\lambda}{c} \sqrt{\frac{8 k_B T \ln 2}{m}}\\
+    &\approx \frac{\lambda}{c} \sqrt{\frac{8 k_B T \ln 2}{m_p}}\\
+    \\
+    \delta \lambda\sub{Doppler} &< \delta \lambda\sub{Zeeman}\\
+    \frac{\lambda}{c} \sqrt{\frac{8 k_B T \ln 2}{m_p}} &<  \frac{\lambda^2}{hc} \mu_B B\\
+    B &> \frac{h}{c\lambda \mu_B } \sqrt{\frac{8 k_B T \ln 2}{m_p}}\\
+    &\approx 2.15\u T
+\end{align*}
+
+\end{document}

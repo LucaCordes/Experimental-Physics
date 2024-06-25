@@ -1,11 +1,12 @@
 \documentclass[twocolumn]{summery_4.1}
+
 \title{Experimentalphysik IV - Zusammenfassung}
 
 \begin{document}
 \maketitle
 \tableofcontents
 
-\section{Erste Einweise auf eine Diskretisierung auf der kleinsten Ebene}
+\section{Erste Hinweise auf eine Diskretisierung auf der kleinsten Ebene}
 \begin{itemize}
     \item \textbf{Gesetz der konstanten Proportionen:} In der Chemie wurde im 19. Jahrhundert entdeckt, dass viele chemische Reaktionen in ganzzahligen Verhältnissen ablaufen, z.B. für 100g Wasser: 11.1g Wasserstoff + 88.9g Sauerstoff $\to$ Massenverhältnis 1:8 
     \item \textbf{Gesetz konstanter Volumina:} Bei gleicher Temperatur und Druck reagieren Gase in konstanten ganzzahligen Volumenverhältnissen. Dies kann mit der idealen Gasgleichung so erklärt werden, dass bei gleicher Temperatur und Druck das  Volumenverhältnissen gleich dem Verhältnis an Teilchenzahlen ist $\frac{V_1}{V_2} = \frac{N_1}{N_2}$.
@@ -15,7 +16,8 @@
 \end{itemize}
 
 \onecolumn
-\section{Drehimpuls}
+\section{Drehimpuls und magnetisches Moment}
+\subsection{Drehimpuls}
 
 \begin{description}
     \item[Beschreibung:] Eine klassisch verständliche Eigenschaft. 
@@ -60,7 +62,7 @@ Es gilt \(J_z = J_{1z}+J_{2z}\), aber die Basis besteht im allgemeinen nicht aus
 \end{description}
 
 
-\section{Spin}
+\subsection{Spin}
 \begin{description}
     \item[Beschreibung:] Rein quantenmechanische Eigenschaft, welche einem Drehimpuls ähneld. 
     \item[Operator:] \(\v S = (S_x,S_y,S_z)\). Gehorcht der Vertauschungsrelation von Drehimpulsen \(\bug{S_x,S_y} = i\hbar S_z \). Da die drei Komponenten nicht mit einander vertauschen wählt man als maximal möglicher Satz vertauschbarer Operatoren \(\absv S\) und \(S_z\).
@@ -89,7 +91,7 @@ Es gilt \(J_z = J_{1z}+J_{2z}\), aber die Basis besteht im allgemeinen nicht aus
     Photonen mit \(m_s=+1\) sind rechts-zirkular polarisiert, \(m_s=-1\) sind links-zirkular polarisiert, linear polarisiertes Licht ist nicht etwa \(m_s=0\), sondern eine Überlagerung von zwei Photonen mit \(m_s=+1\) und \(m_s=-1\).
 \end{description}
 
-\section{Magnetisches Moment:}
+\subsection{Magnetisches Moment:}
 \begin{description}
     \item[Beschreibung:] Magnetisches Moment das von einem Teilchen oder einem Verbund dieser ausgeht. Semiklassisch lässt sich das magnetische Moment auf die bewegten Ladungsträger z.B. in der Atomschale zurückführen. Demnoch führt jeder Drehimpuls eines Ladungsträgers zu einem B-Feld, jedoch ist auch die rein quantenmechanische Eigenschaft des Spins Ursache eines magnetischen Moments. Magnetisches Moment und Drehimpulse werden durch die gleichen Quantenzahlen beschrieben.
     
@@ -118,9 +120,7 @@ Es gilt \(J_z = J_{1z}+J_{2z}\), aber die Basis besteht im allgemeinen nicht aus
     \end{center}
 \end{description}
 
-\section{Erwartungswerte}
-
-
+\section{Erwartungswerte im Wasserstoff-Atom}
 \begin{center}
     \tabbox{{\bf Physikalische Größe \(\mathbf{(n,l,m)}\)-Abhängigkeit}}
     {\begin{tabular}{l|c}
@@ -147,9 +147,9 @@ Es gilt \(J_z = J_{1z}+J_{2z}\), aber die Basis besteht im allgemeinen nicht aus
 
 \twocolumn
 
-\section{Ein Elektron Atome}
+\section{Wasserstoff}
 \subsection{Herleitung}
-\subsubsection{DGL Gesamt}
+{\large DGL Gesamt}
 \begin{align*}
     \hug{-\frac{\hbar^2}{2m_2} \Delta_e - \frac{\hbar^2}{2A m_p}\Delta_p + V(\v r_e, \v r_p)} \Psi(\v r_e, \v r_p) = E \,\Psi(\v r_e, \v r_p)
 \end{align*}
@@ -168,7 +168,7 @@ mit
     \v r_e = \v R + \frac{A\, m_p}{m_e + A\, m_p} &\tand \v r_p = \v R - \frac{m_e}{m_e + A\, m_p} \v r
 \end{align*}
 
-\subsubsection{Zerlegung der Gesamt-DGL}
+{\large Zerlegung der Gesamt-DGL}
 {\bf DGL Schwerpunktbewegung}
 \begin{align*}
     -\frac{\hbar^2}{2M} \Delta_R \varphi(\v R) &= E_s \varphi(\v R)\note M = m_e +A\cdot m_p
@@ -189,7 +189,7 @@ mit
     \psi(\v r) &= R(r) \cdot \Theta(\theta) \cdot \Phi(\phi)
 \end{align*}
 
-\subsubsection{DGL $\Phi(\phi)$}
+{\large DGL $\Phi(\phi)$}
 \begin{align*}
     - \dd[2]{}\phi \Phi(\phi) &= m^2 \Phi(\phi)
 \end{align*}
@@ -206,7 +206,7 @@ Randbedingungen:
     L_z \Phi(\phi) &= \hbar m\, \Phi(\phi)
 \end{align*}
 
-\subsubsection{DGL $\Theta(\theta)$}
+{\large DGL $\Theta(\theta)$}
 \begin{align*}
     \hug{-\frac{1}{\sin\theta}\pp{}\theta \hug{\sin\theta\pp{}\theta}  + \frac{m^2}{\sin^2\theta}}\Theta(\theta) =  l(l+1)\Theta(\theta)
 \end{align*}
@@ -226,7 +226,7 @@ mit \( P_l^{\abs m}(\cos\theta)\) als assoziierte Legendrepolynome, und \( l\in 
     \sum_{m=-l}^l \sabs{\Upsilon_{l}^{(m)}}^2 &= \frac{2l + 1}{4\pi}
 \end{align*}
 
-\subsubsection{DGL $R(r)$}
+{\large DGL $R(r)$}
 \begin{align*}
     \hug{\pp{}r \hug{r^2\pp{}r} + \frac{2\mu r^2}{\hbar^2} \hug{E_r - V(r)}} R(r) = l(l+1) R(r)
 \end{align*}
@@ -276,8 +276,6 @@ Anmerkungen:
         \end{description}
 
     \item[Erwartungswerte:]\,
-    Siehe Taballe \ref{tab:Erwartungswerte}.
-
     
     Für ein wasserstoffähnliches Atom welches sich nicht in einem außerem Feld befindet, ist nur die Quantenzahl \(n\) relevant für die Energie. Damit ist die Entartung der Energieniveaus \(k= \sum_{\ell,m,m_s} =2n^2 \).  
 
@@ -617,8 +615,35 @@ Für den Quadrupol ergibt sich z.B. Auswahlregen \(\Delta l=0,\pm2\), d.h. es we
         \overset{v\ll c}\approx 1-\beta 
     \end{align*}
     Die Geschwindigkeitesverteilung in radialer Richtung folgt einer Maxwellverteilung, sodass die Linienverbreiterung Gaußförmig wird.
-    Die Breite wächst mit \(\sqrt T\) an.
+    Die Breite wächst mit \(\sqrt T\) an:
+    \begin{align*}
+        \delta \lambda\sub{Doppler} 
+    &= \frac{\lambda}{c} \sqrt{\frac{8 k_B T \ln 2}{m}}
+    \end{align*}
 \end{description}
+
+\subsection{Röntgenstrahlung}
+\begin{description}
+    \item[Streuung und Absorbtion:] Jedes Photon hat eine konstante Wahrscheinlichkeit pro Zeiteinheit gestreut oder absorbiert zu werden, daher gilt für die Strahlungsleistung \(P\) nach der Absorberdicke \(x\) das Exponentialgesetzt
+    \begin{align*}
+        P(x) &= P_0 e^{-\mu x}, \mu = \sigma n
+    \end{align*}  
+    mit $\mu = \mu_s+\alpha$, \(\mu_s\) als Streukoeffizient und \(\alpha\) als Absorptionskoeffizient.
+    \item[Streuung:] Hier gibt es drei wesendliche Streuprozesse ($E_B$ Bindungsenergie des Elektrons):
+    \begin{description}
+        \item[Rayleigh Streung] \(h\nu  \le E_B\). Es werden in den Atomhüllen elektrische Dipole angeregt.   
+        \item[Thomson-Streuung] \(E_B\ll h\nu\ll m_ec^2\). Der Rückstoß des Elektrons ist vernachlässigbar, und das Photon wird mit gleicher Frequenz gestreut 
+        \item[Comptonstrahlung] \(E_B\ll h\nu \approx m_ec^2\). Rückstoß ist nicht vernachlässigbar und es kommt zur Frequenzänderung beim Photon.  
+    \end{description}
+    \item[Absorbtion:] Für die Absorbtion bei höheren Energien sind im wesendlichen zwei Effekte relevant:
+    \begin{description}
+        \item[Photoeffekt] \(h\nu + A\to A^+ + e-\). Maximal Wahrscheinlichkeit für \(h\nu \approx E_B\), außerdem \(\alpha\propto Z^{4.5}\).
+        \item[Paarbildung] \(h\nu + A \to A + e^+ + e^-\). Minimale Energie \(2 m_e c^2 \approx 1022\u{keV}\), und \(\alpha\propto Z^2\) 
+    \end{description}
+    \item[Wirkungsquerschnitt:] \(R = \sigma\cdot \Phi_\gamma \cdot N\sub{Target}\), \(R\) Reaktionsrate,\(\sigma, [\sigma]=m^2\) Proportionalitätskonstante, \(\Phi_\gamma\) Photonenfluss, \(N\sub{Target}\) Anzahl der Target-Teilchen. Es gilt \(\mu = \sigma n =\sigma \cdot \rho \frac{N_A}A\), \(n\) Menge an Target-Teilchen. 
+    \item[Massenabschwächungskoeffizient:] \(\kappa =\frac{\mu}\rho\)
+\end{description}
+\subsubsection{Bremsstrahlung}
 
 \section{Experimente}
 

@@ -1,0 +1,59 @@
+\documentclass[ex]{exercise_4.1}
+
+\deadline{26.06.2024}
+
+\begin{document}
+
+\section{Gepulster Rubinlaser}
+{\it Im Rubin Festkörper führt optisches Pumpen mit einer Wellenlänge von \(550\u{nm}\) auf einen angeregten Zustand \(E_3\) von \(\schemie{Cr^{3+}}\)-Ionen, die im \(\schemie{Al_2O_3}\)-Gitter des Rubin-Kristalls einige der Al-Atome ersetzten. Dieser Zustand hat eine Lebensdauer von \(10^{-3}\u s \). Es folgen von hier strahlungslose Übergänge in das metastabile Niveau \(E_2\) mit einer Lebensdauer von \(3\E{-3}\u s\). Der Laserübergang zwischen den Niveaus \(E_2\) und \(E_1\) besitzt eine Wellenlänge von \(694.3\u{nm}\).\\
+Bestimmen Sie:
+}
+
+\subsection{Die Pulsdauer des Lasers beträgt \(12\u{ps}\) und die Energie pro Puls ist \(0.15\u J\).}
+
+\subsubsection{Welche räumliche Länge hat der Puls?}
+\begin{align*}
+    s &=  c t \approx 3.60\u{mm}
+\end{align*}
+
+\subsubsection{Was ist die erreichte Leistung?}
+\begin{align*}
+    P &= \dd Et = \frac{E}{t} \approx \SI{12.5}{\GW}
+\end{align*}
+
+\subsubsection{Wieviele Photonen werden pro Puls emittiert?}
+\begin{align*}
+    N &= \frac{E\sub{Puls}}{E\sub{ph}} 
+    = \frac{E\sub{Puls}\lambda}{h c}
+    \approx 5.24\E{17}
+\end{align*}
+
+
+\subsection{Vergleichen Sie die natürliche Linienbreite des Laser-Übergangs mit der Dopplerverbreiterung von \(\Gamma_D=\SI{1.3}{\pico\Hz}\), für eine Betriebstemperatur von \(\SI{300}\K\), mit der Breite aufgrund der kurzen induzierten Emissiondauer.}
+
+\dottedlinete
+
+\begin{align*}
+    E &= \frac{hc}{\lambda}\implies \Delta E = \frac{hc}{\lambda^2}\Delta\lambda
+\end{align*}
+\begin{align*}
+    \frac{\hbar}{2} &= \Delta E \Delta t = \frac{hc}{\lambda^2}\Delta\lambda\sub n \Delta t \\
+    \Delta \lambda\sub n &= \frac{\lambda^2}{4\pi c \Delta t }
+    \approx \SI{10.6}{\pm}\\
+    \\
+    \Delta  \lambda\sub{Doppler} 
+    &= \frac{\lambda}{c} \sqrt{\frac{8 k_B T \ln 2}{m}}
+    \note m(\schemie{C3^{3+}}) = \frac{52\E {-3}}{N_A}\u{kg}\\
+    &\approx \SI{1.19}{\pm}
+\end{align*}
+
+Damit ist die Linienverbreiterung durch die Kürze des Laserpuls etwa um eine Größenordnung größer, als die Dopplerverbreiterung.
+
+\begin{align*}
+\end{align*}
+
+\subsection{}
+\begin{align*}
+\end{align*}
+
+\end{document}
