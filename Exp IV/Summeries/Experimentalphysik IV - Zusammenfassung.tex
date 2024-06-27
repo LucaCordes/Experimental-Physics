@@ -574,6 +574,7 @@ Zwischen den Einsteinkoeffizienten gilt der folgenden Zusammenhang:
 \begin{align*}
     B_{kj} &= \frac{c^3} {8\pi h \nu^3}A_{kj} =\frac{g_j}{g_k} B_{jk}
 \end{align*}
+mit \(g_j\) als Entwartung der Energiezustände
 
 \subsection{Messung der Einsteinkoeffizienten}
 Die Lebensdauer \(\tau_i\) eines Zustandes \(E_i\) ist gegeben durch
@@ -618,7 +619,9 @@ Für den Quadrupol ergibt sich z.B. Auswahlregen \(\Delta l=0,\pm2\), d.h. es we
     Die Breite wächst mit \(\sqrt T\) an:
     \begin{align*}
         \delta \lambda\sub{Doppler} 
-    &= \frac{\lambda}{c} \sqrt{\frac{8 k_B T \ln 2}{m}}
+    &= 2\sqrt{2\ln 2 }\cdot \Delta\lambda\sub{Doppler}\\
+    \Delta \lambda\sub{Doppler}&= \frac{\lambda}{c} \sqrt{\frac{k_B T}{m}}\\
+    \Delta f\sub{Doppler}&= \sqrt{\frac{k_B T}{mc^2}} f\\
     \end{align*}
 \end{description}
 
@@ -644,6 +647,80 @@ Für den Quadrupol ergibt sich z.B. Auswahlregen \(\Delta l=0,\pm2\), d.h. es we
     \item[Massenabschwächungskoeffizient:] \(\kappa =\frac{\mu}\rho\)
 \end{description}
 \subsubsection{Bremsstrahlung}
+
+
+\section{Laser}
+\subsection{Grundlagen}
+Laser steht für {\bf \large L}aser {\bf\large A}mplification by {\bf\large S}timulated {\bf\large E}mission of {\bf\large R}adiation.\\[1ex]
+Grundlage des Laser-Effekts ist die \emph{stimulierte Emission} von Photonen aus einem angeregten Zustand. \\
+Hierbei wird durch ein einlaufendes Photon der richtigen Frequenz ein kohärenter Übergang angeregt und dabei ein Photon mit: 
+1) \emph{gleicher Frequenz}, 2) \emph{Polarisation}, 3) \emph{Ausbreitungsrichtung} und 4)
+\emph{fester Phasenbeziehung} erzeugt. Es kommt somit zur Lichtverstärkung.
+Zusätzlich zur stimulierten Emission existieren zwei weitere konkurrierende Prozesse, die nicht zur Lichtverstärkung führen: Die spontane Emission und die Absorption aus dem Grundzustand.\\[1ex]
+
+\subsubsection{Besetzungsinversion}
+Damit es zu einer Lichtverstärkung kommen kann, benötigt man ein aktives Medium, d.h. es liegt eine Besetzungsinversion vor in dem mehr Teilchen im angeregten Niveau sind, als im Grundzustand. Die Inversionsbedingung ist 
+\begin{align*}
+    N_2 \gg N_1 \frac{g_2}{g_1}
+\end{align*}
+mit \(N_{1,2}\) als Teilchenzahl im Energieniveau und \(g_{1,2}\) als Entartung der Niveaus.
+
+\subsubsection{Drei Niveau System}
+\begin{description}
+    \item[Grundzustand \(E_1\):] Aus diesem Niveau werden mitteln optischen Pumpens Zustände aus dem Energieniveau \(E_3\) angeregt.
+    \item[Metastabiler Zustand \(E_3\):] Dieser Zustand ist metastabil, d.h. er kann aufgrund der Auswahlregeln nicht direkt in den Grundzustand verfallen. Der Zustand zerfällt schnell in den Zustand \(E_2\), verglichen mit der Zerfallzeit von \(E_2\to E_1\). So kann eine Inversion von \(E_1\) bezüglich 
+    \(E_2\) erzeugt werden.
+    \item[Angeregter Zustand \(E_2\):] Dieser zerfällt mit Strahlung in \(E_1\) ist ist die eigentliche Quelle des Laserlichts.   
+\end{description}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{3_Niveau_Laser.png}
+\end{figure}
+
+\subsubsection{Resonator}
+Problem: Der mit der induzierten Emission konkurrierende Prozess der spontanen Emission steigt mit zunehmender Frequenz, da dieser antiproportional ist zur Photonendichte aber proportional zur Modenzahldichte.\\
+
+Lösung: Die spontane Emission kann entweder durch eine hohe Photonendichte unterdrückt werden, oder indem man die Modenzahldichte mit einem Resonator einschränkt. Moden, die die Resonanzbedingung \(m\cdot \lambda/2 = n L\note m\in\N \) erfüllen sind dann sehr stark besetzt.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Schwellwertbedingung.png}
+\end{figure}
+
+Für eine Verstärkung muss die \emph{Schwellwertbedingung} erfüllt sein 
+\begin{align*}
+    -2\mu \cdot L > \gamma 
+\end{align*}
+mit Resonatorlänge \(L\), Wahrscheinlichkeit eines Photonenverlustes \(\gamma\) und der effektiven Abschwächung \(\mu = \mu\sub{abs}+\mu\sub{ind}\)
+\(= \underbrace{\hug{n_k - \frac{g_k}{g_j}n_j}}\sub{Besetzungsinversion}\cdot \sigma(\nu)\), \(I(z)\propto e^{-\mu z}\).
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Schwellwertbedingung.png}
+\end{figure}
+
+\subsection{Ultra kurze Lichtpulse}
+Dies funktioniert über die Nutzung des Zusammenhangs, dass ein sehr kurzes Wellenkacket ein sehr breites Frequenzspektrum hat. Über ein reflektierendes Gitter können die Wellenlängen räumlich getrennt und der
+Puls damit gestreckt werden. Nach erfolgter Verstärkung wird über ein Gitter im umgekehrten Aufbau die räumliche Trennung wieder rückgängig gemacht.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Kurzer_Puls.png}
+\end{figure}
+
+\subsection{Laserkühlung}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Laserkühlung.png}
+\end{figure}
+
+\subsection{Frequenzkamm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Frequenzkamm.png}
+\end{figure}
+
+\section{Moleküle}
 
 \section{Experimente}
 
