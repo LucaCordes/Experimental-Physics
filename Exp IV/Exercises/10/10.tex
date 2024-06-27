@@ -18,42 +18,165 @@ Bestimmen Sie:
 
 \subsubsection{Was ist die erreichte Leistung?}
 \begin{align*}
-    P &= \dd Et = \frac{E}{t} \approx \SI{12.5}{\GW}
+    P &= \dd Et \approx \SI{12.5}{\GW}
 \end{align*}
 
 \subsubsection{Wieviele Photonen werden pro Puls emittiert?}
 \begin{align*}
     N &= \frac{E\sub{Puls}}{E\sub{ph}} 
     = \frac{E\sub{Puls}\lambda}{h c}
-    \approx 5.24\E{17}
+    \approx \SI{5.24E17}{}
 \end{align*}
 
 
-\subsection{Vergleichen Sie die natürliche Linienbreite des Laser-Übergangs mit der Dopplerverbreiterung von \(\Gamma_D=\SI{1.3}{\pico\Hz}\), für eine Betriebstemperatur von \(\SI{300}\K\), mit der Breite aufgrund der kurzen induzierten Emissiondauer.}
+\subsection{Vergleichen Sie die natürliche Linienbreite des Laser-Übergangs mit der Dopplerverbreiterung von \(\Gamma_D=\SI{1.3}{\THz}\), für eine Betriebstemperatur von \(\SI{300}\K\), mit der Breite aufgrund der kurzen induzierten Emissiondauer.}
+
+\dottedlinett
+
+Die Dopplerverbreitung für \(m(\mathrm{Cr}^{3+})\) und \(T=300K\) ist laut Formel aus der Vorlesung
+\begin{align*}
+    \Delta f\sub{Doppler}&= \sqrt{\frac{k_B T}{mc^2}} f 
+    \approx  \SI{0.315}{\GHz}
+\end{align*}
+und damit gut vier Größenordnungen kleiner als die, die in der Aufgabe angegeben ist. Kann das wirklich sein?\\
+
+Auf jeden Fall gilt für die natürliche Linienbreite:
+\begin{align*}
+    E &= hf \implies \Delta E = h\Delta f\\
+    \frac\hbar2 &= \Delta E \Delta t 
+    = h\Delta t \Delta f\\
+    \Delta f &= \frac{\hbar}{2h \Delta t} 
+    = \frac{1}{4\pi \Delta t}
+    \approx \SI{26.5}{\Hz}
+\end{align*}
+
+Damit ist die natürliche Linienbreite etwa um zwölf Größenordnung kleiner, als die Dopplerverbreiterung.
+
+\section{Laserresonator}
+{\it Bei einem Laserresonator sind die Endspiegel durch Stahlstangen mit einer Länge von \(1\u m\) verbunden. Das Laserlicht mit einer Frequenz von \(5\E{14}\u{Hz}\) läuft in \(20\u{cm}\) der Resonatorlänge durch Luft bei Atmosphärendruck, der Rest des Resonators ist Vakuum.\\
+Hinweis: Der thermische Ausdehnungskoeffizient von Stahl ist \(\alpha=12\E{-6}\u {K\inv}\). Der Brechungsindex von Luft bei Atmosphärendruck ist \(n=1+2.7\E{-7}\) und hängt linear von der Dichte ab.}
+
+\subsection{Wie ändert sich die Laserfrequenz bei einer Temperaturänderung von \(1\u K\)?}
 
 \dottedlinete
 
 \begin{align*}
-    E &= \frac{hc}{\lambda}\implies \Delta E = \frac{hc}{\lambda^2}\Delta\lambda
-\end{align*}
-\begin{align*}
-    \frac{\hbar}{2} &= \Delta E \Delta t = \frac{hc}{\lambda^2}\Delta\lambda\sub n \Delta t \\
-    \Delta \lambda\sub n &= \frac{\lambda^2}{4\pi c \Delta t }
-    \approx \SI{10.6}{\pm}\\
+    \frac{\lambda_m}{2} &= \frac {nz}m=\frac{c}{2\nu_m}\note m\in\N\\
+    \nu_m &= m \frac{c}{2nz}\\
+    \Delta \nu_m &= \pp{\nu_m}z \cdot \Delta z 
+    = -m \frac{c\alpha \Delta T}{2nz}\\
+    m_0 &= \frac{2n z \nu}{c}\\
     \\
-    \Delta  \lambda\sub{Doppler} 
-    &= \frac{\lambda}{c} \sqrt{\frac{8 k_B T \ln 2}{m}}
-    \note m(\schemie{C3^{3+}}) = \frac{52\E {-3}}{N_A}\u{kg}\\
-    &\approx \SI{1.19}{\pm}
+    \implies \Delta \nu_{m_0} &= -\alpha \nu \Delta T
+    \approx\SI{-6.00}{\GHz}
 \end{align*}
 
-Damit ist die Linienverbreiterung durch die Kürze des Laserpuls etwa um eine Größenordnung größer, als die Dopplerverbreiterung.
+\subsection{Wie ändert sich die Laserfrequenz bei einer Druckänderung von \(1\u{mbar}\)?}
+
+\dottedlinete
 
 \begin{align*}
+    \nu_m &= m \frac{c}{2nz}\\
+    \Delta \nu_m &= \pp{\nu_m}{n} \pp n p \Delta p \\ 
+    &=- m \frac{c}{2n^2z}\pp n p \Delta p 
 \end{align*}
+Ich konnte im Internet keinen Wert für \(\pp n p \) oder äquivalentes wie \(\pp n \rho \) finden, daher kein Ergebnis.
 
-\subsection{}
+\subsection{Findet für die Änderung der Temperator und des Drucks aus den vorherigen Aufgabenteilen jeweils ein Modensprung statt?}
+
+\dottedlinete
+
 \begin{align*}
+    \nu_m &= m \frac{c}{2nz}\\
+    \implies \Delta \nu_m &= \frac{c}{2nz}
+    \approx \SI{749}{\mega\hertz}
+\end{align*}
+Da die Frequenzdifferenz, zwischen den Moden, deutlich kleiner ist als die Frequenzdifferenz, welche durch die Temperaturänderung verursacht wird, findet ein Modensprung statt.
+
+\section{Kühlung von Atomen mit einem Laser}
+{\it Der Nobelpreis in Physik ging 1997 an Steven Chu, Claude Cohen-Tannoudji und William Phillips für die Entwicklung von Techniken, mit denen man Atome durch Laserlicht abbremsen, anhalten und „einfangen“ kann. Um zu verstehen wie dies funktioniert, betrachten wir einen Strahl von Rubidium-Atomen (Masse
+$m = 1.4 ⋅ 10^{-25} \text{ kg}$), die aus einem Ofen mit einer Geschwindigkeit von $v = 500 \text{ m s}^{-1}$ austreten. (Die Breite
+der Geschwindigkeitsverteiling soll hier vernachlässigt werden). Ein Laserstrahl mit einer Wellenlänge von
+$\lambda = 780 \text{ nm}$ zielt antiparallel auf den Atomstrahl. Dies ist die Wellenlänge des $5s \leftrightarrow 5p$-Überganges in
+Rubidium, wobei 5s der Grundzustand ist. Damit werden die Photonen aus dem Laser von den Atomen
+leicht eingefangen. Nach einer mittleren Zeit von $t = 15 \text{ ns}$ rekombiniert das angeregte Elektron wieder in den
+Grundzustand und emittiert ein Photon der Wellenlänge $\lambda$.}
+
+\subsection{Nehmen Sie an, dass die Atome sich in positive $z$-Richtung, und die Photonen sich in negative $z$-Richtung bewegen. Wie groß ist der Impuls der Atome, die den Ofen gerade verlassen? Wie groß ist der Impuls der
+Photonen?}
+
+\dottedlinete
+
+\begin{align*}
+    p\sub{Rb} &= m v = \SI{7.05e-23}{\kg\m\per\s}\\
+    p\sub{ph} &= \hbar \v k = -\frac h \lambda = \SI{-8.50e-28}{\kg\m\per\s}
 \end{align*}
 
+\subsection{Wie viele Photonen muss ein Atom absorbieren, um angehalten zu werden?\\
+Hinweis: Für Emission und Absorption von Photonen gilt natürlich die Impulserhaltung. Die spontante Emission erfolgt jedoch isotrop, trägt also gemittelt über viele Emissionsprozesse nicht zu einer Impulsänderung bei.}
+
+\dottedlinete
+
+\begin{align*}
+    N &= -\frac{p\sub{Rb}}{p\sub{ph}}
+    \approx \SI{82990}{}
+\end{align*}
+
+\subsection{Nehmen Sie an, dass der Laserstrahl so intensiv ist, dass ein Atom im Grundzustand sofort ein Photon
+absorbiert. Welche Zeit wird benötigt, um ein Atom zu stoppen?}
+
+\dottedlinete
+
+\begin{align*}
+    t_0 &= N \tau \approx \SI{1.25}{\ms}
+\end{align*}
+
+\subsection{Benutzen Sie Newtons zweites Bewegungsgesetz in der Form $F =  \Delta p / \Delta t$, um die von den Photonen ausgeübte Kraft zu berechnen. Berechnen Sie die Bremsbeschleunigung der Atome.}
+
+\dottedlinete
+
+\begin{align*}
+    F &= \frac{\Delta p}{\Delta t} = -\frac{p\sub{Rb}}{t_0} \approx \SI{-5.66E-20}{\N}
+\end{align*}
+
+
+\subsection{Welche Distanz haben die vollständig abgebremsten Atome zurückgelegt?}
+
+\dottedlinete
+
+\begin{align*}
+    s &= v t + \frac12 a t^2
+    = v_0 t_0 + \frac{F}{2m}  t_0^2
+    \approx \SI{0.311}{\m}
+\end{align*}
+
+\section{Laser}
+{\it Eine dopplerverbreiterte Linie mit der Halbwertsbreite $\delta\nu = 2\u{GHz}$ und einer Mittenfrequenz $\nu = 5.14\cdot10^{14}$ Hz
+wird in einen Laser mit einem planparallelem Resonator der Länge $L = 60$ cm und zwei Spiegeln mit den
+Reflektivitäten $R_1 = 0.998$ und $R_2 = 0.980$ genutzt. Vernachlässigen Sie weitere Verluste und nehmen Sie an,
+dass die Besetzungs-Gewichte der am Laserübergang beteiligten Niveaus $g_i = 1$ sind. Der Absorbtionswirkungsquerschnitt beträgt $\sigma = 1 \cdot 10^{-13}$ cm$^2$.}
+
+\subsection{Wie groß ist die mindestens erforderliche Besetzungsinversion an der Laserschwelle?}
+
+\dottedlinete
+
+\begin{align*}
+    \te{Schwellwertbedingung:}\quad 0 &\overset!> 2\mu L+\gamma \\
+    &= 2n\sigma  L + R_1 R_2 \\
+    &= 2\underbrace{\hug{n_k - \frac{g_k}{g_j}n_j}}\sub{Besetzungsinversion}\sigma L + R_1 R_2 \\
+    \hug{n_k - \frac{g_k}{g_j}n_j} &<  \frac{R_1 R_2}{2\sigma L}\approx  \SI{8.15e16}{\meter^{-3}}
+\end{align*}
+
+\subsection{Wie viele longitudinale Resonator-Moden passen in die Halbwertsbreitebreite der Laserfrequenz?}
+
+\dottedlinete
+
+\begin{align*}
+    \frac{\lambda_m}{2} &= \frac {nz}m=\frac{c}{2\nu_m}\note m\in\N\\
+    \nu_m &= m \frac{c}{2nz}\\    
+    \Delta \nu_m &= \frac{c}{2nz}\\    
+    \\
+    \implies N &= \frac{\delta \nu }{\Delta \nu_m }
+    = \frac{2n z \delta \nu}{c} \approx 8
+\end{align*}
 \end{document}
