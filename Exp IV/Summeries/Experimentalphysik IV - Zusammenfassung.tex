@@ -181,7 +181,7 @@ mit
 {\bf DGL Relativbewegung}
 \begin{align*}
     E_r \psi(\v r) &= -\frac{\hbar^2}{2\mu} \Delta_r \psi(\v r) + V(r) \psi(\v r) \\
-    \mu &= \frac{Z m_e m_p}{m_e + Z m_p}\neq \frac1{1+\frac{m_e}{m_k}}
+    \mu &= \frac{Z m_e m_p}{m_e + Z m_p}
 \end{align*}
 
 \textbf{Zerlegung der Relativbewegung:}
@@ -721,6 +721,98 @@ Puls damit gestreckt werden. Nach erfolgter Verstärkung wird über ein Gitter i
 \end{figure}
 
 \section{Moleküle}
+\subsection{LCAO-Methode}
+{\large L}inear {\large C}ombinations of {\large Atomic} {\large O}rbitals ist eine Methode um Molekülorbitale anzunähern.
+\begin{description}
+    \item[Born-Oppenheimer-Näherung:] Der Abstand der Atomkerne wird als konstant angenommen.
+    \item[Prinzip:] Die Wellenfunktion wird als lineare Überlagerung der Lösung für ein seperates Atom angenommen. Für zwei Protonen \(A\) und \(B\) also \(\psi_{e^-} = c_A\psi_A + c_B \psi_B\). Dann werden per Störungsrechnung die neuen Energienieveaus genähert.
+    \item[Energieniveaus:]
+    \begin{align*}
+        E_\pm &= \frac{\bra{\Psi_A}H\ket{\Psi_A} \pm \bra{\Psi_A}H\ket{\Psi_B}}{1\pm \braket{\Psi_A}{\Psi_A}}
+    \end{align*} 
+\end{description}
+
+\subsection{Van-der-Waals-Wechselwirkung}
+
+\subsection{Rotation und Vibration}
+\begin{center}
+\begin{tabular}[0.49\textwidth]{@{}lll@{}}
+    \toprule
+    & Äquivalent & Energie \\
+    \midrule
+    {\bf Rotation:} & Drehimpuls & \(\frac{\v J^2}{2\Theta} = \frac{j(j+1)\hbar^2}{2\mu R^2}\)\\
+    {\bf Vibration:} & Harmonischer Oszillator & \(\hbar\omega(n+1/2)\)\\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Raman-Effekt}
+\begin{description}
+    \item[Was?] Bestrahlt man Moleküle mit monochromatischem Licht der Frequenz \(\nu_0\) kommt es zur Rayleigh-Streuung. D.h. die Elektronenhülle wird zu Dipolschwingungen angeregt.
+    \begin{align*}
+        \v p \sub{el} &= \v p\sub{el,0} + \alpha \v E(t), \ \alpha \equiv \te{Polarisierbarkeit}
+    \end{align*} 
+    Das abgestrahlte Licht hat die Frequenz \(\nu_0\), und zusätzlich schwächere Linien kleinerer und größerer Frequenz. Dies ist der Raman-Effekt.
+    \item[Warum?] Die Linie \(\nu_0\) wird durch Rayleigh-Streuung verursacht. Linien niedrigerer Frequenz, die so genannten \emph{Stokes Linien}, werden durch die inelastische Anregung von Schwingungen verursacht.
+    \begin{align*}
+        \Delta E &= h(\nu_0 - \nu_r)\\
+        \nu_r &\approx n(\nu\sub{vib} + k \nu\sub{rot})
+    \end{align*} 
+    Die Linien energetischeren Lichts, die sogenannten \emph{Anti-Stokes Linien}, ergeben sich über die Wechselwirkung mit einem angeregten Schwingungszustand und Relaxion in einen niedrigeren Zustand.
+    \begin{align*}
+        \Delta E= h(\nu_0 + \nu_r)
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.49\textwidth]{Raman-Spektrum.png}
+    \end{figure}
+    \item[Nutzen:] Eine wichtige Eigenschaft des Raman Effektes ist die Messung und Identifkation von Schwingungszuständen,
+    ohne diese direkt mit der richtigen Frequenz resonant anzuregen. Außerdem die Messung von Spurgasen ($\schemie{CO_2}$) und Aerosolen in der Atmosphäre (Messung mit Infrarot-Licht nicht möglich, da dieses zu stark von der Luft absorbiert wird).
+\end{description}
+
+\subsection{Fluoreszenz}
+Absorption in angeregten Schwingungsniveaus. Durch Stöße (innere Konversion) wird die angeregte Schwingungsenergie abgegeben. Dieser Prozess läuft typischerweise 10 bis 1000 mal schneller ab, so dass der folgende Strahlungsübergang aus dem Grundschwingungszustand erfolgt; das Molekül leuchtet daher bei einer niedrigeren Frequenz.
+
+\subsection{Phosporeszenz}
+Zusätzlich kann auch durch den sogenannten Interkombinationsprozess die Energie
+auf Zustände übertragen werden, die einen verbotenen Übergang in den Grundzustand darstellen. Auch hier erfolgt zunächst die Relaxation über innere Konversion in den Grundzustand der Schwingung. Von
+hier aus kommt es zum stark verzögerten Strahlungsübergang (Nachleuchten) auf typischen Zeitskalen von $10^{-4} - 10^{-2}$ Sekunden.
+
+\subsection{Kompakt}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Tabelle_Molekülepng.png}
+\end{figure}
+
+\section{Struktur von Atomkernen}
+\subsection{Allgemeines Streuproblem}
+\begin{description}
+    \item[Mathematische Beschreibung:]
+    Einfallende Teilchen als ebene Welle, mit \(N_0\) als Normierung der Teilchenzahl pro Fläche und Zeit:
+    \begin{align*}
+        \phi_0(\v r) &= N_0 \exp(ikz) 
+    \end{align*} 
+    Nach der Streuung an einem sphärisch symmetrischen Potential ist die Welle beschrieben durch 
+    \begin{align*}
+        \phi_1(\v r) &= f(\theta)\frac{\exp(ikr)}{r}
+    \end{align*}
+    Der Wirkungsquerschnitt ist (mit \(n\equiv \)Zahl der Streuzentren, \(\Delta l\equiv\)Dicke des Targets, \(F\equiv\)Targetfläche und \(R_0=F\phi_0\equiv\)Rate der einlaufenden Teilchen, \(R\sub{tot}\equiv\)Wechselwirkungsrate)
+    \begin{align*}
+        \sigma &= \int \abs{f(\theta)}^2\d\Omega\\
+        \sigma\sub{exp} &= \frac{R\sub{tot}}{\phi_0 F \Delta l n } = \frac{R\sub{tot}}{R_0 \Delta l n }
+    \end{align*}
+    Die Streuamplitude ist der differentielle Wirkungsquerschnitt (Anteil der effektiven Targetlfäche für eine Streuung
+    in den Raumwinkel \(Omega\).)
+    \begin{align*}
+        \dd \sigma \Omega &= \abs{f(\theta)}^2
+    \end{align*}
+    \item[Berechnete Formfaktoren]
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.49\textwidth]{Tabelle_Streuung.png}
+    \end{figure}
+\end{description}
+
 
 \section{Experimente}
 
@@ -832,10 +924,30 @@ Puls damit gestreckt werden. Nach erfolgter Verstärkung wird über ein Gitter i
     Moment bestimmt werden.
 \end{description}
 
+\subsection{Rutherford'sche Streuexperiment}
+\begin{description}
+    \item[Prinzip:] \(\alpha\)-Teilchen aus einem radioaktiven Präperat werden an einer dünnen Gold-Folie gestreut. Anschließend misst man die Zählrate \(N\) als Funktion des Winkels \(\theta\). Der Zerfall verläuft monoenergetisch, d.h. alle Alphateilchen haben die gleiche Geschwindigkeit.
+    \item[Aufbau:] \,
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.49\textwidth]{Rutherford_Aufbau.png}
+    \end{figure}
+    \item[Ergebnis:]
+    Es ergibt sich eine Verteilung 
+    \begin{align*}
+        N(\theta) \propto \frac{1}{\sin^4\hug{\theta/2}}
+    \end{align*}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.49\textwidth]{Rutherford_Graph.png}
+    \end{figure} 
+    Die starke Streuung widerlegte das damalige Verständnis der Atomkerne als groß und ausgedehnt.
+\end{description}
+
 
 \section{Formelzeichen und ihre Bedeutung}
 \begin{description}
-    \item[\(r_B\):] Bohrscher Atomradius, \(r_B= \)
+    \item[\(r_B\):] Bohrscher Atomradius, \(r_B=\frac{\hbar}{mc \alpha}=0.529 \A \)
     \item[\(\mu_B\):] Bohrsches Magneton, \(\mu_B= \frac{e\hbar}{2m} = \begin{cases}
         9.27\E{-24}\ufrac JT\\ 5.8 \E{-5}\ufrac{eV}T
     \end{cases}\)
@@ -844,7 +956,7 @@ Puls damit gestreckt werden. Nach erfolgter Verstärkung wird über ein Gitter i
     \item[\(\gamma:\)] gyromagnetisches Verhältnis, \(\gamma = \frac{\absv \mu}{\absv S}\) 
     \item[\(\alpha:\)] Feinstrukturkonstante, \(\alpha = \frac{e^2}{4\pi \varepsilon_0 \hbar c}\approx \frac{1}{137}\)
     \item[\(\mu_k:\)] Kernmagneton \(\mu_k = \frac{\mu_B}{1836} = 3\E{-8} \ufrac{eV}{T}\)  
-    \item[\(\Ry\):] Rybergenergie, \(\Ry = \frac{\mu Z^2 e^4}{32\pi^2 \hbar^2 \epsilon_0^2} = 13.6\u{eV}\)  
+    \item[\(\Ry\):] Rybergenergie, \(\Ry = \frac{m_e c^2 \alpha^2}{2} = 13.6\u{eV}\)  
     \item[\(R_\inf\):] Rybergwellenlänge, \(R_\inf = \frac{\Ry}{hc}\)  
 \end{description}
 
