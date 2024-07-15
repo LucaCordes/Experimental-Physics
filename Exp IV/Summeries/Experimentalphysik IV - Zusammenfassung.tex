@@ -1,4 +1,5 @@
 \documentclass[twocolumn]{summery_4.1}
+\graphicspath{./img/}
 
 \title{Experimentalphysik IV - Zusammenfassung}
 
@@ -180,7 +181,7 @@ mit
 
 {\bf DGL Relativbewegung}
 \begin{align*}
-    E_r \psi(\v r) &= -\frac{\hbar^2}{2\mu} \Delta_r \psi(\v r) + V(r) \psi(\v r) \\
+    E_r \psi(\v r) &= -\frac{\hbar^2}{2\mu} \Delta_r \psi(\v r) - \frac{e^2}{4\pi\varepsilon_0 r } \psi(\v r) \\
     \mu &= \frac{Z m_e m_p}{m_e + Z m_p}
 \end{align*}
 
@@ -249,11 +250,16 @@ mit
 
 Anmerkungen:
 \begin{align*}
-    E_r = -\frac{\mu Z^2 e^4}{32 \pi^2 \varepsilon_0^2 \hbar^2} \frac{1}{n^2} = - \frac{13.6\cdot Z^2}{n^2} \u{eV}
+    E_n = -\frac{\mu Z^2 e^4}{32 \pi^2 \varepsilon_0^2 \hbar^2} \frac{1}{n^2} = - \frac{13.6\cdot Z^2}{n^2} \u{eV}
 \end{align*}
 
 \subsection{Kompakt} 
 \begin{description}
+    \item[Lösung:]
+    \begin{align*}
+        \psi_{n,l,m}(\v r) &= R_{n,l}(r)\cdot Y_l^m(\theta,\varphi)\\
+        H \ket {\psi_{n,l,m}} &= -\frac{m_e c^2 \alpha^2}{2}\frac{Z^2}{n^2}\ket{\psi_{n,l,m}}
+    \end{align*}
     \item[Quantenzahlen:]
     Der Zustand eines Wasserstoff ähnlichen Atoms wird durch die fünf Quantenzahlen $(n,l,m_l,m_s)$ charakterisiert:
     \begin{itemize}
@@ -368,7 +374,7 @@ Anmerkungen:
 \subsection{Korrekturen}
 
 \subsubsection{Normaler Zeeman-Effekt:}
-Befindet sich das Wasserstoffatom in einem inhomogenen B-Feld, haben die Quantenzahlen \(l,m_l\) einen (kleinen) Beitrag zur Energie. Damit spalten sich die bekannten Energieniveaus weiter auf.     
+Befindet sich das Wasserstoffatom in einem inhomogenen B-Feld, haben die Quantenzahlen \(l,m_l\) über das Erzeugen eines magnetischen Moments einen (kleinen) Beitrag zur Energie. Damit spalten sich die bekannten Energieniveaus weiter auf.     
 Es sind nur Übergänge erlaubt bei denen \(\Delta \ell=\pm 1\), entsprechend dem Spin eines Photons. Damit ist \(\Delta m = -1,0,1\).
 Anschaulich wird bei $\Delta m = \pm1$ die z-Komponente des Drehimpulses geändert
 und ein zirkular polarisiertes Photon erzeugt. Für den Fall $\Delta m = 0$ überlagern sich beide zirkulare
@@ -442,7 +448,7 @@ Die Korrekturen sind:
     \item[Insgesamt:] Alle Korrekturen können zusammen addiert werden zu 
     \begin{align*}
         E_{n,j} &= E_n + \Delta E_{LS} + \Delta E\sub{rel} + \Delta E\sub{Darwin}\\ 
-        &= E_n \bug{1 + \frac{Z^2 \alpha^2}{n} \hug{\frac{1}{j + \half}}- \frac{3}{4n}}
+        &= E_n \bug{1 + \frac{Z^2 \alpha^2}{n} \hug{\frac{1}{l + \half}}- \frac{3}{4n}}
     \end{align*}
 \end{description}
 
@@ -459,7 +465,7 @@ Konkret:
 \end{enumerate}
 
 \subsubsection{Hyperfeinstruktur:}
-Die Hyperfeinstruktur ist analog zur Feinstruktur, nur dreht es sich um die Kopplung dea Kernspins \(\v I\) mit dem Gesamtdrehimpuls der Hülle \(\v J\) zu dem Gesamtdrehimpuls \(\v F = \v I + \v J \).
+Die Hyperfeinstruktur ist analog zur Feinstruktur, nur dreht es sich um die Kopplung des Kernspins \(\v I\) mit dem Gesamtdrehimpuls der Hülle \(\v J\) zu dem Gesamtdrehimpuls \(\v F = \v I + \v J \).
 Der Beitrag der Hyperfeinstruktur zu den Energieniveaus ist 
 \begin{align*}
     \Delta E_{HFS} &= \frac A2 \hug{F(F+1) - j(j+1) - I(I+1)} \\
@@ -489,9 +495,10 @@ von $n$ und $l$ abhängig. Dies wird durch einen Korrekturfaktor1 beschrieben:
 \subsection{Drehimpuls-Kopplungen}
 Im allgemeinen sehr kompliziert, daher nur zwei Extremfällte.
 \begin{description}
-    \item[LS-Kopplung] 
+    \item[LS-Kopplung]\,\vspace{-2mm}
+    
     \begin{description}
-        \item[Wann?] Diese Kopplung tritt auf wenn die magnetische Wechselwirkung zwischen den Spins der Elektronen
+        \item[Wann?] Diese Kopplung tritt auf, wenn die magnetische Wechselwirkung zwischen den Spins der Elektronen
         und zwischen den Bahndrehimpulsen der Elektronen stärker ist, als die Wechselwirkung zwischen dem
         Spin und Bahndrehimpuls für jedes Elektron separat.
         \item[Kopplung:]
@@ -501,11 +508,11 @@ Im allgemeinen sehr kompliziert, daher nur zwei Extremfällte.
         \end{align*} 
         \item[Quantenzahlen:] \(S,L,m_S, m_L \)
         \begin{align*}
-            \abs{\v L} &= \sqrt{L(L+1)}\hbar\\
-            \abs{\v S} &= \sqrt{S(S+1)}\hbar
+            \sabs{\v L} &= \sqrt{L(L+1)}\hbar\\
+            \sabs{\v S} &= \sqrt{S(S+1)}\hbar
         \end{align*} 
-        \item[Aufspaltung:]
-        \item[] \begin{align*}
+        \item[Aufspaltung:]\vspace{-1mm}
+        \begin{align*}
             E &= E_{n,L,S} + C \,\v L \cdot \v S \note C\propto \frac{Z^4}{n^3}
         \end{align*}
     \end{description}
@@ -524,7 +531,7 @@ Im allgemeinen sehr kompliziert, daher nur zwei Extremfällte.
             \sabs{\v S} &= \sqrt{S(S+1)}\hbar
         \end{align*} 
         \item[Aufspaltung:]
-        \item[] \begin{align*}
+        \begin{align*}
             E &= E_{n,L,S} + C \,\v L \cdot \v S \note C\propto \frac{Z^4}{n^3}
         \end{align*}
     \end{description} 
@@ -587,8 +594,12 @@ Misst man zusätzlich die relativen Linienintensitäten \(I_{ij}\), können die 
 \end{align*}
 
 \subsection{Elektrische Multipolstrahlung}
+Die meisten Emissions-/ und Absorbtionsprozesse geschehen durch elektrische Dipolstrahlung. Anschaulich wird ein Photon absorbiert/emittiert. Das Photon trägt einen Spin von \(s=1\), nach der Drehimpulserhaltung muss sich daher der Drehimpuls um \(\Delta l = \pm 1\) ändern, und weiter \(\Delta m_s=0,\pm 1\), \(\Delta s = 0, \Delta m_s =0\) (Auswahlregel Dipolstrahlung).
+
 Es gibt auch Übergange die anderen Ordungen der elektrischen Multipolentwicklung entsprechen.
-Für den Quadrupol ergibt sich z.B. Auswahlregen \(\Delta l=0,\pm2\), d.h. es werden zwei Photonen emittiert.
+Für den Quadrupol ergeben sich z.B. Auswahlregen \(\Delta l=0,\pm2\), d.h. es werden zwei Photonen emittiert.
+
+Die \nameref{Übergangsregeln} sind in der Tabelle im Anhang aufgeführt.
 
 \subsection{Breite von Spektrallinien}
 \begin{description}
@@ -806,13 +817,130 @@ hier aus kommt es zum stark verzögerten Strahlungsübergang (Nachleuchten) auf 
     \begin{align*}
         \dd \sigma \Omega &= \abs{f(\theta)}^2
     \end{align*}
+
+    \item[Differenzieller Wirkungsquerschnitt]
+    Der differenzieller Wirkungsquerschnitt \(\pp \sigma \Omega\) ist definiert durch
+    \begin{align*}
+        j\sub{out} &= \pp \sigma \Omega  \cdot j\sub{in}\\
+        \pp \sigma \Omega &=\frac{j\sub{out}(\theta,\phi)}{j\sub{in}}
+    \end{align*} mit \(j\sub{in}\) als die Stromdichte der parallel einlaufenden Primärstrahlung in Teilchen pro Fläche und Zeit, und \(j\sub{out}\) als die Strondichte der in RIchtung \(\Omega\) auslaufenden Sekundärstrahlung bei Anwesenheit eines einzigen Targets, gegeben in Teilchen pro Raumwinkel und Zeitspanne.
+
+    \item[Streuwinkelverteilung]\,
+    
+    \begin{center}
+    \begin{tabular*}{.49\textwidth}{@{}lll@{}}
+        \toprule
+        {\bf Potenzial} & {\bf Streuwinkelverteilung} & {\bf \(\pp \sigma\Omega\)} \\
+        \midrule
+        \(\frac{e}{4\pi \varepsilon_0 r}\)& \(b(\theta) = \frac{k}{m_\alpha v_0^2}\cot\frac\theta2\) & \(\hug{\frac{z Z^2 e^2}{8\pi \varepsilon_0 m_\alpha v_0^2}}^2 \frac{1}{\sin^4 \frac\theta 2}\)\\
+        & \\
+        \bottomrule
+    \end{tabular*}
+    \end{center}
     \item[Berechnete Formfaktoren]
+    Formfaktoren sind die Fouriertransformierte des Potenzials
+    \begin{align*}
+        F(q) &= \int e^{i \v q\cdot \v x / \hbar } \rho(\v x) \dv x\note \v q = \v p' - \v p
+    \end{align*}
+    Er gibt die korrektur zum Wirkungsquerschnitt an
+    \begin{align*}
+        \dd\sigma\Omega\eval\sub{exp} &= \dd\sigma\Omega\eval\sub{Ruth/Mott} \cdot \abs{F(q)}^2
+    \end{align*}
     \begin{figure}[H]
         \centering
         \includegraphics[width=.49\textwidth]{Tabelle_Streuung.png}
     \end{figure}
 \end{description}
 
+\section{Kernmodelle}
+\subsection{Yukawa Modell}
+\begin{align*}
+    V(r) = -g^2 \frac{e^{-mr}}{r}
+\end{align*}
+\subsection{Kernkräfte}
+Kernkräfte werden durch Austausch virtuelle Teilchen erzeugt, die die Energieerhaltung verletzten und deshalb nur im Rahmen der Unschärferelation bestehen könnnen. Für ein Austauschteilchen mit Ruhemasse \(m_0\) gilt
+\(\Delta E = m_0 c^2 + E\sub{kin} \ge m_0 c^2\) und damit die maximale Reichweite
+\(r\sub{max} = c\Delta t = \frac{\hbar c}{\Delta E} \le  \frac{\hbar c}{m_0 c} = \lambda_C\), mit \(\lambda_C\) als Comptonwellenlänge.  
+Das Kraft vermittelne Teilchen im Atomkern ist das Pion \(\pi^\pm, \pi^0\).
+In kleinen Abständen werden drei Pionen ausgestauscht mit einer abstoßenden Wechselwirkung, in mittleren Abständen zwei Pionen mit einer stark anziehenden Wechselwirkung, und bei langen Abständen wird ein Pion ausgestauscht mit einer schwach anziehenden Wechselwirkung.
+
+\subsection{Fermi Gas der Atomkerne}
+Das durch die Kernkraft vermittelte Potenzial im Atomkern ist annähernd ein kugelsymmetrischer endlicher Potenzialtopf, weshalb die Lösung folgende Eigenschaften hat:
+\begin{enumerate}[(i)]
+    \item Potenzialtopf \(\to\) diskrete Energiezustände \(\rightarrow \) Quantenzahl \(n\)
+    \item Kugelsymmetrie \(\to\) wohldefinierte Drehmomente \(\rightarrow\) Quantenzahl \(l\)
+    \item Protonen und Neutronen sind Fermionen \(\to\) Pauliprinzip
+    \item endlicher Potentialtopf \(\to\) endlich viele gebundene Zustände
+    \item Coulomb-Abstoßung zwischen Protonen \(\to\) Anhebung der Energieniveaus für Protonen \(\to\) für große \(Z\) weniger Protonen als Neutronen
+\end{enumerate}
+
+\subsection{Isospin}
+Im Isospin Formalismus betrachtet man die Unterscheidung Proton/Neutron als binäre Eigenschaft (\(\to\) analog zu Spin) eines imaginären Nukleonen-Teilchens. Isospin up \(\to \) bedeutet Proton \(\ket p\), Isospin down \(\to \) Neutron \(\ket n\).
+
+Für die Kopplung der Isospins gelten die gleichen Eigenschaften wie für den Spin, außerdem ist der Gesamtisospin bei Reaktionen der starken und elektromagentischen Wechselwirkung erhalten. Nur die schwache Wechselwirkung verletzt die Isospinerhaltung.
+
+Wellenfunktionen lassen sich dann nach dem Pauliprinzip konstruieren als
+\begin{align*}
+    \psi &= \phi(\te{Raum}) \cdot \chi(\te{Spin}) \cdot \varphi (\te{Isospin})
+\end{align*}
+wobei die Wellenfunktion als gesamtes antisymmetrisch unter dem Permutationsoperator sein muss. 
+
+\subsection{Massendefekt}
+Die hohe Bindungsenergie im Kern führt zu einem spürbaren Massendefekt \(\Delta m = \frac{E_B}{c^2}\). Die Bindungsenergie pro Nukleon als Funktion des Massendefektes ist 
+\begin{align*}
+    \frac{E_B}{A} &= \frac{M_\Sigma c^2}{A} - m_p c^2 - \hug{1-\frac ZA} (m_n - m_p)c^2
+\end{align*}
+
+\subsection{Tröpfchenmodell/Weizsäcker-Formel}
+Es gibt im Tröpfchenmodell fünf additive Beiträge zur Bindungsenergie:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Beiträge_Kernenergie.png}
+    \caption{Beiträge der Kernenergie}
+\end{figure}
+\begin{description}
+    \item[Volumenenergie:] Jedes Nukleon wechselwirkt mit seinen Nachbarn, aber aufgrund der kurzen Reichweite nicht mit allen Nukleonen. Daher gilt die Proportionalitäts \(E_V\propto A\) nicht \(\propto A^2\)
+    \begin{align*}
+        E_V = c_V A \with c_V = \SI{- 15.84}{\MeV}
+    \end{align*}
+    \item[Oberflächenenergie:] Dieser Energiebeitrag ist propotional zur Oberfläche und wirkt Bindungslockernd
+    \begin{align*}
+        E_O &= c_O \cdot A^\frac32 \with c_O = \SI{18.33}{\MeV}
+    \end{align*}
+    \item[Coulombenergie:] 
+    Wirkt ebenfalls bindungslockernd mit der Proportionalität \(V \propto \frac{Z(Z-1)}{R}\)
+    \begin{align*}
+        E_C &= c_C \frac{Z(Z-1)}{A^\frac13} \with c_C = \SI{0.714}\MeV
+    \end{align*}
+    \item[Asymmetrieenergie:]
+    Die Energieniveaus der Kernkräfte im Fermi-Gas Modell können optimal bei gleicher Zahl von Protonen und Neutronen aufgefüllt werden. Da eine größere relative Zahl von n oder p
+    höhere Energieniveaus erfordert, ist dies energetisch ungünstig. Es ergibt sich
+    \begin{align*}
+        E_A = c_A \cdot \frac{(N-Z)^2}{A}\with c_A = \SI{23.2}\MeV
+    \end{align*}
+    \item[Paarungsenergie:]
+    Entsprechend der Spinentartung muss für jede ungerade Anzahl an Nukleonen ein neues Energieniveau angebrochen werden. Dies führt zu einem bindungslockernden Term für unpaarige Neutronen und Protonen:
+    \begin{align*}
+        E_P &= c_P \frac{\delta}{\sqrt A} 
+        \with \begin{cases}
+            c_P = \SI{-11.2}{\MeV} \\
+            \delta = \begin{cases}
+                +1 \te{ für gg Kerne}\\
+                0 \te{ für gu/ug Kerne}\\
+                -1 \te{ für uu Kerne}\\
+            \end{cases}
+        \end{cases}
+    \end{align*}
+\end{description}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Kernenergien.png}
+    \caption{Tröpfchenmodell als Erklärung der Nukleidkarte und radioaktive Übergänge}
+\end{figure}
+
+\subsection{Schalenmodell}
+Ähnlich wie bei der Elektronenhülle (\(\to\)Edelgase: \(Z=2,10,18,36,54,86 \)) gibt es besonders stabile Konfigurationen, welche jedoch nicht vom Tröpfchenmodell vorhergesagt werden. Diese \"{}magischen Zahlen\"{} sind \(N,Z = 2,8,20,28,50,82,126\).
 
 \section{Experimente}
 
@@ -956,8 +1084,25 @@ hier aus kommt es zum stark verzögerten Strahlungsübergang (Nachleuchten) auf 
     \item[\(\gamma:\)] gyromagnetisches Verhältnis, \(\gamma = \frac{\absv \mu}{\absv S}\) 
     \item[\(\alpha:\)] Feinstrukturkonstante, \(\alpha = \frac{e^2}{4\pi \varepsilon_0 \hbar c}\approx \frac{1}{137}\)
     \item[\(\mu_k:\)] Kernmagneton \(\mu_k = \frac{\mu_B}{1836} = 3\E{-8} \ufrac{eV}{T}\)  
-    \item[\(\Ry\):] Rybergenergie, \(\Ry = \frac{m_e c^2 \alpha^2}{2} = 13.6\u{eV}\)  
     \item[\(R_\inf\):] Rybergwellenlänge, \(R_\inf = \frac{\Ry}{hc}\)  
+    \item[\(\Ry\):] Rybergenergie, \(\Ry = \frac{m_e c^2 \alpha^2}{2} = 13.6\u{eV}\)  
 \end{description}
+
+\onecolumn
+\section{Anhang}
+\subsection*{Tabelle Übergangsregeln}
+\begin{center}
+    \begin{tabular}[H]{@{}lllll@{}}
+        \toprule
+        & \multicolumn{2}{l}{\bf Dipol-Strahlung} & \multicolumn{2}{l}{\bf Quadrupol-Strahlung}\\
+        \midrule
+        Ein Elektron Systeme: &\(\Delta l = \pm 1\)&\(\Delta s = 0 \) & \(\Delta l = 0,\pm 2\)&\(\Delta s = 0\)\\
+        Leichte Atome: & \(\Delta L =0,\pm 1\)&\( \Delta S = 0\) & \(\Delta L = 0,\pm1, \pm2\)&\(\Delta S = 0 \)\\
+        Schwere Atome: & \(\Delta L =0,\pm1,\pm2\)&\(\Delta S = \pm 1\) & \(\Delta L = 0, \pm1,\pm2,\pm3\)&\(\Delta S = \pm1 \)\\
+        \bottomrule
+    \end{tabular}
+    \label{Übergangsregeln}
+\end{center}
+mit \(L\) als Gesamtbahndrehimpuls und \(S\) als Gesamtspin.
 
 \end{document}
