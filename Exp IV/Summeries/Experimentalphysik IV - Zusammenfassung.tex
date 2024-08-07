@@ -1,5 +1,5 @@
 \documentclass[twocolumn]{summery_4.1}
-\graphicspath{./img/}
+\graphicspath{{img/}}
 
 \title{Experimentalphysik IV - Zusammenfassung}
 
@@ -102,9 +102,13 @@ Es gilt \(J_z = J_{1z}+J_{2z}\), aber die Basis besteht im allgemeinen nicht aus
         \begin{tabular}{@{}lcc@{}}
             \toprule 
             {\bf Größe} & {\bf Quantenzahl} & {\bf Wert}\\\midrule
-            \(\v \mu_J = (\mu_x,\mu_y,\mu_z)\) & & nicht scharf messbar\\
-            \(\abs{\v \mu_J}\) & \(j\) & \(\abs{\v \mu_J} = -g_J \mu_B \sqrt{j(j+1)}\)\\
-            \(\mu_z\) & \(m_j\)  & \(\mu_z = - g_J \mu_B m_j\)\\\bottomrule
+            \(\v \mu= (\mu_x,\mu_y,\mu_z)\) & & nicht scharf messbar\\
+            \(\abs{\v \mu_{\ell/s}}\) 
+            & \(\ell/s\) & \(\abs{\v \mu_{\ell/s}} = - g_{\ell/s} \mu_B \sqrt{[{\ell/s}]([{\ell/s}]+1)}\)\\
+            & \(I\) & \(\abs{\v \mu_{I}} = g_{I} \mu_K \sqrt{I(I+1)}\)\\
+            \(\mu_z\) & \(m_{\ell/s}\)  & \(\mu_z = - g_{\ell/s} \mu_B m_{\ell/s}\)\\
+            & \(m_{I}\)  & \(\mu_z = g_{I} \mu_B m_{I}\)\\
+            \bottomrule
         \end{tabular}
     \end{center}\vspace{1ex}
 
@@ -115,34 +119,37 @@ Es gilt \(J_z = J_{1z}+J_{2z}\), aber die Basis besteht im allgemeinen nicht aus
             {\bf Bezug} & {\bf Formelzeichen} & {\bf Wert}\\\midrule
             Bahndrehimpuls & \(g_l\) & 1\\
             Spin & \(g_s\) & \(2.00232\)\\
-            Wasserstoffatom (für \(\tug{\abs{\v \mu_J}}\))& \(g_J\) & \(1 + \frac{j(j+1) + m(m+1) - l(l+1)}{2 j(j+1)} \)\\
-            Wasserstoff Atomkern & \(g_I=g_p\) & 5.6\\\bottomrule
+            Wasserstoffatom (für \(\tug{\abs{\v \mu_j}}\))& \(g_j\) & \(1 + \frac{j(j+1) + s(s+1) - l(l+1)}{2 j(j+1)} \)\\
+            Proton & \(g_s\) & 5.6\\
+            Neutron & \(g_s\) & -3.8\\\bottomrule
         \end{tabular}
     \end{center}
 \end{description}
 
 \section{Erwartungswerte im Wasserstoff-Atom}
 \begin{center}
-    \tabbox{{\bf Physikalische Größe \(\mathbf{(n,l,m)}\)-Abhängigkeit}}
-    {\begin{tabular}{l|c}
-            Energie: & \(E_n = -\frac\Ry{n^2}\)  \\\hdashline
-            Energiebeitrag durch B-Feld: & \(\Delta E_B = \mu_B m_l \absv B\)  \\\hdashline
-            Radius: & \(\tug {r_{nl}} = \frac{a_0}{2} \hug{3n^2 - l(l+1)}
-            \ge a_0 n^2\)\\\hdashline
-            Periodendauer für Umlauf: & \(T_n \propto n^3\)\\\hdashline
-            Strahlungslebensdauer: & \(\propto n^3\)\\\hdashline
-            Krititsche Feldstärke: & \(E_c = \pi \varepsilon_0 \Ry^2 e^{-3} n^{-4}\)\\
-    \end{tabular}}\label{tab:Erwartungswerte}\vspace{1cm}
+    % \tabbox{{\bf Physikalische Größe \(\mathbf{(n,l,m)}\)-Abhängigkeit}}
+    % {\begin{tabular}{l|c}
+    %         Energie: & \(E_n = -\frac\Ry{n^2}\)  \\\hdashline
+    %         Energiebeitrag durch B-Feld: & \(\Delta E_B = \mu_B m_l \absv B\)  \\\hdashline
+    %         Radius: & \(\tug {r_{nl}} = \frac{a_0}{2} \hug{3n^2 - l(l+1)}
+    %         \ge a_0 n^2\)\\\hdashline
+    %         Periodendauer für Umlauf: & \(T_n \propto n^3\)\\\hdashline
+    %         Strahlungslebensdauer: & \(\propto n^3\)\\\hdashline
+    %         Krititsche Feldstärke: & \(E_c = \pi \varepsilon_0 \Ry^2 e^{-3} n^{-4}\)\\
+    % \end{tabular}}\label{tab:Erwartungswerte}\vspace{1cm}
 
-    \begin{tabular}{@{}lll@{}}
+    \begin{tabular}{@{}lc@{}}
         \toprule
-        {\bf Physikalische Größe} & \multicolumn{2}{l}{\bf \(\mathbf{(n,l,m)}\)-Abhängigkeit}\\\midrule
-        Energie & \(E_n\) & \(= -\frac\Ry{n^2}\)  \\
-        Energiebeitrag durch B-Feld & \(\Delta E_B \) & \(= \mu_B m_l \absv B\)  \\
-        Radius & \(\tug {r_{nl}} \) & \(= \frac{a_0}{2} \hug{3n^2 - l(l+1)}
+        {\bf Physikalische Größe} & {\bf \(\mathbf{(n,l,m)}\)-Abhängigkeit}\\\midrule
+        Energie & \(E_n = -Z^2\frac\Ry{n^2}\)  \\
+        Energiebeitrag durch B-Feld & \(\Delta E_B= \mu_B m_l \absv B\)  \\
+        Radius & \(\tug {r_{nl}} = \frac{a_0}{2} \hug{3n^2 - l(l+1)}
         \ge a_0 n^2\)\\
-        Periodendauer für Umlauf & \(T_n \) & \(\propto n^3\)\\
-        Krititsche Feldstärke & \(E_c \) & \(= \pi \varepsilon_0 \Ry^2 e^{-3} n^{-4}\)\\\bottomrule
+        Periodendauer für Umlauf & \(T_n \propto n^3\)\\
+        Krititsche Feldstärke & \(E_c = \pi \varepsilon_0 \Ry^2 e^{-3} n^{-4}\)\\
+        Entartung \(n\)-tes Niveau (Bohr) & \(\Sigma = 2 n^2\)\\
+        \bottomrule
     \end{tabular}
 \end{center}
 
@@ -275,97 +282,11 @@ Anmerkungen:
     \end{itemize} 
 
     \item[Notationen:]\,
-    
-        \begin{description}
-            \item[{\normalfont Normal:}] \((n,l,m_l,m_s) \to nlm_lm_s\) mit den entsprechenden Buchstaben.
-            \item[{\normalfont  Drehimpuls Notation:}] \((n,s,l,j)\to n^{2s+1}l_j\), nur \(l\) als Buchstabe sonst Zahlen
-        \end{description}
 
-    \item[Erwartungswerte:]\,
-    
-    Für ein wasserstoffähnliches Atom welches sich nicht in einem außerem Feld befindet, ist nur die Quantenzahl \(n\) relevant für die Energie. Damit ist die Entartung der Energieniveaus \(k= \sum_{\ell,m,m_s} =2n^2 \).  
-
-    \item[Normaler Zeeman-Effekt:]
-    Befindet sich das Wasserstoffatom in einem inhomogenen B-Feld, haben die Quantenzahlen \(l,m_l\) einen (kleinen) Beitrag zur Energie. Damit spalten sich die bekannten Energieniveaus weiter auf.     
-    Es sind nur Übergänge erlaubt bei denen \(\Delta \ell=\pm 1\), entsprechend dem Spin eines Photons. Damit ist \(\Delta m = -1,0,1\).
-    Anschaulich wird bei $\Delta m = \pm1$ die z-Komponente des Drehimpulses geändert
-    und ein zirkular polarisiertes Photon erzeugt. Für den Fall $\Delta m = 0$ überlagern sich beide zirkulare
-    Polarisationsrichtungen zu linear polarisiertem Licht.\\
-    Die Auswahlregeln sind: \(\Delta s = 0, \Delta m_s=0, \Delta l =\pm 1, \Delta m_l = 0,\pm1\)
-
-    \item[Anormaler Zeeman Effekt]
-    Analog zum normalen Zeeman Effekt, jedoch berücksichtigt man nun auch das magnetische Moment, welches durch den Spin verursacht wird. 
-    Also \(\v \mu \equiv \v \mu_J = \v \mu_l + \v \mu_s\). Außerdem geht man davon aus, dass das Magnetfeld so schwach ist, dass die Kopplung von \(\v L\) und \(\v S\) zu \(\v J\) nicht gestört wird. 
-    \begin{align*}
-        \Delta E &= - \tug{\v \mu_j}_z B = m_j g_j \mu_B B
-    \end{align*}
-
-    \item[Paschen-Back Effekt]
-    Analog zum annormalen Zeeman Effekt, jedoch ist das Magnetfeld so stark, dass die Kopplung von \(\v L\) und \(\v S\) zu \(\v J\) gestört wird. 
-    \begin{align*}
-        \Delta E &= (g_l m_l + g_s m_s) \mu_B B 
-    \end{align*}
-
-    \item[Stark Effekt]
-    Auch das Anlegen eines starken elektrischen Feldes \(\v {\mathcal E} = \mathcal E \cdot \v e_z  \) führt zu einer Aufspaltung der Energieniveaus. Die Ursache für die Verschiebung der Energienivaus ist, dass das Coulomb-Potenzial wie folgt modifiziert wird:
-    \begin{align*}
-        V=-\frac{e^2}{4\pi\epsilon_0} \frac1r + e\,\mathcal E \,z 
-    \end{align*}
-    Der radiale Abstand $r$ des Elektrons hängt von $l$ ab. Die Orientierung der Orbitale hängt von $m_l$ ab. Dadurch wird das Potential für das Elektron abhängig von $l$ und $m_l$ unterschiedlich modifiziert. Durch diesen Effekt wird die ursprüngliche Entartung von $l$ aufgehoben.Welche Aufspaltung wird nun erwartet?
-    \begin{itemize}
-        \item Der S-Zustand (\(l=0\)): Ist sphärisch symmetrisch. Es ist keine Aufspaltung erwartet.
-        \item \(l\neq0\): Keine sphärische Symmetrie \(\to\) Aufspaltung mit \(\Delta E \propto \absv{{\mathcal E}}\) (linearer Stark-Effekt)
-        \item \(l\neq 0\): Meist quadratischer Stark-Effekt. \(\Delta E =\propto \abs{\v{\mathcal E}}^2\). Ursache: E-Feld induziert ein permanentes elektrisches Dipol \(\v p_{el} = \alpha \v{\mathcal E}\). Dies führt zum zusätzlichen Term \(V_{el} = - \v p_{el} \v{\mathcal E}=-\alpha \abs{\v{\mathcal E}}^2\)
-    \end{itemize}
-
-    \item[Feinstruktur:]
-    Verwendet man statt der Schrödingergleichung die relativistische Diracgleichung und nähert diese durch eine Reihenentwicklung, bekommt man in erster Ordnung drei weitere Terme zum nicht relativistischen Hamiltonoperator \(H_0\).
-    \begin{align*}
-        H &= H_0 + V_{ls} + V_{rel} + V_{D} \\
-        V_{ls} &=  \frac{g_s \mu_B \mu_0 Z e}{8\pi m_e \hbar} \frac{1}{r^3} \v S \cdot \v L 
-    \end{align*}
-    Die Korrekturen sind: 
-    \begin{description}
-        \item[Spin-Bahn-Kopplung \(V_{ls}\):]
-        Eine relativistische Betrachtung zeigt, dass sich durch den Bahndrehimpuls ein B-Feld im Elektron befindet, mit dem das magnetische Moment des Spins wechselwirken kann. Die neuen Energieniveaus sind:
-        \begin{align*}
-            E_{n,l,s} &= E_n - \v \mu_s\cdot\v B_l\\
-            &= E_n \left(1- \frac{Z^2\alpha^2}{2n l\hug{l+\frac12}(l+1)}\cdot\right.
-            \\&\qquad \left. \begin{cases}
-                +l &\for j=l+\frac12\\
-                -(l+1) &\for j=l-\frac12\\
-            \end{cases}\right)
-        \end{align*}
-        \item[Relativistische Korrektur der kin. Energie \(V_{rel}\):]
-        Relativistisch ist die kinetische Energie gegeben durch
-        \begin{align*}
-            E\sub{kin} &= m_0 c^2 \hug{\sqrt{1 + \frac{p^2 c^2}{m_0^2c^4}} - 1}\\
-            \frac{p^2 c^2}{m_0^2c^4}\ll1 \to&\approx\frac{p^2}{2 m_0}-\frac{p^4}{8m_0^3 c^2}
-        \end{align*}
-        Damit ist der neue Hamiltonoperator
-        \begin{align*}
-            H &= \frac{p^2}{2m} + V - \frac{p^4}{8m_0^3 c^2}
-        \end{align*}
-        welcher über eine Störungsrechnung zu den neuen Energieniveaus 
-        \begin{align*}
-            E_{n,l} &= E_n \cdot\hug{1 - \frac{Z^2\alpha^2}{n}\hug{\frac{3}{4n} - \frac{1}{l+\frac12}}}
-        \end{align*}
-        führt.
-
-        \item[Darwin-Term \(V_D\):] Relativistische Korrektur zur Potenziellen Energie. Die Darwinkorrektur betrifft nur \(l=0\) Zustände und ergibt sich quantitativ korrekt auch aus der Gleichung für die Energiekorrektur der LS-Kopplung, wenn man \(l=j-\frac12 =0\) einsetzt.
-        \begin{align*}
-            E_{n,js} = E_n\hug{1 - \frac{1}{2}\frac{Z^2\alpha^2}{n}}
-        \end{align*}
-
-        \item[Insgesamt:] Alle Korrekturen können zusammen addiert werden zu 
-        \begin{align*}
-            E_{n,j} &= E_n + \Delta E_{LS} + \Delta\sub{rel} + \Delta E\sub{Darwin}\\ 
-            &= E_n \bug{1 + \frac{Z^2 \alpha^2}{n} \hug{\frac{1}{j + \half}}- \frac{3}{4n}}
-        \end{align*}
-    \end{description}
-
-
-    \item[Hyperfeinstruktur:]
+        \begin{enumerate}[(i)]
+            \item Normal: \((n,l,m_l,m_s) \to nlm_lm_s\) mit den entsprechenden Buchstaben.
+            \item Drehimpuls Notation: \((n,s,l,j)\to n^{2s+1}l_j\), nur \(l\) als Buchstabe sonst Zahlen
+        \end{enumerate}
 \end{description}
 
 
@@ -373,44 +294,10 @@ Anmerkungen:
 %%%%
 \subsection{Korrekturen}
 
-\subsubsection{Normaler Zeeman-Effekt:}
-Befindet sich das Wasserstoffatom in einem inhomogenen B-Feld, haben die Quantenzahlen \(l,m_l\) über das Erzeugen eines magnetischen Moments einen (kleinen) Beitrag zur Energie. Damit spalten sich die bekannten Energieniveaus weiter auf.     
-Es sind nur Übergänge erlaubt bei denen \(\Delta \ell=\pm 1\), entsprechend dem Spin eines Photons. Damit ist \(\Delta m = -1,0,1\).
-Anschaulich wird bei $\Delta m = \pm1$ die z-Komponente des Drehimpulses geändert
-und ein zirkular polarisiertes Photon erzeugt. Für den Fall $\Delta m = 0$ überlagern sich beide zirkulare
-Polarisationsrichtungen zu linear polarisiertem Licht.\\
-Die Auswahlregeln sind: \(\Delta s = 0, \Delta m_s=0, \Delta l =\pm 1, \Delta m_l = 0,\pm1\)
-
-\subsubsection{Anormaler Zeeman Effekt}
-Analog zum normalen Zeeman Effekt, jedoch berücksichtigt man nun auch das magnetische Moment, welches durch den Spin verursacht wird. 
-Also \(\v \mu \equiv \v \mu_J = \v \mu_l + \v \mu_s\). Außerdem geht man davon aus, dass das Magnetfeld so schwach ist, dass die Kopplung von \(\v L\) und \(\v S\) zu \(\v J\) nicht gestört wird. 
-\begin{align*}
-    \Delta E &= - \tug{\v \mu_j}_z B = m_j g_j \mu_B B
-\end{align*}
-
-\subsubsection{Paschen-Back Effekt}
-Analog zum annormalen Zeeman Effekt, jedoch ist das Magnetfeld so stark, dass die Kopplung von \(\v L\) und \(\v S\) zu \(\v J\) gestört wird. 
-\begin{align*}
-    \Delta E &= (g_l m_l + g_s m_s) \mu_B B 
-\end{align*}
-
-\subsubsection{Stark Effekt}
-Auch das Anlegen eines starken elektrischen Feldes \(\v {\mathcal E} = \mathcal E \cdot \v e_z  \) führt zu einer Aufspaltung der Energieniveaus. Die Ursache für die Verschiebung der Energienivaus ist, dass das Coulomb-Potenzial wie folgt modifiziert wird:
-\begin{align*}
-    V=-\frac{e^2}{4\pi\epsilon_0} \frac1r + e\,\mathcal E \,z 
-\end{align*}
-Der radiale Abstand $r$ des Elektrons hängt von $l$ ab. Die Orientierung der Orbitale hängt von $m_l$ ab. Dadurch wird das Potential für das Elektron abhängig von $l$ und $m_l$ unterschiedlich modifiziert. Durch diesen Effekt wird die ursprüngliche Entartung von $l$ aufgehoben.Welche Aufspaltung wird nun erwartet?
-\begin{itemize}
-    \item Der S-Zustand (\(l=0\)): Ist sphärisch symmetrisch. Es ist keine Aufspaltung erwartet.
-    \item \(l\neq0\): Keine sphärische Symmetrie \(\to\) Aufspaltung mit \(\Delta E \propto \absv{{\mathcal E}}\) (linearer Stark-Effekt)
-    \item \(l\neq 0\): Meist quadratischer Stark-Effekt. \(\Delta E =\propto \abs{\v{\mathcal E}}^2\). Ursache: E-Feld induziert ein permanentes elektrisches Dipol \(\v p_{el} = \alpha \v{\mathcal E}\). Dies führt zum zusätzlichen Term \(V_{el} = - \v p_{el} \v{\mathcal E}=-\alpha \abs{\v{\mathcal E}}^2\)
-\end{itemize}
-
 \subsubsection{Feinstruktur:}
 Verwendet man statt der Schrödingergleichung die relativistische Diracgleichung und nähert diese durch eine Reihenentwicklung, bekommt man in erster Ordnung drei weitere Terme zum nicht relativistischen Hamiltonoperator \(H_0\).
 \begin{align*}
     H &= H_0 + V_{ls} + V_{rel} + V_{D} \\
-    V_{ls} &=  \frac{g_s \mu_B \mu_0 Z e}{8\pi m_e \hbar} \frac{1}{r^3} \v S \cdot \v L 
 \end{align*}
 Die Korrekturen sind: 
 \begin{description}
@@ -468,15 +355,60 @@ Konkret:
 Die Hyperfeinstruktur ist analog zur Feinstruktur, nur dreht es sich um die Kopplung des Kernspins \(\v I\) mit dem Gesamtdrehimpuls der Hülle \(\v J\) zu dem Gesamtdrehimpuls \(\v F = \v I + \v J \).
 Der Beitrag der Hyperfeinstruktur zu den Energieniveaus ist 
 \begin{align*}
-    \Delta E_{HFS} &= \frac A2 \hug{F(F+1) - j(j+1) - I(I+1)} \\
-    A&=\frac{g_i \mu_K B_j}{\sqrt{j(j+1)}}
+    \Delta E_{HFS} &= \frac A2 \hug{F(F+1) - J(J+1) - I(I+1)} \\
+    A&=\frac{g_I \mu_K B_J}{\sqrt{J(J+1)}}
 \end{align*}
 
 Für zwei aufeinanderfolgende Energieniveau gilt:
 \begin{align*}
-    \Delta E_f &= \Delta E_{HFS,f+1}- \Delta E_{HFS,f} =  A\cdot (f+1)
+    \Delta E_F &= \Delta E_{HFS,F+1}- \Delta E_{HFS,F} =  A\cdot (F+1)
 \end{align*}
 %%%%
+
+\subsection{Externes EM-Feld}
+
+Ein externens EM-Feld führt zu einer weiteren Aufspaltung der Niveaus.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Wasserstoff_Zeeman.png}
+\end{figure}  
+
+\subsubsection{Normaler Zeeman-Effekt:}
+Befindet sich das Wasserstoffatom in einem inhomogenen B-Feld, haben die Quantenzahlen \(l,m_l\) über das Erzeugen eines magnetischen Moments einen (kleinen) Beitrag zur Energie. Damit spalten sich die bekannten Energieniveaus weiter auf.     
+Es sind nur Übergänge erlaubt bei denen \(\Delta \ell=\pm 1\), entsprechend dem Spin eines Photons. Damit ist \(\Delta m = -1,0,1\).
+Anschaulich wird bei $\Delta m = \pm1$ die z-Komponente des Drehimpulses geändert
+und ein zirkular polarisiertes Photon erzeugt. Für den Fall $\Delta m = 0$ überlagern sich beide zirkulare
+Polarisationsrichtungen zu linear polarisiertem Licht.\\
+Die Auswahlregeln sind: \(\Delta s = 0, \Delta m_s=0, \Delta l =\pm 1, \Delta m_l = 0,\pm1\)
+
+\subsubsection{Anormaler Zeeman Effekt}
+Analog zum normalen Zeeman Effekt, jedoch berücksichtigt man nun auch das magnetische Moment, welches durch den Spin verursacht wird. 
+Also \(\v \mu \equiv \v \mu_J = \v \mu_l + \v \mu_s\). Außerdem geht man davon aus, dass das Magnetfeld so schwach ist, dass die Kopplung von \(\v L\) und \(\v S\) zu \(\v J\) nicht gestört wird. 
+\begin{align*}
+    \Delta E &= - \tug{\v \mu_j}_z B = m_j g_j \mu_B B
+\end{align*}
+
+\subsubsection{Paschen-Back Effekt}
+Analog zum annormalen Zeeman Effekt, jedoch ist das Magnetfeld so stark, dass die Kopplung von \(\v L\) und \(\v S\) zu \(\v J\) gestört wird. 
+\begin{align*}
+    \Delta E_B &= (g_l m_l + g_s m_s) \mu_B B 
+\end{align*}
+Als Faustregel gilt, dass der Zeemann Effekt in den Paschen-Back Effekt über geht, wenn die Aufspaltung durch das B-Feld größer wird, als die Spin-Bahn-Kopplung.
+\begin{align*}
+    \te{P.B. für } \Delta E_B &> \Delta E_{LS}\\
+\end{align*}
+
+\subsubsection{Stark Effekt}
+Auch das Anlegen eines starken elektrischen Feldes \(\v {\mathcal E} = \mathcal E \cdot \v e_z  \) führt zu einer Aufspaltung der Energieniveaus. Die Ursache für die Verschiebung der Energienivaus ist, dass das Coulomb-Potenzial wie folgt modifiziert wird:
+\begin{align*}
+    V=-\frac{e^2}{4\pi\epsilon_0} \frac1r + e\,\mathcal E \,z 
+\end{align*}
+Der radiale Abstand $r$ des Elektrons hängt von $l$ ab. Die Orientierung der Orbitale hängt von $m_l$ ab. Dadurch wird das Potential für das Elektron abhängig von $l$ und $m_l$ unterschiedlich modifiziert. Durch diesen Effekt wird die ursprüngliche Entartung von $l$ aufgehoben.Welche Aufspaltung wird nun erwartet?
+\begin{itemize}
+    \item Der S-Zustand (\(l=0\)): Ist sphärisch symmetrisch. Es ist keine Aufspaltung erwartet.
+    \item \(l\neq0\): Keine sphärische Symmetrie \(\to\) Aufspaltung mit \(\Delta E \propto \absv{{\mathcal E}}\) (linearer Stark-Effekt)
+    \item \(l\neq 0\): Meist quadratischer Stark-Effekt. \(\Delta E =\propto \abs{\v{\mathcal E}}^2\). Ursache: E-Feld induziert ein permanentes elektrisches Dipol \(\v p_{el} = \alpha \v{\mathcal E}\). Dies führt zum zusätzlichen Term \(V_{el} = - \v p_{el} \v{\mathcal E}=-\alpha \abs{\v{\mathcal E}}^2\)
+\end{itemize}
 
 \section{Viel Elektron Atome}
 \subsection{Abschirmung}
@@ -484,6 +416,7 @@ Die Elektronen werden in Mehrelektronenatomen abhängig vom Energiezustand unter
 \begin{align*}
     \underbrace{-\frac{Z e^2}{4\pi \varepsilon_0 r}}\sub{Kernähe}\le V(r)\le \underbrace{-\frac{e^2}{4\pi \varepsilon_0 r}}\sub{außen}
 \end{align*} 
+
 
 \subsection{Polarisation}
 Nicht nur abhängig von $n$ sondern auch von $l$ wird die äußere Hülle der Rumpfelektronen abhängig von dem Anregungszustand unterschiedlich polarisiert. Somit sind auch die Energieniveaus
@@ -494,9 +427,7 @@ von $n$ und $l$ abhängig. Dies wird durch einen Korrekturfaktor1 beschrieben:
 
 \subsection{Drehimpuls-Kopplungen}
 Im allgemeinen sehr kompliziert, daher nur zwei Extremfällte.
-\begin{description}
-    \item[LS-Kopplung]\,\vspace{-2mm}
-    
+\subsubsection{LS-Kopplung}
     \begin{description}
         \item[Wann?] Diese Kopplung tritt auf, wenn die magnetische Wechselwirkung zwischen den Spins der Elektronen
         und zwischen den Bahndrehimpulsen der Elektronen stärker ist, als die Wechselwirkung zwischen dem
@@ -507,16 +438,13 @@ Im allgemeinen sehr kompliziert, daher nur zwei Extremfällte.
             \v S &= \sum_i \v s_i \tand \v L =\sum_i \v l_i 
         \end{align*} 
         \item[Quantenzahlen:] \(S,L,m_S, m_L \)
-        \begin{align*}
-            \sabs{\v L} &= \sqrt{L(L+1)}\hbar\\
-            \sabs{\v S} &= \sqrt{S(S+1)}\hbar
-        \end{align*} 
         \item[Aufspaltung:]\vspace{-1mm}
         \begin{align*}
             E &= E_{n,L,S} + C \,\v L \cdot \v S \note C\propto \frac{Z^4}{n^3}
         \end{align*}
     \end{description}
-    \item[$jj$-Kopplung]
+
+\subsubsection{$jj$-Kopplung}
     \begin{description}
         \item[Wann?] Diese Kopplung tritt auf wenn die magnetische Wechselwirkung zwischen jedem Spin und seinem
         Bahndrehimpuls stärker ist als die Wechselwirkungen zwischen den Spins und zwischen den Bahndrehimpulsen. Diese Kopplung tritt eher bei schweren Atomen auf. 
@@ -525,39 +453,71 @@ Im allgemeinen sehr kompliziert, daher nur zwei Extremfällte.
         \begin{align*}
             \v j_i &= \v l_i + \v s_i \tand \v J = \sum_i \v j_i 
         \end{align*} 
-        \item[Quantenzahlen:] \(S,L,m_S, m_L \)
-        \begin{align*}
-            \sabs{\v L} &= \sqrt{L(L+1)}\hbar\\
-            \sabs{\v S} &= \sqrt{S(S+1)}\hbar
-        \end{align*} 
-        \item[Aufspaltung:]
+        \item[Quantenzahlen:] \(J,m_J \)
         \begin{align*}
             E &= E_{n,L,S} + C \,\v L \cdot \v S \note C\propto \frac{Z^4}{n^3}
         \end{align*}
     \end{description} 
-    \item[Intermedäre Kopplung]
-    Eine Mischung aus LS-/ und \(jj\)-Kopplung. Typischerweise die Realtität.
-\end{description}
+\subsubsection{Intermedäre Kopplung}
+Eine Mischung aus LS-/ und \(jj\)-Kopplung. Typischerweise die Realtität.
 
-\subsection{Besetzungsregel}
+\subsection{Besetzungsregeln}
+\subsubsection{Pauliprinzip}
+Das Pauliprinzip besagt, dass die Gesamtwellenfunktion eines Systems antisymmetrisch unter der Vertauschung zweier ununterscheidbarer Fermionen ist. Als Konsequenz können zwei Fermionen nicht gleichzeitig einen Zustand annehmen der durch die gleichen Quantenzahlen beschrieben wird.  
+
+\subsubsection{Aufbau-Regel}
+Die Reihenfolge, nach der Elektronen die Orbitale besetzen wird durch die \(n+l\)-Regel (auch Mandelung-Regel oder Aufbau-Regel) beschrieben. Das Prinzip ist 
+\begin{enumerate}[(i)]
+    \item Orbitale mit kleinerem \(n+l\)-Wert werden vor den Orbitalen mit größerem Wert befüllt.
+    \item Falls die \(n+l\)-Werte gleich sind, wird das Orbital mit dem kleinerem \(n\)-Wert zuerst befüllt.
+    \item In nicht abgeschlossenen Schalen werden Spins unpaarig und
+    gleichsinnig eingebaut, so dass sich ein maximaler Gesamtspin ergibt (Hundsche Regel). Da die antisymmetrische Ortswellenfunktion einen größerem mittleren Abstand der Elektronen und somit kleinerer Abstoßung entspricht. 
+\end{enumerate}
+\begin{figure}[H]
+    \centering
+    \includesvg[width=.35\textwidth]{Madelung_Regel.svg}
+\end{figure}
+Anmerkung: Volle Unterschalen haben keinen Drehimpuls, da \(\sum_{m_l=-l}^l \abs{Y_{lm}^2} = \frac{2l+1}{4\pi }\)
+
+\subsubsection{Hund'sche Regeln}
+Die vier Hund'schen Regeln beschreiben auf welche Weise Elektronen innerhalb einzelner Unterschalen eingebaut. Sie lauten:
+\begin{enumerate}[(i)]
+    \item Volle Schalen und Unterschalen haben den Gesamtdrehimpuls Null. 
+    
+    Begründung: Nach dem Pauliprinzip müssen alle Quantenzahlen vergeben sein, vorallem alle Orientierungen \(m_l\), sodass der Gesamtdrehimpuls null ist.
+    
+    \item Der Gesamtspin $S$ nimmt den maximal möglichen Wert an, die Spins der einzelnen Elektronen $s_i$ stehen also möglichst parallel. 
+    
+    Begründung: Ist der Spinanteil der Wellenfunktion symmetrisch, muss der Bahnanteil antisymmetrisch sein. Ein antisymmetrischer Bahnanteil entspricht aber gerade Zuständen, bei denen die Elektronen weit vom Kern und somit tendenziell auch voneinander entfernt sind. Dies entspricht einer geringen Coulombwechselwirkungsenergie und ist daher energetisch günstig.
+
+    \item Erlaubt das Pauli-Prinzip mehrere Konstellationen mit maximalem Gesamtspin $S$, dann werden die Unterzustände mit der Magnetquantenzahl $m _l$ so besetzt, dass der Gesamt-Bahndrehimpuls $L$ maximal wird.  
+    
+    Begründung: Klassisch kann verstanden werden, dass sich Elektronen wenn sie alle im gleichen Drehsinn rotieren (hoher Drehimpuls), seltener treffen als wenn sie entgegengesetzt rotieren. In letzteren Fall würde sich die abstoßende Kraft erhöhen, was wiederrum die Coulombenergie anheben würde.  
+    
+    \item Ist eine Unterschale höchstens zur Hälfte gefüllt, dann ist der Zustand mit minimaler Gesamtdrehimpulsquantenzahl $J$ am stärksten gebunden. Bei mehr als halbvollen Unterschalen ist es umgekehrt.   
+\end{enumerate}
+
+
+\section{Rydberg Atome}
+In einem Rydberg Atom ist das äußerste Elektron deutlich weiter entfernt als in seinem Grundzustand. Der Kern kann daher gut als Wasserstoff-Kern genähert werden. Natürliches Vorkommen beschränkt sich haubtsächlich auf stark verdünnte Sternathmossphären oder interstellare Gaswolken, da praktisch jeder Zusammenstoß das Ryberg Atom ionisieren würde. Die Lebensdauer ist sehr groß, da der Drehimpuls \(l\propto n\) nur in Schritten \(\Delta l = 1\) abgebaut werden kann, und die Energieunterschiede der hohen Schalen nur sehr klein ist \(\tau \propto \Delta E\inv \). 
 
 \section{Atomübergänge und Strahlung}
 \subsection{Kategorisierung}
 Die möglichen Übergange von Atomen können in vier Kategorien verteilt werden:
 \begin{description}
-    \item[Absorption:] Befindet sich ein Atom des Zustandes $E_k$ in einem Strahlungsfeld, können Photonen absorbiert
-    werden, die der Energiedifferenz zu einem angeregten Zustand $E_j$ entsprechen. Die Wahrscheinlichkeit für diesen Vorgang ist:
+    \item[Absorption:] Befindet sich ein Atom des Zustandes $E_a$ in einem Strahlungsfeld, können Photonen absorbiert
+    werden, die der Energiedifferenz zu einem angeregten Zustand $E_b$ entsprechen. Die Wahrscheinlichkeit für diesen Vorgang ist:
     \begin{align*}
-        W_{k\to j} = B_{kj}\cdot u_\nu (\nu)
+        W_{a\to b} = B_{ab}\cdot u_\nu (\nu)
     \end{align*}
-    mit \(B_{kj}\) als Einstein-Koeffizient für die Absorption (Reziprokwert der $1/e$-Zerfallszeit) und \(u_\nu(\nu)=h\nu\cdot n_\nu= h\nu \cdot \dd n\nu \) als spektrale Photonendichte des Strahlungsfeldes, d.h. Photonen pro Frequenz und Volumen. 
-    \item[Spontane Emission:] Befindet sich ein Atom in einem angeregten Zustandes $E_j$, kann es spontan unter Aussendung von Licht in einen Zustand niedrigerer Energie übergehen. Die Wahrscheinlichkeit für diesen Vorgang ist:
+    mit \(B_{ab}\) als Einstein-Koeffizient für die Absorption (Reziprokwert der $1/e$-Zerfallszeit) und \(u_\nu(\nu)=h\nu\cdot n_\nu= h\nu \cdot \dd n\nu \) als spektrale Photonendichte des Strahlungsfeldes, d.h. Photonen pro Frequenz und Volumen. 
+    \item[Spontane Emission:] Befindet sich ein Atom in einem angeregten Zustandes $E_b$, kann es spontan unter Aussendung von Licht in einen Zustand niedrigerer Energie übergehen. Die Wahrscheinlichkeit für diesen Vorgang ist:
     \begin{align*}
-        W_{j\to k}^{\te{spontan}} = A_{j\to k}    
-    \end{align*} mit \(A_{j\to k }\) als Einstein-Koeffizienten.
-    \item[Induzierte Emission:] Trifft Licht auf ein Atom im angeregten Zustand $E_j$ kann der Übergang in ein tieferes Niveau $E_k$ angeregt werden. Wie Wahrscheinlichkeit ist:
+        W_{b\to a}^{\te{spontan}} = A_{b\to a}    
+    \end{align*} mit \(A_{b\to a}\) als Einstein-Koeffizienten.
+    \item[Induzierte Emission:] Trifft Licht auf ein Atom im angeregten Zustand $E_b$ kann der Übergang in ein tieferes Niveau $E_a$ angeregt werden. Wie Wahrscheinlichkeit ist:
     \begin{align*}
-            W_{j\to k }^\te{ind} &= u_\nu (\nu) \cdot B_{j\to k }
+            W_{b\to a}^\te{ind} &= u_\nu (\nu) \cdot B_{b\to a}
     \end{align*}
     \item[Strahlungsloser Übergang:] Durch Stöße können auch verbotene Übergänge strahlungslos und damit unsichtbar induziert
     werden. Die Wahrscheinlichkeit \(R_i\) für diesen Vorgang hängt von der Temperatur und der Teilchendichte \(n\) ab.
@@ -569,29 +529,30 @@ Die möglichen Übergange von Atomen können in vier Kategorien verteilt werden:
 \subsection{Berechnung der Einsteinkoeffizienten}
 Durch Betrachtung des Erwartungswertes des Dipoloperators \(\tug{\v p\sub{el}}\) ergibt sich: 
 \begin{align*}
-    A_{kj} &= \frac{P}{\hbar \omega_{kj}}=\frac23 \frac{\omega_{kj}^3}{\epsilon_0 c^3 h}\abs{M_{kj}}^2\\
-    B_{kj} &= \frac{1}{6\hbar^2 \epsilon_0} \abs{M_{kj}}^2 
+    A_{ab} &= \frac{P}{\hbar \omega_{ab}}=\frac23 \frac{\omega_{ab}^3}{\epsilon_0 c^3 h}\abs{M_{ab}}^2\\
+    B_{ab} &= \frac{1}{6\hbar^2 \epsilon_0} \abs{M_{ab}}^2 
 \end{align*}
-mit dem Matrixelement \(M_{kj}\) des Dipoloperators als 
+mit dem Matrixelement \(M_{ab}\) des Dipoloperators als 
 \begin{align*}
-    M_{kj} = \bra{\psi_k} q\v r \ket{\psi_j}
+    M_{ab} = \bra{\psi_a} q\v r \ket{\psi_b}
 \end{align*}
 
 Zwischen den Einsteinkoeffizienten gilt der folgenden Zusammenhang:
 \begin{align*}
-    B_{kj} &= \frac{c^3} {8\pi h \nu^3}A_{kj} =\frac{g_j}{g_k} B_{jk}
+    B_{ab} &= \frac{c^3} {8\pi h \nu^3}A_{ab} =\frac{g_b}{g_a} B_{ba}
 \end{align*}
-mit \(g_j\) als Entwartung der Energiezustände
+mit \(g_b\) als Entartung der Energiezustände
 
 \subsection{Messung der Einsteinkoeffizienten}
-Die Lebensdauer \(\tau_i\) eines Zustandes \(E_i\) ist gegeben durch
+Die Lebensdauer \(\tau_b\) eines Zustandes \(E_b\) ist gegeben durch
 \begin{align*}
-    \frac{1}{\tau_i} &= A_i + R_i= \sum_j \hug{A_{ij} + R_{ij}}
+    \frac{1}{\tau_b} &= A_b + R_b= \sum_a \hug{A_{ba} + R_{ba}}
 \end{align*}
-Misst man zusätzlich die relativen Linienintensitäten \(I_{ij}\), können die einzelnen \(A_{ij}\) bestimmt werden als (mit \(R_i = 0\))
+Misst man zusätzlich die relativen Linienintensitäten \(I_{ab}\), können die einzelnen \(A_{ab}\) bestimmt werden als (mit \(R_i = 0\))
 \begin{align*}
     A_{ik} = A_i \cdot \frac{\frac{I_{ik}}{h\nu_{ik}}}{\sum_j \frac{I_{ij}}{h\nu_{ij}}}
 \end{align*}
+
 
 \subsection{Elektrische Multipolstrahlung}
 Die meisten Emissions-/ und Absorbtionsprozesse geschehen durch elektrische Dipolstrahlung. Anschaulich wird ein Photon absorbiert/emittiert. Das Photon trägt einen Spin von \(s=1\), nach der Drehimpulserhaltung muss sich daher der Drehimpuls um \(\Delta l = \pm 1\) ändern, und weiter \(\Delta m_s=0,\pm 1\), \(\Delta s = 0, \Delta m_s =0\) (Auswahlregel Dipolstrahlung).
@@ -606,9 +567,17 @@ Die \nameref{Übergangsregeln} sind in der Tabelle im Anhang aufgeführt.
     \item[Heisenberg'sche Unschärferelation:]
     Die Heisenberg'sche Unschärferelation gibt basierend auf der Lebensdauer \(\tau\) eines Zustandes eine untere Schranke für die Breite der Linie:
     \begin{align*}
-        \Delta \nu &\ge \frac{1}{4\pi \tau}\\
-        \Delta \lambda &\ge \frac{\lambda^2}{4\pi c \tau }
+        \Delta \nu &\ge \frac{1}{2 \pi \tau}\\
+        \Delta \lambda &\ge \frac{\lambda^2}{2\pi c \tau }
     \end{align*} 
+    Für die Halbwertsbreite gilt 
+    \begin{align*}
+        \delta_\omega = 2\pi \delta_\nu = \frac{1}{\tau_b} = \sum_a A_{ba} + R_b
+    \end{align*}
+    Achtung: Für Übergänge zwischen zwei angeregten Zuständen tragen \emph{beide} Lebensdauern zur Linienbreite bei 
+    \begin{align*}
+        \delta_\omega = \frac1{\tau_a} + \frac1{\tau_b}
+    \end{align*}
     \item[Form der Spektrallinie:]
     Der Ansatz einer exponentiell abfallenden Strahlungsleistung führt zu einem Frequenzspektrum mit Lorentzprofil, bzw. Cauchyverteilung in der Wahrscheinlichkeitsrechnung.
     \begin{align*}
@@ -632,13 +601,14 @@ Die \nameref{Übergangsregeln} sind in der Tabelle im Anhang aufgeführt.
         \delta \lambda\sub{Doppler} 
     &= 2\sqrt{2\ln 2 }\cdot \Delta\lambda\sub{Doppler}\\
     \Delta \lambda\sub{Doppler}&= \frac{\lambda}{c} \sqrt{\frac{k_B T}{m}}\\
-    \Delta f\sub{Doppler}&= \sqrt{\frac{k_B T}{mc^2}} f\\
+    \Delta f\sub{Doppler}&= \sqrt{\frac{k_B T}{mc^2}} f
     \end{align*}
 \end{description}
 
-\subsection{Röntgenstrahlung}
+\subsection{Streuung und Absorbtion}
+
 \begin{description}
-    \item[Streuung und Absorbtion:] Jedes Photon hat eine konstante Wahrscheinlichkeit pro Zeiteinheit gestreut oder absorbiert zu werden, daher gilt für die Strahlungsleistung \(P\) nach der Absorberdicke \(x\) das Exponentialgesetzt
+    \item[Allgemein:] Jedes Photon hat eine konstante Wahrscheinlichkeit pro Zeiteinheit gestreut oder absorbiert zu werden, daher gilt für die Strahlungsleistung \(P\) nach der Absorberdicke \(x\) das Exponentialgesetzt
     \begin{align*}
         P(x) &= P_0 e^{-\mu x}, \mu = \sigma n
     \end{align*}  
@@ -657,7 +627,33 @@ Die \nameref{Übergangsregeln} sind in der Tabelle im Anhang aufgeführt.
     \item[Wirkungsquerschnitt:] \(R = \sigma\cdot \Phi_\gamma \cdot N\sub{Target}\), \(R\) Reaktionsrate,\(\sigma, [\sigma]=m^2\) Proportionalitätskonstante, \(\Phi_\gamma\) Photonenfluss, \(N\sub{Target}\) Anzahl der Target-Teilchen. Es gilt \(\mu = \sigma n =\sigma \cdot \rho \frac{N_A}A\), \(n\) Menge an Target-Teilchen. 
     \item[Massenabschwächungskoeffizient:] \(\kappa =\frac{\mu}\rho\)
 \end{description}
+
+\subsection{Röntgenstrahlung}
+\subsubsection{Allgemein}
+Röntgenstrahlung entsteht, wenn hoch energetische Teilchen (Photonen/Elektronen/Protonen/Ionen/...) auf ein Target treffen. 
+\subsubsection{Charakteristische Röntgenstrahlung}
+Die eingehende Strahlung schlägt in den inneren Schalen ein gebundenes Elektron heraus und hinterlässt so ein Loch. Gebundene Elektronen höherer Schalenfüllen das Loch und geben dabei teils hoch energetische EM-Strahlung ab.
+\begin{figure}[H]
+    \centering
+    \includesvg[width=.45\textwidth]{Molybdän_Energien-min.svg}
+\end{figure}
+Notation: Sei \(n_1\) die innere Schale und \(\Delta n = n_2 -n_1\) die Differenz der inneren und äußeren Schalen. Dann ist die Notation \({n_1}_{\Delta n}\), mit \(n_1=\)K,L,M,... und \(\Delta n=\alpha,\beta,\gamma,\dots\):  
+\begin{figure}[H]
+    \centering
+    \includesvg[width=.35\textwidth]{CharacteristicRadiation.svg}
+\end{figure}
+
 \subsubsection{Bremsstrahlung}
+Das Abbremsen der Elektronen im Coulombpotenzial führt zur Emission eines kontinuierlichen Bremsspektrums.
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=.25\textwidth]{Bremsstrahlung.svg}
+\end{figure}
+
+\subsubsection{Absorbtionsspektrum}
+Der Wirkungsquerschnitt für den Photoeffekt ist am größsten wenn \(E_\gamma \approx E_B\), d.h. wenn die Photonenenergie gerade zur Anregung auf ein höheres Niveau ausreicht. Da der Photoeffekt für kleine Energien verschwindet, steigt er sprunghaft an, wenn die Energie ausreichend für eine Anregung ist. Es entstehen die sogenannten \emph{Absorbtionskanten}.
+Die Benennung der Kante ist die der Röntgenstrahlung, jedoch verwendet man eine römische Nummerierung, die der Energien von der höchsten bis zur niedrigsten entspricht. 
 
 
 \section{Laser}
@@ -670,22 +666,38 @@ Hierbei wird durch ein einlaufendes Photon der richtigen Frequenz ein kohärente
 Zusätzlich zur stimulierten Emission existieren zwei weitere konkurrierende Prozesse, die nicht zur Lichtverstärkung führen: Die spontane Emission und die Absorption aus dem Grundzustand.\\[1ex]
 
 \subsubsection{Besetzungsinversion}
-Damit es zu einer Lichtverstärkung kommen kann, benötigt man ein aktives Medium, d.h. es liegt eine Besetzungsinversion vor in dem mehr Teilchen im angeregten Niveau sind, als im Grundzustand. Die Inversionsbedingung ist 
+Damit es zu einer Lichtverstärkung kommen kann, benötigt man ein aktives Medium, d.h. es liegt eine Besetzungsinversion vor in dem mehr Teilchen im angeregten Niveau sind, als im Grundzustand. Das Verhältnis der stimulierten Emissionrate zur Absorbtionsrate ist 
 \begin{align*}
-    N_2 \gg N_1 \frac{g_2}{g_1}
+    \frac{R_{2\to 1}^{\te{Em}}}{R_{1\to 2}^{\te{Abs}}} &= \frac{N_2 \cdot B_{2\to 1} \cdot n_\gamma }{ N_1 \cdot B_{1\to 2} \cdot n_\gamma } = \frac{N_2}{N_1} \frac{g_1}{g_2}
 \end{align*}
-mit \(N_{1,2}\) als Teilchenzahl im Energieniveau und \(g_{1,2}\) als Entartung der Niveaus.
+mit \(N_{i}\) als Besetzungszahl des jeweiligen Zustandes, \(n_\gamma\) als Photonendichte und \(g_{i}\) als Entartung der Niveaus. Für Lichtverstärkung muss das Verhältnis größer eins sein, die Inversionsbedingung ist somit 
+\begin{align*}
+    N_2 \gg N_1 \frac{g_2}{g_1}.
+\end{align*}
 
-\subsubsection{Drei Niveau System}
+\subsubsection{Zwei Niveau System}
+Die stimulierte Emission und Absorption sind bei gleicher Besetzungs-
+zahl des Grund-/ und angeregten Zustandes gleich wahrscheinlich. Daher ist es
+unmöglich eine Photonenmultiplikation zu erhalten: Es werden durch Absorption gleich viele Elektronen aus dem Grundzustand angeregt, wie durch Emission
+Elektronen in den Grundzustand fallen.
+
+\subsubsection{Drei Niveau System (z.B. Rubinlaser)}
 \begin{description}
     \item[Grundzustand \(E_1\):] Aus diesem Niveau werden mitteln optischen Pumpens Zustände aus dem Energieniveau \(E_3\) angeregt.
-    \item[Metastabiler Zustand \(E_3\):] Dieser Zustand ist metastabil, d.h. er kann aufgrund der Auswahlregeln nicht direkt in den Grundzustand verfallen. Der Zustand zerfällt schnell in den Zustand \(E_2\), verglichen mit der Zerfallzeit von \(E_2\to E_1\). So kann eine Inversion von \(E_1\) bezüglich 
-    \(E_2\) erzeugt werden.
+    \item[Metastabiler Zustand \(E_3\):] Dieser Zustand ist metastabil, d.h. er kann aufgrund der Auswahlregeln nicht direkt in den Grundzustand verfallen. Der Zustand zerfällt schnell in den langlebigen Zustand \(E_2\). Besetzungsinversion wird erreicht, weil bei genügender Intensität des Pumplichts viele Atome sehr schnell in den Zustand $E_2$ gelangen und nur wenige von dort durch spontane Emission in den Grundzustand $E_1$ zurückkehren. 
     \item[Angeregter Zustand \(E_2\):] Dieser zerfällt mit Strahlung in \(E_1\) ist ist die eigentliche Quelle des Laserlichts.   
 \end{description}
 \begin{figure}[H]
     \centering
     \includegraphics[width=.49\textwidth]{3_Niveau_Laser.png}
+\end{figure}
+
+
+\subsubsection{Vier Niveau System (z.B. He-Ne-Laser)}
+Für das drei Niveau System ist ein starkes Pumpen erforderlich, da mindestens 50\(\%\) der Elektronen ins zweite Niveau gepumpt werden müssen, um eine Lichtverstärkung zu bewirken. Eine Verbesserung erreicht man, indem man den Grundzustand des Laserübergangs strahlungslos in ein viertes, tieferes Energieniveau übergehen lässt (strahlungslos). So entlehrt sich das untere Strahlungsniveau und schon das erste gepumpte Elektron führt zu einer Besetzungsinversion.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.49\textwidth]{Population-inversion-4level.png}
 \end{figure}
 
 \subsubsection{Resonator}
@@ -705,13 +717,12 @@ Für eine Verstärkung muss die \emph{Schwellwertbedingung} erfüllt sein
 mit Resonatorlänge \(L\), Wahrscheinlichkeit eines Photonenverlustes \(\gamma\) und der effektiven Abschwächung \(\mu = \mu\sub{abs}+\mu\sub{ind}\)
 \(= \underbrace{\hug{n_k - \frac{g_k}{g_j}n_j}}\sub{Besetzungsinversion}\cdot \sigma(\nu)\), \(I(z)\propto e^{-\mu z}\).
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=.49\textwidth]{Schwellwertbedingung.png}
-\end{figure}
-
 \subsection{Ultra kurze Lichtpulse}
-Dies funktioniert über die Nutzung des Zusammenhangs, dass ein sehr kurzes Wellenkacket ein sehr breites Frequenzspektrum hat. Über ein reflektierendes Gitter können die Wellenlängen räumlich getrennt und der
+Das Grundprinzip basiert auf der Variation der Verluste im Laser, sodass die Schwellwertbedingung
+nicht vor Erreichen der maximalen Besetzungsinversion erfüllt ist, siehe Abbildung (z.B. erwendung einer Pockelszelle2 zur schnelleren Drehung der Polarisationsrichtung).
+
+\subsection{Verstärkungs ultra kurze Lichtpulse}
+Für ultra kurze Lichtpulse (Attosekunden Laser) nutzt man aus, dass ein sehr kurzes Wellenpacket ein sehr breites Frequenzspektrum hat. Über ein reflektierendes Gitter können die Wellenlängen räumlich getrennt und der
 Puls damit gestreckt werden. Nach erfolgter Verstärkung wird über ein Gitter im umgekehrten Aufbau die räumliche Trennung wieder rückgängig gemacht.
 
 \begin{figure}[H]
@@ -780,15 +791,11 @@ Puls damit gestreckt werden. Nach erfolgter Verstärkung wird über ein Gitter i
     \item[Nutzen:] Eine wichtige Eigenschaft des Raman Effektes ist die Messung und Identifkation von Schwingungszuständen,
     ohne diese direkt mit der richtigen Frequenz resonant anzuregen. Außerdem die Messung von Spurgasen ($\schemie{CO_2}$) und Aerosolen in der Atmosphäre (Messung mit Infrarot-Licht nicht möglich, da dieses zu stark von der Luft absorbiert wird).
 \end{description}
-
 \subsection{Fluoreszenz}
-Absorption in angeregten Schwingungsniveaus. Durch Stöße (innere Konversion) wird die angeregte Schwingungsenergie abgegeben. Dieser Prozess läuft typischerweise 10 bis 1000 mal schneller ab, so dass der folgende Strahlungsübergang aus dem Grundschwingungszustand erfolgt; das Molekül leuchtet daher bei einer niedrigeren Frequenz.
+Absorption in angeregten Schwingungsniveaus. Durch Stöße (innere Konversion) wird die angeregte Schwingungsenergie abgegeben. Dieser Prozess läuft typischerweise 10 bis 1000 mal schneller ab, so dass der folgende Strahlungsübergang aus dem Grundschwingungszustand erfolgt; das Molekül leuchtet daher bei einer niedrigeren Frequenz. Der ganze Prozess dauert dabei meist nur Mikrosekunden, sodass ein fluoreszierender Stoff praktisch nur bei aktiver Beleutung z.B. mit Schwarzlicht leuchtet.
 
 \subsection{Phosporeszenz}
-Zusätzlich kann auch durch den sogenannten Interkombinationsprozess die Energie
-auf Zustände übertragen werden, die einen verbotenen Übergang in den Grundzustand darstellen. Auch hier erfolgt zunächst die Relaxation über innere Konversion in den Grundzustand der Schwingung. Von
-hier aus kommt es zum stark verzögerten Strahlungsübergang (Nachleuchten) auf typischen Zeitskalen von $10^{-4} - 10^{-2}$ Sekunden.
-
+Zusätzlich kann auch durch den sogenannten Interkombinationsprozess die Energie auf Zustände übertragen werden, die einen verbotenen Übergang in den Grundzustand darstellen. Auch hier erfolgt zunächst die Relaxation über innere Konversion in den Grundzustand der Schwingung. Von hier aus kommt es zum stark verzögerten Strahlungsübergang (Nachleuchten) auf typischen Zeitskalen von $10^{-4} - 10^{-2}$ Sekunden.
 \subsection{Kompakt}
 \begin{figure}[H]
     \centering
@@ -796,6 +803,9 @@ hier aus kommt es zum stark verzögerten Strahlungsübergang (Nachleuchten) auf 
 \end{figure}
 
 \section{Struktur von Atomkernen}
+\begin{align*}
+    \sin\frac\theta2 &= \frac{\Delta p /2}{p}
+\end{align*}
 \subsection{Allgemeines Streuproblem}
 \begin{description}
     \item[Mathematische Beschreibung:]
@@ -821,30 +831,73 @@ hier aus kommt es zum stark verzögerten Strahlungsübergang (Nachleuchten) auf 
     \item[Differenzieller Wirkungsquerschnitt]
     Der differenzieller Wirkungsquerschnitt \(\pp \sigma \Omega\) ist definiert durch
     \begin{align*}
-        j\sub{out} &= \pp \sigma \Omega  \cdot j\sub{in}\\
-        \pp \sigma \Omega &=\frac{j\sub{out}(\theta,\phi)}{j\sub{in}}
-    \end{align*} mit \(j\sub{in}\) als die Stromdichte der parallel einlaufenden Primärstrahlung in Teilchen pro Fläche und Zeit, und \(j\sub{out}\) als die Strondichte der in RIchtung \(\Omega\) auslaufenden Sekundärstrahlung bei Anwesenheit eines einzigen Targets, gegeben in Teilchen pro Raumwinkel und Zeitspanne.
+        \pp \sigma \Omega &=\frac{j\sub{out}(\theta,\phi,r) r^2}{j\sub{in}}\\
+        \hug{\pp \sigma \Omega}\sub{exp} &= \frac{R\sub{det}}{R_0} \frac{d^2}{S\sub{det}} \frac1{n \Delta l}
+    \end{align*} 
+    mit \(j\sub{in}\) als die Stromdichte der parallel einlaufenden Primärstrahlung in Teilchen pro Fläche und Zeit, und \(j\sub{out}\) als die Stromdichte der in Richtung \(\Omega\) der auslaufenden Sekundärstrahlung bei Anwesenheit eines einzigen Targets, gegeben in Teilchen pro Fläche und Zeitspanne.
+
+    \item[Random Formeln]
+    \begin{align*}
+        \dd\sigma\Omega &= \dd\sigma\theta\dd\theta\Omega = \dd\sigma\theta \frac1{2\pi \sin\theta} = \dd \sigma\theta \frac{1}{4\pi \sin\frac\theta2\cos\frac\theta2}
+    \end{align*}
+    Zur Berechnung des differentiellen Wirkungsquerschnitts berechnet man zunächst den Streuwinkel als Funktion des Streuparameters $\theta(b)$ und bestimmt dann die invertierte Funktion $b(\theta)$. Differenzierung liefert die Ablenkungsverteilung $\dd b\theta$.
+    \begin{align*}
+        \dd\sigma\Omega = \dd \sigma b \dd b\theta \dd\theta\Omega = \frac{b(\theta) \dd b \theta (\theta)}{2\sin\frac\theta2\cos\frac\theta2}
+    \end{align*}
+    
+    Optisches Theorem:
+    \begin{align*}
+        \sigma\sub{tot}(k) = \frac{4\pi}k \Im(f(k,\theta = 0))
+    \end{align*} 
 
     \item[Streuwinkelverteilung]\,
     
     \begin{center}
-    \begin{tabular*}{.49\textwidth}{@{}lll@{}}
+    \begin{tabular}{@{}ccc@{}}
         \toprule
-        {\bf Potenzial} & {\bf Streuwinkelverteilung} & {\bf \(\pp \sigma\Omega\)} \\
+        \(V(r)\) & \(b(\theta)\) & \(\pp \sigma\Omega\) \\
         \midrule
-        \(\frac{e}{4\pi \varepsilon_0 r}\)& \(b(\theta) = \frac{k}{m_\alpha v_0^2}\cot\frac\theta2\) & \(\hug{\frac{z Z^2 e^2}{8\pi \varepsilon_0 m_\alpha v_0^2}}^2 \frac{1}{\sin^4 \frac\theta 2}\)\\
+        \(-\frac k {r}\)& \(\frac{k}{m v_0^2}\cot\frac\theta2\) & \(\hug{\frac{k}{2 m v_0^2}}^2 \frac{1}{\sin^4 \frac\theta 2}\)\\
         & \\
         \bottomrule
-    \end{tabular*}
+    \end{tabular}
     \end{center}
+    \item[Integrale Beschreibung]
+    Die zu lösende DGL für das allgemeine Streuproblem ist 
+    \begin{align*}
+        \hug{\frac{p^2}{2m} + V} \psi &= E\psi\\
+        \hug{\frac{\hbar^2}{2m}\Delta + E} \psi &= V\psi\\
+        -\frac{\hbar^2}{2m}\hug{\Delta + k^2} \psi &= -V\psi
+    \end{align*}
+    Die allgemeine Lösung der homogenen Gleichung ist eine ebene Welle 
+    \begin{align*}
+        \psi\sub{hom}(\v r) &= e^{i\v k\cdot \v r}.
+    \end{align*}
+    Die spezielle Lösung erhält man mit der Greenschen Funktion 
+    \begin{align*}
+        \delta^3 (\v r - \v r' ) &= -\frac{\hbar^2}{2m}\hug{\Delta + k^2} G_0(\v r, \v r', \v k)\\
+        \psi\sub{part}(\v r) &= \int G_0(\v r, \v r', \v k) \hug{-V(\v r')\psi\sub{part}(\v r')} \d{^3r'}
+    \end{align*} 
+    welche die Steuung an einem fiktiven punktförmigen Potenzial beschreibt. Es ist 
+    \begin{align*}
+        G_0^\pm &= \frac{2m}{\hbar^2} \frac1{4\pi} \frac{e^{\pm ik \abs{\v r - \v r'}}}{\abs{\v r - \v r'}}
+    \end{align*}
+    sodass die allgemeine Lösung durch
+    \begin{align*}
+        \psi(\v r,\v k) &= \psi\sub{hom} + \psi\sub{part}\\
+        &= e^{i\v k\cdot \v r} -   \frac{m}{2\pi\hbar^2}  \int  \frac{e^{ik \abs{\v r - \v r'}}}{\abs{\v r - \v r'}} V(\v r') \psi(\v r')\d{^3r'}
+   \end{align*}
+    gegeben ist. Es handelt sich um die Lipmann-Schwinger-Gleichung
+
     \item[Berechnete Formfaktoren]
-    Formfaktoren sind die Fouriertransformierte des Potenzials
+    Formfaktoren sind die Fouriertransformierte eines auf eins normierten Potenzials
     \begin{align*}
         F(q) &= \int e^{i \v q\cdot \v x / \hbar } \rho(\v x) \dv x\note \v q = \v p' - \v p
     \end{align*}
-    Er gibt die korrektur zum Wirkungsquerschnitt an
+    Er gibt die Korrektur zum Wirkungsquerschnitt an
     \begin{align*}
-        \dd\sigma\Omega\eval\sub{exp} &= \dd\sigma\Omega\eval\sub{Ruth/Mott} \cdot \abs{F(q)}^2
+        \dd\sigma\Omega\eval\sub{exp} &= \dd\sigma\Omega\eval\sub{Ruth/Mott} \cdot \abs{F(q)}^2\\
+        \dd\sigma\Omega\eval\sub{Ruth/Mott} &= \hug{\frac{2m z Z e^2}{4\pi \varepsilon_0} }^2  \frac{1}{q^4}\note \v q = \hbar(\v k - \v k')
     \end{align*}
     \begin{figure}[H]
         \centering
@@ -940,9 +993,213 @@ Es gibt im Tröpfchenmodell fünf additive Beiträge zur Bindungsenergie:
 \end{figure}
 
 \subsection{Schalenmodell}
-Ähnlich wie bei der Elektronenhülle (\(\to\)Edelgase: \(Z=2,10,18,36,54,86 \)) gibt es besonders stabile Konfigurationen, welche jedoch nicht vom Tröpfchenmodell vorhergesagt werden. Diese \"{}magischen Zahlen\"{} sind \(N,Z = 2,8,20,28,50,82,126\).
+
+\begin{description}
+    \item[Kompakt:]
+    Im Schalenmodell bewegen sich Nukleonen unabhängig von einander im Kernpotenzial (Woods-Saxon Potenzial). Das Modell beschreibt korrekt die magischen Zahlen, d.h. besonders stabile Konfigurationen \(N,Z=2,8,20,28,50,82,126\) äquivalent zur edlen Elektronenhülle, und viele Kerneigenschaften. 
+
+    Das Schalenmodell beschreibt \underline{nicht}: kollektive Schwingungen (Vibrationen); Kerne weit weg von der abgeschlossenen Schale zeigen starke Deformationen. Die Stärke der Deformierung wird über das Quadrupolmomoent der Ladungsverteilung gemessen.
+
+    \item[Herleitung:]
+    Das betrachtete Potential
+    \begin{align*}
+        V(r) &= \begin{cases}
+            -V_0 \cdot \hug{1- k\cdot \hug{\frac{r}{R_m}}^2}&\te{für }r<R_m\\
+            0 &\te{für }r\ge R_m 
+        \end{cases}
+    \end{align*}
+    setzt sich zusammen aus einem 3d harmonischen Oszillator und einem Kastenpotential. Es lässt sich aus der Entwicklung der Woods-Saxon Verteilung herleiten. 
+
+    Die Lösung für die Energieniveaus des harmonischen Oszillators ist
+    \begin{align*}
+        E_{n_1,n_2,n_3} &= \hbar\omega\hug{n_1+n_2+n_3+\frac32}\note n_i\in \N_0
+    \end{align*}
+    Die Entartung des \(N=n_1+n_2+n_3\)-ten Energiezustandes ist
+    \(\frac{N^2+3N + 2}{2}\), berücksichtigt man den Spin als zusätzlichen Entartungsgrad, ist die Entartung \(N^2 + 3N +2\). Die Entartung jedes Energieniveaus entspricht der Kapazität jeder Schale, und die Summe über die Entartungen ergibt eine Näherung der magischen Zahlen, nur die ersten drei sind korrekt. 
+
+    Um höhere magische Zahlen korrekt zu beschreiben, muss zusätzlich die Spin-Bahnwechselwirkung berücksichtigt werden 
+    \begin{align*}
+        V_N(r) = V(r) + V_{ls} \cdot \v L \cdot \v S.
+    \end{align*}
+    Die Lösung der Schrödingergleichung erfolgt hier nur noch numerisch.
+\end{description}
+
+\section{Zerfälle und Strahlung}
+\subsection{Grundsätzliches}
+Zerfälle sind immer dann möglich, wenn der Endzustand energetisch günstiger ist. Den Energiegewinn aus einem Zerfall bezeichnet man als \(Q\)-Wert
+\begin{align*}
+    Q\equiv \hug{m_x - \sum_{i=1}^N m_{y_i}}\cdot c^2 \overset!>0
+\end{align*} mit \(m_x\) als Masse des ursprünglichen Teilchens, und \(m_{y_i}\) als Massen der Zerfallsprodukte. 
+
+Es gilt ein exponentielles Zerfallsgesetz
+\begin{align*}
+    N(t) &= N_0 \cdot \exp(-\lambda t)
+\end{align*} mit \(\lambda\) als Zerfallskonstante.
+
+Die Zerfallsrate wird \emph{Aktivität} \(A\) genannt (Einheit Bequerel)
+\begin{align*}
+    A\equiv -\dd Nt = \lambda N , [A]=1\te{Bq}
+\end{align*}
+
+Die mittlere Lebensdauer jedes Kerns ist 
+\begin{align*}
+    \tug{t} &= \frac1 \lambda \equiv \tau 
+\end{align*}
+Nicht zu verwechseln mit der Halbwertszeit 
+\begin{align*}
+    t_{1/2} &= \tau \ln 2
+\end{align*}
+\subsection{Zerfallsarten}
+\begin{description}
+    \item[Neutronen-/ oder Protonenaussendung:] 
+    \begin{align*}
+        {}_Z^A X \to \schemie{_{Z-1}^{A-1}} Y + p \tor \schemie{_Z^AX} \to \schemie{_Z^{A-1}X} + n 
+    \end{align*} 
+    Dieser Prozess tritt nicht natürlich aus, da eine hohes Ungleichgewicht von \(N\) und \(Z\) nötig, d.h. Kerne müssen weit von der Stabilitätslinie entfernt sein.
+
+    \item[\(\alpha\)-Zerfall:] 
+    \begin{align*}
+        \schemie{_Z^A X} \to \schemie{_{Z-2}^{A-4}Y} + \schemie{_2^4 He}
+    \end{align*}
+    Durch Abstrahlung eines $\alpha$-Teilchens können sich schwere Kerne in Richtung des Maximums des Betrags der Bindungsenergie bewegen, ohne besonders viel Bindungsenergie für die Bildung des He aufbringen
+    zu müssen, da der $\alpha$-Zustand für jedes der vier Nukleonen um $\SI{7.1}\MeV$ günstiger als das jeweils freie Nukleon ist.
+    Auf Grund des Zwei-Körper-Zerfalls ergibt sich eine feste kinetische Energie für die \(\alpha\)-Teilchen 
+    \begin{align*}
+        Q &=E\sub{kin}^\alpha + E\sub{kin}^y \\
+        \implies E\sub{kin}^\alpha &= \frac{Q}{1 + \frac{m_\alpha}{m_y}}
+    \end{align*}
+    
+    \item[Spontane Spaltung:] 
+    \begin{align*}
+        \schemie{_Z^A X} \to \schemie{_{Z'}^{A'} Y} + \schemie{_{Z-Z'}^{A-A'} Z}
+    \end{align*} Dieser Prozess tritt besonders bei sehr schweren Kernen auf, wenn beide Tochterkerne dem Maximum des Betrags der Bindungsenergie näher liegen.
+
+    \item[\(\beta\)-Zerfall:]
+    \begin{align*}
+        p\to n+e^+ + \nu_e  \tor n\to p+e^- + \bar \nu_e
+    \end{align*}
+    Hier wandelt sich über die schwache Wechselwirkung ein Proton in ein Neutron um oder umgekehrt. Abhängig von dem Ladungsvorzeichen des Elektrons bzw. des Positrons, nennt man den Zerfall $\beta^+$- oder $\beta^-$-Zerfall. Da sich in dem Zerfall der Impuls variabel auf drei Tochterteilchen verteilt, haben die beobachteten
+    \(\beta\)-Elektronen eine kontinuierliche Energieverteilung. Durch das höhere Durchdringungsvermögen von Elektronen, ist die Reichweite der \(\beta\)-Strahlung in der Regel deutlich größer als die der $\alpha$-Strahlung. Der \(\beta^-\)-Zerfall ist energetisch günstiger, da das Neutron schwerer als das Proton, und \(p\to n\) eine Energie von \(\sim \SI{1.30}{\MeV}\) benötigt. 
+
+    \item[Elektroneneinfang:]
+    \begin{align*}
+        p+e^- &\to n + \nu_e\\
+        \schemie{_Z^A} X + e^- &\to \schemie{_{Z-1}^A}Y + \nu_e
+    \end{align*}
+    Ein Elektron der K-Schale, das eine endliche Aufenthaltswahrscheinlichkeit im Kern besitzt, reagiert mit einem Proton zu einem Neutron und einem Neutrino. Der resultierende Kern ist somit identisch zu dem des \(\beta\)-Zerfalls.
+
+    \item[\(\gamma\)-Strahlung:]
+    \begin{align*}
+        \schemie{_Z^A X^*} \to \schemie{_Z^A X} + \gamma 
+    \end{align*}
+    Es handelt sich strenggenommem nicht um einen Zerfall, sondern nur um den Übergang eines angeregten Zustandes in ein niedrigeres Niveau. Für die Energie des Photons gilt 
+    \begin{align*}
+        E_\gamma &= m_y c^2 \hug{\sqrt{1 + 2 \frac Q{m_y c^2}}-1}\\
+        &\approx  Q \hug{1- \frac{Q}{2m_y c^2}}
+    \end{align*}
+    Die Differenz zwischen Übergangsenergie und ausgesendetem Photon ist deutlich größer als die natürliche Linienbreite, sodass das Photon nicht vom gleichen Material wieder absorbiert werden kann. Die Außnahme ist der Mößbauereffekt, in dem das Material kristallin ist, und aufgrund diskreter Niveaus von Gitterschwingungen praktisch der gesamte Kristall den Rückstoß des Kerns übernimmt.
+\end{description}
+
+\subsection{Geiger Nutter Regel}
+Die Geiger Nutter Regel beschreibt die Lebensdauer von Zerfällen via \(\alpha\)-Teilchen
+\begin{align*}
+    -\ln \frac\tau{\tau_0} &= \ln (\lambda \tau_0) = c+ a \frac{Z}{\sqrt {E_\alpha}}
+\end{align*}
+Modell: Innerhalb des Kerns bildet sich spontan ein \(\alpha\)-Kern, die frei werdende Bindungsenergie hebt das \(\alpha\)-Teilchen energetisch auf die Energie \(E_\alpha>0\). Nach dem Prinzip des Tunneleffekts, gibt es eine endliche Wahrscheinlichkeit dafür, dass das Teilchen das Coloubpotenzial überwindet.
+
+\subsection{Strahlenschutz}
+\begin{description}
+    \item[Energiedosis \(D\):] Pro Masse absorbierte Strahlungsenergie (Einheit: Gray/Gy)
+    \begin{align*}
+        D = \dd Em
+    \end{align*}
+    \item[Äquivalentdosis \(H\):] Die Stärke des der biologischen Schädigung hängt nicht nur von der Energiedosis \(D\) an, sondern auch von der Art der Strahlung. Dies wird durch den \emph{Qualitätsfaktor} \(Q\) (Einheit: Sievert 
+    /Sv) beschrieben. 
+    \begin{align*}
+        H = Q\cdot D
+    \end{align*}
+    Ein Sievert enspricht der gleichen biologischen Schädigung wie ein 1 Gy absorbierter \(\gamma\)-Strahlung.
+    \begin{center}
+    \begin{tabular}{@{}ll@{}}
+        \toprule
+        {\bf Strahlung} & \(Q\)\\
+        \midrule
+        \(\beta,\gamma\)& 1 \\
+        \(\alpha\) & 20 \\
+        \(n,<\SI{10}\keV\) & 5 \\
+        \(n,\SI{10}\keV-\SI{100}\keV\) & 10 \\
+        \(n,\SI{100}\keV-\SI{2}\MeV\) & 20 \\
+        \(n,\SI{2}\MeV-\SI{20}\MeV\) & 10 \\
+        \(n,>\SI{20}\keV\) & 5 \\
+        \bottomrule
+    \end{tabular}
+    \end{center}
+    
+    \item[Biologische Effekte auf Menschen:]\,
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.49\textwidth]{Strahlung_Quellen.png}
+    \end{figure}
+    
+    \begin{center}
+        \begin{tabular}{@{}ll@{}}
+            \toprule
+            \multicolumn{2}{c}{\bf Deterministische Schäden}\\
+            \midrule
+            Veränderung im Blutbild & ab \(0.25\u{Sv}\) \\
+            Strahlenkrankheit & ab \(1\u{Sv} \) \\
+            Letale Dosis & ab $7\u{Sv}$ \\
+            \bottomrule
+        \end{tabular}
+        \end{center}
+        Dazu kommt ein erhöhtes Risiko für Krebs, Leukemie und ähnliches (statistische Schäden, statistisch relevant ab \(0.2\u{Sv}\)). Zum Einschätzen des Risikos/Schaden ein Vergleich: 
+        \begin{center}
+        \begin{tabular}{@{}ll@{}}
+            \toprule
+            {\bf Ursache} & \(\Delta\){\bf LE} (Tage)\\
+            \midrule
+            Alkoholismus & \(-432\) \\
+            ledig bleiben (\male)& \(-350\) \\
+            ledig bleiben (\female)& \(-1600\) \\
+            rauchen (\male)& \(-240\) \\
+            rauchen (\female)& \(-1425\) \\
+            Passivrauchen& \(-50\) \\
+            \(30\%\) Übergewicht& \(-130\) \\
+            \\
+            Sicherheitsgurt nutzen & \(+50\)\\ 
+            Verfügbarkeit RTW & \(+125\)\\ 
+            \\\midrule
+            \multicolumn{2}{@{}l}{\bf Strahlung}\\\midrule
+            \(1\u{mSv/a}\), lebenslang & \(-19\)\\
+            \({10}\u{mSv}\), einmalig & \(-3\)\\
+            \(3\u{mSv} \), einmalig & \(-1\)\\
+            \(1\u{mSv} \), einmalig & \(-0.5\)\\
+            \bottomrule
+        \end{tabular}
+        \end{center}
+\end{description}
 
 \section{Experimente}
+
+\subsection{Stern-Gerlach Experiment}
+\begin{description}
+    \item[Ziel:] Nachweis des Spins, und die Quantisierung dessen.
+    
+    \item[Aufbau:]\,
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.49\textwidth]{Stern-Gerlach_Experiment.png}
+    \end{figure}
+    
+    \item[Erklärung:]
+    Es wird ein Strahl neutraler Silber Atome durch ein stark inhomogenes B-Feld \(\v B = B \e_z \) in z-Richtung geleitet. Im Falle eines magnetischen Momentes erwartet
+    man durch den B-Feldgradienten eine Ablenkkraft 
+    \begin{align*}
+        F_z &= - \p_z V  = \mu_z \p_z B .
+    \end{align*}
+    Es zeigt sich am Schirm eine Aufspaltung des Strahls in zwei Linien, für einen Drehimpuls würde man jedoch eine ungerade Anzahl erwarten, entsprechend \(m_l = 0,\dots , \pm l\). Außerdem erwartet man für Silber überhaubt garkeinen Drehimpuls, da das äußerste Elektron einen Drehimpuls null hat, und sich die Drehimpuls in den unteren Schalen alle wegheben. Das Experiment demonstriert die Existenz eines weiteren, rein quantenmechanischen intrensischen Drehimpuls, dem Spin. Auch der Lande Faktor von \(\sim 2\) kann hier nachgewiesen werden.  
+\end{description}
 
 \subsection{Massenspektrometer nach Thomsons (1912)}
 \begin{description}
@@ -1037,22 +1294,22 @@ Es gibt im Tröpfchenmodell fünf additive Beiträge zur Bindungsenergie:
         \centering
         \includegraphics[width=0.49\textwidth]{Dopplerfreie_Sättigungsspektroskopie.png}
     \end{figure}
-    
+
     \item[Erklärung:]
-    Grundlage dieses Effektes ist die Ausrichtung des magnetischen Momentes des Elektronspins in einem externen B-Feld. Hierbei definiert das B-Feld die z-Achse und die Ausrichtung entspricht einer potentiellen Energie
-    \begin{align*}
-        V\sub{mag} &= -\v \mu \cdot \v B = g_s \mu_b \frac{s_z}{\hbar}B = g_s \mu_B m_s B 
-    \end{align*}
-    Abhängig von der Spin Einstellung $m_s = \pm \frac12$ ergibt sich ein Energieunterschied zwischen den beiden Einstellungen von
-    \begin{align*}
-        \Delta E &= g_s \mu_B B
-    \end{align*}
-    Durch die frequenzabhängige Messung der Absorption von Mikrowellen in einer Probe oder
-    alternativ bei einer festen Frequenz in Abhängigkeit des B-Feldes, kann sehr präzise das magnetische
-    Moment bestimmt werden.
+    Habe der Laser mit Frequenz \(f\) eine vernachlässigbare Frequenzbreite und sei die Frequenz, welche nötig ist, um in der Probe den Grundzustand anzuregen \(f_0\). Der Pumpstrahl regt aufgrund der Dopplerverschiebung nur an mit \(v_z = \lambda\cdot(f-f_0)\), der Probestrahl nur für \(v_z = -\lambda\cdot(f-f_0)\). Stimmt man den Laser nun durch gibt es genau zwei Fälle:
+    \begin{enumerate}[(i)]
+        \item \(f\neq f_0\): Die beiden Laserstrahlen regen unterschiedliche Atome an, in der Besetzungsrate \(n(v_z)\) gibt es zwei seperate Peaks.
+        \item \(f= f_0\): Die beiden Laserstrahlen regen die gleichen Atome mit \(v_z=0\) an. Da die Intensität des Sättigungsstrahls deutlich größer ist, regt er die meisten Atome an, und der Probestrahl wird kaum absorbiert. Die Absorbtionrate des Probestrahls \(\alpha\) nimmt deshalb ein lokales minimum, das sogenannte Lamb-Dip an. 
+    \end{enumerate}   
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.35\textwidth]{Lamb-Dip.png}
+    \end{figure}
+
 \end{description}
 
-\subsection{Rutherford'sche Streuexperiment}
+\subsection{Rutherford'sches Streuexperiment}
 \begin{description}
     \item[Prinzip:] \(\alpha\)-Teilchen aus einem radioaktiven Präperat werden an einer dünnen Gold-Folie gestreut. Anschließend misst man die Zählrate \(N\) als Funktion des Winkels \(\theta\). Der Zerfall verläuft monoenergetisch, d.h. alle Alphateilchen haben die gleiche Geschwindigkeit.
     \item[Aufbau:] \,
@@ -1079,11 +1336,21 @@ Es gibt im Tröpfchenmodell fünf additive Beiträge zur Bindungsenergie:
     \item[\(\mu_B\):] Bohrsches Magneton, \(\mu_B= \frac{e\hbar}{2m} = \begin{cases}
         9.27\E{-24}\ufrac JT\\ 5.8 \E{-5}\ufrac{eV}T
     \end{cases}\)
+    \item[\(\mu_k\);] Kernmagneton, \(\mu_k =\frac{m_e}{m_p} \mu_B  = \frac{\mu_B}{1836} = 3\E{-8} \ufrac{eV}{T}\) 
+    \item[\(n\):] Haubtquantenzahl, \(n=1,2,\dots\)
+    \item[\(\v \ell ,\ell, m_\ell\):] Bahndrehimpuls und Quantenzahlen, \(\ell=0,\dots , n-1\)
+    \item[\(\v L ,L,m_L\):] Gesamtbahndrehimpuls und Quantenzahlen, \(\v L = \sum_i \v \ell_i\)
+    \item[\(\v s, s,m_s\):] Spin und Quantenzahlen, \(m_s = \pm\frac12\hbar \)
+    \item[\(\v S, S,m_S\):] Gesamtspin und Quantenzahl, \(\v S = \sum_i \v s_i \)
+    \item[\(\v j, j ,m_j\):] Gesamtdrehimpuls eines Elektrons und Quantenzahlen, \(\v j = \v l + \v s\)
+    \item[\(\v J, J ,m_J\):] Gesamtdrehimpuls und Quantenzahlen, \(\v J = \sum_i \v j\)
+    \item[\(\v I, I , m_I\):] Gesamtkerndrehimpuls und Quantenzahlen, \(\v I = \sum_i \v s_{Kern,i}\)
+    \item[\(\v F, F, m_F\):] Gesamtdrehimpuls des Atom und Quantenzahlen, \(\v F = \v J + \v I\)
     \item[\(g_\ell\):] Lande Faktor für \(\ell\), \(g_\ell=1\)
     \item[\(g_s\):] Lande Faktor für \(s\), \(g_s=2\)
+    \item[\(g_j\):] Lande Faktor für \(j\), \(g_j= 1 + \frac{j(j+1) + s(s+1) - l(l+1)}{2 j(j+1)} \)
     \item[\(\gamma:\)] gyromagnetisches Verhältnis, \(\gamma = \frac{\absv \mu}{\absv S}\) 
-    \item[\(\alpha:\)] Feinstrukturkonstante, \(\alpha = \frac{e^2}{4\pi \varepsilon_0 \hbar c}\approx \frac{1}{137}\)
-    \item[\(\mu_k:\)] Kernmagneton \(\mu_k = \frac{\mu_B}{1836} = 3\E{-8} \ufrac{eV}{T}\)  
+    \item[\(\alpha:\)] Feinstrukturkonstante, \(\alpha = \frac{e^2}{4\pi \varepsilon_0 \hbar c}\approx \frac{1}{137}\) 
     \item[\(R_\inf\):] Rybergwellenlänge, \(R_\inf = \frac{\Ry}{hc}\)  
     \item[\(\Ry\):] Rybergenergie, \(\Ry = \frac{m_e c^2 \alpha^2}{2} = 13.6\u{eV}\)  
 \end{description}

@@ -1,0 +1,122 @@
+%% Creator: Inkscape 1.3.2 (091e20e, 2023-11-25, custom), www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'Wasserstoff_Zeeman_svg-tex.pdf' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \newcommand*\fsize{\dimexpr\f@size pt\relax}%
+  \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{2080.36706543bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.70493293)%
+    \lineheight{1}%
+    \setlength\tabcolsep{0pt}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{Wasserstoff_Zeeman_svg-tex.pdf}}%
+    \put(0.84214747,0.52343028){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l} \end{tabular}}}}%
+    \put(0.84214747,0.51229242){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l} \end{tabular}}}}%
+    \put(0.84214747,0.50301083){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l} \end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{Wasserstoff_Zeeman_svg-tex.pdf}}%
+    \put(1.00000001,0.46267596){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l} \end{tabular}}}}%
+    \put(0.75721042,0.17898037){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}−1/2\end{tabular}}}}%
+    \put(0.75721042,0.39584864){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}+1/2\end{tabular}}}}%
+    \put(0.75721042,0.22647118){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}+1/2\end{tabular}}}}%
+    \put(0.75721042,0.38037936){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}−1/2\end{tabular}}}}%
+    \put(0.75721042,0.42889009){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}+1/2\end{tabular}}}}%
+    \put(0.75721042,0.41898975){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}−1/2\end{tabular}}}}%
+    \put(0.75721042,0.43879043){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}+3/2\end{tabular}}}}%
+    \put(0.75721042,0.40908941){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[rt]{\lineheight{0}\smash{\begin{tabular}[t]{r}−3/2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{Wasserstoff_Zeeman_svg-tex.pdf}}%
+    \put(0.93426425,0.15215721){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.93426425,0.2506566){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.95530842,0.15215721){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}−1/2\end{tabular}}}}%
+    \put(0.93426425,0.37356649){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.95530842,0.37356649){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}−1/2\end{tabular}}}}%
+    \put(0.95530842,0.2506566){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+1/2\end{tabular}}}}%
+    \put(0.92834843,0.34279046){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}−1\end{tabular}}}}%
+    \put(0.95530842,0.34279046){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}−1/2\end{tabular}}}}%
+    \put(0.93426425,0.43511849){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.95530842,0.43511849){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+1/2\end{tabular}}}}%
+    \put(0.92834843,0.4658945){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+1\end{tabular}}}}%
+    \put(0.95530842,0.4658945){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+1/2\end{tabular}}}}%
+    \put(0.92834843,0.40929266){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}−1\end{tabular}}}}%
+    \put(0.92834843,0.39939232){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+1\end{tabular}}}}%
+    \put(0.95530842,0.40929266){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+1/2\end{tabular}}}}%
+    \put(0.95530842,0.39939232){\color[rgb]{1,0,0.4}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}−1/2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{Wasserstoff_Zeeman_svg-tex.pdf}}%
+    \put(0.32213213,0.24021014){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.32213213,0.43792508){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.31621634,0.45091927){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+1\end{tabular}}}}%
+    \put(0.31906848,0.42493088){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}-1\end{tabular}}}}%
+    \put(0.32213213,0.53642447){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}0\end{tabular}}}}%
+    \put(0.31621634,0.54941866){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+1\end{tabular}}}}%
+    \put(0.31906848,0.52343028){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}-1\end{tabular}}}}%
+    \put(0.31521929,0.56303163){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}+2\end{tabular}}}}%
+    \put(0.31807144,0.51229239){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}-2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=5]{Wasserstoff_Zeeman_svg-tex.pdf}}%
+    \put(0.52326515,0.20184633){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1/2\end{tabular}}}}%
+    \put(0.52328932,0.42493088){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}3/2\end{tabular}}}}%
+    \put(0.52326515,0.38904215){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1/2\end{tabular}}}}%
+    \put(0.52328932,0.53642447){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}5/2\end{tabular}}}}%
+    \put(0.52328932,0.52343028){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}3/2\end{tabular}}}}%
+    \put(0.52326515,0.51229239){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1/2\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=6]{Wasserstoff_Zeeman_svg-tex.pdf}}%
+    \put(0.10780302,0.23933067){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}1\end{tabular}}}}%
+    \put(0.10780302,0.43395177){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}2\end{tabular}}}}%
+    \put(0.1104414,0.53508954){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}3\end{tabular}}}}%
+    \put(0.1104414,0.58459123){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}4\end{tabular}}}}%
+    \put(0.1104414,0.60872331){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}5\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=7]{Wasserstoff_Zeeman_svg-tex.pdf}}%
+    \put(-0.00038975,0.12936033){\color[rgb]{0.10196078,0.10196078,0.10196078}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\textbf{Bohr}\end{tabular}}}}%
+    \put(0.40278733,0.12907032){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\textbf{Feinstruktur}\end{tabular}}}}%
+    \put(0.40289611,0.07361799){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Spin-Bahn-Kopplung\\und relativistische\\Korrektur.\end{tabular}}}}%
+    \put(0.20130409,0.07361799){\color[rgb]{0,0.66666667,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Magnetfeld ohne\\Berücksichtigung\\des Spins.\end{tabular}}}}%
+    \put(0.60510698,0.12910654){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\textbf{Anomaler}\\\textbf{Zeeman-Effekt}\end{tabular}}}}%
+    \put(0.6049438,0.07361799){\color[rgb]{0.44313725,0.21568627,0.78431373}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Magnetfeld mit\\Berücksichtigung \\des Spins.\\B < ls-Kopplung\end{tabular}}}}%
+    \put(0.80703993,0.12936033){\color[rgb]{1,0,0.39607843}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\textbf{Paschen-}\\\textbf{Back-Effekt}\end{tabular}}}}%
+    \put(0.8071033,0.07361799){\color[rgb]{1,0,0.39607843}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Magnetfeld mit\\Berücksichtigung \\des Spins.\\B > ls-Kopplung\end{tabular}}}}%
+    \put(-0.00037162,0.07361799){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}Lösungen der\\Schrödinger-\\Gleichung ohne Spin.\end{tabular}}}}%
+    \put(0.20146725,0.12910658){\color[rgb]{0,0.67058824,0.83137255}\makebox(0,0)[lt]{\lineheight{0}\smash{\begin{tabular}[t]{l}\textbf{Normaler}\\\textbf{Zeeman-Effekt}\end{tabular}}}}%
+  \end{picture}%
+\endgroup%
