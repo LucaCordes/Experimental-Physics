@@ -1,0 +1,152 @@
+\documentclass[exb, en]{exercise_5.0}
+
+\deadline{08.11.2024}
+
+\begin{document}
+
+\section{Time-of-flight system}
+\subsection{}
+I feel like the task isn't explained well enough. There is only a well defined \glqq maximum momentum\grqq{} if both particles carry the same momentum. So are we to assume that is the case? The task doesn't say. Also isn't there an underlying assumption that we can associate the signals of the scintillator to the correct particle?\\
+
+The time-of-flight of a single particle is 
+\begin{align*}
+    t &= \frac{L}{v} = \frac{L E}{pc^2} =   \frac{LE}{p}
+\end{align*}
+The time difference of two particles is then given by
+\begin{align*}
+    \Delta t &= \abs{t_2 - t_1} 
+    = \abs{\frac{L E_2}{p_2} - \frac{L E_1}{p_1}}\\
+    &= Lc\abs{\sqrt{m_2^2 c^2/p_2^2  + 1} - \sqrt{m_1^2 c^2/p_1^2  + 1}}\\
+    &= L\abs{\sqrt{m_2^2/p_2^2  + 1} - \sqrt{m_1^2/p_1^2  + 1}}\\
+    \implies\sigma_{\Delta t} &= \sigma_{t_2}\oplus \sigma_{t_2}=\sqrt 2\sigma_t
+\end{align*}
+The time difference must be at least $4\sigma_{\Delta t}$:
+\begin{align*}
+    4\sigma_{\Delta t} &\le \Delta t \\
+    4\sqrt 2\sigma_t 
+    &= L\abs{\sqrt{m_2^2/p\sub{max}^2  + 1} - \sqrt{m_1^2/p\sub{max}^2  + 1}}\\
+    &\overset*{\approx} L\abs{\frac12 m_2^2/p\sub{max}^2- \frac12 m_1^2/p\sub{max}^2}\\
+    p\sub{max}&= \sqrt{\frac{L}{8\sqrt2 \sigma_t}\abs{m_2^2- m_1^2}}\\
+\end{align*}
+Note that at the following taylor expansion was used in the step with a star:
+\begin{align*}
+    f(x) &= \sqrt{1+x^2},
+    \qquad\qquad \ \  f'(x) = \frac x{f(x)}\\
+    f''(x) &= \frac1{f(x)}-\frac{x^2}{f^3(x)},
+    \qquad f'''(x) = -\frac x{f^3(x)} - \frac{2x}{f^3(x)} + \frac{3x^3}{f^5(x)}
+\end{align*}
+\begin{align*}    
+    f(x) &= \sum_{n=0}^3 \frac{f^{(n)}(0)}{n!}x^n + \bigO{x^4} 
+    = 1  + \frac12{x^2} + \bigO{x^4}
+\end{align*}
+
+\subsection{}
+With the values 
+\begin{align*}
+    L &= 1m = 5067730 \ufrac1{eV}, \qquad 
+    \sigma_t = 100\u{ps} = 151926\ufrac1{eV}\\
+    m(K^+) &= 494\u{MeV}, \quad\, \ \  \qquad m(\pi^+) = 140\u{MeV}
+\end{align*}
+the derived formula yields:
+\begin{align*}
+    p\sub{max}(K^+,\pi^+) &= 0.813\u{GeV}
+\end{align*}
+
+\section{Cherenkov detector}
+\subsection{}
+The cherenkov angle can be expressed as:
+\begin{align*}
+    \cos(\theta_C) &= \frac1{n\beta} 
+    = \frac1n \frac{E}{p}
+    = \frac1n \frac{\sqrt{m^2 + p^2}}{p} = \frac1n \sqrt{m^2/p^2 + 1}
+\end{align*}
+Using gaussian error propagation the error $\sigma_m$ is then given by $\sigma_m = \abs{\dd m{\theta_C}}\cdot \sigma_{\theta_C}$, with 
+\begin{align*}
+    -\sin(\theta_C) \dd{\theta_C}m &= \frac1n \frac{m}{p^2\sqrt{m^2/p^2 + 1}}
+    \\
+    \abs{\dd m{\theta_C}} 
+    &= np\sin(\theta_C)\sqrt{1 + p^2/m^2}\\
+    &= np\sqrt{1- \frac1{n^2\beta^2}}\sqrt{1 + p^2/m^2}\\
+    &= \frac{p}{\beta}\sqrt{n^2\beta^2- 1}\sqrt{1 + p^2/m^2}\\
+\end{align*}
+
+\subsection{}
+How can the solution depend on $\beta$ when there are two particles, each with different velocities and therefore distinct values $\beta_1$ and $\beta_2$? Additionally, shouldn't the significance of the mass separation be measured by $\frac{\Delta m}{\sigma_{\Delta m}}$ instead of $\frac{\Delta m}{\sigma_m}$? There seem to be several assumptions needed to even approximate the desired solution, so it feels like these should be clarified in the task itself.
+
+The closest I've been able to get is using the following assumptions: $m = \frac{m_1 + m_2}{2}$, $\sigma_{\Delta m}\approx \sigma_{m}$, $\beta\equiv\beta_m\approx\beta_1\approx \beta_2$ and $p/m\gg1$.
+\begin{align*}
+    \sigma_m
+    &= \frac{p}{\beta}\sqrt{n^2\beta^2- 1}\sqrt{1 + p^2/m^2}\cdot \sigma_{\theta_C}\approx \frac{p^2}{\beta m}\sqrt{n^2\beta^2- 1}\cdot \sigma_{\theta_C}
+\end{align*}
+\begin{align*}
+    N_\sigma &= \frac{\Delta m}{\sigma_{m}} 
+    = \frac{\abs{m_1-m_2}}{\sigma_{m}}\\
+    &= \frac{\abs{m_1-m_2}\beta m }{p^2\sigma_{\theta_C} \sqrt{n^2\beta^2-1}}\\
+    &= \frac{\abs{m_1-m_2}(m_1+m_2)\beta}{2p^2\sigma_{\theta_C} \sqrt{n^2\beta^2-1}}\\
+    &= \frac{\abs{m_1^2-m_2^2}\beta}{2p^2\sigma_{\theta_C} \sqrt{n^2\beta^2-1}}
+\end{align*}
+
+\subsection{}
+
+The velocity of the particles has to be greater then the local speed of light, for the cherenkov effect to take place:
+\begin{align*}
+    \frac{c}{n} &< v= c\beta = c\frac{p}{\sqrt{m^2 + p^2}} \\
+    \implies p\sub{min} &= \frac{m}{\sqrt{n-1}}
+\end{align*}
+
+\inputpy{}{3.py}
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{3.svg}
+    \caption{resulting plot}
+\end{figure}
+
+In this model the range of momenta in which the detector can differentiate the two particles with $3\sigma$ significance is given by $p\in(7.68, 18.3)\u{GeV}$.
+
+\section{Decay to four photons}
+\begin{align*}
+    P &= \sum_i p_i = (1.412,-8\E{-5}, 0)\u{GeV}\\
+    E &= \sum_i \abs{p_i} = 1.497\u{GeV}\\
+    \\
+    E_0 &= \sqrt{E^2-\abs P^2} = 499 \u{MeV}\\  
+    E\sub{kin} &= E - E_0 = 998\u{{MeV}}
+\end{align*}
+In conclusion the particle must have the following proporties: 
+\begin{enumerate}
+    \item chargeless
+    \item no baryon
+    \item whole number spin
+    \item rest mass $\approx 499\u{MeV}$
+\end{enumerate}
+Based on these observations a $K^0$ with restmass $E_0(K^0)=498\u{MeV}$ seems the fit the bill, since it can decay into an intermediate state of $\pi^0\pi^0$ which then decays into four photons. 
+
+If this is correct, then it should be possible to pair the photons, such that the invariant mass of each pair matches the $E_0(\pi^0) = 135\u{MeV}$ mass. This is indeed the case when grouping $p_0$ with $p_2$, and $p_1$ with $p_3$:
+\begin{align*}
+    E_{0,(0,2)} &= \sqrt{(\abs{p_0}+\abs{p_2}) - (p_0 + p_2)^2} = 135\u{MeV}\\
+    E_{0,(1,3)} &= \sqrt{(\abs{p_1}+\abs{p_3}) - (p_1 + p_3)^2} = 135\u{MeV}
+\end{align*} 
+The observed particle is therefore a $K^0$.
+
+\section{Particle decays}
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}llll@{}}
+    \toprule
+    Task & Reaction & Possible? & Conservation laws\\
+    \midrule
+    (a) & $\mu^- \to e^-\bar \nu_e \nu_\mu$ & \cmark &  \\
+    (b) & $\mu^- \to e^- \gamma \gamma$ & \xmark & lepton number \\
+    (c) & $\mu^+ \to e^+ \bar \nu_c \nu_\mu$ & \xmark & lepton number \\
+    (d) & $K^+ \to  \pi^+ \pi^0 \pi^-$ & \xmark & charge \\
+    (e) & $K^+ \to \pi^+\pi^+\pi^+\pi^-\pi^-$ & \xmark & energy \\
+    (f) & $\Lambda \to \pi^+\pi^-$ & \xmark & baryon number \\
+    (g) & $\Lambda \to p\pi^-\gamma$ & \cmark &  \\
+    (h) & $\Lambda \to p\mu^-\bar \nu_\mu$ & \cmark &  \\
+    (i) & $\Omega^- \to \Sigma^- \pi^+\pi^-$ & \xmark & strangeness $\Delta S= \pm1,0$ \\
+    (j) & $\Sigma^+ \to p$ & \xmark & energy/momentum \\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+
+\end{document}

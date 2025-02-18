@@ -1,0 +1,279 @@
+\documentclass[twocolumn, bfvec]{summery_5.0}
+\title{Experimentalphysik I - Zusammenfassung}
+\date{WS 22/23}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Newtonsche Mechanik}
+\subsection{Newtonsche Axiome}
+\begin{description}
+    \item[1. Axiom - Trägheitsprinzip:]\,\\
+    Ein kräftefreier Körper in einem Inertialsystem, bleibt in Ruhe oder bewegt sich geradlinig mit konstanter Geschwindigkeit. 
+    \item[2. Axiom - Aktionsprinzip:]\,\\
+    Wirkt eine Kraft \(\v F\) auf einen Körper, so erfährt er eine Beschleunigung gemäß
+
+    \hfill\(\v F = m \v a\)\hspace*\fill
+
+    \item[3. Axiom - Reaktionsprinzip:]\,\\
+    Eine Kraft von Körper A auf Körper B geht immer mit einer gleich großen, aber entgegen gerichteten Kraft von Körper B auf Körper A einher:
+
+    \hfill$\v F_{A\to B} = -\v F_{B\to A}$\hspace*\fill
+
+    \item[4. Axiom - Superpositionsprinzip:]\,\\
+    Kräfte überlagern sich wie Vektoren in der Mathematik, sodass gilt:
+
+    \hfill\(\v F = \displaystyle \sum_i \v F_i\)\hspace*\fill\,
+\end{description}
+
+\subsection{Gravitationskraft}
+Das Potenzial \(\Phi\) und das Gravitationsfeld \(g\) sind mathematische Hilfsgrößen zur Bestimmung des Potenzial \(V\) und der Kraft \(F\). \(G\) ist die Gravitationskonstante. 
+\begin{align*}
+    \Phi(\v r) &= - G \int_{\R^3}\dV' \frac{\rho(\v r')}{\abs{\v r - \v r'}}\\
+    \v g(\v r) &=  - \grad \Phi(\v r) \\
+    &= G \int_{\R^3}\dV' \rho(\v r)\frac{\v r - \v r'}{\abs{\v r - \v r'}^3}\\
+    \\
+    V(\v r) &= m \Phi(\v r)\\
+    \v F (\v r) &= m g 
+\end{align*}
+
+\subsection{Reibungskräfte}
+Es wird $F_N$ verwendet als Normalkraft.
+\begin{table}[H]
+\begin{tabular}{@{}l c l @{}}
+    \toprule
+    Name & Formel & Anmerkung\\
+    \midrule
+    Gleitreibung & \(\v F\sub{GR}=-\mu_G \absv{F_N} \e_v\) & $\mu_G<\mu_H$\\
+    Haftreibung & \(F\sub{HR} \le \mu_H \absv{F_N}\) & $\tan\alpha = \mu_H$\\
+    Rollreibung & \(R\sub{RR} = - \mu_R \absv{F_N} \e_v\) & $\mu_R \propto 1/r$\\
+    Stoke'sche Reibung & \(F\sub{SR} = - \kappa \v v\) & Kugel: \(\kappa = 6\pi r \eta\)\\
+    Newton'sche Reibung & \(F\sub{NR} = -\xi \v v^2 \e_v\) & \(\xi =\frac12 c_w A \rho\)\\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Arbeit und Energie}
+Die Arbeit ist als das Wegintegral über die Kraft definiert:
+\begin{align*}
+    W\sub{AB} &= - \int_{K\sub{AB}} \v F(\v x) \dv x
+\end{align*}
+Für eine konservatives Potenzial gilt:
+\begin{align*}
+    W\sub{ab} &= V(\v x\sub B) - V(\v x\sub A)
+\end{align*}
+
+\subsection{Leistung}
+Die Leistung $P$ ist definiert als die zeitliche Ableitung der Arbeit.
+\begin{align*}
+    P = \dd Wt
+\end{align*}
+Für die, von einem konservativen Potenzial geleisteter Arbeit, kann man auch schreiben:
+\begin{align*}
+    P = \dd W{\v x} \dd{\v x} t &= - \v F \cdot \v v 
+\end{align*}
+
+\section{Erhaltungssätze}
+In einem abgeschlossenen System gilt die Gesamtimpulserhaltung un der Schwerpunktssatz:
+\begin{align*}
+    \dotv P = \sum_i F_i = 0 \tand \dotv X = \frac1M \sum_i p_i = \const 
+\end{align*}
+Außerdem ist die Energie erhalten. 
+
+\section{Schwingungen}
+\subsection{harmonische Schwingung}
+\begin{description}
+    \item[DGL:] Mit \(\gamma\) als Dämpfung und \(\omega_0\) als Kreisfrequenz des ungedämpften Oszillators.
+    \begin{align*}
+        \ddot x + 2\gamma \dot x + \omega_0^2 x = 0
+    \end{align*}
+    \item[Lösung:] Mit Fouriertransformation
+    \begin{align*}
+        0 &= \ddot x + 2\gamma \dot x + \omega_0^2 x\\
+        &= (-ik)^2 x + 2\gamma (-ik) x + \omega_0^2 x\\
+        &= k^2 + 2 i \gamma k - \omega_0^2 \\
+        k_\pm &= - i \gamma \pm \underbrace{\sqrt{\omega_0^2 - \gamma^2}}_{\equiv \omega} \\
+        x(t) 
+        &= A e^{i k_+ t} + B e^{i k_- t}\\
+        &= e^{-\gamma t}\hug{A e^{i \omega t} + B e^{-i \omega t}}
+    \end{align*}
+    \item[Kriechfall \(\gamma^2>\omega_0^2\):] Im Kriechfall findet keine Schwingung statt, und die Amplitude geht exponentiell gegen null.
+    \item[Aperiodischer Grenzfall \(\gamma^2 = \omega_0^2\):] Die kleinste Dämpfung bei der keine Schwingung zustande kommt. Das Pendel strebt am schnellsten gegen den Nullpunkt.
+    \item[Schwache Dämpfung \(\gamma^2<\omega_0^2\):] Es findet eine sinusförmige Schwingung statt, die exponentiell gedämpft ist. 
+    \item[Ungedämpft \(\gamma=0\):] Eine Sinusförmige Schwingung.    
+\end{description}
+
+
+\section{Wellen}
+Die DGL der Welle ist 
+\begin{align*}
+    \square \Phi &= 0 = \Delta \Phi  - \frac{1}{v^2}\p_t^2 \Phi.
+\end{align*}
+Die allgemeine Lösung ist eine integrale Überlagerung von Wellenfronten:
+\begin{align*}
+    \Phi(\v x, t) &= \int\tilde f(\v k) e^{i(\v k\cdot \v x - \omega t)} \d{^3\v k} 
+\end{align*}
+mit den Beziehungen
+\begin{align*}
+    c = \frac{\omega}{\absv k } \tand k=\frac{2\pi}\lambda
+\end{align*}
+
+\subsection{Schallwellen}
+Für eine Schallwelle lässt sich die folgenden DGL herleiten:
+\begin{align*}
+    \Delta \Phi &= \frac{\rho_0}{p_0} \p_t^2 \Phi
+\end{align*}
+Wobei für Luft gilt, dass \(\sqrt{p_0/\rho_0} \approx \SI{340}{m/s}\)
+und für Festkörper statt \(p_0\) das Elastizitätsmodul eingesetzt wird. 
+
+\subsection{Überlagerung von Wellen}
+Da die DGL der Wellen linear ist, gilt auch hier das Superpositionsprinzip. Beim Überlagern von Wellen entstehen viele charakteristische Effekte/Eigenschaften wie die Schwebung oder die Interferenz.
+
+\subsection{Dopplereffekt}
+Der Dopplereffekt entsteht dadurch, dass Wellen durch die Bewegung eines Senders gestaucht werden, oder ein Empfänger sich durch eine Welle bewegt. $c$ meint hier nicht die Lichtgeschwindigkeit, sondern i.A. die Ausbreitungsgeschwindigkeit der Welle. 
+
+\begin{description}
+    \item[Bewegte Quelle:] 
+    \begin{align*}
+        \te{Ansatz: } \lambda &= \lambda_0 - v_Q\cdot T, \ c=\const\\
+        \implies  \omega &= \frac{\omega_0}{1-\frac c{v_Q}}
+    \end{align*}
+    \item[Bewegter Beobachter:] 
+    \begin{align*}
+        \te{Ansatz: } c &= c_0 + v_B, \ \lambda=\const\\
+        \implies  \omega &= \omega_0 \cdot \hug{1+\frac{v_B}c}
+    \end{align*}
+    \item[Beide Effekte:]
+    \begin{align*}
+        \te{Ansatz: } f &= \frac{c}{\lambda} = \frac{c_0 + v_B}{\lambda_0 - v_Q T}\\
+        \implies \omega &= \omega_0 \cdot \frac{c_0-v_B}{c+v_Q}
+    \end{align*}
+\end{description}
+
+\section{Rotationsbewegungen}
+\subsection{Die Kepler'schen Gesetzte}
+\begin{description}
+    \item[1. Kepler'sches Gesetz - Bahnkurven]
+    \begin{quote}
+        Die Planetenbahnen sind Ellipsen, in deren Brennpunkt die Sonne steht.
+    \end{quote}
+    Tatsächlich ist die Bahn nur gebunden, d.h. ein Kreis oder eine Ellipse, wenn die Gesamtenergie negativ ist:
+    \begin{align*}
+        E = \frac{1}{2} mv^2 - G \frac{mM}{r}<0
+    \end{align*}
+    Für \(E>0\) sind die Bahnkurven Parabeln und Hyperbeln.
+
+    \item[2. Kepler'sches Gesetz - Flächensatz]
+    \begin{quote}
+        Der Radiusvektor \(\v r\) zwischen Sone und Planet überschreitet in gleichen Zeiten gleiche Flächen.
+    \end{quote}  
+    Ursache ist die Drehimpulserhaltung, denn das infinitessinale Flächenelement \(\dA\) ist gegeben durch: 
+    \begin{align*}
+        \dA &= \frac12 \abs{\v r \times \dv s}  = \frac12 \abs{\v r \times \v p} \frac\dt m  \\
+        \dd At &= \frac{\absv L }{2m} 
+    \end{align*}
+
+    \item[3. Kepler'sches Gesetz - Perioden und Halbachsen]
+    \begin{quote}
+        Die Perioden \(T\) und großen Halbachsen \(a\) erfüllen \(\frac{T^2}{a^3} = \const\).
+    \end{quote}
+    Für eine Kreisbahn kann der Satz durch gleichsetzten von Gravitationskraft und Zentripetalkraft bewiesen werden:
+    \begin{align*}
+        G\frac{mM}{r^2} &= m\omega^2 r\\
+        \frac{T^2}{r^3} &= \frac{4\pi^2}{GM} = \const
+    \end{align*}
+\end{description}
+
+\subsection{Scheinkräfte in Beschleunigten Bezugssystemen}
+
+Für ein beschleunigtes Bezugssystem kann man mittels einer Koordinatentransformation herleiten:
+\begin{align*}
+    m\v a &= \v K \underbrace{-2m\v \omega \times \dotv y}\sub{Corioliskraft} \underbrace{- m\dotv \omega \dot y}\sub{Euler-Kraft} \underbrace{-m\v \omega\times(\v \omega\times\v y)}\sub{Zentrifugalkraft} 
+\end{align*}
+
+\section{Dynamik starrer Körper}
+Man unterschiedet bei Bewegungen starrer Körper zwischen Rotationen und Translationen. Eine Translation lässt sich immer mittels seines Schwerpunktes beschreiben.
+
+\subsection{Größen der Bewegung}
+In Analogie zu Größen für Translationen findet man für Rotationen:
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+    \toprule
+    Größe & $\v x$ & $\v \varphi$  &Formel\\
+    \midrule
+    Strecke/Winkel & $\v x$ & \(\v \varphi\) & $ $ \\
+    Winkel-/ Geschw. & $\v v$ & \(\v \omega\) & $\dd{\v\varphi} t = \frac{\v r \times \v v }{r^2}$ \\
+    Winkel-/ Beschl. & $\v a$ & \(\dotv \omega\) & $ \dd {\v \omega}t$ \\
+    Masse/Trägheitsm. & $m$ & \(I\) & $ m\v R^2 $ \\
+    Trägheitstensor &  & \(\Theta\) & $ m(\v x^2\I - \v x\otimes \v x) $ \\
+    Dreh-/ Impuls & $\v p$ & \(\v L\) & $ \v r \times \v p = \Theta \v \omega $ \\
+    Kraft/Drehmoment & $\v F$ & \(\v M\) & $ \v r \times \v F = \Theta \dotv \omega= \dotv  L$ \\
+    Kinetische Energie & $E\sub{kin}$ & \(E\sub{rot}\) & $\frac12 \v \omega \Theta \v \omega$ \\
+    \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Trägheitstensor}
+Der Trägheitstensor ist definiert als:
+\begin{align*}
+    \Theta_{ij} &= \int \rho(\v x) (\v x^2 \delta_{ij} - x_i x_j)\dV\\
+    &= \int \rho(\v x) \begin{pmatrix}
+        y^2+z^2 & -xy & -xz \\
+        -xy & x^2 + z^2 & -yz \\
+        -xz & -yz & x^2 + y^2\\
+    \end{pmatrix}\dV
+\end{align*}
+Herleiten lässt sich dies, indem man \(\v L(\v \omega) = m \v r\times (\v \omega \times \v r)\) als Matrix \(\Omega \v \omega \) darstellt:
+\begin{align*}
+    \frac{\v L} m &= \v r\times \v v\\
+    &= \v r\times (\v \omega \times \v r)\\
+    &= \levi r^j (\varepsilon_{klm} \omega^l r^m)^k\\
+    &= \levi \varepsilon_{\ lm}^k r^j \omega^l r^m\\
+    &= (\delta_{il} \delta_{jm} - \delta_{im} \delta_{jl}) r^j r^m \omega^l\\
+    &= (\delta_{ij} r_m r^m - r_i r_j) \omega^k\\
+    \v L &= \underbrace{m (\v r^2 \I - \v r \otimes \v r) }_\Theta \cdot \v \omega
+\end{align*}
+Die Elemente auf der Diagonale sind die Haubtträgheitsmomente und beschreiben die Trägheit entlang der Achsen $x,y,z$. Die restlichen Elemente beschreiben die Umwuchten für diese Drehachsen.
+
+Da der Trägheitstensor positiv definit ist, lässt er sich immer diagonalisieren.
+
+\subsubsection{Satz von Steiner}
+Man kan zeigen, dass man das Trägheitsmoment und den Trägheitstensor bei einer Verschiebung zu einer neuen Drehachse (parallel zur alten) einfach beschreiben kann durch:
+\begin{align*}
+    I &= I_0 + M \v a^2 \\
+    \Theta_{ij} &= \Theta_{ij}^{(0)} + M(\v a^2 \delta_{ij} - a_i a_j)
+\end{align*}
+mit \(\v a\) als Verschiebungsvektor senkrecht zur Drehachse.
+
+\subsubsection{Kreiseltypen}
+Mit dem Vergleich der Haubtträgheitsmomente in der Diagonalform unterschiedet man zwischen drei Kreiseltypen:
+\begin{enumerate}
+    \item \emph{antisymmetrischer} Kreisel: \(I_a \neq I_b \neq I_c\)
+    \item \emph{symmetrischer} Kreisel: \(I_a = I_b \neq I_c\)
+    \item \emph{sphärischer} Kreisel: \(I_a = I_b = I_c\) 
+\end{enumerate}
+Die einzigen stabilen Drehungen sind solche um das kleinste oder größste Haubtträgheitsmoment.
+
+
+\subsection{Komplexe Rotationsbewegungen}
+Da im Allgemeinen gilt: \(\v L = \Theta \v \omega\) sind \(\v L\) und \(\v \omega\) und die Figurenachse nicht mehr zwingend parallel. Es treten verschiedene Effekte auf:
+
+\subsubsection{Präzession}
+Eine Präzession ist eine Bewegung des Drehimpulsvektors. Dieser kann (natürlich
+nur wenn ein äußeres Drehmoment existiert) selbst eine Rotationsbewegung ausfüh-
+ren! Wenn der Kreisel im Schwerefeld im Schwerpunkt unterstützt wird, gibt es kein Drehmoment.
+
+Dieser Kreisel wird beginnen um die Aufhängung zu rotieren, da das Drehmoment
+$M = m\v r \times \v g$ (in der Abbildung auch T ) ja in diese Richtung zeigt. man kann
+sich fragen, woher kommt die Energie für diese Rotation überhaupt? Bei genauer
+Betrachtung stellt man fest, dass die Konstruktion im Moment, in dem man sie
+loslässt, tatsächlich etwas absackt. Dadurch ergibt sich auch eine kleine Änderung $\Delta L$ die nach unten zeigt und dann durch die Präzession kompensiert wird. Wenn man so möchte ändert sich hier die Lageenergie.
+
+
+\section{Deformierbare Medien}
+
+\section{Spezielle Relativitätstheorie}
+
+
+\end{document}

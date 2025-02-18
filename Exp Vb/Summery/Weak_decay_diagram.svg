@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="900" width="800" version="1.0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">
+    <![CDATA[
+	.text1{fill:#000000}
+	.cl1{stroke-linejoin:miter;stroke:#000000;stroke-linecap:butt;stroke-width:5;fill:none;}
+	.cl2{font-size:24px;line-height:125%;font-family:sans;}
+	.cl3{stroke:#000000;stroke-width:1pt;fill-rule:evenodd;}
+	.cl4{overflow:visible;}
+	.cl5{stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-width:3;fill:none;}
+	.cl6{font-size:24px;fill:#000000;line-height:125%;font-family:sans;}
+	.cl7{font-size:20px;line-height:125%;font-family:sans;}
+	.cl8{stroke-linejoin:miter;marker-end:url(#Arrow1Mend);stroke:#000000;stroke-linecap:butt;stroke-width:5;fill:none;}
+    ]]>
+  </style>
+  <marker id="Arrow1Mend" refY="0" refX="0" class="cl4" orient="auto">
+   <path class="cl3" d="M 0,0 L 5,-5 L -12.5,0 L 5,5 L 0,0 z" transform="matrix(-.4 0 0 -.4 -4 0)"/>
+  </marker>
+  <marker id="Arrow1Send" refY="0" refX="0" class="cl4" orient="auto">
+   <path class="cl3" d="M 0,0 L 5,-5 L -12.5,0 L 5,5 L 0,0 z" transform="matrix(-.2 0 0 -.2 -1.2 0)"/>
+  </marker>
+ </defs>
+ <g transform="translate(-24.6 -77.2)">
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);fill-rule:evenodd;stroke:#000000;stroke-linecap:butt;stroke-miterlimit:1.100;stroke-width:4.787;marker-mid:none;fill:#800080" d="M 614.501,520.980 L 277.388,393.056"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-width:4.755;fill:none" d="M 614.517,791.057 L 272.916,563.821"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-width:5.016;fill:none" d="M 275.093,239.506 L 601.556,186.657"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-dasharray:57.453, 4.787;stroke-width:4.787;marker-mid:none;fill:none" d="M 609.264,512.404 L 293.099,250.124"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-dasharray:13.941, 4.647;stroke-width:4.647;fill:none" d="M 275.447,562.448 L 609.636,525.277"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-dasharray:4.869, 4.869;stroke-width:4.869;fill:none" d="M 268.450,560.188 L 609.825,190.155"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-dasharray:60.196, 5.016;stroke-width:5.016;marker-mid:none;fill:none" d="M 274.374,392.340 L 604.432,188.086"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-dasharray:14.649, 4.883;stroke-width:4.883;fill:none" d="M 614.362,788.849 L 273.111,394.447"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-dasharray:4.883, 4.883;stroke-width:4.883;fill:none" d="M 614.451,785.277 L 273.163,242.277"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Mend);stroke:#000000;stroke-linecap:butt;stroke-width:5;fill:none" d="M 151.142,152.362 L 151.142,934.505"/>
+  <path class="cl1" d="M 149,592.362 L 171.142,592.362"/>
+  <path class="cl1" d="M 148.071,700.219 L 170.214,700.219"/>
+  <path class="cl1" d="M 151.392,373.433 L 173.535,373.433"/>
+  <path class="cl1" d="M 150.464,481.290 L 172.607,481.290"/>
+  <path class="cl1" d="M 150.214,263.076 L 172.357,263.076"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Mend);stroke:#000000;stroke-linecap:butt;stroke-width:5;fill:none" d="M 150.428,153.790 L 750.428,153.076"/>
+  <path class="cl1" d="M 610.428,151.647 L 610.428,173.790"/>
+  <path class="cl1" d="M 264.285,155.719 L 264.285,177.862"/>
+  <text y="808.790" x="93.714" class="text1"><tspan y="808.790" x="93.714" style="font-size:36px;text-anchor:middle;text-align:center">Mass</tspan>
+	<tspan y="843.763" x="95" style="font-size:24px;text-anchor:middle;text-align:center">(MeV ∕ <tspan style="font-size:24px; font-style:italic">c</tspan><tspan style="font-size:14px" dx="1" dy="-8">2</tspan><tspan style="font-size:24px" dy="8">) </tspan></tspan>
+  </text>
+  <path style="stroke-linejoin:miter;stroke:#000000;stroke-linecap:butt;stroke-width:3.322;fill:none" d="M 218.929,736.539 L 349.170,736.539"/>
+  <path style="stroke-linejoin:miter;stroke:#000000;stroke-linecap:butt;stroke-dasharray:39.869, 3.322;stroke-width:3.322;fill:none" d="M 218.929,757.321 L 349.170,757.321"/>
+  <path style="stroke-linejoin:miter;stroke:#000000;stroke-linecap:butt;stroke-dasharray:13.289, 3.322;stroke-width:3.322;fill:none" d="M 218.929,778.103 L 349.170,778.103"/>
+  <path style="stroke-linejoin:miter;stroke:#000000;stroke-linecap:butt;stroke-dasharray:3.322, 3.322;stroke-width:3.322;fill:none" d="M 217.264,800.922 L 347.505,800.922"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-width:3;fill:none" d="M 394.407,744.159 L 394.407,789.159"/>
+  <rect style="stroke:#000000;stroke-linecap:round;stroke-width:3.131;fill:none" height="103" width="263" y="717" x="202"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-width:3;fill:none" d="M 402.365,909.037 L 584.192,909.037"/>
+  <path style="stroke-linejoin:miter;marker-end:url(#Arrow1Send);stroke:#000000;stroke-linecap:butt;stroke-width:3.014;fill:none" d="M 587.879,877.217 L 403.513,877.217"/>
+  <text y="132.714" x="678.511" class="text1 cl2">Charge</text>
+  <text y="141.157" x="580.824" class="text1 cl2">+2/3</text>
+  <text y="142.107" x="240" class="text1 cl2">−1/3</text>
+  <text class="cl6" y="598.500" x="63.099">10,000</text>
+  <text class="cl6" y="707.529" x="49.739">100,000</text>
+  <text y="488.243" x="85.114" class="text1 cl2">1000</text>
+  <text y="379.672" x="98.474" class="text1 cl2">100</text>
+  <text y="268.243" x="111.833" class="text1 cl2">10</text>
+  <text y="165.386" x="128.450" class="text1 cl2">1</text>
+  <text y="231.432" x="251.636" class="text1 cl2">d</text>
+  <text y="193.604" x="623" class="text1 cl2">u</text>
+  <text y="398.323" x="253.794" class="text1 cl2">s</text>
+  <text y="525.323" x="623" class="text1 cl2">c</text>
+  <text y="565.980" x="252" class="text1 cl2">b</text>
+  <text y="795.151" x="630" class="text1 cl2">t</text>
+  <text y="736.419" x="353.953" class="text1 cl7">Most likely</text>
+  <text y="810.575" x="349.938" class="text1 cl7">Least likely</text>
+  <text y="935.685" x="413.451" class="text1 cl2"><tspan>Emission of W</tspan><tspan class="cl6" dy="-11.2">−</tspan></text>
+  <text y="869.450" x="421.197" class="text1 cl2"><tspan>Emission of W</tspan><tspan class="cl6" dy="-11.2">+</tspan></text>
+ </g>
+</svg>

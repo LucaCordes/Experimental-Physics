@@ -1,0 +1,104 @@
+\documentclass[exb]{exercise_5.0}
+
+\deadline{21.01.2025}
+
+\begin{document}
+
+\section{The sun as a neutron star}
+\subsection{neutron star}
+\begin{align*}
+    M\sub{sun} &= M\sub{n} = \rho \frac43\pi R_{n}^3\\
+    \Aboxed{R_n &= \hug{\frac{3 M\sub{sun}}{4\pi \rho }}^\frac13 = 9.83\u{km}}
+\end{align*}
+
+\subsection{rotation}
+The moment of inertia of an infinitesimal mass element is given by $\d I=\d m r^2$, where $r$ is the distance from the axis of rotation. Since this relationship holds for each infinitesimal element, the total moment of inertia, obtained by summing or integrating over all such elements, retains the same proportionality:
+\begin{align*}
+    I = \int \d I \propto M R^2
+\end{align*}
+With $M$ as the total mass and $R$ as same characteristic lenght. In the case of a spherical body one can therefore write the moment of inertia as $I = \lambda M R^2$, where $\lambda$ denotes a constant value characteristic for the inertia of a sphere. 
+
+During the collaps of the star, angular momentum has be conserved, from that follows:
+\begin{align*}
+    L_n &= L\sub{sun}\\
+    \lambda M_n R_n^2\omega_n &= \lambda M_s R_s^2\omega_s\\
+    \Aboxed{\omega_n &= \omega_s \frac{R_s^2}{R_n^2}=13504\u s\inv}
+\end{align*}
+
+\subsection{stability}
+The neutron star would shed its outer layers if the centrifugal force is greater then the gravitational one:
+\begin{align*}
+    a_Z &> a_G\\
+    \frac{v^2}{r} &> \frac{GM}{r^2}\\
+    \omega^2 r &> \frac{GM}{r^2}\\
+    1&> \frac{GM}{r^3\omega ^2} = 0.767
+\end{align*}
+That is to say, the neutron star would be \emph{unstable}.
+
+\section{Solar constant}
+\subsection{average radiant power}
+Note that $\theta$ will only be integrated from $0$ to $\pi/2$, which corresponds to the fact, that only half of the earths surface is illuminated at only given time.
+\begin{align*}
+    \bar P\sub{earth} &= \frac{P\sub{total}}{A}\\
+    &= \frac1{4\pi R^2}\int \d S \hat n \cdot \v P\\
+    &= \frac1{4\pi R^2} \int \d S \colvec{\sin\theta\cos\phi}{\sin\theta\sin\phi}{\cos\theta}\cdot \colvec{0}{0}{P} \cdot\\
+    &= \frac1{4\pi R^2}P \int \d S \cos\theta\\
+    &= \frac1{4\pi R^2} P R^2\underbrace{\int_0^{\pi/2} \d\theta \sin\theta \cos\theta}_{1/2}\underbrace{\intphi }_{2\pi}\\
+    \Aboxed{\bar P\sub{earth}&= \frac P4 = 342 \ufrac W{m^2}}
+\end{align*}
+
+The task specifically asks for the radiant power on the Earth's surface, i.e. not just at the "upper edge" of the atmosphere, but im going to ignore that.
+
+\subsection{mass loss}
+\begin{align*}
+    \Aboxed{\dot m &= \frac{P\sub{sun}}{c^2} 
+    = \frac{4\pi d\sub{sun/earth}^2 P}{c^2}
+    = 4.14\E9\ufrac {kg} s}
+\end{align*}
+
+\subsection{neutrino flux}
+For light stars like the sun almost all energy comes from the pp-cycle, the netto reaction beeing:
+\begin{align*}
+    4 ^1 \mathrm H \to {}^4_2\mathrm{He} + 2 e^+ + 2 \nu_e + 26.73\u{MeV}
+\end{align*}
+Where the $26.73\u{MeV}$ includes the energy that will be released, once the positrons annihilate with their antiparticle. Assuming further that the released energy is equal to the energy radiated away electromagnetically, the total neutrino flux is given by:
+\begin{align*}
+    \Aboxed{P_\nu &= \frac{P}{26.73\u{MeV} /2} = 6.39\E{14}\ufrac{1}{m^2 s}
+    = 6.39\E{10}\ufrac{1}{cm^2 s}}
+\end{align*} 
+According to lecture 14 the expected neutrino flux due to the pp-cycle is $5.99\E{10}\ufrac{1}{cm^2 s}$ with the total neutrino flux beeing approximatly $6.5\E{10}\ufrac{1}{cm^2 s}$. The calculated neutrino flux alignes nicely with these numbers.
+
+\section{Apparent magnitude}
+\begin{align*}
+    m = - 2.5 \cdot \log_{10} \frac S{S_0},\qquad S_0 = 2.518\E{-8} \ufrac{W}{m^2}
+\end{align*}
+
+\subsection{sun}
+\begin{align*}
+    \Aboxed{m\sub{sun} = - 2.5 \cdot \log_{10} \frac {4\pi R\sub{sun/earth}^2 P}{S_0}  = -85.4}
+\end{align*}
+
+\subsection{distant vega}
+The luminosity of Vega is $L = 47.2\u L \odot = 47.2 \cdot 3.828\E{26}\u W$, and the distance to andromeda is $d = 0.78\u{Mpc} = 3.0857\E{22}\u m$. 
+\begin{align*}
+    \Aboxed{m\sub{distant vega} = - 2.5 \cdot \log_{10} \frac {\frac{L}{4\pi d^2}}{S_0} = 29.2}
+\end{align*}
+
+\section{GZK cutoff}
+Using Wien's law the energy of the MBR is:
+\begin{align*}
+    \lambda\sub{max} &= 2898 \ufrac{\mu m}{K} \cdot 2.7\u K\\
+    E_\gamma &= \omega \hbar = \frac{hc}{\lambda\sub{max}} = 158 \u{\mu eV}
+\end{align*}
+The minimum energy of the proton is then given by: 
+\begin{align*}
+    m_{\Delta^+}^2 &= s = (p_p + p_\gamma)^2 \\
+    &= (E_p + E_\gamma)^2 - (\v p_p + \v p_\gamma)^2\\
+    &= E_p^2 + 2E_p E_\gamma + E_\gamma^2 - \v p_p^2 - 2 \v p_p \v p_\gamma - \v p^2_\gamma\\
+    &= m_p^2 + 2E_p E_\gamma + 2 \sqrt{E_p^2 - m_p^2} E_\gamma\\
+    E_p^2 - m_p^2 &= \hug{\frac{m_{\Delta^+}^2 - m_p^2}{2E_\gamma} - E_p}^2\\
+    - m_p^2 &= \hug{\frac{m_{\Delta^+}^2 - m_p^2}{2E_\gamma}}^2 - \frac{E_p}{E_\gamma}\hug{m_{\Delta^+}^2 - m_p^2}\\
+    \Aboxed{E_p &= E_\gamma \hug{\frac{m_p^2}{m_{\Delta^+}^2 - m_p^2} + {\frac{m_{\Delta^+}^2 - m_p^2}{4E_\gamma^2}}} = 1.01\E{21}\u{eV}}
+\end{align*}
+
+\end{document}

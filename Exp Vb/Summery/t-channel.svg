@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 12.0.1, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+	<!ENTITY ns_svg "http://www.w3.org/2000/svg">
+	<!ENTITY ns_xlink "http://www.w3.org/1999/xlink">
+]>
+<svg  version="1.1" xmlns="&ns_svg;" xmlns:xlink="&ns_xlink;" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 width="298" height="264" viewBox="-12.547 5.324 298 264" enable-background="new -12.547 5.324 298 264" xml:space="preserve">
+<defs>
+</defs>
+<text transform="matrix(1 0 0 1 0 32.1323)" font-family="'Myriad-Roman'" font-size="38.3902">p</text>
+<text transform="matrix(1 0 0 1 13.6724 48.2329)" font-family="'Myriad-Roman'" font-size="22.0453">1</text>
+<text transform="matrix(1 0 0 1 0 249.2778)" font-family="'Myriad-Roman'" font-size="38.3902">p</text>
+<text transform="matrix(1 0 0 1 13.6724 265.3784)" font-family="'Myriad-Roman'" font-size="22.0453">2</text>
+<text transform="matrix(1 0 0 1 247.7822 249.2778)" font-family="'Myriad-Roman'" font-size="38.3902">p</text>
+<text transform="matrix(1 0 0 1 261.4541 265.3784)" font-family="'Myriad-Roman'" font-size="22.0453">4</text>
+<text transform="matrix(1 0 0 1 247.7822 32.1323)" font-family="'Myriad-Roman'" font-size="38.3902">p</text>
+<text transform="matrix(1 0 0 1 261.4541 48.2329)" font-family="'Myriad-Roman'" font-size="22.0453">3</text>
+<line fill="none" stroke="#231F20" stroke-width="2" stroke-dasharray="12" x1="136.953" y1="191.324" x2="136.953" y2="76.324"/>
+<line fill="none" stroke="#231F20" stroke-width="2" x1="28.453" y1="25.324" x2="136.953" y2="76.324"/>
+<line fill="none" stroke="#231F20" stroke-width="2" x1="136.953" y1="76.324" x2="245.453" y2="25.324"/>
+<line fill="none" stroke="#231F20" stroke-width="2" x1="136.953" y1="191.324" x2="245.453" y2="242.324"/>
+<line fill="none" stroke="#231F20" stroke-width="2" x1="136.953" y1="191.324" x2="28.453" y2="242.324"/>
+</svg>

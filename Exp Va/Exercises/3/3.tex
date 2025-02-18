@@ -1,0 +1,140 @@
+\documentclass[exa]{exercise_5.0}
+
+\deadline{04.11.2024}
+
+\begin{document}
+
+\section{Stoßzeiten u. freie Weglängen im Drude-Modell}
+\subsection{}
+Mit der Drude Formel $\sigma = \frac{n e^2}{m_e}\tau$,  $\sigma = \rho\inv$ und $n = n_A\frac{Z\rho_M}{M}$ folgt:
+\begin{align*}
+    \tau &= \frac{m_e M }{n_A \rho_M e^2 \rho}
+    \to  \begin{cases}
+        \tau\sub{Ag} = 38.1 \u{fs}\\
+        \tau\sub{Li} = 8.32\u{fs}
+    \end{cases}
+\end{align*}
+Die Leitungselektronen im Metall werden im Drude Modell beschrieben als ideales Gas, ihre Geschwindigkeiten folgen daher der Maxwell-Boltzmann-Verteilung, dessen Mittel gegeben ist durch:
+\begin{align*}
+    \tug v &= \sqrt{\frac{8 k_B T}{\pi m_e}}
+\end{align*}
+Damit gilt für die mittlere Weglänge:
+\begin{align*}
+    \Lambda &= \tau \tug v = \tau \sqrt{\frac{8 k_B T}{\pi m_e}}\to
+    \begin{cases}
+        \Lambda\sub{Ag} = 4.10\u{nm}\\
+        \Lambda\sub{Li} = 0.900\u{nm}
+    \end{cases}
+\end{align*}
+
+\subsection{}
+Die Massendichte von Stickstoff bei normal Bedingungen ist etwa $\rho_M=1.25\ufrac{kg}{m^3}$, die molare Masse $M = 28.0\ufrac g{mol}$.
+\begin{align*}
+    \tau_{\te N_2} &= \frac{1}{n\tug v \sigma} = \frac{M}{n_A \rho_M}\frac{1}{\pi d^2}\sqrt{\frac{\pi m_{\te{N}_2}}{8 k_B T}}
+    = \frac{M}{n_A \rho_M}\frac{1}{\pi d^2}\sqrt{\frac{\pi M}{8 k_B n_A T}}
+    = 182\u{fs}\\
+    \Lambda_{\te N_2} &= \tug v \tau_{\te N_2} = \frac1{n\sigma} =\frac{M}{n_A \rho_M}\frac{1}{\pi d^2}  = 86.5\u{nm}
+\end{align*}
+
+Die (Elektronen-) Dichten in einem Metall sind deutlich höher als in alltäglichen Gasen, weshalb es nicht verwunderlich ist, dass Relaxionszeit und freie Weglänge in den beiden Metallen etwa ein bis zwei Größenordnungen kleiner sind als für Stickstoff.  
+
+\section{Potentialtopf-Modell für Retinal}
+Der eindimensionale Potentialtopf hat für ein einzelnes Teilchen die Lösungen
+\begin{align*}
+    \psi_n(x) &= \sqrt{\frac 2L} \sin\hug{k_n x},\qquad k_n = \frac{n\pi}{L},\qquad 
+    E_n = \frac{\hbar k_n}{2m} 
+\end{align*}
+wobei das dreidimensionale Äquivalent mit einem Seperationsansatz wieder auf den eindimensionalen Potenzialtopf zurückgeführt werden kann. Die Lösung ist daher:
+\begin{align*}
+    \psi_{\v n}(\v x) &= \sqrt{\frac 8{L^3}} e^{i \v k \v x },
+    \qquad k_i=\frac{\pi n_i}{L},
+    \qquad E_{\v n} = \frac{\hbar^2 \v k^2}{2m} = \frac{\pi^2\hbar^2}{2mL^2}\v n^2
+\end{align*}
+\subsection{}
+Da die Elektronen dem Pauliprinzip unterliegen, sind im Grundzustand je zwei Elektronen in den fünf niederenergetischsten Niveaus. Für das höhste, besetzte Energieniveau (3-fach entartet) gilt $\v n =(2,2,1)$. 
+
+Der erste angeregte Zustand entspricht dem Übergang eines Elektrons mit $\v n =(2,1,1)$ zu $\v n'=(2,2,1)$. Die Energiedifferenz beträgt $E_0$, der Grundzustandsenergie.
+\begin{align*}
+    E_0 &= \frac{6\pi^2\hbar^2}{mL^2} =  2.30\u{eV}
+\end{align*}
+
+Die Wellenlänge des ersten Absorbtionsmaximum ist gerade so, dass die Grundenergie absorbiert wird: 
+\begin{align*}
+    E_0& = hf = \frac{hc}{\lambda}\\
+    \lambda &= \frac{hc}{E_0} = 539\u{nm}
+\end{align*}
+
+\section{Fermi-Gase}
+Die molaren Massen von Silber und Helium-3 sind $M\sub{Ag} = 108\u u $ und $M\sub{He} = 3.02\u u $.
+Es gilt
+\begin{align*}
+    k_F &= (3\pi^2 n)^{\frac13} \qquad  v_F = \frac{\hbar k_F}{m_e}\\
+    E_F &= \frac{\hbar^2 k_F^2}{2m_e} \quad\qquad T_F = \frac{E_F}{k_B}
+\end{align*}
+mit der Teilchendichte $n = \frac{n_A \rho}M$. 
+
+Damit ergeben sich die folgenden Werte:
+
+\begin{table}[H]
+    \centering
+    \input{table2.tex}
+\end{table}
+
+\section{Thermodynamik des Fermi-Gases bei $T=0\u K $}
+\begin{align*}
+    N(E) &= \frac{V}{3\pi^2} \hug{\frac{2m}{\hbar^2}}^{\frac32} E^\frac32,\qquad
+    D(E) = \dd NE = \frac{V}{2\pi^2} \hug{\frac{2m}{\hbar^2}}^{\frac32} \sqrt E,\qquad
+    E_F = \frac{\hbar^2}{2m}\hug{\frac{3\pi^2 N}{V}}^\frac23
+\end{align*}
+\subsection{}
+\begin{align*}
+    U &= \int \d E E \,D(E)\\
+    &= \frac{V}{2\pi^2}\hug{\frac{2m}{\hbar^2}}^{\frac32} \int_0^{E_F} \d E E^\frac32\\
+    &= \frac25 \frac{V}{2\pi^2}\hug{\frac{2m}{\hbar^2}}^{\frac32} E_F^\frac52\\
+    &= \frac35 \underbrace{\frac{V}{3\pi^2}\hug{\frac{2m}{\hbar^2}}^{\frac32} E_F^\frac32}_{N} E_F\\
+    &= \frac 35 E_F N 
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    \mu &= \pp UN \eval_{S,V} \\
+    &= \pp{}N \hug{\frac 35 E_F N}\\
+    &= \frac 35  \frac{\hbar^2}{2m}\hug{\frac{3\pi^2}{V}}^\frac23 \pp{}N N ^\frac53\\
+    &= \frac{\hbar^2}{2m}\hug{\frac{3\pi^2N}{V}}^\frac23\\
+    &= E_F
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    p &= -\pp UV \eval_{T}\\
+    &= -\pp {}V  \frac 35  \frac{\hbar^2}{2m}\hug{\frac{3\pi^2}{V}}^\frac23 N^\frac53\\
+    &= \frac23 \frac 35  \frac{\hbar^2}{2m}\hug{3\pi^2}^\frac23 \hug{\frac NV}^\frac53\\
+    &= \frac23 \frac UV \\
+    \\
+    K  &= - V \pp p V\eval_T\\
+    &= - V \pp{}V \frac23 \frac 35  \frac{\hbar^2}{2m}\hug{3\pi^2}^\frac23 \hug{\frac NV}^\frac53\\
+    &= \frac53 \frac23 \frac 35  \frac{\hbar^2}{2m}\hug{3\pi^2}^\frac23 \hug{\frac NV}^\frac53\\
+    &= \frac{10}{9}\frac UV = \frac23 \frac NV E_F
+\end{align*}
+
+\subsection{}
+Die Formel aus (c) kommt mit der angegebenen Fermi-Energie auf einen Kompressionsmodul von
+\begin{align*}
+    K\sub{Na}(E_F=3.14\u{eV}) &= 7.63\u{GPa}
+\end{align*}
+und trifft damit den experimentellen Wert von $7.46\u{GPa}$ mit einer relativen Fehler von nur $\sim2\%$.
+
+\section{Breite der Fermi-Kante für $T>0\u K$}
+
+\subsection{}
+Die im Plot eingezeichnete Kante schneidet die beiden Geraden bei $\pm2$, die Breite $\delta_E$ ist also 
+\begin{align*}
+    \delta_{E} &= 4 k_B T +\mu \approx 4k_B T
+\end{align*}
+\subsection{}
+Für $300\u K$ ergibt sich:
+\begin{align*}
+    \delta_E &= 0.103\u{eV},\qquad \frac\delta{E_F} = 2\%   
+\end{align*}
+
+\end{document}

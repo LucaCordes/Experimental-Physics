@@ -1,0 +1,189 @@
+\documentclass[exa]{exercise_5.0}
+
+\deadline{28.10.2024}
+
+\begin{document}
+
+\section{Wärmekapazität im Einstein-Modell}
+\subsection{Berechnen Sie die Wärmekapazität eines dreidimensionalen Festkörperes gemäß \(C=\pp UT\) für die innere Energie \(U=3\hbar\omega_E\hug{\frac1{e^x - 1}  + \frac12} \) mit \(x=\frac{\hbar\omega_E}{k_BT}\).}
+
+\dottedlinete
+
+\begin{align*}
+    C 
+    &= \pp U T= \pp U x \pp xT\\
+    &=  -3\hbar\omega_E \frac{e^x}{(e^x - 1)^2} \cdot \hug{-\frac{\hbar\omega_E}{k_B T^2}}\\    
+    &=  3 k_B x^2 \frac{ e^x }{(e^x - 1)^2}  
+\end{align*}
+
+\subsection{Plotten Sie den sich daraus ergebenen Verlauf der spezifischen Wärmekapazität als Funktion der skalierten Temperatur $T/T_E$.}
+
+\dottedlinett
+
+\inputpy[lastline=26]{}{2.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{2.svg}
+    \caption{Resultierender Plot}
+\end{figure}
+
+\subsection{Zeigen Sie, dass die Hochtemperatur-Wärmekapazität eines dreidimensionalen Festkörpers aus $N$ Atomen in führender Ordnung folgendermaßen geschrieben werden kann
+\begin{align*}
+    C = 3Nk_B \hug{1-\frac\kappa {T^2} + \dots}
+\end{align*}
+und drücken Sie die Konstante $\kappa$ durch die Einstein-Temperatur $T_E$ aus!
+}
+
+\dottedlinete
+
+\begin{align*}
+    C &= 3 N k_B x^2 \frac{e^x}{(e^x - 1)^2}  \\
+    &= 3 N k_B \hug{1- \frac16 \frac1{2!} x^2 + \bigO{x^4}}  \\
+    &\approx 3 N k_B \hug{1 - \frac{x^2}{12}}  \note \abs x \ll 1\\
+    &= 3 N k_B \hug[\Bigg]{1 - \underbrace{\frac{\hbar^2 \omega_E^2}{12 k_B^2}}_{\kappa} \frac1{T^2}}\\
+    &= 3 N k_B \hug[\Bigg]{1 - \frac1{12}\frac{T_E^2}{T^2}}
+\end{align*}
+
+\section{Debye-Modell im Experiment}
+\subsection{Bestimmen Sie mit Hilfe dieser Daten die Debye-Temperatur der Substanz}
+
+\dottedlinett
+
+\inputpy[firstline=29]{}{2.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{fit.svg}
+    \caption{Resultierender Plot}
+\end{figure}
+
+\subsection{Ziehen Sie wissenschaftliche Literatur zu Rate, um einen begründeten Vorschlag zu machen,
+welche Substanz hier vorliegen könnte.}
+
+\dottedlinett
+
+Es gibt zwei Elemente, die bei niedrigen Temperaturen eine ähnliche Debye Temperatur haben: 
+Das künstlich erzeugte Curium mit $T_D = 123\u K$, und etwas weniger exotisch: Wasserstoff mit $T_D = 122\u K $ (Quelle: S. 37 in A. Tari. The Specific Heat of Matter at Low Temperatures. London: Imperial College Press, 2003).
+
+\section{Debye-Modell für beliebige Temperaturen}
+{\it In der Vorlesung wurde die allgemeine Debye-Formel zur Beschreibung der Wärmekapazität eines Festkörpers aus \(N\) Teilchen hergeleitet:
+\begin{align*}
+    C = 9 N k_B \hug{\frac T{T_D}}^3 I_D\hug{\frac{T_D}T}
+\end{align*}
+wobei \(I_D\) das sogenannte Debye-Integral darstellt, welches analytisch nicht lösbar ist:
+\begin{align*}
+    I_D(x_D) &=\int_0^{x_D} \dx\frac{x^4 e^x}{(e^x - 1)^2}
+\end{align*}
+mit $x_D = \frac{\hbar \omega_D}{ k_B T} = \frac{T_D} T$.
+}
+
+\subsection{Zeigen Sie, dass sich im Grenzfall tiefer Temperaturen ein $T^3$-Gesetz ergibt, und bestimmen Sie den Vorfaktor.}
+
+\dottedlinett
+
+Für tiefe Temperaturen wird die obere Grenze des Debye Integral quasi unendlich, und lässt sich analytisch lösen:
+\begin{align*}
+    I_D(x_D) &=\int_0^{x_D} \dx\frac{x^4 e^x}{(e^x - 1)^2}\\
+    &\approx \int_0^\inf \dx\frac{x^4 e^x}{(e^x - 1)^2}\note T/T_D\to 0\implies x_D\to \inf\\
+    &= 4 \int_0^\inf \dx\frac{x^3}{e^x - 1}\note[part. Int.]\\
+    &= 4 \int_0^\inf \dx x^3 \sum_n e^{-nx}\note[Laurent-Entw.]\\
+    &= 4 \sum_n \int_0^\inf \dx x^3 e^{-nx}\\
+    &= 4 \sum_n \int_0^\inf \frac\du n \hug{\frac u n}^3 e^{-u}\note u = nx\\
+    &= 4 \sum_n \frac1{n^4}\int_0^\inf \du u^3 e^{-u}\\
+    &= 4 \,\Gamma(4) \sum_n \frac1{n^4}  \\
+    &= 4 \,\Gamma(4) \, \zeta (4)  \\
+    &= 4\cdot 3! \cdot \frac{\pi^4}{90}\\
+    &= \frac{4\pi^4}{15}
+\end{align*}
+Eigesetzt in die Formel der Wärmekapazität ergibt sich das bekannte $T^3$ Gesetz:
+\begin{align*}
+    C &= 9 N k_B \hug{\frac T{T_D}}^3 I_D\hug{\frac{T_D}T}\\
+    &\approx 9 N k_B \hug{\frac T{T_D}}^3\cdot  \frac{4\pi^4}{15} \note T/T_D\ll1\\
+    &=  \frac{12\pi^4}{5} N k_B \hug{\frac T{T_D}}^3\\
+\end{align*}
+
+\subsection{Zeigen Sie, dass sich im Grenzfall hoher Temperaturen der Dulong-Petit-Grenzwert ergibt.}
+
+\dottedlinett
+
+Für hohe Temperaturen geht $x_D$ gegen null. Der Integrand des Debye Integral lässt sich in Nenner und Zähler in linearer Ordnung entwickeln, um eine asymptotische Lösung zu erhalten:
+\begin{align*}
+    \quad I_D\hug {\frac{T_D}T}
+    &= \int_0^{x_D} \dx\frac{x^4 e^x}{(e^x - 1)^2}\\
+    &\approx \int_0^{x_D} \dx\frac{x^4 (1+x)}{(1+x - 1)^2}\note \abs{x_D}\ll 1\\
+    &\approx \int_0^{x_D} \dx x^2(1+x)\\
+    &= \frac{x_D^4}{4} + \frac{x_D^3}{3}
+\end{align*}
+Dies kann nun in die Formel der Wärmekapazität eingesetzt werden:
+\begin{align*}
+    \implies C_{T/T_D\to\inf} 
+    &\approx 9 N k_B \frac1 {x^3} \hug{\frac{x_D^4}{4} + \frac{x_D^3}{3}}\\
+    &= 9 N k_B \hug{\frac{x_D}{4} + \frac{1}{3}}\\
+    &= 3 N k_B \note x_D\to 0\\
+\end{align*}
+Für hohe Temperaturen geht die Wärmekapazität nach Debye also in den Dulong-Petit Grenzwert von $3N k_B$ über.
+
+\section{Periodische Randbedingungen}
+{\it Periodische Randbedingungen werden immer dann verwendet, wenn die Eigenschaften eines idealisierten, unendlich ausgedehnten Systems mittels eines Systems aus nur endlich vielen Bestandteilen berechnet werden sollen. Die Idee ist dabei, unphysikalische Divergenzen zu vermeiden, die
+von einer unendlich großen Anzahl an Bestandteilen hervorgerufen werden.
+Betrachten Sie einen Festkörper der endlichen, makroskopischen Länge L. Periodische Randbedingungen bedeuten in einer Dimension, dass  für eine Funktion $u(x)$ gilt $u(0)\equiv u(L)$.}
+
+\subsection{Zeigen Sie, dass die Anwendung periodischer Randbedingungen auf eine ebene Welle mit
+der Wellenfunktion $\psi(x) = A \cdot e^{ikx}$ zu einer Diskretisierung der erlaubten $k$-Werte führt,
+und geben Sie die erlaubten $k$-Werte für den eindimensionalen Fall an}
+
+\dottedlinete
+
+\begin{align*}
+    \psi(0) &= \psi(L)\\
+    A &= A e^{ikL}\\
+    1 &= e^{ikL}\\
+    \implies ikL &= n2\pi i\note n\in\N\\ 
+    k &= \frac{2\pi n}{L}\\ 
+\end{align*}
+
+\subsection{Zeigen Sie, das für beliebige stetige Funktionen $f(k)$ eine Summation über alle erlaubten $k$-Werte in sehr guter Näherung durch folgendes Integral approximiert werden kann:
+\begin{align*}
+    \sum_k f(k) \sim \frac{L}{2\pi} \int \dk f(k).
+\end{align*}}
+
+\dottedlineet
+
+Für ein genügend großes $L$ gilt:
+\begin{align*}
+    \frac L{2\pi} \int_{k_0}^{k_0+2\pi/L} f(k)\dk
+    &\approx \frac L {2\pi}  \int_{k_0}^{k_0+2\pi/L} f(k_0)\dk\\
+    &= f(k_0)
+\end{align*}
+und somit für die Summe:
+\begin{align*}
+    \sum_k f\hug{k} 
+    &\approx \sum_k \frac L{2\pi} \int_{k}^{k+2\pi/L} f(k')\dk'\\
+    &\approx \frac L{2\pi} \int f(k)\dk\\
+\end{align*}
+
+\subsection{Was ergibt sich jeweils in drei Dimension?}
+
+\dottedlinett
+
+In drei Dimensionen sind die Wellenvektoren analog zum eindimensionalen Fall quantisiert:
+\begin{align*}
+    \v k &= (k_1,k_2,k_3)\\
+    k_i &= \frac{2\pi n_i}{L} \note n_i \in \N
+\end{align*}
+
+Der Übergang zum Integral erfolgt mit 
+\begin{align*}
+    \hug{\frac {L}{2\pi}}^3 \int_{\kappa_1}^{\kappa_1 + \frac{2\pi}L} \dk_1\int_{\kappa_2}^{\kappa_2 + \frac{2\pi}L} \dk_2\int_{\kappa_3}^{\kappa_3 + \frac{2\pi}L} \dk_3 f(\v k)
+    &\approx \hug{\frac {L}{2\pi}}^3 \int_{\kappa_1}^{\kappa_1 + \frac{2\pi}L} \dk_1\int_{\kappa_2}^{\kappa_2 + \frac{2\pi}L} \dk_2\int_{\kappa_3}^{\kappa_3 + \frac{2\pi}L} \dk_3 f(\v \kappa)\\
+    &= f(\v \kappa )
+\end{align*}
+
+sodass für die Summe gilt:
+\begin{align*}
+    \sum_{\v k} f(\v k) 
+    &\approx \sum_{\v k} \hug{\frac {L}{2\pi}}^3 \int_{k_1}^{k_1 + \frac{2\pi}L} \d\kappa_1\int_{l_2}^{k_2 + \frac{2\pi}L} \d\kappa_2\int_{k_3}^{k_3 + \frac{2\pi}L} \d\kappa_3 f(\v \kappa)\\
+    &= \hug{\frac L{2\pi}}^3 \int f(\v k)\d{^3k}
+\end{align*}
+\end{document}

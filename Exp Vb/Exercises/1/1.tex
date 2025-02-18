@@ -1,0 +1,172 @@
+\documentclass[exb]{exercise_5.0}
+
+\deadline{17.10.2024}
+\pagenumbering{arabic}
+
+\begin{document}
+
+\section{LEP und LHC}
+{\it Am CERN in Genf wurde von 1989 bis 2000 der Elektron-Positron Speicherring LEP
+betrieben. Dabei wurden Elektronen und Positronen bis auf eine Energie von 100 GeV
+beschleunigt und zur Kollision gebracht. In demselben Tunnel, mit 26.695 km Umfang,
+wurden ab 2008 an dem LHC Proton-Proton Kollisionen untersucht. Die Protonen haben
+dabei bis heute eine Maximalenergie von 6.8 TeV erreicht.}
+
+\subsection
+{Welche Strukturen können mit der Schwerpunktsenergie von LEP bzw. LHC auf-
+gelöst werden? Nehmen Sie für LHC an, dass sich die Strahlenergie gleichmäßig auf die drei Quarks im Proton aufteilt.}
+
+\dottedlinett
+
+Elektron und Positron haben die gleiche Masse, daher entspricht das Schwerpunktsystem dem Laborsystem und die Schwerpunktsenergie ist einfach
+\begin{align*}
+    E_S &= 2 E\sub{lab} = \SI{200}{GeV}.
+\end{align*}
+
+Die kleinste aufnehmbare Struktur von LEP ist in der Größenordung von 
+\begin{align*}
+    \lambda\sub{LEP} &= \frac{hc}{E_S}\\
+    &= \SI{6.20e-18}{m}
+\end{align*}
+
+Für die Proton-Proton Kollision am LHC sind noch kleinere Strukturen möglich:
+\begin{align*}
+    \lambda\sub{LHC} &= \frac{hc}{E_S} = \frac{hc}{2\cdot 6.8\u{TeV}}\\
+    &\approx \SI{1.82e-19}{m}
+\end{align*}
+
+\subsection
+{Ein Protonstrahl im LHC besteht aus 2808 einzelnen Paketen, von denen jedes
+$115\E9$ Protonen enthält. Wie groß ist die gespeicherte Energie in Joule in jedem Protonstrahl? Welche Masse hätte ein ICE bei $v = 350$ km/   h bei gleicher kinetischer Energie?}
+
+\dottedlinett
+
+Die Energie eines Strahls ist: 
+\begin{align*}
+    E\sub{Strahl} &= 2808\cdot 115\E9\cdot 6.8 \u{TeV}\\
+    &\approx \SI{351}{MJ}
+\end{align*}
+
+Damit gilt für die Masse des ICE:
+\begin{align*}
+    E\sub{Strahl} &= E\sub{kin} 
+    = \frac12 m v^2 \\ 
+    m &= \frac{2E\sub{Strahl}}{v^2}\\
+    &\approx 74.4\u{t
+    }
+\end{align*}
+
+\subsection{Wieviel Zeit vergeht zwischen der Kollision von zwei Proton-Paketen in einem der LHC-Detektoren? Wie weit können Teilchen in dieser Zeit durch die Teilchendetektoren fliegen? Vergleichen Sie dies mit den Abmessungen von ATLAS und CMS.}
+
+\dottedlinett
+
+Die Zeit zwischen Kollisionen ist
+\begin{align*}
+    \Delta t &= \frac{L}{Nv} \approx \frac{L}{Nc} \\
+    &\approx 31.7\u{ns}
+\end{align*}
+Laut Wikipedia sollten es \(\SI{25}{ns}\) sein. Die Teilchen fliegen in dieser Zeit:
+\begin{align*}
+    \Delta s &\approx c\Delta t\\ 
+    &\approx 9.5 \u m 
+\end{align*}
+
+Sowohl ATLAS als auch CMS sind mit Längen von jeweils 46m und 21m deutlich länger als die Strecke, die sich zwischen zwei Teilchenpaketen befindet. 
+
+\section{Natürliche Einheiten}
+\subsection{Drücken Sie die Gravitationskonstante in natürlichen Einheiten (1/GeV$^2$) aus. Geben Sie die zugehörige Massen-, Längen- und Zeitskala in SI-Einheiten an. Diese Skala bezeichnet man als Planck-Skala und sie legt die Grenzen der bisher bekannten physikalischen Gesetze fest.}
+
+\dottedlinett
+
+Ziel ist es die nur Gravitationskonstante durch Elektronenvolt und Konstanten auszudrücken, welche in den natürlichen Einheiten gleich eins gesetzt sind. Die Betrachtung der Einheiten liefert: 
+\begin{align*}
+    G &= \cG\\
+    [G] &= \frac{L^3}{M T^2} \peq[\u{eV}^\alpha\hbar^\beta c^\gamma]\\
+    \implies &\begin{cases}
+        \u{kg}:\quad  -1 = \alpha+\beta\\
+        \u{m}:\quad \, 3 = 2\alpha+2\beta+\gamma\\
+        \u{s}:\quad \ \ -2 = -2\alpha - \beta - \gamma
+    \end{cases}
+    \implies \begin{cases}
+        \alpha = -2\\
+        \beta = 1\\
+        \gamma = 5\\
+    \end{cases}\\
+    \implies G &= \hbar c^5 \cdot 6.71\E{-57} \ufrac{1}{eV^2}\\
+    G\sub{nat} &= 6.71\E{-57} \ufrac{1}{eV^2}
+\end{align*}
+Die dazugehörigen Massen-, Längen- und Zeitskalen in SI-Einheiten sind:
+\begin{table}[H]
+\centering
+\begin{tabular}{@{}lll@{}}
+    \toprule
+    {\bf Größe} & {\bf Formel} & {\bf SI-Wert} \\
+    \midrule
+    Masse & \(\sqrt{\frac{\hbar c}{G}}\) & \(2.18\E{-8}\u{kg}\)\\
+    Länge & \(\sqrt{\frac{\hbar G}{c^3}}\) & \(1.62\E{-35}\u m\)\\
+    Zeit & \(\sqrt{\frac{\hbar G}{c^5}}\) & \(5.40\E{-44}\u s\)\\
+    \bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Wie groß ist das Verhältnis von Gravitationskraft zu Coulomb-Kraft von zwei Protonen im Abstand $r$?}
+
+\dottedlinete
+
+\begin{align*}
+    \frac{F_G}{F_C} 
+    &= \frac{G \frac{m_p^2}{r^2}}{\frac{1}{4\pi\varepsilon_0}\frac{e^2}{r^2}}
+    = 4\pi G m_p^2 \varepsilon_0 / e^2\\
+    &\approx 8.094\E{-37}
+\end{align*}
+
+\section{HERA}
+{\it An dem HERA Beschleuniger am DESY in Hamburg wurden von 1992 bis 2007 Elektron-Proton Kollisionen untersucht. Dabei wurden Elektronen auf eine Energie von 27.5 GeV und Protonen auf eine Energie von 920 GeV beschleunigt. Berechnen Sie die Schwerpunktsenergie $E_{CM}$.}
+
+\dottedlinett
+
+Für beide Teilchen ist die kinetische Energie mindestens um drei Größenordnungen größer als die Ruheenergie, womit ultra hochrelativistische Näherungen wie $p\approx \pm E$ gerechtfertigt sind.
+
+\begin{align*}
+    s &= (E_e + E_p)^2 - (p_e + p_p)^2\\
+    &\approx (E_e + E_p)^2 - (E_e - E_p)^2\\
+    \sqrt s&= 2 \sqrt{E_e E_p} \\
+    &\approx 318 \u{MeV}
+\end{align*}
+
+\section{Relativistische Kinematik - Pionzerfall}
+{\it Ein Pion zerfällt in Ruhe in ein Myon und ein Myon-Neutrino: $\pi^+ \to \mu^+\nu_\mu$. Berechnen Sie aus Energie- und Impulserhaltung die Geschwindigkeit ($\nu_\mu/c$) des $\mu^+$
+unter der Annahme, dass das Neutrino $\nu_\mu$ masselos ist.\\[1ex]
+Tipp: Berechnen Sie dazu zunächst $\abs{p_\mu}$ aus dem Ansatz $p_\pi=p_\mu + p_\nu$ der Vierervektoren.}
+
+\dottedlinett
+
+Aus der Viererimpuls-Erhaltung folgt:
+\begin{align*}
+    (E_\pi,  p_\pi) &= (E_\mu + E_\nu, p_\mu + p_\nu)\\
+    (m_\pi,0) &= \hug{\sqrt{m_\mu^2 + p_\mu^2} + p_\nu, p_\mu + p_\nu}\\
+    \\
+    \implies p_\nu &= - p_\mu\\
+    \implies m_\pi &= \sqrt{m_\mu^2 + p_\mu^2} - p_\mu\\
+    (m_\pi + p_\mu)^2 &= m_\mu^2 + p_\mu^2\\
+    m_\pi^2 + 2m_\pi p_\mu &= m_\mu^2 \\
+    \implies p_\mu &= \frac{m_\mu^2 - m_\pi^2}{2m_\pi } \\
+    \implies p_\nu &= \frac{m_\pi^2 - m_\mu^2}{2m_\pi }
+\end{align*}
+
+Aus dem Impuls lässt sich nun die Geschwindigkeit berechnen:
+\begin{align*}
+    p_\mu &= \gamma m_\mu v\\
+    p_\mu^2 &= \frac{\beta^2}{1-\beta^2} m_\mu^2\\
+    0 &= \beta^2( m_\mu^2 + p_\mu^2) - p_\mu^2\\
+    \beta &= \frac{p_\mu}{\sqrt{m_\mu^2 + p_\mu^2}}\\
+     &= \frac{\frac{m_\mu^2 - m_\pi^2}{2m_\pi }}{\sqrt{m_\mu^2 + \hug{\frac{m_\mu^2 - m_\pi^2}{2m_\pi }}^2}}\\
+    &= \frac{m_\mu^2 - m_\pi^2}{\sqrt{4m_\pi^2 m_\mu^2 + \hug{m_\mu^2 - m_\pi^2}^2}}\\
+    &= \frac{m_\mu^2 - m_\pi^2}{\sqrt{4m_\pi^2 m_\mu^2 + m_\mu^4 - 2m_\mu^2 m_\pi^2 + m_\pi^4}}\\
+    &= \frac{m_\mu^2 - m_\pi^2}{\sqrt{m_\mu^4 + 2 m_\mu^2 m_\pi^2 + m_\pi^4}}\\
+    &= \frac{m_\mu^2 - m_\pi^2}{m_\mu^2 + m_\pi^2}\\
+    &\approx 0.422\\
+    v &= c\beta \approx 1.26\E{8}\ufrac ms 
+\end{align*}
+
+\end{document}

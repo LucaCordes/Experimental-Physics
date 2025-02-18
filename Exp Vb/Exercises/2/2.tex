@@ -1,0 +1,136 @@
+\documentclass[exb]{exercise_5.0}
+
+\deadline{31.10.2024}
+
+\begin{document}
+
+\section{Mandelstam-Variablen}
+Für die drei Mandelstam-Variablen gilt:\\[-4ex]
+\begin{minipage}[t]{0.33\textwidth}
+    \begin{align*}
+    s &= (p_1+p_2)^2\\
+    &= (2E, \v p - \v p)^2\\
+    &= 4E\\
+    &= 4(\v p^2 + m^2)
+    \end{align*}
+\end{minipage}\begin{minipage}[t]{0.33\textwidth}
+    \begin{align*}
+        t &= (p_1 - p_3)^2\\
+    &= (E-E, \v p_1 - \v p_3)^2\\
+    &= -2\v p^2 + 2 \v p_1 \v p_3\\
+    &= -2\v p^2 + 2 \v p^2 \cos\theta\\
+    &= -2\v p^2 (1-  \cos\theta)
+    \end{align*}
+\end{minipage}\begin{minipage}[t]{0.33\textwidth}
+    \begin{align*}
+    u
+    &= (p_1 - p_4)^2\\
+    &= (E-E,\v p_1-\v p_4)^2\\
+    &= (E-E,\v p_1+\v p_3)^2\\
+    &= -2\v p^2 - 2\v p_1 \v p_3\\
+    &= -2\v p^2 - 2\v p^2 \cos (\theta)\\
+    &= -2\v p^2 (1+ \cos (\theta))
+    \end{align*}
+\end{minipage}
+
+
+\section{Linear Beschleuniger and Zyklotron}
+\subsection{}
+Die Längen $l_i$ der Driftröhren müssen offensichtlich als $\frac{v_i}{2f}$ gewählt werden. Der Energiegewinn nach jeder Driftröhre ist dann 
+\begin{align*}
+    \Delta E = e U_0
+\end{align*}
+Insgesamt benötigt man also 
+\begin{align*}
+    N = \frac{E\sub{kin}}{\Delta E} = 100
+\end{align*}
+Driftröhren. Die Gesamtlänge des Beschleunigers beläuft sich damit auf:
+\begin{align*}
+    l &= \sum_i l_i = \sum_i \frac{v_i}{2f} = \frac1 {2f}\sum_i \sqrt{\frac{2 i \Delta E}{m_p}} = \frac1f\sqrt{\frac{\Delta E }{2 m_p}}\sum_{i=1}^{100}  \sqrt{i}\approx \frac{671}f\sqrt{\frac{\Delta E }{2 m_p}}
+    \approx 104 \u m 
+\end{align*}
+
+
+\subsection{}
+Die Lorentzkraft wirkt als Zentripetalkraft:
+\begin{align*}
+    F_z &= F_L \Leftrightarrow\frac{m v^2}r = e v B \Leftrightarrow r = \frac{mv}{e B} \\
+    \\
+    \implies T &= \frac{2\pi r}{v} = 2\pi \frac{mv}{e B} \frac 1v = 2\pi \frac{m}{e B} =\const\\
+    \implies B &= \frac{2\pi m }{e T } = \frac{m\omega}{e} \approx 1.31 \u T 
+\end{align*}
+
+Unter der Annahme, dass die Protonen bei jeder Runde zwei Mal beschleunigt werden, 
+müssen sie $50$ Mal den Zyklotron durchlaufen.
+
+Der Durchmesser ist:
+\begin{align*}
+    r\sub{max} &= \frac{mv\sub{max}}{e B} 
+    = \frac{mv\sub{max}}{e} \frac e{m\omega} 
+    = \frac{ v\sub{max}} \omega  
+    = \frac1\omega \sqrt{\frac{2E\sub{kin}}{m_p}}
+    \approx 49.3 \u{cm}
+\end{align*}
+
+\section{Luminosität}
+
+\subsection{}
+Allgemein ergibt sich die Luminosität als Überlappungsintegral der Dichtefunktionen der beiden Strahlen:
+\begin{align*}
+    L = K N_1 N_2 f n_B \iiiint  \rho_1(x,y,s,-s_0)\rho_2(x,y,s,s_0) \dx \dy \d s \d s_0
+\end{align*}
+Speziell für ein doppelt Gaußisches Profil ergibt sich damit 
+\begin{align*}
+    L &= \frac{n_B f N_1 N_2}{4\pi \sigma_x \sigma_y} 
+    \approx \frac{n_B c N_1 N_2}{4\pi l \sigma_x \sigma_y}
+    \approx\begin{cases}
+         1.48\E{38}\ufrac{1}{m^2s}\\
+         1.48\E{34} \ufrac{1}{cm^2s}\\
+         14.8\ufrac{1}{nb\, s} 
+    \end{cases}
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    L\sub{int} &= \eta \int_0^{t'} \dt L 
+    = \eta \cdot 6\cdot 30\cdot 24\cdot 60^2\u s \cdot L 
+    =  57.3\u{fb } 
+\end{align*}
+
+\subsection{}
+\begin{align*}
+    N &= L\sub{int} \sigma \approx 1.15\E6 
+\end{align*}
+
+\section{Ionisierungs Verluste}
+\subsection{}
+\, 
+
+\inputpy{}{2.py}
+
+\begin{figure}[H]
+    \centering
+    \includesvg[width=1.0\textwidth]{2.svg}
+    \caption{Resultierender Plot}
+\end{figure}
+
+\subsection{}
+Der mittlere Energieverlust ist für Pionen und Kaonen ungefähr bei $158.5\u{MeV}$ gleich, wie man im Plot sehen kann.
+
+\subsection{}
+Das Script gibt aus:
+\begin{minted}{python}
+    muon  :    argmin        = 114.1 MeV
+               dE/dx(argmin) = 0.0070069 MeV/cm
+    pion  :    argmin        = 150.91 MeV
+               dE/dx(argmin) = 0.0070055 MeV/cm
+    kaon  :    argmin        = 531.72 MeV
+               dE/dx(argmin) = 0.0070029 MeV/cm
+    proton:    argmin        = 1010.1 MeV
+               dE/dx(argmin) = 0.0070024 MeV/cm
+    alpha :    argmin        = 4014.3 MeV
+               dE/dx(argmin) = 0.028008 MeV/cm
+\end{minted}
+Wobei $\d E/\dx(\te{argmin})\cdot 1\u{cm}$ näherungsweise der Energie entspricht, die die MIPs in einem cm Absorber deponieren.
+
+\end{document}
